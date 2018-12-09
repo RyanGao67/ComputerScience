@@ -16,6 +16,7 @@ arr = [1], in this case , arr is already sorted
 
 *2: Now assume arr=[4,5,7,8,9,2]*  
 **Induction: The part of arr to the left of index i is sorted, the part of arr to the right of i is unsorted.** 
+
 **i = 1**
 The left part is [4], which is sorted. The right part is [7,8,9,2], which is unsorted. Now, we consider the entry of index i(now i == 1) and expand the left part(sorted part) to include arr[i]. j starts from i-1, so j starts 0. Because arr[j] == 4, which is smaller than arr[i] (also curNum, now is 5), the program does not enter the while loop. arr[j+1] doesn't change. 
 
