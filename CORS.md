@@ -28,5 +28,10 @@ The above header says that this server will share the requested resources with a
 * options
 * trace
 * path
+
 Here is image which could illustrate the process
+
 ![](./img/cors.png)
+
+reference: 
+[What is CORS?](https://www.codecademy.com/articles/what-is-cors)
