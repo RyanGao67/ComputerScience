@@ -24,3 +24,28 @@ x = 'hi'
 y = 'hi'
 id(x)==id(y)   # this returns true
 ```
+
+##### How to find the ascii value of a character
+* Javascript
+```
+var s = 'A';
+console.log(s.charCodeAt(0));
+console.log(String.fromCharCode(65));
+```
+* Python
+```
+ord('A')
+chr(65)
+```
+* Java
+```
+public class inToNumber{
+    public static void main(String[] args){
+        int i = 65;
+        int j = 'a';
+        char g = (char)i;
+        System.out.println(g);
+        System.out.println(j);
+    }
+}
+```
