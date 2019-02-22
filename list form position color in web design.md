@@ -80,8 +80,8 @@ step2: press 'Tab'
 Then the tab will be automaticly created  
 
 #### Block level container vs inline container  
-<div> and <p> are block level container   
-<span> is inline container
+div and p are block level container   
+span is inline container
 
 #### The following code shows how to build a list in html. ol means ordered list, if we use ul, then an unordered list will be created. 
 ```
