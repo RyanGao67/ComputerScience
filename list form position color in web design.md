@@ -75,9 +75,9 @@ body{
 }
 ```
 #### Some tricks when using editor
-step1: print ol
-step2: press 'Tab'
-Then the tab will be automaticly created
+step1: print ol  
+step2: press 'Tab'  
+Then the tab will be automaticly created  
 
 #### Block level container vs inline container  
 <div> and <p> are block level container   
