@@ -35,7 +35,7 @@ div.sticky{
 
 
 
-#### The following will css and html will show how to build a table. <th> means table head.<tr> means table rows.
+#### The following css and html will show how to build a table. <th> means table head.<tr> means table rows.
 ![](/img/table.jpg)
 ```
 <table >
