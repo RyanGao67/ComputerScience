@@ -3,7 +3,7 @@
 * The possible behaviors of a program are a set of such sequences. 
 * The whole set of states and transitions is called the state space of the program
 * Models of program execution are abstractions of that space. 
-* Two effects of abstraction: (1)The execution model is coarsened (2)mondeterminism is introduced
+* Two effects of abstraction: (1)The execution model is coarsened (2)nondeterminism is introduced
 
 
 # Models used frequently
