@@ -9,13 +9,13 @@
 * Inadequate testing of software
 * Evolution
 
-# Verification and Validation
+# Verification and Validation  
 • Validation: does the software system meet
-the user's real needs?
-**Are we building the right software?**
+the user's real needs?    
+**Are we building the right software?**    
 • Verification: does the software system meet
-the requirements specifications?
-**Are we building the software right?**
+the requirements specifications?    
+**Are we building the software right?**   
 
 # Levels of testing 
 ![](img/levelsTesting.png)
@@ -23,270 +23,270 @@ the requirements specifications?
 # Static versus Dynamic Analysis
 Static Analysis:
 • Determines or estimates software quality without
-reference to actual executions
+reference to actual executions   
 • Techniques: code inspection, program analysis,
-symbolic analysis, and model checking.
-Dynamic Analysis:
+symbolic analysis, and model checking.   
+Dynamic Analysis:   
 • Approximates software quality through actual
 executions, i.e., with real data and under real (or
-simulated) circumstances
+simulated) circumstances    
 • Techniques: synthesis of inputs, testing procedures,
-and the automation of testing environment generation.
+and the automation of testing environment generation.    
 
 # Functional versus Structural Testing
 **Functional Testing:**
 • software program or system under test is
-viewed as a “black box”.
+viewed as a “black box”.     
 • emphasizes on the external behavior of the
-software entity.
+software entity.    
 • selection of test cases for functional testing is
 based on the requirement or design
 specification of the software entity under
-test.
+test.    
 **Structural Testing:**
-• the software entity is viewed as a “white box”.
+• the software entity is viewed as a “white box”.    
 • emphasizes on the internal structure of the
-software entity.
+software entity.    
 • goal of selecting such test cases is to cause the
 execution of specific statements, program
-branches or paths.
+branches or paths.    
 • expected results are evaluated on a set of
 coverage criteria. Examples: path coverage,
-branch coverage, and data-flow coverage.
+branch coverage, and data-flow coverage.    
 
 # Levels of Automation
-• Manual Testing (no automation)
-– Code review, inspection, exploratory testing
-• Test Scripting (automated test execution)
-– Writing unit tests
-• Test Generation (Automated test creation)
-– Using a tool to generate test cases
+• Manual Testing (no automation)   
+– Code review, inspection, exploratory testing   
+• Test Scripting (automated test execution)   
+– Writing unit tests   
+• Test Generation (Automated test creation)   
+– Using a tool to generate test cases   
 
 
 # Testing Terminology
-• Failure/fault/error (or bug)
-• Test plan: test specification
-• Test case: a single unique unit of testing code
-• Test suite: collection of test cases
-• Test oracle: expected behavior
-• Test fixture (or test data)
-• Test harness: collection of all the above + conf.
+• Failure/fault/error (or bug)     
+• Test plan: test specification    
+• Test case: a single unique unit of testing code    
+• Test suite: collection of test cases    
+• Test oracle: expected behavior   
+• Test fixture (or test data)    
+• Test harness: collection of all the above + conf.   
 – The software, tools, samples of data input and output,
 and configurations are all referred to collectively as a test
-harness.
+harness.   
 
 # Test Oracles
-Common types of oracles:
-• an expert human being
-• Assertions: assertEquals(x, 34);
-• specifications and documentation (e.g., invariants)
+Common types of oracles:    
+• an expert human being   
+• Assertions: assertEquals(x, 34);   
+• specifications and documentation (e.g., invariants)   
 • other programs (e.g., program that uses a different
 algorithm to evaluate the same expression as the product
-under test)
+under test)   
 • a heuristic oracle that provides approximate results or
-exact results for a set of test inputs,
+exact results for a set of test inputs,   
 • a consistency oracle that compares the results of one test
-execution to another for similarity (regression testing),
+execution to another for similarity (regression testing),   
 
 # What to test in Software Testing 
-• Test the main functionality of the system
+• Test the main functionality of the system    
 • Testing non-functional properties such as
 security, performance, usability, accessibility is
-important but **not** part of software testing
+important but **not** part of software testing   
 
-# Finite Abstractions of Behavior
-* A single program execution can be viewed as a sequence of states alternating with actions. 
-* The possible behaviors of a program are a set of such sequences. 
-* The whole set of states and transitions is called the state space of the program
-* Models of program execution are abstractions of that space. 
-* Two effects of abstraction: (1)The execution model is coarsened (2)nondeterminism is introduced
+# Finite Abstractions of Behavior   
+* A single program execution can be viewed as a sequence of states alternating with actions.    
+* The possible behaviors of a program are a set of such sequences.    
+* The whole set of states and transitions is called the state space of the program   
+* Models of program execution are abstractions of that space.    
+* Two effects of abstraction: (1)The execution model is coarsened (2)nondeterminism is introduced   
 
 
-# Models used frequently
-* Control flow graph
-* Data flow graph
-* State machine
-* Decision tables
-* Grammars
-* Class diagrams
-* Call graph
+# Models used frequently    
+* Control flow graph     
+* Data flow graph   
+* State machine   
+* Decision tables    
+* Grammars   
+* Class diagrams   
+* Call graph    
 
 # Why not use UML?
-* It is devised promarily for human communication
-* Poor in semantic meaning and prediction
+* It is devised promarily for human communication    
+* Poor in semantic meaning and prediction    
 
 # Properties of Models
-* Compact
-* Predictive **(represent the model so that we can distinguish between good and bad outcomes of analysis)**
-* Semantically meaningful **（permit disgnosis of causes of failure）**
-* Sufficiently general **(general enough for practical use)**
+* Compact    
+* Predictive **(represent the model so that we can distinguish between good and bad outcomes of analysis)**   
+* Semantically meaningful **（permit disgnosis of causes of failure）**   
+* Sufficiently general **(general enough for practical use)**  
 
-# (intraprocedual) Control Flow Graph vs (interprocedural, AKA Call graph) Control Flow Graph
-* For Call graph, of which there are two kinds: 1. Static 2. Dynamic
-* One convention of drawing Call graph is starting from check() function
+# (intraprocedual) Control Flow Graph vs (interprocedural, AKA Call graph) Control Flow Graph   
+* For Call graph, of which there are two kinds: 1. Static 2. Dynamic    
+* One convention of drawing Call graph is starting from check() function    
 
 # Systematic Testing
-Functional testing:
-* Test cases come from requirements/specs
+Functional testing:    
+* Test cases come from requirements/specs    
 
-Structural testing:
-* Test cases check the source code
+Structural testing:    
+* Test cases check the source code   
 
-Model-based testing:
+Model-based testing:    
 * Test cases from models of the system and
-its behavior
+its behavior    
 
-# Terminology
-• Test case: a set of inputs, execution conditions, and a pass/fail criterion.
-• Test case specification: a requirement to be satisfied by one or more test cases.
-• Test obligation: a partial test case specification requiring some property deemed important to thorough testing
-• Test suite: a set of test cases.
+# Terminology    
+• Test case: a set of inputs, execution conditions, and a pass/fail criterion.   
+• Test case specification: a requirement to be satisfied by one or more test cases.   
+• Test obligation: a partial test case specification requiring some property deemed important to thorough testing   
+• Test suite: a set of test cases.   
 • Test or test execution: the activity of executing test cases and evaluating
-their results.
+their results.    
 • Adequacy criterion: a predicate that is true (satisfied) or false (not
-satisfied) of a 〈program, test suite〉 pair.
+satisfied) of a 〈program, test suite〉 pair.   
 • Test coverage: percentage of test obligations met for a given adequacy
-criterion.
+criterion.    
 
 
-# Where do test obligations come from?
-• Functional (black box, specification-based): from software specifications
+# Where do test obligations come from?   
+• Functional (black box, specification-based): from software specifications   
 – Example: If spec requires robust recovery from power failure, test
-obligations should include simulated power failure
+obligations should include simulated power failure    
 • Structural (white or glass box): from code
-– Example: Traverse each program loop one or more times.
-• Model-based: from model of system
-– Models used in specification or design, or derived from code
-– Example: Exercise all transitions in the UI model
-• Fault-based: from hypothesized faults (common bugs)
+– Example: Traverse each program loop one or more times.    
+• Model-based: from model of system   
+– Models used in specification or design, or derived from code    
+– Example: Exercise all transitions in the UI model    
+• Fault-based: from hypothesized faults (common bugs)    
 – Example: Check for buffer overflow handling (common vulnerability) by
-testing on very large inputs
+testing on very large inputs    
 
-# Adequacy criteria
-• Adequacy criterion = set of test obligations
-• A test suite satisfies an adequacy criterion if
-– all the tests succeed (pass)
-– every test obligation in the criterion is satisfied by at least one of the test cases in the test suite.
-• Example:
-the statement coverage adequacy criterion is satisfied by test suite S for program P if each executable statement in P is executed by at least one test case in S, and the outcome of each test execution is “pass”
+# Adequacy criteria   
+• Adequacy criterion = set of test obligations   
+• A test suite satisfies an adequacy criterion if   
+– all the tests succeed (pass)   
+– every test obligation in the criterion is satisfied by at least one of the test cases in the test suite.    
+• Example:    
+the statement coverage adequacy criterion is satisfied by test suite S for program P if each executable statement in P is executed by at least one test case in S, and the outcome of each test execution is “pass”    
 
-# Practical in Adequacy Criteria
-• Criteria that identify inadequacies in test suites.  
-Examples: If no test in the test suite executes a particular program statement, the test suite is inadequate to guard against faults in that particular statement.
+# Practical in Adequacy Criteria   
+• Criteria that identify inadequacies in test suites.     
+Examples: If no test in the test suite executes a particular program statement, the test suite is inadequate to guard against faults in that particular statement.   
 • If a test suite fails to satisfy some criterion, the obligation that has not been satisfied may provide some useful
-information about improving the test suite.
-• If a test suite satisfies all the obligations by all the criteria, we do not know definitively that it is an effective test suite, but we have some evidence of its thoroughness.
+information about improving the test suite.   
+• If a test suite satisfies all the obligations by all the criteria, we do not know definitively that it is an effective test suite, but we have some evidence of its thoroughness.    
 
-# Line Coverage
-* Line coverage means the percentage of source code lines executed by test cases.
-* Easiest for developer to work with
-* Precise percentage depends on layout
-* In practice, coverage not based on lines, but on control flow graph
+# Line Coverage   
+* Line coverage means the percentage of source code lines executed by test cases.   
+* Easiest for developer to work with   
+* Precise percentage depends on layout   
+* In practice, coverage not based on lines, but on control flow graph   
 
-# The control Flow Graph
-* Node:
-  *  Regions of source code (basic blocks)
-  *  Basic block = maximal program region with single entry and single exit point
-* Directed edges:
-  * possibility that program execution proceeds from the end of one region directly to the beginning of another
-* Intra-procedural:
-  * within one procedure / method
-  * Extra nodes: single entry, single exit for full procedure
+# The control Flow Graph   
+* Node:   
+  *  Regions of source code (basic blocks)   
+  *  Basic block = maximal program region with single entry and single exit point   
+* Directed edges:   
+  * possibility that program execution proceeds from the end of one region directly to the beginning of another  
+* Intra-procedural:   
+  * within one procedure / method    
+  * Extra nodes: single entry, single exit for full procedure   
 
-# CFG Abstraction Level
-* includes Loop condition(Yes)
-* includes Individual statements(No)
-* includes Exception Handling(No)
+# CFG Abstraction Level   
+* includes Loop condition(Yes)   
+* includes Individual statements(No)   
+* includes Exception Handling(No)   
 
-# Statement coverage 
-* Adequacy criterion: each statement (or node in the CFG) must be executed at least once
-* Coverage:
-  number of executed statements/ number statements
+# Statement coverage   
+* Adequacy criterion: each statement (or node in the CFG) must be executed at least once   
+* Coverage:   
+  number of executed statements/ number statements    
 
-# Branch Coverage
-• Every path going out of node executed at least once
-– cover all Decision-, all-edges-
-– Coverage: percentage of edges hit.
-• Each predicate must be both true and false
+# Branch Coverage   
+• Every path going out of node executed at least once   
+– cover all Decision-, all-edges-   
+– Coverage: percentage of edges hit.   
+• Each predicate must be both true and false   
 
 
-# modified condition/decision coverage or MC/DC, also known as the modified condition adequacy criterion. 
+# modified condition/decision coverage or MC/DC, also known as the modified condition adequacy criterion.    
 The modified condition/decision criterion requires that each D modified condition/
 decision coverage (MC/DC) basic condition be shown to independently affect the outcome of each decision. That
 is, for each basic condition C, there are two test cases in which the truth values of all evaluated conditions except C are the same, and the compound condition as a whole evaluates to True for one of those test cases and False for the other. The modified condition adequacy criterion can be satisfied with N+1 test cases.
 
-# Path coverage
-Adequacy criterion: each path must be executed at least once. 
-defined as: number of executed paths/all paths
+# Path coverage   
+Adequacy criterion: each path must be executed at least once.    
+defined as: number of executed paths/all paths   
 **How to reduce the number of path tests**
-* Loop boundary testing(Limits the number of traversals of loops, zero, once many)
-* Boundary interior testing(unfold loop as tree)
+* Loop boundary testing(Limits the number of traversals of loops, zero, once many)   
+* Boundary interior testing(unfold loop as tree)   
 * Linear code sequence and jump(limit the length of the paths to be traversed， by using Subpaths of control flow graph
-from one branch to another)
-* Cyclomatic complexity(Linearly independent paths)
+from one branch to another)    
+* Cyclomatic complexity(Linearly independent paths)   
 
-# McCabe's Cyclomatic Complexity
-C=|E|-|N|+2  
-C=number of decision points + 1  
-C>10 means the method is too complex    
-We need at most C basis paths, All paths are linear combination of basis cycles.
-We need one test case for each basis path. 
+# McCabe's Cyclomatic Complexity   
+C=|E|-|N|+2     
+C=number of decision points + 1    
+C>10 means the method is too complex      
+We need at most C basis paths, All paths are linear combination of basis cycles.  
+We need one test case for each basis path.   
 **What is basis paths**
-* independent paths that span the graph
-* Any path that includes at least one edge that is not included in any of the former independent paths
-* Start with the longest one
+* independent paths that span the graph   
+* Any path that includes at least one edge that is not included in any of the former independent paths   
+* Start with the longest one   
 
 
 # State Coverage
-• Given a state machine of the program
-• Have all the states and/or transitions been covered!
+• Given a state machine of the program   
+• Have all the states and/or transitions been covered!   
 
-# Is 100% coverage Feasible?
-No, there are three reasons. (1)Mutually exclusive conditions (2) Dead code (3) This should never happen code
+# Is 100% coverage Feasible?   
+No, there are three reasons. (1)Mutually exclusive conditions (2) Dead code (3) This should never happen code   
 **In practice Statement coverage with 85%-90% is feasible**
 
 # Devise a technique to automatically measure code coverage of your test suite
-1. Parse the source code to build an Abstract Syntax Tree(AST)
-2. Analyze the AST to build a Control Flow Graph(CFG)
-3. Count total number of statements, branches, etc
-4. Instrument the AST using the CFG(add tracing statements in code)
-5. Transform AST back to instrumented code
-6. Recompile and run the test suite on the recompiled code
-7. collect tracing data： stm 1 executed stm 3 executed
-8. traced points / total number of points 
-# Why Coverage may affect test outcomes?What si Heisenberg effect? 
-* Heisenberg effect is the act of observing a system inevitably alters its state
-* Two reasons: (1)Coverage analysis changes the code by adding tracing statements (2) Instrumentation can change program behaviour
+1. Parse the source code to build an Abstract Syntax Tree(AST)  
+2. Analyze the AST to build a Control Flow Graph(CFG)  
+3. Count total number of statements, branches, etc   
+4. Instrument the AST using the CFG(add tracing statements in code)  
+5. Transform AST back to instrumented code  
+6. Recompile and run the test suite on the recompiled code  
+7. collect tracing data： stm 1 executed stm 3 executed  
+8. traced points / total number of points   
+# Why Coverage may affect test outcomes?What si Heisenberg effect?   
+* Heisenberg effect is the act of observing a system inevitably alters its state  
+* Two reasons: (1)Coverage analysis changes the code by adding tracing statements (2) Instrumentation can change program behaviour  
 
-# As we know in-code assertion mess up branch coverage report, what can we do? 
-* ALways run your test suite with and without coverage 
-* Always run your test suite with and without in-code assertions enabled 
+# As we know in-code assertion mess up branch coverage report, what can we do?  
+* ALways run your test suite with and without coverage  
+* Always run your test suite with and without in-code assertions enabled  
+ 
 
-
-# Subsumption relation
+# Subsumption relation  
 ![](img/subsumption.png)
 
-# Why is coverage usful and why is it harmful? 
-* Measure coverage can be a useful indicator of progress towards a thorough test suite, of trouble spots requiring more attention
-* Coverage is only proxy for thoroughness * It is easy to improve coverage without improving a test suite
+# Why is coverage usful and why is it harmful?  
+* Measure coverage can be a useful indicator of progress towards a thorough test suite, of trouble spots requiring more attention  
+* Coverage is only proxy for thoroughness * It is easy to improve coverage without improving a test suite  
 **Coverage is not strongly correlated with test suite effectiveness**
 **Assertions are Strongly correlated with test suite effectiveness**
 
-# How to use coverage?
-* Use coverage to expose code that's not adequately tested(find low values and understand why they are low)
-* You can use coverage to estimate the time to modify existing code 
-* You can use coverage to evaluate code quality
+# How to use coverage?  
+* Use coverage to expose code that's not adequately tested(find low values and understand why they are low)   
+* You can use coverage to estimate the time to modify existing code   
+* You can use coverage to evaluate code quality   
 
-# Automation is the way to reduce cost
-* No way to fully automate testing in predictable future
-* Three phase automation:
-  * Execution automation
-  * Test case generation automation
-  * Test oracle check automation
+# Automation is the way to reduce cost   
+* No way to fully automate testing in predictable future   
+* Three phase automation:  
+  * Execution automation  
+  * Test case generation automation  
+  * Test oracle check automation  
 
-* Software testing consists of two steps:
-  * Selecting a set of inputs to a program
-  * Determining if the program behaves correctly on each test input
+* Software testing consists of two steps:  
+  * Selecting a set of inputs to a program  
+  * Determining if the program behaves correctly on each test input  
 
 # Benefits of random testing
 * Choice of input data at random
