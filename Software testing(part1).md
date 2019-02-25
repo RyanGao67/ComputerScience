@@ -6,7 +6,7 @@
 * Design
 * Implementation
 * Support System
-* Inadequate testing of software
+* Inadequate testing  
 * Evolution
 
 # Verification and Validation  
