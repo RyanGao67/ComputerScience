@@ -1,3 +1,7 @@
+# What is software testing? 
+* Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite executions domain against the specified expected behavior.
+
+
 # Finite Abstractions of Behavior
 * A single program execution can be viewed as a sequence of states alternating with actions. 
 * The possible behaviors of a program are a set of such sequences. 
