@@ -1,5 +1,5 @@
 # What is software testing? 
-* Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite executions domain against the specified expected behavior. Each test case is an executable example of system behavior
+* Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite execution domain against the specified expected behavior. Each test case is an executable example of system behavior
 
 # Sources of Problems
 * Requirements Definition  
