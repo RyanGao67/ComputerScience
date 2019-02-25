@@ -21,7 +21,7 @@ the requirements specifications?
 ![](img/levelsTesting.png)
 
 # Static versus Dynamic Analysis
-Static Analysis:
+Static Analysis:  
 • Determines or estimates software quality without
 reference to actual executions   
 • Techniques: code inspection, program analysis,
@@ -34,7 +34,7 @@ simulated) circumstances
 and the automation of testing environment generation.    
 
 # Functional versus Structural Testing
-**Functional Testing:**
+**Functional Testing:**   
 • software program or system under test is
 viewed as a “black box”.     
 • emphasizes on the external behavior of the
@@ -43,7 +43,7 @@ software entity.
 based on the requirement or design
 specification of the software entity under
 test.    
-**Structural Testing:**
+**Structural Testing:**   
 • the software entity is viewed as a “white box”.    
 • emphasizes on the internal structure of the
 software entity.    
@@ -347,22 +347,22 @@ causes P to fail (P(t) ≠ the expected response).
 * The equivalent mutant and original program produce the same result.
 * Mutation Score = Killed Mutants/(Total mutation-equivalent mutants)
 
-# Strong VS Weak Mutation
-• Strong mutation
+# Strong VS Weak Mutation   
+• Strong mutation   
 – Mutation has propagated to some
-observable behavior
-• Weak mutation
-– Mutation has affected state (infection)
-– Compare internal state after mutation
-– Easier to kill: Less analysis
-– Does not guarantee propagation
+observable behavior   
+• Weak mutation   
+– Mutation has affected state (infection)   
+– Compare internal state after mutation   
+– Easier to kill: Less analysis   
+– Does not guarantee propagation   
 
 
-# Mutation Pros and cons:
-• Great degree of automation
-• Providing an interactive test environment
-– Tester can locate and remove errors
-Cons:
-• Large computation resources (time and space)
+# Mutation Pros and cons:   
+• Great degree of automation   
+• Providing an interactive test environment   
+– Tester can locate and remove errors   
+Cons:   
+• Large computation resources (time and space)   
 • Human cost of examining large numbers of
-mutants for possible equivalence
+mutants for possible equivalence   
