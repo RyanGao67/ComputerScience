@@ -1,6 +1,98 @@
 # What is software testing? 
-* Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite executions domain against the specified expected behavior.
+* Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite executions domain against the specified expected behavior. Each test case is an executable example of system behavior
 
+# Sources of Problems
+* Requirements Definition  
+* Design
+* Implementation
+* Support System
+* Inadequate testing of software
+* Evolution
+
+# Verification and Validation
+• Validation: does the software system meet
+the user's real needs?
+**Are we building the right software?**
+• Verification: does the software system meet
+the requirements specifications?
+**Are we building the software right?**
+
+# Levels of testing 
+![](img/levelsTesting.png)
+
+# Static versus Dynamic Analysis
+Static Analysis:
+• Determines or estimates software quality without
+reference to actual executions
+• Techniques: code inspection, program analysis,
+symbolic analysis, and model checking.
+Dynamic Analysis:
+• Approximates software quality through actual
+executions, i.e., with real data and under real (or
+simulated) circumstances
+• Techniques: synthesis of inputs, testing procedures,
+and the automation of testing environment generation.
+
+# Functional versus Structural Testing
+**Functional Testing:**
+• software program or system under test is
+viewed as a “black box”.
+• emphasizes on the external behavior of the
+software entity.
+• selection of test cases for functional testing is
+based on the requirement or design
+specification of the software entity under
+test.
+**Structural Testing:**
+• the software entity is viewed as a “white box”.
+• emphasizes on the internal structure of the
+software entity.
+• goal of selecting such test cases is to cause the
+execution of specific statements, program
+branches or paths.
+• expected results are evaluated on a set of
+coverage criteria. Examples: path coverage,
+branch coverage, and data-flow coverage.
+
+# Levels of Automation
+• Manual Testing (no automation)
+– Code review, inspection, exploratory testing
+• Test Scripting (automated test execution)
+– Writing unit tests
+• Test Generation (Automated test creation)
+– Using a tool to generate test cases
+
+
+# Testing Terminology
+• Failure/fault/error (or bug)
+• Test plan: test specification
+• Test case: a single unique unit of testing code
+• Test suite: collection of test cases
+• Test oracle: expected behavior
+• Test fixture (or test data)
+• Test harness: collection of all the above + conf.
+– The software, tools, samples of data input and output,
+and configurations are all referred to collectively as a test
+harness.
+
+# Test Oracles
+Common types of oracles:
+• an expert human being
+• Assertions: assertEquals(x, 34);
+• specifications and documentation (e.g., invariants)
+• other programs (e.g., program that uses a different
+algorithm to evaluate the same expression as the product
+under test)
+• a heuristic oracle that provides approximate results or
+exact results for a set of test inputs,
+• a consistency oracle that compares the results of one test
+execution to another for similarity (regression testing),
+
+# What to test in Software Testing 
+• Test the main functionality of the system
+• Testing non-functional properties such as
+security, performance, usability, accessibility is
+important but **not** part of software testing
 
 # Finite Abstractions of Behavior
 * A single program execution can be viewed as a sequence of states alternating with actions. 
