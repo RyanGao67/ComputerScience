@@ -1,6 +1,19 @@
 # What is software testing? 
 * Testing consists of the dynamic verification of the behavior of a program on a finite set of test cases suitably selected from the usually infinite execution domain against the specified expected behavior. Each test case is an executable example of system behavior
 
+# Testing 
+* Failure:
+– Manifested inability of a system
+to perform required function.
+* Fault:
+– Incorrect/missing code
+* Error:
+– human action producing fault
+• And thus:
+– Testing is: triggering failures
+– Debugging: finding faults given a failure
+
+
 # Sources of Problems
 * Requirements Definition  
 * Design
