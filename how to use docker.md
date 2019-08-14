@@ -30,9 +30,6 @@
 * ```docker container stop $(docker container ls -aq)```, ```docker container rm $(docker container ls -aq)``` => -q means numeric ID
 * ```docker pull alpine``` , ```docker image ls``` pull a image from docker hub
 
-### Docker network 
-* pass
-
 ### Assignment:CLI App Testing
 * Use different Linux distro containers to check curl cli tool version
 * Use two different terminal windows to start bash in both centos:7 and ubuntu:14.04, using -it
@@ -48,6 +45,23 @@ curl --version
 docker container run --rm --it ubuntu:14.04 bash
 curl --version
 ```
+
+### Docker network
+* Each container connected to a private virtual network which is also called "bridge"
+* Each virtual network routes through NAT firewall on host IP
+* All containers on a virtual network can talk to each other without -p
+* When starting a container, you're in the background connecting to a particular Docker network. Bu default, that is the bridge network. Each one of those networks that would connect to actually route out through a NAT firewall, which is the docker daemon configuring the host IP baddress on its default interface so that your container can get to the rest of your network and get back
+* ```docker container run -p 80:80 --name webhost -d nginx``` -d is always is host:container format
+* ```docker container port webhost``` shows which ports are forwarding traffic to that container from the host into container itself
+* ```docker container inspect --format '{{.NetworkSettings.IPAddress}}' webhost``` search format log docker to see document
+* ```docker network ls``` list network
+* ```docker network inspect bridge``` list containers in this bridge network
+* ```docker network create my_app_net``` (Here it creates a new virtual network with a driver of bridge which is the default driver. Network driver is the built-in or 3rd party extensions that give you virtual network features). Bridge driver is a simple driver that creates a virtual network locally with its own subnet somewhere around 172.17 , 18, 19, 20)
+* ```docker container inspect my-app-net```
+* docker network disconnect <tab> <tab> (first tab => network, second tab=> container)
+* docker network connect <tab><tab> 
+* docker use container name as the equivalant of a hostname for containers to talk to each other, because docker DNS docker daemon has a built-in NDS server that containers use by default
+
 
 ### Assignment: DNS Round Robin Test
 * Ever since Docker Engine 1.11, we can have multiple containers on a created network respond to the same DNS address
@@ -67,3 +81,44 @@ docker container run --rm --net dude centos curl -s search:9200
 docker container run --rm --net dude centos curl -s search:9200
 docker container run --rm --net dude centos curl -s search:9200
 ```
+
+### Assignment: build your own image 
+* Dockerfiles are part process workflow and part art
+* Take existing Node.js app and dockerize it 
+* Make Dockerfile. Build it. Test it. Push it. (rm it ). Run  it.
+* Details in dockerfile-assignment-1/Dockerfile
+* Use the Alpine version of the official 'node' 6.x image
+* Expected result is web site at http://localhost
+* Tag and push to your docker hub account
+* remove your image from local cache, run again from hub
+
+```
+# Instructions from the app developer
+# - you should use the 'node' official image, with the alpine 6.x branch
+FROM node:6-apline
+# - this app listens on port 3000, but the container should launch on port 80 so it will reponse to http://localhost:80 on your computer
+EXPOSE 3000
+# - then it should use alpine package manager to install tini:'apk add --update tini'
+RUN apk add --update tini
+# - then it should create directory /usr/src/app for app files with 'mkdir -p /usr/src/app'
+RUN mkdir -p /usr/src/app
+# - Node uses a "package manager", so it needs to copy in packet.json file
+WORKDIR /usr/src/app
+# - then it needs to run 'npm install' to install dependencies from that file
+COPY package.json package.json
+# - to kepp it clean and small, run "npm cache clean" after above
+RUN npm install && npm cache clean
+# - then it needs to copy in all files from current directory
+# - then it needs to start container with command 'tini -- node ./bin/www'
+COPY ..
+CMD ["tini","--","node","./bin/www"]
+# - in the end your should be using FROM, RUN, WORKDIR, COPY, EXPOSE, and CMD commands
+```
+
+```docker build -t testnode .```  
+```docker container run --rm -p 80:3000 testnode ```
+```docker images```
+```docker tag testnode bretfisher/testing-node:part2``` => username/repo:tag
+```docker push bretfisher/testing-node:part2 ```
+```docker image rm bretfisher/testing-node```
+```docker container run --rm -p 80:3000 bretfisher/testing-node```
