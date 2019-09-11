@@ -59,3 +59,15 @@ AWS glue data catalog - The persistent metadata
    * Table  ---------  A table in AWS glue data catalog consists of the names of columns, data type definitions, and other metadata about a base dataset. The schema of your data is represented in your AWS glue table definition. The actual data remains in its original data store. 
    * Classifier ---- Determines the schema of your data
    * Crawler ---- A program that connects to a data store (source or target), progresses through a prioritized list of classifiers to determine the schema for your data, and creates metadata in the AWS glue data catalogue. 
+   * Development endpoint - An environment that you can use to develop and test your aws glue script
+   
+### glue network
+* To run your ETL jobs, AWS Glue must be able to access your data store. If a job doesn't need to run in your virtual provate cloud (VPC) subnet, no additional configuration is needed. For example, transforming data from amazon s3 to amazon s3.   
+* If a job needs to run in your VPC subnet, AWS glue sets up elastic network interfaces that enable your jobs to connect securely to other resources within your VPC. Each elastic network interface is assigned a private IP address from the IP address range within the subnet you specified. (No public IP addresses are assigned. The specified security groups are applied on the elastic network interface)  
+* All JDBC data stores that are accessed by the job must be available from the VPC subnet.   
+* To access Amazon s3 from within your VPC, a VPC endpoint is required.   
+* If your job needs to access both VPC resources and the public internet, the VPC needs to have a Network Address Translation(NAT) gateway inside the VPC.  
+* A job or development endpoint can only access one VPC(and subnet) at a time. If you neet to access data stores in different VPCs, you have the following options:
+  * Use VPC peering to access the data stores. 
+  * Use an amazon s3 bucket as an intermediary storage location. Split the work into two jobs, with the amazon s3 output of job 1 as the input of job 2
+  
