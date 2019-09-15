@@ -1,3 +1,4 @@
+```
 import sys
 from awsglue.transforms import *
 from awsglue.utils import getResolvedOptions
@@ -46,3 +47,4 @@ for df_name in dfc.keys():
                                                    catalog_connection = "testred20190912",
                                                    connection_options = {"dbtable": df_name, "database": "platform"},
                                                    redshift_tmp_dir = "s3://ryantest20190914/")
+```
