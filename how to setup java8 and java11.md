@@ -1,21 +1,22 @@
 ### How to install oracle java 11 in ubuntu 18
 
-```sudo add-apt-repository ppa:linuxuprising/java```
-```sudo apt-get update```
-```sudo apt-get install oracle-java11-installer-local```
-```sudo apt-get install oracle-java11-set-default-local``` Install oracle-java11-set-default package to set java 11 as default. Remove oracle-java11-set-default package to not set java 11 as default. 
+```sudo add-apt-repository ppa:linuxuprising/java```  
+```sudo apt-get update```   
+```sudo apt-get install oracle-java11-installer-local```   
+```sudo apt-get install oracle-java11-set-default-local```    
+   Install oracle-java11-set-default package to set java 11 as default. Remove oracle-java11-set-default package to not set java 11 as default. 
 
-**To check java version:**
-```java -version```
-```javac -version```
+**To check java version:**   
+```java -version```   
+```javac -version```   
 
-**To uninstall**
-```sudo apt-get remove oracle-java11-set-default-local```   
-and   go to Software & Updates -> Other Software to remove the PPA repository
+**To uninstall**     
+```sudo apt-get remove oracle-java11-set-default-local```      
+and   go to Software & Updates -> Other Software to remove the PPA repository    
 
 
-### How to install java8 on Ubuntu 
-```sudo apt install openjdk-8-jdk```
+### How to install java8 on Ubuntu    
+```sudo apt install openjdk-8-jdk```   
 
 
 ### Managing JAVA
@@ -75,7 +76,7 @@ At the end of this file, add the following line, making sure to replace the high
 /etc/environment
 
 ```
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"
+JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 ```
 
 Modifying this file will set the  `JAVA_HOME`  path for all users on your system.
