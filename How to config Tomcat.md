@@ -68,6 +68,9 @@ sudo systemctl deamon-reload
 ```  
 Start the service status with the following command:  
 ```
+sudo systemctl start tomcat
+```
+```
 sudo systemctl status tomcat
 ```  
 ```
