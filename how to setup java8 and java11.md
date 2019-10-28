@@ -99,3 +99,36 @@ You’ll see the path you just set:
 
 
 Other users will need to execute the command  `source /etc/environment`  or log out and log back in to apply this setting.
+
+
+*** How to remove java   
+ 
+```
+dpkg-query -W -f='${binary:Package}\n' | grep -E -e '^(ia32-)?(sun|oracle)-java' -e '^openjdk-' -e '^icedtea' -e '^(default|gcj)-j(re|dk)' -e '^gcj-(.*)-j(re|dk)' -e '^java-common' | xargs sudo apt-get -y remove
+```   
+
+
+```  
+sudo apt-get -y autoremove
+
+```  
+
+```
+sudo bash -c 'ls -d /home/*/.java' | xargs sudo rm -rf  
+```  
+
+```
+sudo rm -rf /usr/lib/jvm/*
+
+``` 
+
+```
+for g in ControlPanel java java_vm javaws jcontrol jexec keytool mozilla-javaplugin.so orbd pack200 policytool rmid rmiregistry servertool tnameserv unpack200 appletviewer apt extcheck HtmlConverter idlj jar jarsigner javac javadoc javah javap jconsole jdb jhat jinfo jmap jps jrunscript jsadebugd jstack jstat jstatd native2ascii rmic schemagen serialver wsgen wsimport xjc xulrunner-1.9-javaplugin.so; do sudo update-alternatives --remove-all $g; done
+
+```
+
+```
+sudo updatedb
+sudo locate -b '\pack200'
+```  
+If the command above produces any output like /path/to/jre1.6.0_34/bin/pack200 remove the directory that is parent of bin, like this : sudo remove -rf /path/to/jre1.6.0_34
