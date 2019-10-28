@@ -101,7 +101,7 @@ You’ll see the path you just set:
 Other users will need to execute the command  `source /etc/environment`  or log out and log back in to apply this setting.
 
 
-*** How to remove java   
+### How to remove java   
  
 ```
 dpkg-query -W -f='${binary:Package}\n' | grep -E -e '^(ia32-)?(sun|oracle)-java' -e '^openjdk-' -e '^icedtea' -e '^(default|gcj)-j(re|dk)' -e '^gcj-(.*)-j(re|dk)' -e '^java-common' | xargs sudo apt-get -y remove
