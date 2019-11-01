@@ -7,30 +7,34 @@
 ```python
 import unittest
 
-from my_sum import sum
 
-class TestSum(unittest.TestCase):
-    def test_list_int(self):
-        """
- 	Test that it can sum a list of integers
- 	"""
-        data = [1, 2, 3]
-        result = sum(data)
-        self.assertEqual(result, 6)
+class TestBasic(unittest.TestCase):
+    def setUp(self):
+        # Load test data
+        self.app = App(database='fixtures/test_basic.json')
 
-    def test_list_fraction(self):
-        """
- 	Test that it can sum a list of fractions
- 	"""
-        data = [Fraction(1, 4), Fraction(1, 4), Fraction(2, 5)]
-        result = sum(data)
-        self.assertEqual(result, 1)
+    def test_customer_count(self):
+        self.assertEqual(len(self.app.customers), 100)
 
-    def test_bad_type(self): 
-	data = "banana" 
-	with self.assertRaises(TypeError): 
-	    result = sum(data) 
-			
+    def test_existence_of_customer(self):
+        customer = self.app.get_customer(id=10)
+        self.assertEqual(customer.name, "Org XYZ")
+        self.assertEqual(customer.address, "10 Red Road, Reading")
+
+
+class TestComplexData(unittest.TestCase):
+    def setUp(self):
+        # load test data
+        self.app = App(database='fixtures/test_complex.json')
+
+    def test_customer_count(self):
+        self.assertEqual(len(self.app.customers), 10000)
+
+    def test_existence_of_customer(self):
+        customer = self.app.get_customer(id=9999)
+        self.assertEqual(customer.name, u"バナナ")
+        self.assertEqual(customer.address, "10 Red Road, Akihabara, Tokyo")
+
 if __name__ == '__main__':
     unittest.main()
 ```
