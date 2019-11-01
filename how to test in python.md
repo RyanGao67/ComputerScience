@@ -86,3 +86,140 @@ project/
         ├── __init__.py
         └── test_integration.py
 ```
+
+
+```python
+import os
+import time
+import boto3
+import csv
+import requests
+import json
+import unittest 
+TESTSUITE = 'testsuite1'
+
+def wait2min(time_needed):
+    time_elapse = 0
+    while time_elapse<time_needed:
+        time.sleep(10)
+        time_elapse+=10
+        print('Prepareing {}{} finished'.format(float(time_elapse/time_needed)*100, "%"))
+
+
+def get_checksum_from_file(filename):
+    if filename.endswith(".csv"):
+        result = []
+        with open(filename, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                result.append(row['cs'])
+        result.sort()
+        return result
+
+
+def get_checksum_from_rs(filename):
+    try:
+        params = {'table_name':filename}
+        result = requests.post("https://hmidxuiea9.execute-api.ca-central-1.amazonaws.com/dev/regression", data=json.dumps(params)).json()
+        return json.loads(result['body'])
+    except:
+        return []
+
+def get_row_number(table):
+    try:
+        params = {'table_name':table}
+        result = requests.post("https://hmidxuiea9.execute-api.ca-central-1.amazonaws.com/dev/regression", data=json.dumps(params)).json()
+        return int(json.loads(result['body'])[0])
+    except:
+        return 0
+
+def check_identical(a,b):
+    a = ' '.join(a)
+    b = ' '.join(b)
+    return a==b
+    
+
+class ETL_test(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # redcap --modality cardiacmr      --modality cardiacmr --source redcap --file_type results                                 => 0100
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/redcap-export.csv  --modality cardiacmr --source redcap --file_type results --test h".format(TESTSUITE))
+        # redcap-data-dictionary-zhan      --modality cardiacmr --source redcap --file_type metadata                                => 0101
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/redcap-Data-Dictionary.csv  --modality cardiacmr --source redcap --file_type metadata --test h".format(TESTSUITE))
+        # datamap                          --modality datamap --source datamap --file_type results                                  => 0600
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/Subject_ID_mapping_table.csv  --modality datamap --source datamap --file_type results --test h".format(TESTSUITE))
+        # Test xnat_individual (project)   --modality carotidmr --source xnat --file_type project                                   => 0200
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/projects.csv  --modality carotidmr --source xnat --file_type project --test h".format(TESTSUITE))
+        # Test xnat_individual (subject)   --modality carotidmr --source xnat --file_type subject                                   => 0201
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/subjects.csv  --modality carotidmr --source xnat --file_type subject --test h".format(TESTSUITE))
+        # Test xnat_individual (session)   --modality carotidmr --source xnat --file_type session                                   => 0202
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/sessions.csv  --modality carotidmr --source xnat --file_type session --test h".format(TESTSUITE))
+        # Test nightingale-test-zhan       --modality nightingale --source nightingale --file_type results                          => 0300
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/results.csv  --modality nightingale --source nightingale --file_type results --test h".format(TESTSUITE))
+        # Test t-biomarkers-annotation     --modality nightingale --source nightingale --file_type 'metadata_Biomarker annotations' => 0301
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/biomarker_annotations.csv  --modality nightingale --source nightingale --file_type 'metadata_Biomarker annotations' --test h".format(TESTSUITE))
+        # Test t-biomarkers-annotation     --modality nightingale --source nightingale --file_type 'metadata_Tag annotations'       => 0302
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/biomarker_annotations.csv  --modality nightingale --source nightingale --file_type 'metadata_Tag annotations' --test h".format(TESTSUITE))
+        
+        
+        cls.ecg_table_before = get_row_number('ecg_table')
+        cls.cvi_42_table_before = get_row_number("cvi_42_table")
+        cls.cvi_42_wave_table_before= get_row_number("cvi_42_wave_table")
+        # Test ecg-job                     --modality ecg --source muse --file_type results                                         => 0400
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/MUSE_ECG_example.xml  --modality ecg --source muse --file_type results --test h".format(TESTSUITE))
+        # Test cvi-42                      --modality carotidmr --source cvi42 --file_type results                                  => 0500
+        os.system("./dist/uploader --study montrealproject2 --file ./regression_test/{}/input/cvi42_sample.xml  --modality carotidmr --source cvi42 --file_type results --test h".format(TESTSUITE))
+
+        cls.tables_redshift = [
+            'redcap_export',
+            'redcap_merged',
+            'redcap_data_dictionary',
+            'datamap_csv',
+            'xnat_project',
+            'xnat_subject',
+            'xnat_session',
+            'xnat_merged',
+            # 'nightingle_result_t',
+            'biomarker_annotation_csv',
+            # 'tag_annotation_csv',
+            'federate_stage'
+        ]
+
+        wait2min(25*60)
+
+    def test_list_int(self):
+        for i in range(len(ETL_test.tables_redshift)):
+            table_name = ETL_test.tables_redshift[i]
+            directory = "/home/tgao/tgao2019/platform/service/utility/uploaderBi/regression_test/{}/output/{}.csv".format(TESTSUITE, table_name)
+            result_from_file = get_checksum_from_file(directory)
+            result_from_rs = get_checksum_from_rs(table_name)
+            print('comparing {}...'.format(table_name))
+            print(check_identical(result_from_file, result_from_rs))
+            self.assertEqual(result_from_file, result_from_rs)
+
+    def test_no_cs(self):
+        self.ecg_table_after = get_row_number('ecg_table')
+        self.cvi_42_table_after = get_row_number("cvi_42_table")
+        self.cvi_42_wave_table_after = get_row_number("cvi_42_wave_table")
+        print('comparing ecg_table...')
+        print(self.ecg_table_after)
+        print(ETL_test.ecg_table_before)
+        print(self.ecg_table_after==ETL_test.ecg_table_before+70)
+        self.assertEqual(self.ecg_table_after, ETL_test.ecg_table_before+70)
+        print('cvi_42_table...')
+        print(self.cvi_42_table_after)
+        print(ETL_test.cvi_42_table_before)
+        print(self.cvi_42_table_after==ETL_test.cvi_42_table_before+802)
+        self.assertEqual(self.cvi_42_table_after, ETL_test.cvi_42_table_before+802)
+        print('cvi_42_wave_table...')
+        print(self.cvi_42_wave_table_after)
+        print(ETL_test.cvi_42_wave_table_before)
+        print(self.cvi_42_wave_table_after==ETL_test.cvi_42_wave_table_before)
+        self.assertEqual(self.cvi_42_wave_table_after, ETL_test.cvi_42_wave_table_before+3100)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+## Notice the classmethod setup because it only runs once before all tests
+setUp runs every time before every test
+setUpClass runs only once time before all tests
