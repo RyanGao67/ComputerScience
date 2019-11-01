@@ -156,3 +156,6 @@ problem solving exercise就是地理经常说的Auto Manufacturing Case，花了
 第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
   
 还问了一些数据库的基础知识比如index之类的。
+
+
+restful soap 智力题
