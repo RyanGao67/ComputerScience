@@ -1,5 +1,9 @@
 ### What do you like most about computer science?
 
+### Was pretty much on why Laserfiche and other behavorial questions.
+
+### 3. What is virtual distructor  
+
 ### Polymorphism
 * Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
 
@@ -83,7 +87,6 @@ int findFirstSeat(int totalSeats){
 }
 ```
 
-### How to implement a non-recurrency in-order traverse iterator class of binary tree.
 
 ### What't the difference between stack and queue
 BASIS FOR COMPARISON  |	STACK   |	QUEUE
@@ -177,9 +180,6 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 
 * I worked closely with Ann who, for the most part, always carried her fair share of the workload. During a stressful time, working on a project with a deadline, I realized Ann's contributions to the project were almost minimal. I made the decision to wait until after the project to speak with her. I'm glad I did because I learned she'd been going through a very tough time in her personal life and she appreciated my willingness to go the extra mile so that the project could be completed on time. As a result, our ability to work well together significantly increased.
 
-### Was pretty much on why Laserfiche and other behavorial questions.
-
-### 3. What is virtual distructor  
 ### 4. What is the time complexity of inserting an element in an array.The time complexity of Single linked list and array?
 * For an array, accessing elements at a specified index has a constant time of Big O(1).
 * Inserting or removing from an array can come in three different forms: inserting/removing from the being, inserting/removing from the end, or inserting/removing from the middle. In order to add an element to the beginning of an array, we must shift every other element after it to a higher index. For example, If we wanted to add 2 to the beginning of the above so that it would now be at the zeroth index, 10 would now be at the first, 9 would be at the second and so on. Time taken will be proportional to the size of the list or Big O(n), n being the size of the list.
@@ -187,12 +187,28 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 * When accessing elements of a linked list, speed is proportional to size of the list with Big O(n). Since we must traverse the entire list in order to get to the desired element, it is more costly compared to accessing elements of an array.
 * When inserting a node into the beginning of the list, it only involves creating a new node with an address that points to the old head. The time it takes to perform this is not dependent on the size of the list. This means that it will be constant time or a Big O(1). Inserting an element to the end of the list involves traversing the whole list and then creating a new node and adjusting the previous node’s address for the next node. Time taken will be proportional to the size of the list and Big O(n). When we are inserting node into a position between the beginning and end of the linked list, we will have to traverse the list up until the specific point and then adjust the pointers with Big O(n). The same time complexity is also true for removing nodes from a linked list.
 
-### 2. Detect cycles in a singly-linked list.  
-### 3. Reverse all the words in a sentence.
+
 
 ### On site problmes: 1: Weather a number is a prime
-### 4, whether 3 int String range"1-5, 6, 7-8"; 
-### 5, Clime stairs
+```
+# taking input from user
+number = int(input("Enter any number: "))
+
+# prime number is always greater than 1
+if number > 1:
+    for i in range(2, number):
+        if (number % i) == 0:
+            print(number, "is not a prime number")
+            break
+    else:
+        print(number, "is a prime number")
+
+# if the entered number is less than or equal to 1
+# then it is not prime number
+else:
+    print(number, "is not a prime number")
+```
+
 ### Describe a case that you don't have much resources, but you completed a hard project.
 ### How would you describe your role when working in a team?
 I would say I'm like glue that can stick my team together. 
@@ -207,17 +223,6 @@ a retrospective and discuss what was done well, what was not done well, what can
 
 ### Static vs Dynamic Binding in Java
 
-### 第一题，leetcode  [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  就是一次交易的那个。
-
-### 第二题，一个 2-dimension 的平面上有一个点 P0 和 其他一堆点（n个），找出距离 P0 最近的 k 个点。
-K nearest points on the plain
-
-
-Roman to Integer
-Roman Validation
-
-
-### 第二道就是dp上楼梯经典题
 
 第一轮，我考的是prime number求和。自己写出来后，面试官给我说了一个方法叫我实现，就是先new一个数组，把所有的数都初始化“是prime number”，然后开始循环，从2开始，把2加到sum里面后，把所有小于n的2的倍数标记为“不是prime number”，然后继续循环；把3加到sum后，把所有小于n的3的倍数标记为“不是prime number”；然后4是2的倍数，被标记过了，不加；然后5没有被标记，加进sum，然后5的倍数标记为“不是prime number”一直循环循环。。。。。。然后我按照他的要求写了，结果叫我分析时间复杂度的时候我懵逼了，因为本来面试就比较紧张，然后又稍微没弄懂内层循环标记倍数那里的时间复杂度到底应该怎么算，就卡壳了好久，然后人家等了半天就说，算了吧。所以当时就觉得完了，要挂了。后来也没继续想这个问题，麻烦哪个大神看到了告诉告诉我，内层标记2、3、5、7……的倍数那部分的复杂度怎么算啊？
 
@@ -228,44 +233,21 @@ Roman Validation
 在会议室等着第二轮的人来面我，并且调整状态，做好心理建设。  
   
 第二轮，是两个年轻中国engineer来面的，估计也就比我大一两届吧最多，感觉一下就没那么紧张了。因为上一轮已经问过简历，就直接开始写题。
-第一题，给你一个排过序的数组，里面有duplicates，你怎么找到某个target数字在这个数组中第一次出现的地方e.g. nums[] = {1112223335567899}，target == 3，则return 6。binary search解决，然后叫分析时间空间复杂度。 
 第二题，climbing stairs问题，一道简单DP，同样写出来后分析时间空间复杂度（https://leetcode.com/problems/climbing-stairs/）。写出来后叫我优化空间复杂度，用滚动指针，即求当前状态的值只依赖前两个状态的值,没必要保留所有状态的值。所以f[i % 2] = f[(i - 1) % 2] + f[(i - 2) % 2]即可。完成后还有时间，年轻工程师也不造问啥问题好，就临时想了几个问题问了问。比如我会不会android，答：不会；会不会数据库，答：不会（我这种弱渣啊。。。）。但是这种时候，你一定要表达出的意向是，虽然我不会，但是我有一颗愿意学习的心啊，而且学东西很快的~然后问问我abstract class和interface的区别，虽然也懂个大概，但之前没考虑过这个问题，就一边按照自己理解，一边组织语言答得七七八八吧。然后面试结束，被hr送出大楼。
-
-
-
-
 Your task is to implement a findMatches function that takes a query value and a pre-sorted array of integers that may contain duplicates. It should find and return
-
  The index of the first instance of the query value in the array, or -1 if the query value does not exist in the array.
-
  The number of times the query value appears in the array (0 if the query value does not exist in the array).
-
-  
-
 As an example, if findMatches is called, and
-
  query = 8
-
  values = { 0, 1, 2, 3, 4, 4, 5, 6, 7, 8, 8, 8, 9 }
-
   
-
 then it should return,
-
  firstMatchIndex = 9, because values[9] is the first occurrence of 8
-
  numberOfMatches = 3, because there are three occurrences of 8
-
-  
-
 Implement the findMatches function in C, C++ or Java according to the function signatures below, and send back the code as an attached .txt file.
-
 Things to keep in mind:
-
 1. Assume that a junior programmer is going to read your code. You should include comments and any other aides that you use to communicate your code to other developers.
-
 2. The code should compile and work.
-
 3. Your solution should scale well with large arrays.
 
 
@@ -274,4 +256,18 @@ Things to keep in mind:
 第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
   
 还问了一些数据库的基础知识比如index之类的。
+
+### 5, Clime stairs
+### How to implement a non-recurrency in-order traverse iterator class of binary tree.
+### 2. Detect cycles in a singly-linked list.  
+### 3. Reverse all the words in a sentence.
+
+### 第一题，leetcode  [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  就是一次交易的那个。
+
+### 第二题，一个 2-dimension 的平面上有一个点 P0 和 其他一堆点（n个），找出距离 P0 最近的 k 个点。
+K nearest points on the plain
+
+
+Roman to Integer
+Roman Validation
 
