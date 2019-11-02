@@ -31,11 +31,55 @@ class Solution{
 }
 ```
 ### sum of primes till n
+[lc ](https://leetcode.com/problems/prime-arrangements/)
+```java
+class Solution {
+    public int numPrimeArrangements(int n) {
+        int mod = (int)(1e9 + 7);
+        int count = getnumOfPrime(n);
+        long r= 1;
+        System.out.println(count);
+        for(int k=2;k<=count;k++)r = (r*k)%mod;
+        
+        for(int k=2;k<=n-count;k++)r = (r*k)%mod;
+        
+        return  (int)(r);
+    }
+    
+    public int getnumOfPrime(int n){
+        boolean[] len = new boolean[n+1];
+        Arrays.fill(len, 2, len.length, true);
+        for(int i=2;i*i<len.length;i++){
+            if(len[i]){
+                for(int j=i*i;j<n+1;j+=i){
+                    len[j] = false;
+                }
+            }
+        }
+        int result = 0;
+        for(int i=2;i<len.length;i++){
+            if(len[i])result++;
+        }
+        return result;
+    }
+}
+```
 
 ### The Antisocial Club meets every week at Jim's Bar. Since they are so antisocial, however, everyone always sits as far as possible from the other members, and no one ever sits right next to another member. Because of this, the 25-stool bar is almost always less than half full and unfortunately for Jim the members that don't sit at the bar don't order any drinks. Jim, however, is pretty smart and makes up a new rule: The first person to sit at the bar has to sit at one of two particular stools. If this happens, then the maximum number of members will sit at the bar. Which stools must be chosen? Assume the stools are numbered 1 to 25 and are arranged in a straight line.
 
 The first person must take either stool 9 or 17 (because of symmetry, it doesn't matter which). Assume they pick seat 9. The next person will pick seat 25, since it is the furthest from seat 9. The next two people will take Seats one and 17. The next three will occupy 5, 13, and 21. The next six will occupy 3, 7, 11, 15, 19, and 23. This seats the maximum of 13 people, and no one is sitting next to another person. If a seat other than 9 or 17 is chosen first, the total bar patrons will be less than 13.
 
+pseudocode
+```
+int findFirstSeat(int totalSeats){
+    if (totalSeats <= 2) return 1;
+    int firstSeat = 3；
+    while (firstSeat * 2 - 1 < totalSeats){
+        firstSeat = firstSeat * 2 - 1;
+    }
+    return firstSeat;
+}
+```
 
 ### How to implement a non-recurrency in-order traverse iterator class of binary tree.
 
