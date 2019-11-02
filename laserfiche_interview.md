@@ -1,10 +1,35 @@
 ### Polymorphism
 * Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
-* 
-*
+
 
 ### How would use reverse a string using a stack?
-
+```java
+// O(1) extra place
+// class Solution {
+//     public void reverseString(char[] s) {
+//         int i=0,j=s.length-1;
+//         while(i<j){
+//             char temp = s[i];
+//             s[i] = s[j];
+//             s[j] = temp;
+//             i++;
+//             j--;
+//         }
+//     }
+// }
+// O(n) extra place
+class Solution{
+    public void reverseString(char[] s){
+        Stack<Character> ss = new Stack<>();
+        for(char c: s){
+            ss.push(c);
+        }
+        for(int i=0;i<s.length;i++){
+            s[i] = ss.pop();
+        }
+    }
+}
+```
 ### sum of primes till n
 
 ### The Antisocial Club meets every week at Jim's Bar. Since they are so antisocial, however, everyone always sits as far as possible from the other members, and no one ever sits right next to another member. Because of this, the 25-stool bar is almost always less than half full and unfortunately for Jim the members that don't sit at the bar don't order any drinks. Jim, however, is pretty smart and makes up a new rule: The first person to sit at the bar has to sit at one of two particular stools. If this happens, then the maximum number of members will sit at the bar. Which stools must be chosen? Assume the stools are numbered 1 to 25 and are arranged in a straight line.
