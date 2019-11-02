@@ -1,3 +1,5 @@
+### What do you like most about computer science?
+
 ### Polymorphism
 * Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
 
@@ -177,10 +179,8 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 
 ### Was pretty much on why Laserfiche and other behavorial questions.
 
-### 2. What't the difference between stack and queue  
 ### 3. What is virtual distructor  
-### 4. What is the time complexity of inserting an element in an array.
-### The time complexity of Single linked list and array?
+### 4. What is the time complexity of inserting an element in an array.The time complexity of Single linked list and array?
 * For an array, accessing elements at a specified index has a constant time of Big O(1).
 * Inserting or removing from an array can come in three different forms: inserting/removing from the being, inserting/removing from the end, or inserting/removing from the middle. In order to add an element to the beginning of an array, we must shift every other element after it to a higher index. For example, If we wanted to add 2 to the beginning of the above so that it would now be at the zeroth index, 10 would now be at the first, 9 would be at the second and so on. Time taken will be proportional to the size of the list or Big O(n), n being the size of the list.
 * Adding to the end of the array is a lot simpler in terms of speed. It involves adding the element to the next highest index of the array. This means that it is constant time and Big O(1) if the array is not already full. However, if the array is full it would involve having to create a new array and then copy the contents of the original into the new array which would be O(n). The third case of insertion would be adding to a position between the beginning and end of the array which would be Big O(n). The same time complexity is also true for removing from an array.
@@ -190,25 +190,31 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 ### 2. Detect cycles in a singly-linked list.  
 ### 3. Reverse all the words in a sentence.
 
-### What do you like most about computer science?
-
 ### On site problmes: 1: Weather a number is a prime
 ### 4, whether 3 int String range"1-5, 6, 7-8"; 
 ### 5, Clime stairs
 ### Describe a case that you don't have much resources, but you completed a hard project.
 ### How would you describe your role when working in a team?
+I would say I'm like glue that can stick my team together. 
+I have to produce because if I can not produce what I should produce then the team can not produce the team should produce. 
+I'm a good listener
+I'm a good communicator.
 ### How do your projects help you understand software engineer better?
+Define Success (User Acceptance Criteria)   
+Create Projects within Projects    
+a retrospective and discuss what was done well, what was not done well, what can be improved, and what needs to be taken care of immediately.
 
-### # Static vs Dynamic Binding in Java
+
+### Static vs Dynamic Binding in Java
 
 ### 第一题，leetcode  [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  就是一次交易的那个。
 
 ### 第二题，一个 2-dimension 的平面上有一个点 P0 和 其他一堆点（n个），找出距离 P0 最近的 k 个点。
+K nearest points on the plain
 
 
 Roman to Integer
 Roman Validation
-K nearest points on the plain
 
 
 ### 第二道就是dp上楼梯经典题
@@ -262,7 +268,6 @@ Things to keep in mind:
 
 3. Your solution should scale well with large arrays.
 
-什么是polymorphism？stack和queue的区别，从头部插入单链表和数组的时间复杂度。
 
 编程题是DynamicProgramming经典题目coinchange
 
