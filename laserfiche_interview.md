@@ -138,9 +138,7 @@ while (results.next()) {
   // ...oh look, we got hacked.
 }
 ```
-The key difference is the data being passed to the executeQuery(...) method. In the first case, the parameterized string and the parameters are passed to the database separately, which allows the driver to correctly interpret them. In the second case, the full SQL statement is constructed before the driver is invoked, meaning we are vulnerable to maliciously crafted parameters.
-
-You should always use parameterized statements where available, they are your number one protection against SQL injection.
+The key difference is the data being passed to the executeQuery(...) method. In the first case, the parameterized string and the parameters are passed to the database separately, which allows the driver to correctly interpret them. In the second case, the full SQL statement is constructed before the driver is invoked, meaning we are vulnerable to maliciously crafted parameters.You should always use parameterized statements where available, they are your number one protection against SQL injection.
 
 * Object Relational Mapping
 Many development teams prefer to use Object Relational Mapping (ORM) frameworks to make the translation of SQL result sets into code objects more seamless. ORM tools often mean developers will rarely have to write SQL statements in their code – and these tools thankfully use parameterized statements under the hood.
@@ -174,9 +172,9 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 
 
 ### Do you have a hard time coorperating with your teammate.
-```
-I worked closely with Ann who, for the most part, always carried her fair share of the workload. During a stressful time, working on a project with a deadline, I realized Ann's contributions to the project were almost minimal. I made the decision to wait until after the project to speak with her. I'm glad I did because I learned she'd been going through a very tough time in her personal life and she appreciated my willingness to go the extra mile so that the project could be completed on time. As a result, our ability to work well together significantly increased.
-```
+
+* I worked closely with Ann who, for the most part, always carried her fair share of the workload. During a stressful time, working on a project with a deadline, I realized Ann's contributions to the project were almost minimal. I made the decision to wait until after the project to speak with her. I'm glad I did because I learned she'd been going through a very tough time in her personal life and she appreciated my willingness to go the extra mile so that the project could be completed on time. As a result, our ability to work well together significantly increased.
+
 ### Was pretty much on why Laserfiche and other behavorial questions.
 
 ### 2. What't the difference between stack and queue  
