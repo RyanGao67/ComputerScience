@@ -23,3 +23,13 @@ zookeeper-server-start.sh config/zookeeper.properties
 kafka-server-start.sh config/server.properties
 
 Important: For the rest of the course, don't forget to add the extension .sh to commands being run
+
+### kafka topic
+```
+kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 1
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --describe
+kafka-topics --zookeeper 127.0.0.1:2181 --topic second_topic --create --partitions 6 --replication-factor 1
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+kafka-topics --zookeeper 127.0.0.1:2181 --topic second_topic --delete
+```
