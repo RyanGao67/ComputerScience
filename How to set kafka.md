@@ -1,7 +1,7 @@
 
 ### Download and Setup Java 8 JDK:
 
-sudo apt install openjdk-8-jdk
+sudo apt install openjdk-8-jdk   
 ###Download & Extract the Kafka binaries from 
 [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads)
 
