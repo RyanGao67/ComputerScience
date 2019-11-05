@@ -416,6 +416,8 @@ Things to keep in mind:
 第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
   
 还问了一些数据库的基础知识比如index之类的。
+* Well, an index is a data structure (most commonly a B- tree) that stores the values for a specific column in a table. An index is created on a column of a table. So, the key points to remember are that an index consists of column values from one table, and that those values are stored in a data structure. The index is a data structure – remember that.
+* The reason B- trees are the most popular data structure for indexes is due to the fact that they are time efficient – because look-ups, deletions, and insertions can all be done in logarithmic time. And, another major reason B- trees are more commonly used is because the data that is stored inside the B- tree can be sorted. 
 
 ### 5, Clime stairs
 ### How to implement a non-recurrency in-order traverse iterator class of binary tree.
