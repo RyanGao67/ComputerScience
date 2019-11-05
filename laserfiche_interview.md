@@ -157,6 +157,8 @@ Closer to other Web technologies in design philosophy
 
 
 ### Was pretty much on why Laserfiche and other behavorial questions.
+document management software. A few clicks laserfiche turns document to secure searchable files. 
+
 
 ### 3. What is virtual distructor  
 * Deleting a derived class object using a pointer to a base class that has a non-virtual destructor results in undefined behavior. To correct this situation, the base class should be defined with a virtual destructor. 
