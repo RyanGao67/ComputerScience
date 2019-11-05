@@ -1,6 +1,44 @@
 ### What do you like most about computer science?
 
-### restful soap
+### restful 
+* Application programming interface   
+* Representational State Transfer   
+* Architecture style for designing network applications   
+* Relies on a stateless, client-server protocol, almost always HTTP   
+* Treats server objects as resources that can be created or destroyed  
+* can be used by virtually any programming language  
+
+GET: Retrieve data from a specified resource   
+POST: Submit data to be processed to a specified resource   
+PUT: Update a specified resource    
+DELTE: DELTEte a specified resource    
+HEAD: get   
+OPTIONS : Returns the supported HTTP method       
+PATCH:   
+
+GET https://mysite.com/api/users
+
+### A web service that complies to the SOAP web services specifications is a soap web service.
+Simple Object Access protocal. Simple Object Access Protocol (SOAP) and Representational State Transfer (REST) are two answers to the same question: how to access Web services.SOAP relies exclusively on XML to provide messaging services.The point is that SOAP is highly extensible, but you only use the pieces you need for a particular task. For example, when using a public Web service that’s freely available to everyone, you really don’t have much need for WS-Security.Part of the magic is the Web Services Description Language (WSDL). This is another file that’s associated with SOAP. It provides a definition of how the Web service works, so that when you create a reference to it, the IDE can completely automate the process. 
+
+Soap Vs Rest
+SOAP is definitely the heavyweight choice for Web service access. It provides the following advantages when compared to REST:
+
+Language, platform, and transport independent (REST requires use of HTTP)
+Works well in distributed enterprise environments (REST assumes direct point-to-point communication)
+Standardized
+Provides significant pre-build extensibility in the form of the WS* standards
+Built-in error handling
+Automation when used with certain language products
+REST is easier to use for the most part and is more flexible. It has the following advantages when compared to SOAP:
+
+No expensive tools require to interact with the Web service
+Smaller learning curve
+Efficient (SOAP uses XML for all messages, REST can use smaller message formats)
+Fast (no extensive processing required)
+Closer to other Web technologies in design philosophy
+
+
 ### Was pretty much on why Laserfiche and other behavorial questions.
 
 ### 3. What is virtual distructor  
