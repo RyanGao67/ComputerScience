@@ -1,5 +1,122 @@
 ### What do you like most about computer science?
 
+### Constructor 
+Initialize the data member of a class object 
+A constructor is run wheneven an object is created.
+
+
+
+### Encapsulation
+it is a protective shield that prevents the data from being accessed by the code outside this shield.
+
+Data Hiding: The user will have no idea about the inner implementation of the class. It will not be visible to the user that how the class is storing values in the variables. He only knows that we are passing the values to a setter method and variables are getting initialized with that value.
+Increased Flexibility: We can make the variables of the class as read-only or write-only depending on our requirement. If we wish to make the variables as read-only then we have to omit the setter methods like setName(), setAge() etc. from the above program or if we wish to make the variables as write-only then we have to omit the get methods like getName(), getAge() etc. from the above program
+Reusability: Encapsulation also improves the re-usability and easy to change with new requirements.
+Testing code is easy: Encapsulated code is easy to test for unit testing.
+
+### inheritance and polimorphism
+In inheritance, there is a base class, which is inherited by the derived class. When a class inherits any other class, the member(s) of the base class becomes the member(s) of a derived class.
+
+
+The compile time polymorphism is achieved through “overloading” whereas, the run time polymorphism is achieved through “overriding”.
+
+The polymorphism allows the object to decide “which form of the function to be invoked when” at both, compile time and run time.
+
+### inheritance 
+In inheritance, there is a base class, which is inherited by the derived class. When a class inherits any other class, the member(s) of the base class becomes the member(s) of a derived class.
+
+### Class or struct 
+The only difference between using class and struct to define a class is the default access level
+
+### Dynamic binding and static binding
+The binding which can be resolved at compile time by compiler is known as static or early binding. The binding of static, private and final methods is compile-time.The reason is that the these method cannot be overridden and the type of the class is determined at the compile time.In inheritance, there is a base class, which is inherited by the derived class. When a class inherits any other class, the member(s) of the base class becomes the member(s) of a derived class.
+
+Static binding example
+Here we have two classes Human and Boy. Both the classes have same method walk() but the method is static, which means it cannot be overriden so even though I have used the object of Boy class while creating object obj, the parent class method is called by it. Because the reference is of Human type (parent class). So whenever a binding of static, private and final methods happen, type of the class is determined by the compiler at compile time and the binding happens then and there.
+
+
+### Stack and heap
+stack is used for statcic memory allocation, heap is userd for dynamic memory allocation. both stored in the computer's RAM. 
+The stack memory is where local variables get stored or constructed. Stack also hold parameters passed to functions. The stack follows the patern of LIFO. The stack is usually in CPU cache, so operations in stack tend to be faster. It is also a limited resource and shouldn't be used for anything large Running out of stack memory is called stack overflow. 
+objects created with new keyword allocate on the heap, there is no pattern  in heap memory and it almost always manually freed.
+
+```
+class Human{
+   public static void walk()
+   {
+       System.out.println("Human walks");
+   }
+}
+class Boy extends Human{
+   public static void walk(){
+       System.out.println("Boy walks");
+   }
+   public static void main( String args[]) {
+       /* Reference is of Human type and object is
+        * Boy type
+        */
+       Human obj = new Boy();
+       /* Reference is of HUman type and object is
+        * of Human type.
+        */
+       Human obj2 = new Human();
+       obj.walk();
+       obj2.walk();
+   }
+}
+```
+```
+Output:
+
+Human walks
+Human walks
+```
+
+Dynamic Binding or Late Binding
+When compiler is not able to resolve the call/binding at compile time, such binding is known as Dynamic or late Binding. Method Overriding is a perfect example of dynamic binding as in overriding both parent and child classes have same method and in this case the type of the object determines which method is to be executed. The type of object is determined at the run time so this is known as dynamic binding.
+
+Dynamic binding example
+This is the same example that we have seen above. The only difference here is that in this example, overriding is actually happening since these methods are not static, private and final. In case of overriding the call to the overriden method is determined at runtime by the type of object thus late binding happens. Lets see an example to understand this:
+
+```
+class Human{
+   //Overridden Method
+   public void walk()
+   {
+       System.out.println("Human walks");
+   }
+}
+class Demo extends Human{
+   //Overriding Method
+   public void walk(){
+       System.out.println("Boy walks");
+   }
+   public static void main( String args[]) {
+       /* Reference is of Human type and object is
+        * Boy type
+        */
+       Human obj = new Demo();
+       /* Reference is of HUman type and object is
+        * of Human type.
+        */
+       Human obj2 = new Human();
+       obj.walk();
+       obj2.walk();
+   }
+}
+```
+```
+Output:
+
+Boy walks
+Human walks
+```
+
+
+Static binding happens at compile-time while dynamic binding happens at runtime.  
+Binding of private, static and final methods always happen at compile time since these methods cannot be overridden. When the method overriding is actually happening and the reference of parent type is assigned to the object of child class type then such binding is resolved during runtime.   
+The binding of overloaded methods is static and the binding of overridden methods is dynamic.  
+
 ### restful 
 * Application programming interface   
 * Representational State Transfer   
