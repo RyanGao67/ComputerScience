@@ -68,3 +68,12 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --group my-first-applica
 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
 ```
+
+### Producers Acks Deep Dive 
+acks = 0 (no acks)
+* No response is requested
+* If the broker goes offline  or an exception happens, we won't know and will lose data
+Producer --->  Broker 101 Partition 0 (Leader) 0|1|2|3|4|... --->
+* Useful for data where it's okay to potentially lose messages:
+  * Metrics collection
+  * Log collection
