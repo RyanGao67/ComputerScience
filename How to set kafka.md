@@ -77,3 +77,49 @@ Producer --->  Broker 101 Partition 0 (Leader) 0|1|2|3|4|... --->
 * Useful for data where it's okay to potentially lose messages:
   * Metrics collection
   * Log collection
+
+acks = 1 (leader acks)
+* Leader response is requested, but relication is not a guarantee(happens in the background)  
+* If an ack is not received, the producer may retry   
+producer---> broker 101 partition 0 (leader)  0|1|2|3|4...----->
+        <---     
+        
+* If the leader broker goes offline but replicas haven't relicated the data yet, we have a data loss. 
+
+
+acks = all(replicas acks)
+* Leader + replicas ack requested  
+* Added latency and safety  
+* min.insync.replicas  
+* Acks=all must be used in conjuction with min.insync.replicas  
+* min.insync.replicas can be set at the broker or topic level (override).   
+* min.insync.replicas=2 implies that at least 2 brokers that are ISR(including leader) must respond that they have the data.   
+* That means if you use replication.factor=3, min.insync=2, acks=all, you can only tolerate one breker going down, otherwise the producer will receive an exception on send.    
+
+
+### Producer Retries  
+* In case of transient failures, developers are expected to handle exceptions, otherwise the data will be lost.   
+* Example of transient failure: NotEnoughReplicasException    
+* There is a "retries" setting: default to 0 for kafka<=2.0    
+* The retry.backoff.ms setting is by default 100ms
+
+### Producer Timeouts
+* If reties>0, for example retries = 2147483647   
+* the producer won't try the request for ever, it's bounded by a timeout   
+* For this, you can set an intuitive Producer Timeout   
+* delivery.timeout.ms = 120000 ms == 2 minutes   
+* records will be failed if they can not be acknowledges in delivery.timeout.ms   
+
+### Producer Retries: Warning  
+* In case of retries, there is a chance that the message will be sent out of order(If a batch has failed to be sent)    
+* If you rely on key-based ordering, that can be an issue.   
+* For this, you can set the setting while controls how many produce requests can be made in parallel: max.in.flight.requests.per.connection
+* default:5  
+* Set it to 1 if you need to ensure ordering(may inpact throughput)
+
+### Idemponent Producer
+* Idempotent producers are great to guarantee a stable and safe pipeline
+* They come with :
+  * retries = Integer.MAX_VALUE(2^31-1)
+  * max.in.flight.requests=1(Kafka==0.11) or 
+  * max.in.flight.requests=5(Kafka>=1.0 - higher performance & keep ordering)
