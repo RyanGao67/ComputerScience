@@ -3,7 +3,9 @@
 ### Constructor 
 Initialize the data member of a class object 
 A constructor is run wheneven an object is created.
-
+### Design pattern
+Singleton 
+Factory
 
 
 ### Encapsulation
