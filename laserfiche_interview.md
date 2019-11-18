@@ -1,5 +1,7 @@
 ### What do you like most about computer science?
 
+### What is OOP
+
 ### Constructor 
 Initialize the data member of a class object 
 A constructor is run wheneven an object is created.
@@ -437,4 +439,35 @@ K nearest points on the plain
 
 Roman to Integer
 Roman Validation
+
+find nth root of a number without using an exponential built-in
+
+design a battleship game
+
+Two buckets with red and white balls
+
+islands 
+
+Subtree of another
+
+What is CMS
+
+What is object oriented programming
+
+Internet and intranet
+
+Algorithm to find clusters of nodes in a grid
+
+Int string range  [1-5, 6, 7-8]
+
+stamp dispenser
+
+middle element of a linked list
+
+knapsack problem
+
+safe access to a block of RAM 
+
+
+
 
