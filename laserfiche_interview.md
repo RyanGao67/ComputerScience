@@ -13,13 +13,13 @@ Factory
 * Memory leak description: Memory is allocated but not released causing an application to consume memory reducing the available memory for other applications and eventually causing the system to page virtual memory to the hard drive slowing the application or crashing the application. The system may stop working as these limits are approached.   
 * If you are counting on the destructor to delete memory allocated in the constructor Use a virtual destructor. The ~BaseClass() destructor is called and then the destructor ~DerivedClass() is chosen and called at run time because it is a virtual destructor. If it is not declared virtual then only the ~BaseClass() destructor is called leaving any allocated memory from the DerivedClass object to persist and leak. The behavior of this error is undefined so don't do it.
 * If the pointer is re-assigned a new value before being freed, it will lead to a "dangling pointer" and memory leak.    
-'''c
+```c
 char *a = malloc(128*sizeof(char));
 char *b = malloc(128*sizeof(char));
 b = a;
 free(a);
 free(b); // will not free the pointer to the original allocated memory.
-'''
+```
 
 ### Encapsulation
 it is a protective shield that prevents the data from being accessed by the code outside this shield.
