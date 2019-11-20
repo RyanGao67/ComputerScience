@@ -1,5 +1,13 @@
-### What do you like most about computer science?
-
+### What do you like most about computer science?  
+### design a battleship game
+### What is CMS(Not important)
+### Internet and intranet   
+The Internet is the global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link devices worldwide.   
+An intranet is a private network that is contained within an enterprise.    
+### Two buckets with red and white balls
+7 red 7 white.
+two buckets .
+1 red in bucket1 and 6 r and 7w in bucket 2 to maximize the probability of getting a red bll
 ### What is OOP
 Object-oriented programming (OOP) is a way of writing computer programs which is using the idea of "objects" to represent data and methods. Usually, computer programs were just a list of instructions to the computer, telling the computer to do certain things in a certain way, which is called procedural programming. However, in object-oriented programming, computer programs make use of objects that talk to one another and to change the data in those objects, to work in a way that the user wants.  
 The four principles of object-oriented programming are encapsulation, abstraction, inheritance, and polymorphism.
@@ -456,21 +464,13 @@ Roman Validation
 
 find nth root of a number without using an exponential built-in
 
-design a battleship game
-
-Two buckets with red and white balls
-
 islands 
 
 Subtree of another
 
-What is CMS(Not important)
-
-Internet and intranet
-
 Algorithm to find clusters of nodes in a grid
 
-Int string range  [1-5, 6, 7-8]
+Int string range  [1-5, 6, 7-8] 
 
 stamp dispenser
 
