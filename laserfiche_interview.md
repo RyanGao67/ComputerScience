@@ -1,7 +1,8 @@
 ### What do you like most about computer science?
 
 ### What is OOP
-
+Object-oriented programming (OOP) is a way of writing computer programs which is using the idea of "objects" to represent data and methods. Usually, computer programs were just a list of instructions to the computer, telling the computer to do certain things in a certain way, which is called procedural programming. However, in object-oriented programming, computer programs make use of objects that talk to one another and to change the data in those objects, to work in a way that the user wants.  
+The four principles of object-oriented programming are encapsulation, abstraction, inheritance, and polymorphism.
 ### Constructor 
 Initialize the data member of a class object 
 A constructor is run wheneven an object is created.
