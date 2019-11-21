@@ -443,6 +443,57 @@ Things to keep in mind:
 编程题是DynamicProgramming经典题目coinchange
 
 第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
+```java
+package tgao.indocresearch.org;
+
+public class My24Point {
+	private double deviation = 1E-6;
+	private boolean flag = false;
+	private double[] nums = new double[4];
+	public static void main(String[] args) {
+		My24Point game = new My24Point();
+		System.out.println(game.can24(6, 6, 6, 6));
+		System.out.println(game.can24(2, 4, 10, 10));	
+		System.out.println(game.can24(5, 5, 5, 1));
+		System.out.println(game.can24(1, 1, 1, 10)); // 不可以
+		System.out.println(game.can24(1, 1, 1, 11));
+	}
+	
+	public boolean can24(int a, int b, int c, int d) {
+		nums[0] = (double) (a);		nums[1] = (double) (b);		nums[2] = (double) (c);		nums[3] = (double) (d);
+		flag = false;
+		helper(4);
+		return flag;
+			
+	}
+	public void helper(int n) {
+
+		if (n == 1) {
+			if (Math.abs(nums[0] - 24) <= deviation) {
+				flag = true;
+				return;
+			}
+		}
+		if(flag)
+			return ;
+		for(int i=0;i<n;i++) {
+			for(int j=i+1;j<n;j++) {
+				double a = nums[i];double b = nums[j];nums[j] = nums[n-1];
+				nums[i] = a+b;helper(n-1);
+				nums[i] = a-b;helper(n-1);
+				nums[i] = b-a;helper(n-1);
+				nums[i] = a*b;helper(n-1);
+				if(b!=0){nums[i] = a/b;
+					helper(n-1);}
+				if(a!=0){nums[i] = b/a;
+					helper(n-1);}
+				
+				nums[i] = a;nums[j] = b;
+			}
+		}
+	}
+}
+```
   
 还问了一些数据库的基础知识比如index之类的。
 * Well, an index is a data structure (most commonly a B- tree) that stores the values for a specific column in a table. An index is created on a column of a table. So, the key points to remember are that an index consists of column values from one table, and that those values are stored in a data structure. The index is a data structure – remember that.
