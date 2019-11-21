@@ -413,17 +413,16 @@ else:
 ```   
 
 
-第一轮，我考的是prime number求和。自己写出来后，面试官给我说了一个方法叫我实现，就是先new一个数组，把所有的数都初始化“是prime number”，然后开始循环，从2开始，把2加到sum里面后，把所有小于n的2的倍数标记为“不是prime number”，然后继续循环；把3加到sum后，把所有小于n的3的倍数标记为“不是prime number”；然后4是2的倍数，被标记过了，不加；然后5没有被标记，加进sum，然后5的倍数标记为“不是prime number”一直循环循环。。。。。。然后我按照他的要求写了，结果叫我分析时间复杂度的时候我懵逼了，因为本来面试就比较紧张，然后又稍微没弄懂内层循环标记倍数那里的时间复杂度到底应该怎么算，就卡壳了好久，然后人家等了半天就说，算了吧。所以当时就觉得完了，要挂了。后来也没继续想这个问题，麻烦哪个大神看到了告诉告诉我，内层标记2、3、5、7……的倍数那部分的复杂度怎么算啊？
+### 第一轮，我考的是prime number求和。
+自己写出来后，面试官给我说了一个方法叫我实现，就是先new一个数组，把所有的数都初始化“是prime number”，然后开始循环，从2开始，把2加到sum里面后，把所有小于n的2的倍数标记为“不是prime number”，然后继续循环；把3加到sum后，把所有小于n的3的倍数标记为“不是prime number”；然后4是2的倍数，被标记过了，不加；然后5没有被标记，加进sum，然后5的倍数标记为“不是prime number”一直循环循环。。。。。。然后我按照他的要求写了，结果叫我分析时间复杂度
 
-接着就是问简历，宝宝前两个project都还挺熟悉的，结果他不问，挑了个第三个project， which已经做了很久，记不太清了。扯了半天，自己都记不清，怎么给人家讲得懂嘛？！心里又想要挂了。。。
-
-然后, 你有没有在很有限information的情况下完成一件任务的经历；你有没和队友产生过conflict，最后怎么解决的。第一轮结束，感觉到心灰意冷。。。  
-  
-在会议室等着第二轮的人来面我，并且调整状态，做好心理建设。  
-  
-第二轮，是两个年轻中国engineer来面的，估计也就比我大一两届吧最多，感觉一下就没那么紧张了。因为上一轮已经问过简历，就直接开始写题。
-第二题，climbing stairs问题，一道简单DP，同样写出来后分析时间空间复杂度（https://leetcode.com/problems/climbing-stairs/）。写出来后叫我优化空间复杂度，用滚动指针，即求当前状态的值只依赖前两个状态的值,没必要保留所有状态的值。所以f[i % 2] = f[(i - 1) % 2] + f[(i - 2) % 2]即可。完成后还有时间，年轻工程师也不造问啥问题好，就临时想了几个问题问了问。比如我会不会android，答：不会；会不会数据库，答：不会（我这种弱渣啊。。。）。但是这种时候，你一定要表达出的意向是，虽然我不会，但是我有一颗愿意学习的心啊，而且学东西很快的~然后问问我abstract class和interface的区别，虽然也懂个大概，但之前没考虑过这个问题，就一边按照自己理解，一边组织语言答得七七八八吧。然后面试结束，被hr送出大楼。
-Your task is to implement a findMatches function that takes a query value and a pre-sorted array of integers that may contain duplicates. It should find and return
+然后, 你有没有在很有限information的情况下完成一件任务的经历；你有没和队友产生过conflict，最后怎么解决的。
+   
+### 第二题，climbing stairs问题，   
+一道简单DP，同样写出来后分析时间空间复杂度（https://leetcode.com/problems/climbing-stairs/）。   
+写出来后叫我优化空间复杂度，用滚动指针，即求当前状态的值只依赖前两个状态的值,没必要保留所有状态的值。所以f[i % 2] = f[(i - 1) % 2] + f[(i - 2) % 2]即可。完成后还有时间，年轻工程师也不造问啥问题好，就临时想了几个问题问了问。比如我会不会android，答：不会；会不会数据库，答：不会   
+### abstract class和interface的区别 
+### Your task is to implement a findMatches function that takes a query value and a pre-sorted array of integers that may contain duplicates. It should find and return
  The index of the first instance of the query value in the array, or -1 if the query value does not exist in the array.
  The number of times the query value appears in the array (0 if the query value does not exist in the array).
 As an example, if findMatches is called, and
@@ -440,9 +439,9 @@ Things to keep in mind:
 3. Your solution should scale well with large arrays.
 
 
-编程题是DynamicProgramming经典题目coinchange
+### 编程题是DynamicProgramming经典题目coinchange
 
-第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
+### 第二题是24点游戏： 给你一组数字和一个目标数字，判断是否能让那一组数字通过四则运算得到目标数字。因为近期leetcode看多了，一直往nlogn复杂度想，没想出来，后来和面试官表面没有想法之后，他直接就把算法给我说了让我写代码。一看算法晕了，居然是brute force。。  
 ```java
 package tgao.indocresearch.org;
 
@@ -495,25 +494,22 @@ public class My24Point {
 }
 ```
   
-还问了一些数据库的基础知识比如index之类的。
+### 还问了一些数据库的基础知识比如index之类的。
 * Well, an index is a data structure (most commonly a B- tree) that stores the values for a specific column in a table. An index is created on a column of a table. So, the key points to remember are that an index consists of column values from one table, and that those values are stored in a data structure. The index is a data structure – remember that.
 * The reason B- trees are the most popular data structure for indexes is due to the fact that they are time efficient – because look-ups, deletions, and insertions can all be done in logarithmic time. And, another major reason B- trees are more commonly used is because the data that is stored inside the B- tree can be sorted. 
 
-### 5, Clime stairs
-### How to implement a non-recurrency in-order traverse iterator class of binary tree.
-### 2. Detect cycles in a singly-linked list.  
-### 3. Reverse all the words in a sentence.
+### 5, Clime stairs   
+### How to implement a non-recurrency in-order traverse iterator class of binary tree.   
+### 2. Detect cycles in a singly-linked list.    
+### 3. Reverse all the words in a sentence.    
 
 ### 第一题，leetcode  [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  就是一次交易的那个。
 
-### 第二题，一个 2-dimension 的平面上有一个点 P0 和 其他一堆点（n个），找出距离 P0 最近的 k 个点。
-K nearest points on the plain
-
-
-Roman to Integer
-Roman Validation
-
-find nth root of a number without using an exponential built-in
+### 第二题，一个 2-dimension 的平面上有一个点 P0 和 其他一堆点（n个），找出距离 P0 最近的 k 个点。  
+K nearest points on the plain   
+### Roman to Integer  
+### Roman Validation  
+### find nth root of a number without using an exponential built-in  
 ```java
 package tgao.indocresearch.org;
 
@@ -552,19 +548,19 @@ public class MyPowerN {
 
 ```
 
-islands 
+### islands 
 
-Subtree of another
+### Subtree of another
 
-Algorithm to find clusters of nodes in a grid
+### Algorithm to find clusters of nodes in a grid
 
-Int string range  [1-5, 6, 7-8] 
+### Int string range  [1-5, 6, 7-8] 
 
-stamp dispenser
+### stamp dispenser
 
-middle element of a linked list
+### middle element of a linked list
 
-knapsack problem
+### knapsack problem
 
 
 
