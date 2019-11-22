@@ -48,24 +48,14 @@ The compile time polymorphism is achieved through “overloading” whereas, the
 
 The polymorphism allows the object to decide “which form of the function to be invoked when” at both, compile time and run time.
 
-### inheritance 
-In inheritance, there is a base class, which is inherited by the derived class. When a class inherits any other class, the member(s) of the base class becomes the member(s) of a derived class.
 
 ### Class or struct 
 The only difference between using class and struct to define a class is the default access level
 
 ### Dynamic binding and static binding
-The binding which can be resolved at compile time by compiler is known as static or early binding. The binding of static, private and final methods is compile-time.The reason is that the these method cannot be overridden and the type of the class is determined at the compile time.In inheritance, there is a base class, which is inherited by the derived class. When a class inherits any other class, the member(s) of the base class becomes the member(s) of a derived class.
-
+The binding which can be resolved at compile time by compiler is known as static or early binding. The binding of static, private and final methods is compile-time.The reason is that the these method cannot be overridden and the type of the class is determined at the compile time.
 Static binding example
 Here we have two classes Human and Boy. Both the classes have same method walk() but the method is static, which means it cannot be overriden so even though I have used the object of Boy class while creating object obj, the parent class method is called by it. Because the reference is of Human type (parent class). So whenever a binding of static, private and final methods happen, type of the class is determined by the compiler at compile time and the binding happens then and there.
-
-
-### Stack and heap
-stack is used for statcic memory allocation, heap is userd for dynamic memory allocation. both stored in the computer's RAM. 
-The stack memory is where local variables get stored or constructed. Stack also hold parameters passed to functions. The stack follows the patern of LIFO. The stack is usually in CPU cache, so operations in stack tend to be faster. It is also a limited resource and shouldn't be used for anything large Running out of stack memory is called stack overflow. 
-objects created with new keyword allocate on the heap, there is no pattern  in heap memory and it almost always manually freed.
-
 ```
 class Human{
    public static void walk()
@@ -142,6 +132,13 @@ Human walks
 Static binding happens at compile-time while dynamic binding happens at runtime.  
 Binding of private, static and final methods always happen at compile time since these methods cannot be overridden. When the method overriding is actually happening and the reference of parent type is assigned to the object of child class type then such binding is resolved during runtime.   
 The binding of overloaded methods is static and the binding of overridden methods is dynamic.  
+
+
+### Stack and heap
+stack is used for statcic memory allocation, heap is userd for dynamic memory allocation. both stored in the computer's RAM. 
+The stack memory is where local variables get stored or constructed. Stack also hold parameters passed to functions. The stack follows the patern of LIFO. The stack is usually in CPU cache, so operations in stack tend to be faster. It is also a limited resource and shouldn't be used for anything large Running out of stack memory is called stack overflow. 
+objects created with new keyword allocate on the heap, there is no pattern  in heap memory and it almost always manually freed.
+
 
 ### restful 
 * Application programming interface   
@@ -295,7 +292,6 @@ Reject (or strip) out whitespace and new line characters where they are not appr
 * Adding to the end of the array is a lot simpler in terms of speed. It involves adding the element to the next highest index of the array. This means that it is constant time and Big O(1) if the array is not already full. However, if the array is full it would involve having to create a new array and then copy the contents of the original into the new array which would be O(n). The third case of insertion would be adding to a position between the beginning and end of the array which would be Big O(n). The same time complexity is also true for removing from an array.
 * When accessing elements of a linked list, speed is proportional to size of the list with Big O(n). Since we must traverse the entire list in order to get to the desired element, it is more costly compared to accessing elements of an array.
 * When inserting a node into the beginning of the list, it only involves creating a new node with an address that points to the old head. The time it takes to perform this is not dependent on the size of the list. This means that it will be constant time or a Big O(1). Inserting an element to the end of the list involves traversing the whole list and then creating a new node and adjusting the previous node’s address for the next node. Time taken will be proportional to the size of the list and Big O(n). When we are inserting node into a position between the beginning and end of the linked list, we will have to traverse the list up until the specific point and then adjust the pointers with Big O(n). The same time complexity is also true for removing nodes from a linked list.
-
 
 ### Describe a case that you don't have much resources, but you completed a hard project.
 ### How would you describe your role when working in a team?
@@ -495,10 +491,9 @@ public class My24Point {
 ```
   
 ### 还问了一些数据库的基础知识比如index之类的。
-* Well, an index is a data structure (most commonly a B- tree) that stores the values for a specific column in a table. An index is created on a column of a table. So, the key points to remember are that an index consists of column values from one table, and that those values are stored in a data structure. The index is a data structure – remember that.
+* Index is a data structure (most commonly a B- tree) that stores the values for a specific column in a table. An index is created on a column of a table. So, the key points to remember are that an index consists of column values from one table, and that those values are stored in a data structure. The index is a data structure – remember that.
 * The reason B- trees are the most popular data structure for indexes is due to the fact that they are time efficient – because look-ups, deletions, and insertions can all be done in logarithmic time. And, another major reason B- trees are more commonly used is because the data that is stored inside the B- tree can be sorted. 
 
-### 5, Clime stairs   
 ### How to implement a non-recurrency in-order traverse iterator class of binary tree.   
 ### 2. Detect cycles in a singly-linked list.    
 ### 3. Reverse all the words in a sentence.    
@@ -554,18 +549,6 @@ public class MyPowerN {
 
 ### Algorithm to find clusters of nodes in a grid
 
-### Int string range  [1-5, 6, 7-8] 
-
-### stamp dispenser
-
 ### middle element of a linked list
 
 ### knapsack problem
-
-
-
-
-
-
-
-
