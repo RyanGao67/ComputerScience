@@ -50,3 +50,28 @@ A processor can generate new Flow file by processing an existing Flowfile  or in
 * Flowfiles are passed-by-reference
 * A new flowfile will be created if the content of the existing flowfile is modified or new data is ingested from source
 * New Flowfile will not be created if the attributes of the existing Flowfile is modified.
+
+### Apache Nifi use cases:
+* What Apache Nifi is good at:
+  * Reliable and secure transfer of data between systems
+  * Delivery of data from sources of analytic platforms
+  * Enrichment and preparation of data:
+    * Conversion between formats
+    * Extraction/Parsing
+    * Routing decisiion
+
+* What Apache Nifi shouldn't be used for:
+  * Distributed Computation
+  * Complex Event processing
+  * Joins, rolling windows, aggregates opperations
+  
+### Concept: Processor
+* Applies a set of transformations and rules to FlowFiles, to generate new FlowFiles
+* Any processor can process any FlowFile
+* Processors are parsing Flowfile references to each other to advance the data processing
+* They are all running in parallel(different threads)
+
+### Connector
+* It's basically a queue of all the Flowfiles that are yet to be processed by processor2
+* Defines rules about how FlowFiles are prioritized (Which ones first, which ones not at all)
+* Can define backpressure to avoid overflow in the system
