@@ -33,7 +33,7 @@ kafka-topics --zookeeper 127.0.0.1:2181 --topic second_topic --create --partitio
 kafka-topics --zookeeper 127.0.0.1:2181 --list
 kafka-topics --zookeeper 127.0.0.1:2181 --topic second_topic --delete
 ```
-
+*Pay attention to this error, the number of replication-factors larger than avaible brokers*
 ```
 kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic
 kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --producer-property acks=all
