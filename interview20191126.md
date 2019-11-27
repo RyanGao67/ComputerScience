@@ -80,6 +80,53 @@ Design hospital management
 ### reverse string in java
 ### Tell us about a time you failed
 
+
+### SQL query performances, use of indexes, EXPLAIN statement, what is MVC, span vs div.
+### In the second round they gave me a java code to review (one sided A4 sheet) which does some string manipulations, it didn't have proper type casting, had one infinite loops, required constructor over loading, improper use of iterator.next(), 'static' usage mistake etc. With around 10 errors/optimizations.
+
+### What would you do if you found a critical bug one day before release?  
+### - Difference between set and List
+### - What are/example of static variables
+### - Java Questions: describe how "synchronize" works, difference between arraylist and linkedlist, question about Collections/abstract classes, easy stuff
+### The difference between Hashtable and HashMap in Java API.  
+### given a list of sorted integers and an integer sum, find two numbers in the list that sum to said sum.  
+### implement a function that sets values to strings given a Map interface and a helper function  
+### Write code in java to return a list of all the nodes at the greatest depth of a binary tree.  
+### What is transient?  java
+What design pattern is used to implement a SynchronizedHashMap?  
+How is a Java HashMap actually implemented?  
+String foo = "abc";
+String foo1 = "abc";
+what does (foo == foo1) evaluate to?  
+### 给一个有向图, 找 src 到其它所有node的最短距离, 要求递归
+###                Integer i = 12;
+Integer j = 12;
+System.out.println(i == j);
+System.out.println(i.equals(j));
+
+
+Integer i = 1234;
+Integer j = 1234;
+System.out.println(i == j);
+System.out.println(i.equals(j));
+
+
+2 写段js code，实现一个可以click的button
+3 two sum 找出所有pairs
+4 reverse char array 不允许用loop，可以用递归写
+
+
+1. valid string anagram 要求O(n)的时间复杂度
+2. golden tile problem 这题有点难度
+类似迷宫，定义每个格子tile 只有一个boolean 成员变量 isGolden 每个格子只能朝四个方向up down left right 移动到下一个tile。然后这个迷宫中有一个tile 被标记为isGolden=true 要你找到从起始tile 到这个终点的一条路径
+follow up:
+寻找最短的路径（移动步骤最少）
+没有坐标可以使用，也不能修改tile定义。
+我的做法就是dfs 加 一个set记录去过的tile的hash。 follow up的话我就说了改成bfs 但没时间写。
+
+什麼是static, string vs stringbuffer vs stringbuilder, constructor, set vs list 這種
+
+
 ### interview question
 public class Person {
    Person father;
@@ -344,48 +391,3 @@ class PersonTest {
 
 
 ```
-
-### SQL query performances, use of indexes, EXPLAIN statement, what is MVC, span vs div.
-### In the second round they gave me a java code to review (one sided A4 sheet) which does some string manipulations, it didn't have proper type casting, had one infinite loops, required constructor over loading, improper use of iterator.next(), 'static' usage mistake etc. With around 10 errors/optimizations.
-
-### What would you do if you found a critical bug one day before release?  
-### - Difference between set and List
-### - What are/example of static variables
-### - Java Questions: describe how "synchronize" works, difference between arraylist and linkedlist, question about Collections/abstract classes, easy stuff
-### The difference between Hashtable and HashMap in Java API.  
-### given a list of sorted integers and an integer sum, find two numbers in the list that sum to said sum.  
-### implement a function that sets values to strings given a Map interface and a helper function  
-### Write code in java to return a list of all the nodes at the greatest depth of a binary tree.  
-### What is transient?  java
-What design pattern is used to implement a SynchronizedHashMap?  
-How is a Java HashMap actually implemented?  
-String foo = "abc";
-String foo1 = "abc";
-what does (foo == foo1) evaluate to?  
-### 给一个有向图, 找 src 到其它所有node的最短距离, 要求递归
-###                Integer i = 12;
-Integer j = 12;
-System.out.println(i == j);
-System.out.println(i.equals(j));
-
-
-Integer i = 1234;
-Integer j = 1234;
-System.out.println(i == j);
-System.out.println(i.equals(j));
-
-
-2 写段js code，实现一个可以click的button
-3 two sum 找出所有pairs
-4 reverse char array 不允许用loop，可以用递归写
-
-
-1. valid string anagram 要求O(n)的时间复杂度
-2. golden tile problem 这题有点难度
-类似迷宫，定义每个格子tile 只有一个boolean 成员变量 isGolden 每个格子只能朝四个方向up down left right 移动到下一个tile。然后这个迷宫中有一个tile 被标记为isGolden=true 要你找到从起始tile 到这个终点的一条路径
-follow up:
-寻找最短的路径（移动步骤最少）
-没有坐标可以使用，也不能修改tile定义。
-我的做法就是dfs 加 一个set记录去过的tile的hash。 follow up的话我就说了改成bfs 但没时间写。
-
-什麼是static, string vs stringbuffer vs stringbuilder, constructor, set vs list 這種
