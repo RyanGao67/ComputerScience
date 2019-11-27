@@ -409,3 +409,32 @@ How is a Java HashMap actually implemented?
 String foo = "abc";
 String foo1 = "abc";
 what does (foo == foo1) evaluate to?  
+### 给一个有向图, 找 src 到其它所有node的最短距离, 要求递归
+###                Integer i = 12;
+Integer j = 12;
+System.out.println(i == j);
+System.out.println(i.equals(j));
+
+
+Integer i = 1234;
+Integer j = 1234;
+System.out.println(i == j);
+System.out.println(i.equals(j));
+
+
+2 写段js code，实现一个可以click的button
+3 two sum 找出所有pairs
+4 reverse char array 不允许用loop，可以用递归写
+
+
+1. valid string anagram 要求O(n)的时间复杂度
+2. golden tile problem 这题有点难度
+类似迷宫，定义每个格子tile 只有一个boolean 成员变量 isGolden 每个格子只能朝四个方向up down left right 移动到下一个tile。然后这个迷宫中有一个tile 被标记为isGolden=true 要你找到从起始tile 到这个终点的一条路径
+follow up:
+寻找最短的路径（移动步骤最少）
+没有坐标可以使用，也不能修改tile定义。
+
+我的做法就是dfs 加 一个set记录去过的tile的hash。 follow up的话我就说了改成bfs 但没时间写。
+
+什麼是static, string vs stringbuffer vs stringbuilder, constructor, set vs list 這種
+
