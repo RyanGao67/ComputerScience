@@ -1,43 +1,20 @@
 
 ### Java, with data base,
-### OOP concepts  
-
-### Golden tile problem
-
 ### How would you implement Java HashMap with basic data structures?  
-
-### Basic background and resumé questions.
-### The first interview was really straight foward, the interviewer just wanted to know about my experience and talked a little about the company systems.
-### The second was a little to hard. I had to do a challenge about mapping. 
 ### The third interview was more about the company. The interviewer talked a lot about the culture and the products, and said that he wanted to know what I could say about me that fitted their culture. Sounded more of a behavioral interview.
 ### The fourth was again another challenge but in Java. I had to implement the HashMap data structure using basic data structures. It was kind of hard because of the time.
 ### The last interview was with the first person that I talked on the phone. It was more like a formal interview about the company, shw talked more about it's products and culture, asked me about some questions of how could I see myself in the company.
-
 ### How could I find the common Node of two simple linked lists with the minimum complexity?  
-
 ### Some basic javascript questions like hoisting, event loops, scope etc, then asked me to write/implement debounce.
-
 ### BFS in a matrix  
-### Anagram  
-
 ### Given an infinite amount of resources, how can you  determine which build of software caused a problem?
 * I had several answers that were OK and would have worked, but the idea was about creating a binary search of the range of builds.
-
-
 ### When's a time you had to be creative when solving a coding problem?  
-
 ### class vs object  
-
 ### implement binary search  
-
-
-### 1. Phone Screen:
-a. Personality Questions
-b. Difference between == and .equals()
+### b. Difference between == and .equals()
 ### 2. Phone Technical Screen
 a. 4 Principles of OOP
-b. Find Anagram
-c. Find Golden Tile (just a BFS problem)
 ### 3. On Site
 a. Design a Phone System API (getRandomNumber(), showAllUsedNumbers(), showAllUnusedNumbers())
 c. Junit -> This was very difficult and unusual section. He basically provides this really length code and asks you to design Junit Tests for it. You don’t even know much about the code. Basically, try to prove that an assertion will be triggered and then more …
@@ -54,29 +31,20 @@ Design hospital management
 -give a new number(randomly)
 -requests a specific number  
 
-### isPalindrome  and Hashmap related coding question  
-
 ### Write a basic login form that talks to an API and redirects based on the response. Re-write or update the HTML form using jQuery and a single HTML page (SPA w/o a framework).  
 ### Write a tree view list component that can be reused.  
 ### Implement basic components/elements using an SPA framework of your choice (React, Vue, Angular, etc..).  
-
-
-### 1. What are the basic principles of OOP? After answered, asked to explain each one.
-
-### 2. (Coding) Given two strings, figure out if they are anagrams (Kept asking for a better answer until a good linear solution was presented)
-
 ### 3. Given a tile class, where each tile knows: the tile to the east, north, west, and south, along with whether it is a golden tile or not. Tiles are laid out in a large square (of unknown size), and there is only 1 golden tile. You start at one tile within the sqare (unknown) and need to find a path to the golden tile (list directions of east/south/north/west, in order).  
 
 ### Given an Animal class, implement a function that will output all animals organized by group.  
 ### Given any number greater than 2, implement a function that will find the two prime numbers that sum to that number.  
 ### Group similar objects within an array  
-
+[https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects](https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects)
 
 ### How would you test a No. 2 pencil?  
+[https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/](https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/)
 ### blackbox testing and whitebox testing.
 ### Which is important quality or speed.  
-
-### What is polymorphism, abstraction, inheritance, and encapsulation?  
 ### What is the difference between an abstract class and an interface?  
 ### What does the protected keyword do?  
 ### What is the heap in Java?  
@@ -88,7 +56,6 @@ Design hospital management
 ### Walk me through JVM's heap  
 ### Differences between Python and Java  
 ### Palindrome Checker, and read in a file  
-### Cluster together all last names together into an ArrayList.  
 ### General questions about Hash Table, BSTs, and their runtime  
 ### 1. implement array.prototype.map
 ### 2. implement _.debounce from lodash (given the description of what this function does)
@@ -97,25 +64,18 @@ Design hospital management
 ### What are some pros and cons of flexbox and the grid system?  React redux
 ### What is closure, output of JS code. 
 ### 1. given 2 Lists, find the similar elements and print them as a new list
-### 2. determine whether two strings are anagrams
 ### 3. Classes and OOP (constructors, static methods/vars, stuff like that)
 ### 4. SQL and RDBM questions
 ### 5. What is a hastable, how does it work, time complexity, etc
 ### 6. use two stacks to make a queue
 ### 7. java garbage collection
-### 8. debugging unit tests  
-### String vs string buffer.
 ### Write a program to detect similar characters if any.
 ### For data structure: showing three tables and asking some basic question about it like what is primary key in each table, why there is an interface table between the other two and so on.
-
-### and lastly he showed a shell script and asked me to describe it. 
 ### How do you traverse a tree and produce a list of descending order  
 ### Configure a JUnit test environment to work with production code (Onsite)  
 ### Product Array problem(Google it).  
-### -Reverse string
 ### -BST traversals  
 ### Sort algorithms  
-### Recursion  
 ### Had two string manipulation coding questions.
 ### reverse string in java
 ### Tell us about a time you failed
@@ -385,15 +345,13 @@ class PersonTest {
 
 ```
 
-### SQL query performances, use of indexes, EXPLAIN statement, JAVA String vs StringBuilder vs StringBuffer, what is MVC, span vs div.
+### SQL query performances, use of indexes, EXPLAIN statement, what is MVC, span vs div.
 ### In the second round they gave me a java code to review (one sided A4 sheet) which does some string manipulations, it didn't have proper type casting, had one infinite loops, required constructor over loading, improper use of iterator.next(), 'static' usage mistake etc. With around 10 errors/optimizations.
 
 ### What would you do if you found a critical bug one day before release?  
 ### - Difference between set and List
 ### - What are/example of static variables
 ### - Java Questions: describe how "synchronize" works, difference between arraylist and linkedlist, question about Collections/abstract classes, easy stuff
-### - Code Test: map values to letters recursively -&gt; THINK BFS WITHOUT USING A QUEUE (using recursion instead)… 
-
 ### The difference between Hashtable and HashMap in Java API.  
 ### given a list of sorted integers and an integer sum, find two numbers in the list that sum to said sum.  
 ### implement a function that sets values to strings given a Map interface and a helper function  
@@ -428,8 +386,6 @@ System.out.println(i.equals(j));
 follow up:
 寻找最短的路径（移动步骤最少）
 没有坐标可以使用，也不能修改tile定义。
-
 我的做法就是dfs 加 一个set记录去过的tile的hash。 follow up的话我就说了改成bfs 但没时间写。
 
 什麼是static, string vs stringbuffer vs stringbuilder, constructor, set vs list 這種
-
