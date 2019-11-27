@@ -1,10 +1,5 @@
 
-### Then a coding challenge pretty easy with Java; after about three weeks, the third round is also Java, with data base,
-
-
-### 1. Group animals and print them out
-### 2. Divide Squares  
-
+### Java, with data base,
 ### OOP concepts  
 
 ### Golden tile problem
