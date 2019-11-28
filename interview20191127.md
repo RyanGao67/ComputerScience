@@ -63,3 +63,28 @@
 ### whata happends behind the scene when sql join
 ### what is responsive design
 ### treeset
+
+### 题目：
+Given two unsorted arrays arr1[] and arr2[]. They may contain duplicates. For each element in arr1[] count elements less than or equal to it in array arr2[].
+Input : arr1[] = [1, 2, 3, 4, 7, 9]
+        arr2[] = [0, 1, 2, 1, 1, 4]
+Output : [4, 5, 5, 6, 6, 6]
+
+Input : arr1[] = [5, 10, 2, 6, 1, 8, 6, 12]
+        arr2[] = [6, 5, 11, 4, 2, 3, 7]
+Output : [4, 6, 1, 5, 0, 6, 5, 7]
+
+答案：
+骨骼搜 element-1st-array-count-elements-less-equal-2nd-array
+一模一样的题目 但是我用c++写到 要用 binary search的时候 他让我用 stl  所以 我用了 c++ 里面的lower_bound function
+
+### 两轮面试
+第一轮面试:
+问了我简历上项目的经历 c++的熟练度
+两道 李code easy question
+两道sql query 问题  前一道题目 就是 select from where 后面一道 就是 inner join
+接着给我看了一段c#的代码 让我做 code review
+
+第二轮面试:
+问了我项目上的经历
+问了一道 dfs/bfs的经典问题
