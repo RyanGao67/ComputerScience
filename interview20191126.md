@@ -2,7 +2,6 @@
 ### Java, with data base,
 ### How would you implement Java HashMap with basic data structures?  
 ### The third interview was more about the company. The interviewer talked a lot about the culture and the products, and said that he wanted to know what I could say about me that fitted their culture. Sounded more of a behavioral interview.
-### The fourth was again another challenge but in Java. I had to implement the HashMap data structure using basic data structures. It was kind of hard because of the time.
 ### The last interview was with the first person that I talked on the phone. It was more like a formal interview about the company, shw talked more about it's products and culture, asked me about some questions of how could I see myself in the company.
 ### How could I find the common Node of two simple linked lists with the minimum complexity?  
 ### Some basic javascript questions like hoisting, event loops, scope etc, then asked me to write/implement debounce.
