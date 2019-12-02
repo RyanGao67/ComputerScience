@@ -13,6 +13,13 @@
 * I had several answers that were OK and would have worked, but the idea was about creating a binary search of the range of builds.
 ### When's a time you had to be creative when solving a coding problem?  
 ### class vs object  
+Class	| Object
+----- | ------
+A class is a blueprint from which you can create the instance, i.e., objects.	| An object is the instance of the class, which helps programmers to use variables and methods from inside the class.
+A class is used to bind data as well as methods together as a single unit.	| object acts as a variable of the class.
+Classes have logical existence.	Objects have a physical existence.
+A class doesn't take any memory spaces when a programmer creates one.	| An object takes memory when a programmer creates one.
+The class has to be declared only once.	| Objects can be declared several times depending on the requirement.
 ### implement binary search  
 ### b. Difference between == and .equals()
 ### 2. Phone Technical Screen
