@@ -8,10 +8,10 @@ Final is a keyword.	| Finally is a block.	| Finalize is a method.
 [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)  
 [https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)   
 [https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)   
-[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/) 
+[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)  
 
 ### count number of unique words in a n array of words
-[https://leetcode.com/problems/unique-word-abbreviation/](https://leetcode.com/problems/unique-word-abbreviation/)
+[https://leetcode.com/problems/unique-word-abbreviation/](https://leetcode.com/problems/unique-word-abbreviation/)    
 ```java
 public class SetTest {
 	public static void main(String[] args) {
@@ -28,7 +28,8 @@ public class SetTest {
 [https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/](https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/)  
 [https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)         
 [https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)   
-[https://leetcode.com/problems/binary-tree-level-order-traversal/](https://leetcode.com/problems/binary-tree-level-order-traversal/)  
+[https://leetcode.com/problems/binary-tree-level-order-traversal/](https://leetcode.com/problems/binary-tree-level-order-traversal/)   
+
 ### compare content in two files using java program
 ```java
 File file1 = new File("file1.txt");
@@ -70,16 +71,16 @@ On the other hand, in the case of NIO, the methods are non-blocking. This means 
 
 ### how to reverse singly linked list, Even odd program using multithreading
 [https://leetcode.com/problems/reverse-linked-list/](https://leetcode.com/problems/reverse-linked-list/)    
-[https://java2blog.com/print-even-odd-numbers-threads-java/](https://java2blog.com/print-even-odd-numbers-threads-java/) 
-[https://www.baeldung.com/java-even-odd-numbers-with-2-threads](https://www.baeldung.com/java-even-odd-numbers-with-2-threads)  
+[https://java2blog.com/print-even-odd-numbers-threads-java/](https://java2blog.com/print-even-odd-numbers-threads-java/)   
+[https://www.baeldung.com/java-even-odd-numbers-with-2-threads](https://www.baeldung.com/java-even-odd-numbers-with-2-threads)   
 ### fibonaci series
-[https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions](https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions)   
-[https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)   
+[https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions](https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions)    
+[https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)    
 [https://leetcode.com/problems/reverse-linked-list-ii/](https://leetcode.com/problems/reverse-linked-list-ii/)    
-### restful vs soap
-[https://dzone.com/articles/difference-between-rest-and-soap-api](https://dzone.com/articles/difference-between-rest-and-soap-api)  
+### restful vs soap 
+[https://dzone.com/articles/difference-between-rest-and-soap-api](https://dzone.com/articles/difference-between-rest-and-soap-api)   
 ### interface, abstract class polymorphism example
-[https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)  
+[https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)   
 ### design database for library
 ### factorial 
 ```java
@@ -92,9 +93,9 @@ On the other hand, in the case of NIO, the methods are non-blocking. This means 
 ### Name a example of a team experience that did not go well 
 ### Project you are proud of 
 ### comparator java maximum of tree instance
-[https://leetcode.com/problems/connecting-cities-with-minimum-cost/](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)    
-[https://leetcode.com/problems/optimize-water-distribution-in-a-village/](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)   
-[https://leetcode.com/problems/minimum-path-sum/](https://leetcode.com/problems/minimum-path-sum/)
+[https://leetcode.com/problems/connecting-cities-with-minimum-cost/](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)     
+[https://leetcode.com/problems/optimize-water-distribution-in-a-village/](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)     
+[https://leetcode.com/problems/minimum-path-sum/](https://leetcode.com/problems/minimum-path-sum/)     
 ### Why you want to work in tr
 ### Sorting
 ```java
@@ -212,7 +213,7 @@ public static void quickSort(int[] array, int begin, int end) {
 ### TCP HTTP
 ### implement LRU cache
 ### write arraylist add unittest
-[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)   
+[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)    
 ### invert a binary tree
 [https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)    
 ### reverse a string using recursion
@@ -226,7 +227,7 @@ class Solution(object):
 ```
 ### find repeating charactersfrom given string
 ### find second higest element
-[https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)   
+[https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)    
 ### what is immutable class write a immutable class
 ### overiding static method,write singleton class
 ### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
