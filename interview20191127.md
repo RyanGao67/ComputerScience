@@ -5,10 +5,11 @@ Final is used to apply restrictions on class, method and variable. Final class c
 Final is a keyword.	| Finally is a block.	| Finalize is a method.
 
 ### anagram
-[https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)
-[https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)
-[https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)
+[https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)  
+[https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)   
+[https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)   
+[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/) 
+
 ### count number of unique words in a n array of words
 [https://leetcode.com/problems/unique-word-abbreviation/](https://leetcode.com/problems/unique-word-abbreviation/)
 ```java
@@ -22,11 +23,11 @@ public class SetTest {
 
 ```
 ### Traversal of tree reverse string
-[https://leetcode.com/problems/binary-tree-postorder-traversal/](https://leetcode.com/problems/binary-tree-postorder-traversal/)
-[https://leetcode.com/problems/binary-tree-preorder-traversal/](https://leetcode.com/problems/binary-tree-preorder-traversal/)  
+[https://leetcode.com/problems/binary-tree-postorder-traversal/](https://leetcode.com/problems/binary-tree-postorder-traversal/)   
+[https://leetcode.com/problems/binary-tree-preorder-traversal/](https://leetcode.com/problems/binary-tree-preorder-traversal/)    
 [https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/](https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/)  
-[https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)       
-[https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)  
+[https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)         
+[https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)   
 [https://leetcode.com/problems/binary-tree-level-order-traversal/](https://leetcode.com/problems/binary-tree-level-order-traversal/)  
 ### compare content in two files using java program
 ```java
@@ -68,33 +69,152 @@ The main difference between these two packages is that the read() and write() me
 On the other hand, in the case of NIO, the methods are non-blocking. This means that the calling threads can perform other tasks (like reading/writing data from another source or update the UI) while the read or write methods wait for their operation to complete. This can result in a significant performance increase if you're dealing with many IO requests or lots of data.
 
 ### how to reverse singly linked list, Even odd program using multithreading
-[https://leetcode.com/problems/reverse-linked-list/](https://leetcode.com/problems/reverse-linked-list/)
+[https://leetcode.com/problems/reverse-linked-list/](https://leetcode.com/problems/reverse-linked-list/)    
+[https://java2blog.com/print-even-odd-numbers-threads-java/](https://java2blog.com/print-even-odd-numbers-threads-java/) 
+[https://www.baeldung.com/java-even-odd-numbers-with-2-threads](https://www.baeldung.com/java-even-odd-numbers-with-2-threads)  
 ### fibonaci series
-[https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions](https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions)
-[https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)
-[https://leetcode.com/problems/reverse-linked-list-ii/](https://leetcode.com/problems/reverse-linked-list-ii/)
+[https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions](https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions)   
+[https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)   
+[https://leetcode.com/problems/reverse-linked-list-ii/](https://leetcode.com/problems/reverse-linked-list-ii/)    
 ### restful vs soap
+[https://dzone.com/articles/difference-between-rest-and-soap-api](https://dzone.com/articles/difference-between-rest-and-soap-api)  
 ### interface, abstract class polymorphism example
+[https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)  
 ### design database for library
 ### factorial 
+```java
+  int i,fact=1;  
+  int number=5;//It is the number to calculate factorial    
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+```
 ### Name a example of a team experience that did not go well 
 ### Project you are proud of 
 ### comparator java maximum of tree instance
+[https://leetcode.com/problems/connecting-cities-with-minimum-cost/](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)    
+[https://leetcode.com/problems/optimize-water-distribution-in-a-village/](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)   
+[https://leetcode.com/problems/minimum-path-sum/](https://leetcode.com/problems/minimum-path-sum/)
 ### Why you want to work in tr
-
 ### Sorting
-### Interface vs abstract class
+```java
+public static void mergeSort(int[] array, int left, int right) {
+    if (right <= left) return;
+    int mid = (left+right)/2;
+    mergeSort(array, left, mid);
+    mergeSort(array, mid+1, right);
+    merge(array, left, mid, right);
+}
+ void merge(int[] array, int left, int mid, int right) {
+    // calculating lengths
+    int lengthLeft = mid - left + 1;
+    int lengthRight = right - mid;
+
+    // creating temporary subarrays
+    int leftArray[] = new int [lengthLeft];
+    int rightArray[] = new int [lengthRight];
+
+    // copying our sorted subarrays into temporaries
+    for (int i = 0; i < lengthLeft; i++)
+        leftArray[i] = array[left+i];
+    for (int i = 0; i < lengthRight; i++)
+        rightArray[i] = array[mid+i+1];
+
+    // iterators containing current index of temp subarrays
+    int leftIndex = 0;
+    int rightIndex = 0;
+
+    // copying from leftArray and rightArray back into array
+    for (int i = left; i < right + 1; i++) {
+        // if there are still uncopied elements in R and L, copy minimum of the two
+        if (leftIndex < lengthLeft && rightIndex < lengthRight) {
+            if (leftArray[leftIndex] < rightArray[rightIndex]) {
+                array[i] = leftArray[leftIndex];
+                leftIndex++;
+            }
+            else {
+                array[i] = rightArray[rightIndex];
+                rightIndex++;
+            }
+        }
+        // if all the elements have been copied from rightArray, copy the rest of leftArray
+        else if (leftIndex < lengthLeft) {
+            array[i] = leftArray[leftIndex];
+            leftIndex++;
+        }
+        // if all the elements have been copied from leftArray, copy the rest of rightArray
+        else if (rightIndex < lengthRight) {
+            array[i] = rightArray[rightIndex];
+            rightIndex++;
+        }
+    }
+}
+```
+```java
+static int partition(int[] array, int begin, int end) {
+    int pivot = end;
+
+    int counter = begin;
+    for (int i = begin; i < end; i++) {
+        if (array[i] < array[pivot]) {
+            int temp = array[counter];
+            array[counter] = array[i];
+            array[i] = temp;
+            counter++;
+        }
+    }
+    int temp = array[pivot];
+    array[pivot] = array[counter];
+    array[counter] = temp;
+
+    return counter;
+}
+
+public static void quickSort(int[] array, int begin, int end) {
+    if (end <= begin) return;
+    int pivot = partition(array, begin, end);
+    quickSort(array, begin, pivot-1);
+    quickSort(array, pivot+1, end);
+}
+```
 ### java exceptions
 ### How to add dynamic library in java
 ### given a list of integers, count the number of swaps it will take to move the even numbers to left half and odd to right
+```java
+    static void segregateEvenOdd(int arr[]) 
+    { 
+        /* Initialize left and right indexes */
+        int left = 0, right = arr.length - 1; 
+        while (left < right) 
+        { 
+            /* Increment left index while we see 0 at left */
+            while (arr[left]%2 == 0 && left < right) 
+                left++; 
+  
+            /* Decrement right index while we see 1 at right */
+            while (arr[right]%2 == 1 && left < right) 
+                right--; 
+  
+            if (left < right) 
+            { 
+                /* Swap arr[left] and arr[right]*/
+                int temp = arr[left]; 
+                arr[left] = arr[right]; 
+                arr[right] = temp; 
+                left++; 
+                right--; 
+            } 
+        } 
+    } 
+```
 ### x=x+y;y=x-y;x=x-y
 ### version number x/y/z return more recent
 ### TCP HTTP
 ### implement LRU cache
 ### write arraylist add unittest
-[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)
+[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)   
 ### invert a binary tree
-[https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)
+[https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)    
 ### reverse a string using recursion
 ```python
 class Solution(object):
@@ -106,7 +226,7 @@ class Solution(object):
 ```
 ### find repeating charactersfrom given string
 ### find second higest element
-[https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+[https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)   
 ### what is immutable class write a immutable class
 ### overiding static method,write singleton class
 ### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
@@ -114,11 +234,8 @@ class Solution(object):
 ### where js run
 ### how to manipulate java string
 ### Design a object storing info about a pet shop animals and employer
-### mapreduce in java 
-### corejava servelet jsp spring 
 ### linked list vs arraylist
 ### process vs thread
-### Socket programming java
 ### SQL haveing vs where
 ### palindrome
 ### treeset
@@ -229,3 +346,6 @@ int main()
 ### design chessgame  deep swallow copy hibernate first level cache second level coppy
 ### whata happends behind the scene when sql join
 ### what is responsive design
+### Socket programming java
+### mapreduce in java 
+### corejava servelet jsp spring 
