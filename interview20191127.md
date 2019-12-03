@@ -210,6 +210,37 @@ public static void quickSort(int[] array, int begin, int end) {
 ```
 ### x=x+y;y=x-y;x=x-y
 ### version number x/y/z return more recent
+```java
+package tgao.indocresearch.org;
+import java.util.Arrays;
+import java.util.Comparator;
+public class VersionNumber {
+	static class CustomerSorting implements Comparator<String>{
+		@Override
+		public int compare(String arg0, String arg1) {
+			// TODO Auto-generated method stub
+			String[] args1 = arg0.split("/");
+			String[] args2 = arg1.split("/");
+			int i=0,j=0;
+			while(i<args1.length && j<args2.length) {
+				if(args1[i].compareTo(args2[j])>0)return -1;
+				if(args1[i].compareTo(args2[j])<0)return 1;
+				i++;j++;
+			}
+			if(i<args1.length)return -1;
+			if(j<args2.length)return 1;
+			return 0;
+		}
+	}
+	public static void main(String[] args) {
+		String[] versions = new String[] {"1/2/3", "1/3/4", "2/2/1"};
+		Arrays.sort(versions, new CustomerSorting());
+		for(int i=0;i<versions.length;i++) {
+			System.out.println(versions[i]);
+		}
+	}
+}
+```
 ### TCP HTTP
 ### implement LRU cache
 ### write arraylist add unittest
