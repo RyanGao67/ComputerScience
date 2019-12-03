@@ -22,12 +22,12 @@ public class SetTest {
 
 ```
 ### Traversal of tree reverse string
-(https://leetcode.com/problems/binary-tree-postorder-traversal/)[https://leetcode.com/problems/binary-tree-postorder-traversal/]
-(https://leetcode.com/problems/binary-tree-preorder-traversal/)[https://leetcode.com/problems/binary-tree-preorder-traversal/]
-(https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/)[https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/]
-(https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)[https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/]
-(https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)[https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/]
-(https://leetcode.com/problems/binary-tree-level-order-traversal/)[https://leetcode.com/problems/binary-tree-level-order-traversal/]
+(https://leetcode.com/problems/binary-tree-postorder-traversal/)[https://leetcode.com/problems/binary-tree-postorder-traversal/]  
+(https://leetcode.com/problems/binary-tree-preorder-traversal/)[https://leetcode.com/problems/binary-tree-preorder-traversal/]  
+(https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/)[https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/]  
+(https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)     [https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/]  
+(https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)[https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/]  
+(https://leetcode.com/problems/binary-tree-level-order-traversal/)[https://leetcode.com/problems/binary-tree-level-order-traversal/]  
 ### compare content in two files using java program
 ```java
 File file1 = new File("file1.txt");
