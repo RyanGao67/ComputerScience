@@ -179,6 +179,7 @@ public static void quickSort(int[] array, int begin, int end) {
 ```
 ### java exceptions
 ### How to add dynamic library in java
+[https://cs-fundamentals.com/tech-interview/c/difference-between-static-and-dynamic-linking.php](https://cs-fundamentals.com/tech-interview/c/difference-between-static-and-dynamic-linking.php)   
 [https://www.chilkatsoft.com/java-loadLibrary-Linux.asp](https://www.chilkatsoft.com/java-loadLibrary-Linux.asp)   
 ### given a list of integers, count the number of swaps it will take to move the even numbers to left half and odd to right
 ```java
@@ -257,6 +258,7 @@ class Solution(object):
         return self.reverseString(s[l/2:]) + self.reverseString(s[:l/2])
 ```
 ### find repeating charactersfrom given string
+[https://leetcode.com/problems/first-unique-character-in-a-string/](https://leetcode.com/problems/first-unique-character-in-a-string/)
 ### find second higest element
 [https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)    
 ### what is immutable class write a immutable class
