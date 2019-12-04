@@ -264,11 +264,15 @@ class Solution(object):
 ### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
 ### fizzbuzz  
 ### where js run
+
+* JavaScript is what is called a Client-side Scripting Language. That means that it is a computer programming language that runs inside an Internet browser (a browser is also known as a Web client because it connects to a Web server to download pages).
+
 ### how to manipulate java string
 ### Design a object storing info about a pet shop animals and employer
 ### linked list vs arraylist
 ### process vs thread
 ### SQL haveing vs where
+[https://javarevisited.blogspot.com/2013/08/difference-between-where-vs-having-clause-SQL-databse-group-by-comparision.html](https://javarevisited.blogspot.com/2013/08/difference-between-where-vs-having-clause-SQL-databse-group-by-comparision.html)  
 ### palindrome
 ### treeset
 
