@@ -3,7 +3,17 @@ final	| finally	| finalize
 --------|---------------|---------
 Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.	| Finally is used to place important code, it will be executed whether exception is handled or not.	| Finalize is used to perform clean up processing just before object is garbage collected.
 Final is a keyword.	| Finally is a block.	| Finalize is a method.
+[https://www.javatpoint.com/difference-between-final-finally-and-finalize](https://www.javatpoint.com/difference-between-final-finally-and-finalize)  
 
+### traverse a map
+```java
+        HashMap<String, Integer> hm =  HashMap<String, Integer>(); 
+        hm.put("GeeksforGeeks", 54);  hm.put("For geeks", 82); 
+        for (Map.Entry mapElement : hm.entrySet()) { 
+            String key = (String)mapElement.getKey(); 
+            int value = ((int)mapElement.getValue() + 10); 
+        } 
+```
 ### anagram
 [https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)  
 [https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)   
