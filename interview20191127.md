@@ -81,7 +81,6 @@ On the other hand, in the case of NIO, the methods are non-blocking. This means 
 [https://dzone.com/articles/difference-between-rest-and-soap-api](https://dzone.com/articles/difference-between-rest-and-soap-api)   
 ### interface, abstract class polymorphism example
 [https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)   
-### design database for library
 ### factorial 
 ```java
   int i,fact=1;  
@@ -364,6 +363,8 @@ int main()
     return 0; 
 }  
 ```
+
+### design database for library
 ### Dependency inversion yilaizhuru kongzhifanzhuan foreach(S)
 ### How to partition a huge volume of data for distributed processing(S)
 ### Thread class, Race condition, Callable and Runnable Synchronisation(S)
