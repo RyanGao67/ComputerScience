@@ -179,6 +179,7 @@ public static void quickSort(int[] array, int begin, int end) {
 ```
 ### java exceptions
 ### How to add dynamic library in java
+[https://www.chilkatsoft.com/java-loadLibrary-Linux.asp](https://www.chilkatsoft.com/java-loadLibrary-Linux.asp)   
 ### given a list of integers, count the number of swaps it will take to move the even numbers to left half and odd to right
 ```java
     static void segregateEvenOdd(int arr[]) 
@@ -267,7 +268,6 @@ class Solution(object):
 * JavaScript is what is called a Client-side Scripting Language. That means that it is a computer programming language that runs inside an Internet browser (a browser is also known as a Web client because it connects to a Web server to download pages).
 
 ### how to manipulate java string
-### Design a object storing info about a pet shop animals and employer
 ### linked list vs arraylist
 ### process vs thread
 ### SQL haveing vs where
@@ -364,6 +364,8 @@ int main()
 }  
 ```
 
+
+### Design a object storing info about a pet shop animals and employer
 ### design database for library
 ### Dependency inversion yilaizhuru kongzhifanzhuan foreach(S)
 ### How to partition a huge volume of data for distributed processing(S)
