@@ -293,6 +293,10 @@ class Solution(object):
 ### palindrome
 ### treeset
 [https://www.geeksforgeeks.org/treeset-in-java-with-examples/](https://www.geeksforgeeks.org/treeset-in-java-with-examples/)  
+### deep swallow copy
+### compiler vs interpreter
+### whata happends behind the scene when sql join
+
 
 ### 题目：
 Given two unsorted arrays arr1[] and arr2[]. They may contain duplicates. For each element in arr1[] count elements less than or equal to it in array arr2[].
@@ -371,11 +375,9 @@ class GFG
 ### Hibernate JDBC
 ### plunker CSS
 ### data normalization
-### compiler vs interpreter
 ### implement singlton pattern
-### design chessgame  deep swallow copy hibernate first level cache second level coppy
-### whata happends behind the scene when sql join
+### design chessgame   hibernate first level cache second level coppy
 ### what is responsive design
 ### Socket programming java
 ### mapreduce in java 
-### corejava servelet jsp spring 
+### servelet jsp spring 
