@@ -294,8 +294,13 @@ class Solution(object):
 ### treeset
 [https://www.geeksforgeeks.org/treeset-in-java-with-examples/](https://www.geeksforgeeks.org/treeset-in-java-with-examples/)  
 ### deep swallow copy
-### compiler vs interpreter
-### whata happends behind the scene when sql join
+### compiler vs interpreter  
+
+A compiler takes entire program and converts it into object code which is typically stored in a file. The object code is also refereed as binary code and can be directly executed by the machine after linking. Examples of compiled programming languages are C and C++.
+
+An Interpreter directly executes instructions written in a programming or scripting language without previously converting them to an object code or machine code. Examples of interpreted languages are Perl, Python and Matlab.
+
+### whata happends behind the scene when sql join   
 
 
 ### 题目：
