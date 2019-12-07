@@ -1,3 +1,8 @@
+
+### sql nsql
+### Spring di ioc
+### docker vs vm
+### singleton factory
 ### Final, Finally, Finalize
 final	| finally	| finalize
 --------|---------------|---------
