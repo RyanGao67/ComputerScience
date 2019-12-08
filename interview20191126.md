@@ -7,12 +7,11 @@
 ### The last interview was with the first person that I talked on the phone. It was more like a formal interview about the company, shw talked more about it's products and culture, asked me about some questions of how could I see myself in the company.
 ### How could I find the common Node of two simple linked lists with the minimum complexity?  
 (https://leetcode.com/problems/intersection-of-two-linked-lists/)[https://leetcode.com/problems/intersection-of-two-linked-lists/]
-### Some basic javascript questions like hoisting, event loops, scope etc, then asked me to write/implement debounce.
 ### BFS in a matrix  
 ### Given an infinite amount of resources, how can you  determine which build of software caused a problem?
 * I had several answers that were OK and would have worked, but the idea was about creating a binary search of the range of builds.
-### When's a time you had to be creative when solving a coding problem?  
-### class vs object  
+### When's a time you had to be creative when solving a coding problem?   
+### class vs object   
 Class	| Object
 ----- | ------
 A class is a blueprint from which you can create the instance, i.e., objects.	| An object is the instance of the class, which helps programmers to use variables and methods from inside the class.
@@ -20,73 +19,89 @@ A class is used to bind data as well as methods together as a single unit.	| obj
 Classes have logical existence.	| Objects have a physical existence.
 A class doesn't take any memory spaces when a programmer creates one.	| An object takes memory when a programmer creates one.
 The class has to be declared only once.	| Objects can be declared several times depending on the requirement.
-### implement binary search  
+
+### implement binary search   
+[https://leetcode.com/tag/binary-search/](https://leetcode.com/tag/binary-search/)
+
+
 ### b. Difference between == and .equals()
 ### 2. Phone Technical Screen
-a. 4 Principles of OOP
+a. 4 Principles of OOP   
+  
 ### 3. On Site
-a. Design a Phone System API (getRandomNumber(), showAllUsedNumbers(), showAllUnusedNumbers())
-c. Junit -> This was very difficult and unusual section. He basically provides this really length code and asks you to design Junit Tests for it. You don’t even know much about the code. Basically, try to prove that an assertion will be triggered and then more …
+a. Design a Phone System API (getRandomNumber(), showAllUsedNumbers(), showAllUnusedNumbers())   
+c. Junit -> This was very difficult and unusual section. He basically provides this really length code and asks you to design Junit Tests for it. 
 
-### Onsite had 5 questions including OO design
-Create your own HashMap
-Create queue using two stacks
-Permutation of string
-PM came to ask how to render design
-Design hospital management
+### Onsite had 5 questions including OO design   
+Create queue using two stacks   
+[https://leetcode.com/problems/implement-queue-using-stacks/](https://leetcode.com/problems/implement-queue-using-stacks/)  
+[https://leetcode.com/problems/implement-stack-using-queues/](https://leetcode.com/problems/implement-stack-using-queues/)  
+
+Permutation of string    
+[https://leetcode.com/problems/find-permutation/](https://leetcode.com/problems/find-permutation/)      
+[https://leetcode.com/problems/permutations-ii/](https://leetcode.com/problems/permutations-ii/)     
+[https://leetcode.com/problems/next-permutation/](https://leetcode.com/problems/next-permutation/)     
+[https://leetcode.com/problems/palindrome-permutation-ii/](https://leetcode.com/problems/palindrome-permutation-ii/)   
+[https://leetcode.com/problems/permutation-sequence/](https://leetcode.com/problems/permutation-sequence/)   
+[https://leetcode.com/problems/permutation-sequence/](https://leetcode.com/problems/permutation-sequence/)  
+[https://leetcode.com/problems/letter-case-permutation/](https://leetcode.com/problems/letter-case-permutation/)  
+[https://leetcode.com/problems/permutations/](https://leetcode.com/problems/permutations/)   
+[https://leetcode.com/problems/palindrome-permutation/](https://leetcode.com/problems/palindrome-permutation/)  
+[https://leetcode.com/problems/permutation-in-string/](https://leetcode.com/problems/permutation-in-string/)  
+
+Design hospital management   
 
 ### Design a system that represents an API that has the requirements:
--store phone numbers
--give a new number(randomly)
--requests a specific number  
-
-### Write a basic login form that talks to an API and redirects based on the response. Re-write or update the HTML form using jQuery and a single HTML page (SPA w/o a framework).  
-### Write a tree view list component that can be reused.  
-### Implement basic components/elements using an SPA framework of your choice (React, Vue, Angular, etc..).  
-### 3. Given a tile class, where each tile knows: the tile to the east, north, west, and south, along with whether it is a golden tile or not. Tiles are laid out in a large square (of unknown size), and there is only 1 golden tile. You start at one tile within the sqare (unknown) and need to find a path to the golden tile (list directions of east/south/north/west, in order).  
+-store phone numbers   
+-give a new number(randomly)   
+-requests a specific number     
 
 ### Given an Animal class, implement a function that will output all animals organized by group.  
 ### Given any number greater than 2, implement a function that will find the two prime numbers that sum to that number.  
+[https://leetcode.com/problems/count-primes/](https://leetcode.com/problems/count-primes/)  
+[https://www.geeksforgeeks.org/find-two-prime-numbers-with-given-sum/](https://www.geeksforgeeks.org/find-two-prime-numbers-with-given-sum/)    
+
+
 ### Group similar objects within an array  
-[https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects](https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects)
+[https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects](https://stackoverflow.com/questions/14446511/most-efficient-method-to-groupby-on-an-array-of-objects)   
 
 ### How would you test a No. 2 pencil?  
-[https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/](https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/)
+[https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/](https://www.linkedin.com/pulse/how-would-you-test-pencil-vikas-tyagi/)     
 ### blackbox testing and whitebox testing.
 ### Which is important quality or speed.  
 ### What is the difference between an abstract class and an interface?  
 ### What does the protected keyword do?  
 ### What is the heap in Java?  
 ### How does a Java HashMap work? What is the best case lookup time? Worst case?  
+
 ### Given a list of Person objects, group all Person objects which have the same first name. Two first names can be the same if they are aliases of each other. E.g. (Bob and Robert, Elizabeth and Liz, Chris and Christopher) Person objects consist of firstName and lastName Strings and get() methods for each respective variable.  I solved this problem by using two HashMaps. After completing the problem this way, this segued into a discussion about HashMap implementation details
+
 ### Tell me about JVM stack, heap, and garbage collection.  
 ### Create Mockito based tests for some specific scenarios  
 ### Design a data model for the Veeva platform  
-### Walk me through JVM's heap  
 ### Differences between Python and Java  
-### Palindrome Checker, and read in a file  
+### read in a file  
 ### General questions about Hash Table, BSTs, and their runtime  
-### 1. implement array.prototype.map
-### 2. implement _.debounce from lodash (given the description of what this function does)
-### 3. use any framework, implement a multi tab view in codepen
-### 4. use any framework, implement a select element with basic filtering based on user input
-### What are some pros and cons of flexbox and the grid system?  React redux
-### What is closure, output of JS code. 
+
 ### 1. given 2 Lists, find the similar elements and print them as a new list
+[https://leetcode.com/problems/sentence-similarity/](https://leetcode.com/problems/sentence-similarity/)   
+[https://leetcode.com/problems/sentence-similarity-ii/](https://leetcode.com/problems/sentence-similarity-ii/)  
+[https://leetcode.com/problems/sentence-similarity/](https://leetcode.com/problems/sentence-similarity/)  
 ### 3. Classes and OOP (constructors, static methods/vars, stuff like that)
 ### 4. SQL and RDBM questions
 ### 5. What is a hastable, how does it work, time complexity, etc
-### 6. use two stacks to make a queue
-### 7. java garbage collection
-### Write a program to detect similar characters if any.
 ### For data structure: showing three tables and asking some basic question about it like what is primary key in each table, why there is an interface table between the other two and so on.
-### How do you traverse a tree and produce a list of descending order  
-### Configure a JUnit test environment to work with production code (Onsite)  
 ### Product Array problem(Google it).  
-### -BST traversals  
+[https://leetcode.com/problems/product-of-array-except-self/](https://leetcode.com/problems/product-of-array-except-self/)
+### BST traversals  
 ### Sort algorithms  
-### Had two string manipulation coding questions.
 ### reverse string in java
+[https://leetcode.com/problems/reverse-string/](https://leetcode.com/problems/reverse-string/)   
+[https://leetcode.com/problems/reverse-words-in-a-string-iii/](https://leetcode.com/problems/reverse-words-in-a-string-iii/) [https://leetcode.com/problems/reverse-string-ii/](https://leetcode.com/problems/reverse-string-ii/)   
+[https://leetcode.com/problems/reverse-vowels-of-a-string/](https://leetcode.com/problems/reverse-vowels-of-a-string/)   
+[https://leetcode.com/problems/reverse-words-in-a-string/](https://leetcode.com/problems/reverse-words-in-a-string/)  
+[https://leetcode.com/problems/reverse-integer/](https://leetcode.com/problems/reverse-integer/)   
+
 ### Tell us about a time you failed
 
 
@@ -97,35 +112,55 @@ Design hospital management
 ### - Difference between set and List
 ### - What are/example of static variables
 ### - Java Questions: describe how "synchronize" works, difference between arraylist and linkedlist, question about Collections/abstract classes, easy stuff
-### The difference between Hashtable and HashMap in Java API.  
-### given a list of sorted integers and an integer sum, find two numbers in the list that sum to said sum.  
-### implement a function that sets values to strings given a Map interface and a helper function  
-### Write code in java to return a list of all the nodes at the greatest depth of a binary tree.  
-### What is transient?  java
+### The difference between Hashtable and HashMap in Java API.   
+### Write code in java to return a list of all the nodes at the greatest depth of a binary tree.   
+[https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/)  
+[https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/)   
+[https://leetcode.com/problems/minimum-depth-of-binary-tree/](https://leetcode.com/problems/minimum-depth-of-binary-tree/)  
+### What is transient?  java   
 What design pattern is used to implement a SynchronizedHashMap?  
-How is a Java HashMap actually implemented?  
+```
 String foo = "abc";
 String foo1 = "abc";
-what does (foo == foo1) evaluate to?  
+what does (foo == foo1) evaluate to?  false
+```
 ### 给一个有向图, 找 src 到其它所有node的最短距离, 要求递归
-###                Integer i = 12;
+###                
+```
+Integer i = 12;
 Integer j = 12;
-System.out.println(i == j);
-System.out.println(i.equals(j));
+System.out.println(i == j); T
+System.out.println(i.equals(j)); T
 
 
 Integer i = 1234;
 Integer j = 1234;
-System.out.println(i == j);
-System.out.println(i.equals(j));
+System.out.println(i == j); F
+System.out.println(i.equals(j)); T
+```
 
 
-2 写段js code，实现一个可以click的button
-3 two sum 找出所有pairs
 4 reverse char array 不允许用loop，可以用递归写
+```
+public class JavaExample {
+
+    public static void main(String[] args) {
+        String str = "Welcome to Beginnersbook";
+        String reversed = reverseString(str);
+        System.out.println("The reversed string is: " + reversed);
+    }
+
+    public static String reverseString(String str)
+    {
+        if (str.isEmpty())
+            return str;
+        //Calling Function Recursively
+        return reverseString(str.substring(1)) + str.charAt(0);
+    }
+}
+```
 
 
-1. valid string anagram 要求O(n)的时间复杂度
 2. golden tile problem 这题有点难度
 类似迷宫，定义每个格子tile 只有一个boolean 成员变量 isGolden 每个格子只能朝四个方向up down left right 移动到下一个tile。然后这个迷宫中有一个tile 被标记为isGolden=true 要你找到从起始tile 到这个终点的一条路径
 follow up:
@@ -400,3 +435,17 @@ class PersonTest {
 
 
 ```
+
+### Some basic javascript questions like hoisting, event loops, scope etc, then asked me to write/implement debounce.
+
+### PM came to ask how to render design   
+### 1. implement array.prototype.map
+### 2. implement _.debounce from lodash (given the description of what this function does)
+### 3. use any framework, implement a multi tab view in codepen
+### 4. use any framework, implement a select element with basic filtering based on user input
+### What are some pros and cons of flexbox and the grid system?  React redux
+### What is closure, output of JS code. 
+### 2 写段js code，实现一个可以click的button
+### Write a basic login form that talks to an API and redirects based on the response. Re-write or update the HTML form using jQuery and a single HTML page (SPA w/o a framework).  
+### Write a tree view list component that can be reused.  
+### Implement basic components/elements using an SPA framework of your choice (React, Vue, Angular, etc..).  
