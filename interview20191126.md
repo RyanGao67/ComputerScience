@@ -167,9 +167,64 @@ follow up:
 寻找最短的路径（移动步骤最少）
 没有坐标可以使用，也不能修改tile定义。
 我的做法就是dfs 加 一个set记录去过的tile的hash。 follow up的话我就说了改成bfs 但没时间写。
+```
+package tgao.indocresearch.org;
+
+public class GetTile {
+	public static void main(String[] args) {
+		Tile[][] test = new Tile[5][5];
+		for(int i=0;i<test.length;i++) {
+			for(int j=0;j<test[0].length;j++) {
+				test[i][j] = new Tile();
+			}
+		}
+		test[3][4].isGolden = true;
+		boolean[][] mem = new boolean[test.length][test[0].length];
+		
+		String result = findPath(0,0, test, mem);
+//		String shortestPath = findShortestPath(0, 0, test);
+		System.out.println(result);
+//		System.out.println(shortestPath);
+	}
+	
+	public static String findPath(int x, int y, Tile[][] maps, boolean[][] mem) {
+		return helper(x, y, maps, mem);
+	}
+	public static String helper(int x, int y, Tile[][] maps, boolean[][] mem) {
+
+		if(!(x>=0 && x<maps.length && y>=0 && y<maps.length) || mem[x][y] == true)return "0";
+		if(maps[x][y].isGolden) 			return "";
+		
+		mem[x][y] = true;
+		String n = helper(x-1, y, maps, mem);
+		String s = helper(x+1, y, maps, mem);
+		String e = helper(x, y+1, maps, mem);
+		String w = helper(x, y-1, maps, mem);
+		if(n!="0")return "n"+n;
+		if(s!="0")return "s"+s;
+		if(e!="0")return "e"+e;
+		if(w!="0")return "w"+w;
+		return "0";
+	}
+//	public static String findShortestPath(int x, int y, Tile[][] maps) {
+//		
+//	}
+
+}
+
+
+final class Tile{
+	boolean isGolden;
+	public Tile() {
+		this.isGolden = false;
+	}
+}
+```
 
 什麼是static, string vs stringbuffer vs stringbuilder, constructor, set vs list 這種
-
+[https://www.geeksforgeeks.org/static-keyword-java/](https://www.geeksforgeeks.org/static-keyword-java/)
+[https://www.journaldev.com/538/string-vs-stringbuffer-vs-stringbuilder](https://www.journaldev.com/538/string-vs-stringbuffer-vs-stringbuilder)
+[https://stackoverflow.com/questions/1035008/what-is-the-difference-between-set-and-list](https://stackoverflow.com/questions/1035008/what-is-the-difference-between-set-and-list)
 
 ### interview question
 public class Person {
