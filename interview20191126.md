@@ -120,6 +120,10 @@ Design hospital management
 ### What is transient?  java   
 What design pattern is used to implement a SynchronizedHashMap?  
 ```
+decorator
+```   
+[https://stackoverflow.com/questions/18794006/what-pattern-is-used-in-collections-synchronizedlist](https://stackoverflow.com/questions/18794006/what-pattern-is-used-in-collections-synchronizedlist)
+```
 String foo = "abc";
 String foo1 = "abc";
 what does (foo == foo1) evaluate to?  false
