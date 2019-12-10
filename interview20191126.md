@@ -1,8 +1,8 @@
 
 ### Java, with data base,
 ### How would you implement Java HashMap with basic data structures?  
-(https://leetcode.com/problems/design-hashmap/)[https://leetcode.com/problems/design-hashmap/]
-(https://leetcode.com/problems/design-hashset/)[https://leetcode.com/problems/design-hashset/]
+[https://leetcode.com/problems/design-hashmap/](https://leetcode.com/problems/design-hashmap/)
+[https://leetcode.com/problems/design-hashset/](https://leetcode.com/problems/design-hashset/)
 ### The third interview was more about the company. The interviewer talked a lot about the culture and the products, and said that he wanted to know what I could say about me that fitted their culture. Sounded more of a behavioral interview.
 ### The last interview was with the first person that I talked on the phone. It was more like a formal interview about the company, shw talked more about it's products and culture, asked me about some questions of how could I see myself in the company.
 ### How could I find the common Node of two simple linked lists with the minimum complexity?  
