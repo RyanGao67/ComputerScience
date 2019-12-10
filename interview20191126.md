@@ -6,7 +6,7 @@
 ### The third interview was more about the company. The interviewer talked a lot about the culture and the products, and said that he wanted to know what I could say about me that fitted their culture. Sounded more of a behavioral interview.
 ### The last interview was with the first person that I talked on the phone. It was more like a formal interview about the company, shw talked more about it's products and culture, asked me about some questions of how could I see myself in the company.
 ### How could I find the common Node of two simple linked lists with the minimum complexity?  
-(https://leetcode.com/problems/intersection-of-two-linked-lists/)[https://leetcode.com/problems/intersection-of-two-linked-lists/]
+[https://leetcode.com/problems/intersection-of-two-linked-lists/](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 ### BFS in a matrix  
 ### Given an infinite amount of resources, how can you  determine which build of software caused a problem?
 * I had several answers that were OK and would have worked, but the idea was about creating a binary search of the range of builds.
