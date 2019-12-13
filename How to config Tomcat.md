@@ -64,7 +64,7 @@ Modify the value of JAVA_HOME if the path to your java installation is different
 
 Save and close the file and notify systemd that we created a new unit file:   
 ```
-sudo systemctl deamon-reload
+sudo systemctl daemon-reload
 ```  
 Start the service status with the following command:  
 ```
