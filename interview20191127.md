@@ -262,6 +262,7 @@ public class VersionNumber {
 ### TCP HTTP
 ### implement LRU cache
 ### write arraylist add unittest
+[https://github.com/RyanGao67/JavaArrayList](https://github.com/RyanGao67/JavaArrayList)
 [https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)    
 ### invert a binary tree
 [https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)    
