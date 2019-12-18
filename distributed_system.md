@@ -85,3 +85,59 @@ create /parent/child "some child data"
  
 [https://github.com/RyanGao67/DistributedJAVA20191217/blob/master/src/main/java/indoc/dev/com/leader/election/LeaderElection.java](https://github.com/RyanGao67/DistributedJAVA20191217/blob/master/src/main/java/indoc/dev/com/leader/election/LeaderElection.java)
 
+
+### Multithreading vs distributed systems
+* For multithreading, passing a message from one thread to another is easy, since all threads running on the same application, they all had a shared memory space. race condition(lock), semaphore for condition variable for signalling
+* For distributed system, we do not have shared memory any more (can only use network)
+
+**Application HTTP, FTP, SMTP**
+**Transport TCP, UDP**
+**Internet IP, ICMP**
+***DataLink Ethernet, 802.11, ARP, RAPR*
+
+### Datalink
+* Physical delivery of data over a single link
+* in charge of encapsulation of the data
+* Flow control
+* Error detection
+* Error correction
+* Ethernet protocol
+* MAC address 1 <=> MAX address2 <=> MAC address3
+* postal trucks plans schedule ...
+### Internet layer
+* takes service from datalink layer
+* delivering data across multiple network
+* routing the packegs from source computer to destination computer (IP)
+* In this layer obtaining the IP address of computer we want to communicate
+* IP address the address of recepient 
+(Using internet layer only, we can delever the package to target computer, but we do not know which application process is the package intended for)
+### Transport layer
+* end to end   
+* one process to another process   
+* each end point (socket) identify itself as a 16 bits port(8081)  the listening port is chosen ahead of time by the destination application, The source port is generated on the fly by the sender depending on the ports available at the moment   
+* User datagram protocol(udp)  
+  * Connectionless
+  * best effort - unreliable
+  * messages can be lost duplicatied redordered
+  * based on a unit called datagram which is limited in size
+  * UDP is preferred when the speed and simplicity is more important than reliability
+  * UDP use cases : sending  debug information to a distributed logging service
+  * really time video/ online game
+  * allow broadcasting decoupling between sender and receivers
+* transmission control protocol(tcp)
+  * reliable
+  * connection between 2 points 
+  * need to be created before data is sent
+  * shut down in the end
+  * unlike individual datagram, tcp works like a streaming interface(more popular in distributed)
+  
+  * Because TCP is based on exactly two points , even if we have two sources connected to the same IP and port , data flow will be split into two socket, and will be handle seperately by the application and os
+  * Each tcp connection is identified by the full tuple source IP port and destination ip port
+  * The only problem is that TCP works as plain stream of bytes(not distinguishing which bytes belong to what message)
+  
+### Application layer
+* For the precious problem we need application layer
+* Different protocal
+
+  
+  
