@@ -25,6 +25,7 @@ A process running on a dedicated machine as part of a distributed system (graph 
 * Automatically elect the lead node - if the leader become unavailable, the system will automatically elect a new leader, and when the old leader recovers, the it will be no more a leader, it is a normal node
 * ZooKeeper typically runs ina cluster of an odd number of nodes, higher than 3
 * With zookeeper, instead of talking to each other, the nodes are talking to zookeeper server
+![./img/distributed1.png](./img/distributed1.png)
 * Zookeeper's abstraction and data model (each element in this tree(virtual file system) is a znode)
   * Znode is hybrid bwtween file and ditrectory(store like a file, have children like a directory)
   
