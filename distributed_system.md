@@ -26,8 +26,10 @@ A process running on a dedicated machine as part of a distributed system (graph 
 * ZooKeeper typically runs ina cluster of an odd number of nodes, higher than 3
 * With zookeeper, instead of talking to each other, the nodes are talking to zookeeper server
 ![./img/distributed1.png](./img/distributed1.png)
+
 * Zookeeper's abstraction and data model (each element in this tree(virtual file system) is a znode)
-  * Znode is hybrid bwtween file and ditrectory(store like a file, have children like a directory)
+  * Znode is hybrid between file and ditrectory(store like a file, have children like a directory)
+![./img/distributed2.png](./img/distributed2.png)
   
 * Persistent znode: stay between sessions(If one application disconnects from zookeeper and reconnects again, the persistent znode created by our application stays intact with all its children and data)
 * Ephemeral znode is deleted as soon as the application that creates the znode disconnects from zookeeper
@@ -135,10 +137,13 @@ create /parent/child "some child data"
   * Because TCP is based on exactly two points , even if we have two sources connected to the same IP and port , data flow will be split into two socket, and will be handle seperately by the application and os
   * Each tcp connection is identified by the full tuple source IP port and destination ip port
   * The only problem is that TCP works as plain stream of bytes(not distinguishing which bytes belong to what message)
-  
+
+![./img/distributed3.png](./img/distributed3.png)  
 ### Application layer
 * For the precious problem we need application layer
 * Different protocal
 
-  
+![./img/distributed4.png](./img/distributed4.png)
+![./img/distributed5.png](./img/distributed5.png) 
+![./img/distributed6.png](./img/distributed6.png) 
   
