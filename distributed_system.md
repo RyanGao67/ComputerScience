@@ -147,3 +147,10 @@ create /parent/child "some child data"
 ![./img/distributed5.png](./img/distributed5.png) 
 ![./img/distributed6.png](./img/distributed6.png) 
   
+  
+  
+### HTTP request structure
+* method, Path, protocol version
+* Http headers
+* Message body
+method : get head post put delete trace connect options patch
