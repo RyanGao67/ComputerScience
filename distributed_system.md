@@ -174,6 +174,7 @@ method : get head post put delete trace connect options patch
 ### Layer4 (Transport) Load balancing
 * The load balancer performs simple TCP packets forwarding between the client and the abckend servers
 * This the most low everhead balancing mode, since the load balancer don't inspect the content of the TCP stream beyong the first few packets
+![./img/distributed7.png](./img/distributed7.png)
 
 ### Layer 7 (Application) load balancing 
 * Can make smarter routing decisions based on the HTTP header
@@ -185,7 +186,8 @@ method : get head post put delete trace connect options patch
   * browser cookies
   
   * The Request relative URI (path) is part of the HTTP header. If we configure the load balancer in TCP mode, the HTTP header will not be considered
-  
+![./img/distributed8.png](./img/distributed8.png)
+
 ### High Availability Proxy (HAProxy)
 * HAproxy - Reliable, High Performance TCP/HTTP load balancer
 
@@ -219,6 +221,9 @@ method : get head post put delete trace connect options patch
   * minimum latency depends on the geographical location of the database instance and the user
   * limited to the memory a single machine can have
   
+
+![./img/distributed9.png](./img/distributed9.png)
+
 ### Sharding based on Key
 * Sharding is done based on the record's key
 * The key determines in which shard to find an existing record and to add a new record with a new key
@@ -230,6 +235,9 @@ method : get head post put delete trace connect options patch
   * keys with close values will likely not fall in the same shard
   * range based queries will span multiple shards
   
+![./img/distributed10.png](./img/distributed10.png)
+![./img/distributed11.png](./img/distributed11.png)
+
 ### range based sharding 
 * In range based strategy we divide the keyspace into multiple contiguous ranges
 * Records with nearby keys will more likely end up in the same shard(range based queries will be a lot more efficient)
@@ -243,6 +251,8 @@ method : get head post put delete trace connect options patch
   * Fault Tolerance
   * scalability / performance
   
+![./img/distributed12.png](./img/distributed12.png)
+
 ### Replicated Database architectures
 * master slave
   * all the write operation gose  to master
