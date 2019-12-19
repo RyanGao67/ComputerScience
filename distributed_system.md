@@ -154,3 +154,124 @@ create /parent/child "some child data"
 * Http headers
 * Message body
 method : get head post put delete trace connect options patch
+
+
+### load balancing
+* Round robin
+* source IP hash motivation. 
+  * Example, maintaining online shopping cart state between connection loses or browser refresh (Requests from the same user should go to the same server throughout the entire session)
+  * Sticky session Hash(Source.IP) = Server #3
+  
+* The problem of statistical load balancing (round robin)
+  ** We assume that spreading the requests evently would also spread the load evenly
+  ** Not all users are using the system the same way
+  ** not all requests require the same amount of resources
+  
+* Least connection 
+* Weighted Response Time
+* Agent Based polity(Agent process will measure the CPU utilization, inbound outbound network traffic, disk operations memory utilization)
+
+### Layer4 (Transport) Load balancing
+* The load balancer performs simple TCP packets forwarding between the client and the abckend servers
+* This the most low everhead balancing mode, since the load balancer don't inspect the content of the TCP stream beyong the first few packets
+
+### Layer 7 (Application) load balancing 
+* Can make smarter routing decisions based on the HTTP header
+* Load balancer inspects TCP packets and HTTP header
+* Can route requests to different clusters of servers based on 
+  * Request URL
+  * Type of requested data
+  * HTTP methos 
+  * browser cookies
+  
+  * The Request relative URI (path) is part of the HTTP header. If we configure the load balancer in TCP mode, the HTTP header will not be considered
+  
+### High Availability Proxy (HAProxy)
+* HAproxy - Reliable, High Performance TCP/HTTP load balancer
+
+### Database vs File System
+* A file system is a lower level, general purpose approach to storage of data of any format, structure or size
+* Best for unstructured data, or data with no relationship to other data
+* for example video files audio files, text files, meory logs
+
+* A database is a higher level of abstraction that may or may not store data in the file system underneath
+  * an application that provides additional capabilities query landuage/engine, caching and performance optimizations
+  * provides restrictions on structure, relationship and format
+  * guarantees acid transactions
+    * Atomicity
+    * Consistency
+    * isolation
+    * durability
+  * database is easy to build and replace
+
+* SQL vs noSQL
+* What we want from a DB
+  * Availability
+  * Scalability
+  * Fault Tolerance
+### Problems of centralized database issures
+* Single point of failure
+  * Losing a database is a lot worse than losing a compute node
+  * Temporary failure to operate the business
+* Performance bottleneck
+  * Parallelism is limited to the number of cores in a machine
+  * Limited connections the OS and network card can support
+  * minimum latency depends on the geographical location of the database instance and the user
+  * limited to the memory a single machine can have
+  
+### Sharding based on Key
+* Sharding is done based on the record's key
+* The key determines in which shard to find an existing record and to add a new record with a new key
+* advantage: 
+  * with monotonically increasing keys and a good hash function 
+  * we can achieve even data distribution
+  
+* disadvantage
+  * keys with close values will likely not fall in the same shard
+  * range based queries will span multiple shards
+  
+### range based sharding 
+* In range based strategy we divide the keyspace into multiple contiguous ranges
+* Records with nearby keys will more likely end up in the same shard(range based queries will be a lot more efficient)
+
+### Dynamic cluster resizing 
+* consistent hashing(understand)
+
+### replication vs sharding
+* replica 
+  * high available (router failure)
+  * Fault Tolerance
+  * scalability / performance
+  
+### Replicated Database architectures
+* master slave
+  * all the write operation gose  to master
+  * all the read operation goes to slave
+* master master
+---> Eventual consistency
+* in this model, if no further updates are made, eventually all readers will have access to the newest data
+* However twmporarily some readers may see stale data
+* provides lower latency and higher availability
+* good choice for systems that do not need to have the most up to data data across the board
+* example : posts updates to social media profile
+* analytics for product ratings and number of reviews
+
+---> strict consistency
+* In strict consitency, the writer will not get an acknowledgement until we can guarantee that all the readers will see the new data
+* slows down operations and limits system's availability(if some replicas are temporatily not accessible)
+* essential for systems that need to be consistent across all the services
+* Examples: bank account 
+* number of items in a store's inventory
+* avaiblable booked seats ina theater
+
+### Quorum consensus - Record version
+* Record: key | Data | Version
+* Every update to a record increments the version number
+* old record: key1 | data1 | 1
+* new record: key1 | data2 | 2
+
+R: Minimum number of nodes a reader needs to read from 
+W: Minimum number of nodes a writer needs to write to
+N: Number of nodes in the database cluster
+
+R+W > N cuaranteed strict consistency (understand why)
