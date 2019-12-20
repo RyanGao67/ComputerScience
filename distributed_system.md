@@ -285,3 +285,51 @@ W: Minimum number of nodes a writer needs to write to
 N: Number of nodes in the database cluster
 
 R+W > N cuaranteed strict consistency (understand why)
+
+
+### MongoDB
+* create read update delete
+* document _id is immutatle and connot be changed after the document's creation
+
+### Message brokers
+* Why we need a different way to communication between services
+  * One of the properties of direct communication is it is inherently synchronous
+  * broadcasting event to many sevices
+  * The more servers want to receive the event the more direct connections the publisher servers need to open
+  * traffic peaks and valleys 
+* Message Broker difinition
+  * Intermediary software (middleware) that passes messages between senders and receivers
+  * May provide addtional capabilities like 
+    * Data transformation
+    * validation
+    * Queueing
+    * Routing
+  * Full decoupling between sanders and receivers
+  
+  * tradeoff
+    * To avoid the message broker from being the singlue point of failure or a bottleneck
+    * Message brokers need to be scalable and fault tolerant
+    * message brokers are distributed systems by themselves which makes them harder to design and configure
+    * the latency, when using a message broker, in most cases is higher than when using direct communication
+    
+  * Use case
+    * Distributed queue - Message dilivery froma single producer to a single consumer
+    * publish / subscribe - Publishing of a message froma fingle publisher to a group of subscribed consumers
+    
+  
+### Apache Kafka
+* Distributed streaming platform, for exchanging messages between different servers
+* Can be described as a Message Broker on a high level
+* internally kafka is a distributed system that may use multiple message broker to handle the messages. 
+
+* There are many great message brokers 
+  * Open Source : RabbitMQ, ActiveMQ etc...
+  * Proprietary messaging systems offered by the cloud vendors
+  * apache kafka is open source and provides:
+    * distributed queuing
+    * publish/ subcribe
+    * beautifully designed distributed system for high scalability and fault tolerance
+    
+* Kafka scalability through partitioning
+  * Kafka topic partitioning allows us to scale a topic horizontally
+  * more partitions in a topic -> higher parallelism
