@@ -23,6 +23,38 @@ Single responsible principle
 * Creational patterns
 * Structural patterns
 * Behavioral Patterns
+### Prototype pattern
+```java
+package designPattern;
+
+public class PrototypeAddress {
+	public String streetAddress, city, country;
+	public PrototypeAddress(String streetAddress, String city, String country) {
+		this.streetAddress = streetAddress;
+		this.city = city;
+		this.country = country;
+	}
+	
+	public PrototypeAddress (PrototypeAddress other) {
+		this(other.streetAddress, other.city, other.country);
+	}
+}
+class Employee{
+	public String name;
+	public PrototypeAddress address;
+	
+	public Employee(String name, PrototypeAddress address) {
+		this.name = name;
+		this.address = address;
+	}
+	public Employee(Employee other) {
+		name = other.name;
+		address = new PrototypeAddress(other.address);
+	}
+	
+}
+
+```
 
 ### Builder pattern
 * when piecewise object construction is complicated, provide an API for doing it succinctly
