@@ -184,8 +184,7 @@ public class SingletonLazy {
 	}
 	// race condition
 //	public static SingletonLazy getInstance() {
-//		if(instance!=null) {}
-//		else {instance=new SingletonLazy();}
+//		if {instance=new SingletonLazy();}
 //		return instance;
 //	}
 	// double-checked locking
