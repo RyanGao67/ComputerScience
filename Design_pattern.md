@@ -111,3 +111,94 @@ class FactoryPattern{
  
  
  ```
+ 
+ 
+ ### Singleton
+ * For some somponents it only makes sense to have one in the system
+   * Database repository
+   * Object factory
+ * E.g. the contructor call is expensive
+   * we only do it once
+   * we provide everyone with the same instance
+ * Want to prevent anyone creating additional copies
+ * Need to take care of lazy instantiation and thread safety
+ 
+ * A singleton is a component which is instantiated only once. 
+
+**prevent serializable**
+ ```java
+ package designPattern;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class BasicSingleton implements Serializable{
+	private BasicSingleton() {}
+	private static final BasicSingleton INSTANCE = new BasicSingleton();
+	public static BasicSingleton getInstance() {return INSTANCE;}
+	private int value = 0;
+	public int getValue() {return value;}
+	public void setValue(int value) {this.value = value;}
+	// solution for serialization
+	protected Object readResolve() {return INSTANCE;}
+}
+public class SingletonSerialize {
+	static void saveToFile(BasicSingleton singleton, String filename) throws Exception{
+		try(FileOutputStream fileOut = new FileOutputStream(filename);
+			ObjectOutputStream out = new ObjectOutputStream(fileOut)){
+			out.writeObject(singleton);
+		}
+	}
+	static BasicSingleton readFromFile(String filename) throws Exception{
+		try(FileInputStream fileIn = new FileInputStream(filename);
+			ObjectInputStream in = new ObjectInputStream(fileIn)){
+			return (BasicSingleton) in.readObject();
+		}
+	}
+	public static void main(String[] args) throws Exception {
+		// 1. reflection
+		// 2. serialization (when you deserialize an object, JVM doesn't care your constructor is private)
+		BasicSingleton singleton = BasicSingleton.getInstance();
+		singleton.setValue(111);
+		String filename = "singleton.bin";
+		saveToFile(singleton,filename);
+		singleton.setValue(222);
+		BasicSingleton singleton2 = readFromFile(filename);
+		
+		System.out.println(singleton==singleton2);
+		
+	}
+}
+ ```
+**thread safe**
+```java
+package designPattern;
+
+public class SingletonLazy {
+	private static SingletonLazy instance;
+	private SingletonLazy() {
+		System.out.println("initializing a lazy singleton");
+	}
+	// race condition
+//	public static SingletonLazy getInstance() {
+//		if(instance!=null) {}
+//		else {instance=new SingletonLazy();}
+//		return instance;
+//	}
+	// double-checked locking
+	public static SingletonLazy getInstance() {
+		if(instance==null) {
+			synchronized (SingletonLazy.class) {
+				if(instance==null) {
+					instance = new SingletonLazy();
+				}
+			}
+		}
+		return instance;
+	}
+}
+
+```
