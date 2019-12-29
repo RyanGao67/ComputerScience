@@ -21,6 +21,7 @@ A process running on a dedicated machine as part of a distributed system (graph 
 * The nodes in a cluster are working on the same task, and typically are running the same code  
 
 ### ZooKeeper
+* Zookeeper is a high performance coordination service designed specifically for distributed systems
 * Attemp 1 - manually elect a leader node(distributeing the work and collecting the result)
 * Automatically elect the lead node - if the leader become unavailable, the system will automatically elect a new leader, and when the old leader recovers, the it will be no more a leader, it is a normal node
 * ZooKeeper typically runs ina cluster of an odd number of nodes, higher than 3
@@ -86,8 +87,11 @@ create /parent/child "some child data"
 * only one node can succeed
 * indicates bad design, can negatively impact the performance and can completetly freeze the cluster
  
-[https://github.com/RyanGao67/DistributedJAVA20191217/blob/master/src/main/java/indoc/dev/com/leader/election/LeaderElection.java](https://github.com/RyanGao67/DistributedJAVA20191217/blob/master/src/main/java/indoc/dev/com/leader/election/LeaderElection.java)
+* Code Example Leader Election
+[https://github.com/RyanGao67/Distributed_system_Leader_election/blob/master/src/main/java/testElectLeader/LeaderElection.java](https://github.com/RyanGao67/Distributed_system_Leader_election/blob/master/src/main/java/testElectLeader/LeaderElection.java)
 
+* Code Example Leader ReElection
+[https://github.com/RyanGao67/Distributed_system_leader_reElection/blob/master/leader-reelection-test/src/main/java/LeaderElection.java](https://github.com/RyanGao67/Distributed_system_leader_reElection/blob/master/leader-reelection-test/src/main/java/LeaderElection.java)
 
 ### Multithreading vs distributed systems
 * For multithreading, passing a message from one thread to another is easy, since all threads running on the same application, they all had a shared memory space. race condition(lock), semaphore for condition variable for signalling
