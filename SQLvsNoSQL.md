@@ -23,3 +23,25 @@ Sql
 3. no data repetition
 4. integrity checks
 5. harder scalable
+
+
+* Atomicity: The atomicity acid property in SQL. It means either all the operations (insert, update, delete) inside a transaction take place or none. Or you can say, all the statements (insert, update, delete) inside a transaction are either completed or rolled back.
+* Consistency: This SQL ACID property ensures database consistency. It means, whatever happens in the middle of the transaction, this property will never leave your database in a half-completed state. 
+If the transaction completed successfully, then it will apply all the changes to the database.
+If there is an error in a transaction, then all the changes that already made will be rolled back automatically. It means the database will restore to its state that it had before the transaction started.
+If there is a system failure in the middle of the transaction, then also, all the changes made already will automatically rollback. 
+* Isolation: Every transaction is individual, and One transaction can’t access the result of other transactions until the transaction completed. Or, you can’t perform the same operation using multiple transactions at the same time. We will explain this SQL acid property in a separate article.
+* Durability: Once the transaction completed, then the changes it has made to the database will be permanent. Even if there is a system failure, or any abnormal changes also, this SQL acid property will safeguard the committed data.
+
+
+They are somewhat related but there's a subtle difference.
+
+Atomicity means that your transaction either happens or doesn't happen.
+
+Consistency means that things like referential integrity are enforced.
+
+Let's say you start a transaction to add two rows (a credit and debit which forms a single bank transaction). The atomicity of this has nothing to do with the consistency of the database. All it means it that either both rows or neither row will be added.
+
+On the consistency front, let's say you have a foreign key constraint from orders to products. If you try to add an order that refers to a non-existent product, that's when consistency kicks in to prevent you from doing it.
+
+Both are about maintaining the database in a workable state, hence their similarity. The former example will ensure the bank doesn't lose money (or steal it from you), the latter will ensure your application doesn't get surprised by orders for products you know nothing about.
