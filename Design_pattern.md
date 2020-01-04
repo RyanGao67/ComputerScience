@@ -308,22 +308,8 @@ public class InnerStaticSingleton{
 ```
 **Dependency injection for test singleton**
 ```java
-package designPattern;
-import com.google.common.collect.Iterables;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import java.io.File;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-
-
+package designPattern;import com.google.common.collect.Iterables;import org.junit.Test;import static org.junit.Assert.assertEquals;import static org.junit.Assert.assertSame;import java.io.File;import java.nio.charset.Charset;
+import java.nio.file.Files;import java.nio.file.Path;import java.nio.file.Paths;import java.util.Dictionary;import java.util.HashMap;import java.util.Hashtable;import java.util.List;
 interface Database{
   int getPopulation(String name);
 }
