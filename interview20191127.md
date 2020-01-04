@@ -261,6 +261,7 @@ public class VersionNumber {
 ```
 ### TCP HTTP
 ### implement LRU cache
+[https://leetcode.com/problems/lru-cache/submissions/](https://leetcode.com/problems/lru-cache/submissions/)
 ### write arraylist add unittest
 [https://github.com/RyanGao67/JavaArrayList](https://github.com/RyanGao67/JavaArrayList)
 [https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)    
@@ -280,6 +281,36 @@ class Solution(object):
 ### find second higest element
 [https://leetcode.com/problems/kth-largest-element-in-a-stream/](https://leetcode.com/problems/kth-largest-element-in-a-stream/)    
 ### what is immutable class write a immutable class
+* Declare the class as final so it can’t be extended.
+* Make all fields private so that direct access is not allowed.
+* Don’t provide setter methods for variables
+* Make all mutable fields final so that it’s value can be assigned only once.
+* Initialize all the fields via a constructor performing deep copy.
+* Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+```java
+public final class FinalClassExample {
+	private final int id;
+	private final String name;
+	private final HashMap<String,String> testMap;
+	public int getId() {		return id;	}
+	public String getName() {		return name;	}
+	public HashMap<String, String> getTestMap() {
+		return (HashMap<String, String>) testMap.clone();
+	}
+	public FinalClassExample(int i, String n, HashMap<String,String> hm){
+		this.id=i;
+		this.name=n;
+		HashMap<String,String> tempMap=new HashMap<String,String>();
+		String key;
+		Iterator<String> it = hm.keySet().iterator();
+		while(it.hasNext()){
+			key=it.next();
+			tempMap.put(key, hm.get(key));
+		}
+		this.testMap=tempMap;
+	}
+}
+```
 ### overiding static method,write singleton class
 ### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
 ### fizzbuzz  
