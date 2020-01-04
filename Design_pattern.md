@@ -293,3 +293,16 @@ public class SingletonLazy {
 }
 
 ```
+
+**thread safe**
+```java
+public class InnerStaticSingleton{
+	private InnerStaticSingleton(){}
+	private static class Imple{
+		private static final InnerStaticSingleton ins = new InnerStaticSingleton();
+	}
+	public InnerStaticSingleton getInstance(){
+		return Imple.ins;
+	}
+}
+```
