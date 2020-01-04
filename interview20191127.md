@@ -376,6 +376,28 @@ class GFG
 ### Dependency inversion yilaizhuru kongzhifanzhuan foreach(S)
 ### How to partition a huge volume of data for distributed processing(S)
 ### Thread class, Race condition, Callable and Runnable Synchronisation(S)
+```java
+if (x == 5) // The "Check"
+{
+   y = x * 2; // The "Act"
+
+   // If another thread changed x in between "if (x == 5)" and "y = x * 2" above,
+   // y will not be equal to 10.
+}
+```
+The point being, y could be 10, or it could be anything, depending on whether another thread changed x in between the check and act. You have no real way of knowing.
+
+In order to prevent race conditions from occurring, you would typically put a lock around the shared data to ensure only one thread can access the data at a time. This would mean something like this:
+```java
+// Obtain lock for x
+if (x == 5)
+{
+   y = x * 2; // Now, nothing can change x until the lock is released. 
+              // Therefore y = 10
+}
+// release lock for x
+```
+
 ### Core java, Multithreading, sql joins and corelated
 ### How to change design in a distributed environment
 ### How to handle variable update on GUI thread in a multithread environemnt(s)
