@@ -1,7 +1,9 @@
 
 ### sql nsql
+[https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK](https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK)
 ### Spring di ioc
 ### docker vs vm
+[https://geekflare.com/docker-vs-virtual-machine/](https://geekflare.com/docker-vs-virtual-machine/)
 ### singleton factory
 ### Final, Finally, Finalize
 final	| finally	| finalize
