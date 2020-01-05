@@ -431,10 +431,10 @@ if (x == 5)
 // release lock for x
 ```
 
-### Core java, Multithreading, sql joins and corelated
+### sql joins and corelated
+[https://www.geeksforgeeks.org/sql-correlated-subqueries/](https://www.geeksforgeeks.org/sql-correlated-subqueries/)
 ### How to change design in a distributed environment
 ### How to handle variable update on GUI thread in a multithread environemnt(s)
-### immutable class 
 ### how concurrent hashmap works 
 ### How to apply security on restful web services if application has more write operation s and less read opperations 
 ### why wait and notify should be called from  syncronized block
