@@ -377,8 +377,9 @@ public final class FinalClassExample {
 	}
 }
 ```
-### overiding static method,write singleton class
-### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
+### overiding static method
+### ER diagram  
+[https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/](https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/)
 ### where js run
 
 * JavaScript is what is called a Client-side Scripting Language. That means that it is a computer programming language that runs inside an Internet browser (a browser is also known as a Web client because it connects to a Web server to download pages).
