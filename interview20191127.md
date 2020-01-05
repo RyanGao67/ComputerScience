@@ -378,6 +378,8 @@ public final class FinalClassExample {
 }
 ```
 ### overiding static method
+[https://www.geeksforgeeks.org/can-we-overload-or-override-static-methods-in-java/](https://www.geeksforgeeks.org/can-we-overload-or-override-static-methods-in-java/)
+
 ### ER diagram  
 [https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/](https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/)
 ### where js run
