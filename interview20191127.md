@@ -1,19 +1,89 @@
+### comparator java maximum of tree instance
+[https://leetcode.com/problems/connecting-cities-with-minimum-cost/](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)     
+[https://leetcode.com/problems/optimize-water-distribution-in-a-village/](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)     
+[https://leetcode.com/problems/minimum-path-sum/](https://leetcode.com/problems/minimum-path-sum/)  
+### implement LRU cache
+[https://leetcode.com/problems/lru-cache/submissions/](https://leetcode.com/problems/lru-cache/submissions/)
+### write arraylist add unittest
+[https://github.com/RyanGao67/JavaArrayList](https://github.com/RyanGao67/JavaArrayList)
+[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)    
+### invert a binary tree
+[https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)    
+### given a list of integers, count the number of swaps it will take to move the even numbers to left half and odd to right
+```java
+    static void segregateEvenOdd(int arr[]) 
+    { 
+        /* Initialize left and right indexes */
+        int left = 0, right = arr.length - 1; 
+        while (left < right) 
+        { 
+            /* Increment left index while we see 0 at left */
+            while (arr[left]%2 == 0 && left < right) 
+                left++; 
+  
+            /* Decrement right index while we see 1 at right */
+            while (arr[right]%2 == 1 && left < right) 
+                right--; 
+  
+            if (left < right) 
+            { 
+                /* Swap arr[left] and arr[right]*/
+                int temp = arr[left]; 
+                arr[left] = arr[right]; 
+                arr[right] = temp; 
+                left++; 
+                right--; 
+            } 
+        } 
+    } 
+```
+### x=x+y;y=x-y;x=x-y
+### version number x/y/z return more recent
+```java
+package tgao.indocresearch.org;
+import java.util.Arrays;
+import java.util.Comparator;
+public class VersionNumber {
+	static class CustomerSorting implements Comparator<String>{
+		@Override
+		public int compare(String arg0, String arg1) {
+			// TODO Auto-generated method stub
+			String[] args1 = arg0.split("/");
+			String[] args2 = arg1.split("/");
+			int i=0,j=0;
+			while(i<args1.length && j<args2.length) {
+				if(args1[i].compareTo(args2[j])>0)return -1;
+				if(args1[i].compareTo(args2[j])<0)return 1;
+				i++;j++;
+			}
+			if(i<args1.length)return -1;
+			if(j<args2.length)return 1;
+			return 0;
+		}
+	}
+	public static void main(String[] args) {
+		String[] versions = new String[] {"1/2/3", "1/3/4", "2/2/1"};
+		Arrays.sort(versions, new CustomerSorting());
+		for(int i=0;i<versions.length;i++) {
+			System.out.println(versions[i]);
+		}
+	}
+}
+```
 
-### sql nsql
-[https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK](https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK)
-### Spring di ioc
-### docker vs vm
-[https://geekflare.com/docker-vs-virtual-machine/](https://geekflare.com/docker-vs-virtual-machine/)
-### singleton factory
-### Final, Finally, Finalize
-final	| finally	| finalize
---------|---------------|---------
-Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.	| Finally is used to place important code, it will be executed whether exception is handled or not.	| Finalize is used to perform clean up processing just before object is garbage collected.
-Final is a keyword.	| Finally is a block.	| Finalize is a method.
-
-
-[https://www.javatpoint.com/difference-between-final-finally-and-finalize](https://www.javatpoint.com/difference-between-final-finally-and-finalize)  
-
+### anagram
+[https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)  
+[https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)   
+[https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)   
+[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)  
+### factorial 
+```java
+  int i,fact=1;  
+  int number=5;//It is the number to calculate factorial    
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+```
 ### traverse a map
 ```java
         HashMap<String, Integer> hm =  HashMap<String, Integer>(); 
@@ -23,11 +93,7 @@ Final is a keyword.	| Finally is a block.	| Finalize is a method.
             int value = ((int)mapElement.getValue() + 10); 
         } 
 ```
-### anagram
-[https://leetcode.com/problems/valid-anagram/](https://leetcode.com/problems/valid-anagram/)  
-[https://leetcode.com/problems/find-anagram-mappings/](https://leetcode.com/problems/find-anagram-mappings/)   
-[https://leetcode.com/problems/find-all-anagrams-in-a-string/](https://leetcode.com/problems/find-all-anagrams-in-a-string/)   
-[https://leetcode.com/problems/group-anagrams/](https://leetcode.com/problems/group-anagrams/)  
+
 
 ### count number of unique words in a n array of words
 [https://leetcode.com/problems/unique-word-abbreviation/](https://leetcode.com/problems/unique-word-abbreviation/)    
@@ -96,25 +162,89 @@ On the other hand, in the case of NIO, the methods are non-blocking. This means 
 [https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions](https://leetcode.com/problems/fibonacci-number/discuss/215992/Java-Solutions)    
 [https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/)    
 [https://leetcode.com/problems/reverse-linked-list-ii/](https://leetcode.com/problems/reverse-linked-list-ii/)    
+
+
+### sql nsql
+[https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK](https://www.educative.io/courses/grokking-the-system-design-interview/YQlK1mDPgpK)
+### Spring di ioc
+### docker vs vm
+[https://geekflare.com/docker-vs-virtual-machine/](https://geekflare.com/docker-vs-virtual-machine/)
+### singleton factory
+* singleton   
+```java
+package designPattern;
+public class SingletonLazy {
+	private static SingletonLazy instance;
+	private SingletonLazy() {
+		System.out.println("initializing a lazy singleton");
+	}
+	// race condition
+//	public static SingletonLazy getInstance() {
+//		if(instance!=null) {}
+//		else {instance=new SingletonLazy();}
+//		return instance;
+//	}
+	// double-checked locking
+	public static SingletonLazy getInstance() {
+		if(instance==null) {
+			synchronized (SingletonLazy.class) {
+				if(instance==null) {
+					instance = new SingletonLazy();
+				}
+			}
+		}
+		return instance;
+	}
+}
+```   
+* factory
+```java
+package designPattern;
+class Point{
+	private double x, y;
+	private Point(double a, double b) {
+		this.x = a;
+		this.y = b;
+	}
+	static class Factory{
+		public static Point newCartesianPoint(double a, double b) {
+			return new Point(a, b);
+		}
+		public static Point newPolarPoint(double a, double b) {
+			return new Point(Math.cos(a)*b, Math.sin(a)*b);
+		}
+	}
+	@Override
+	public String toString() {return "x="+x+";y="+y;}
+}
+class FactoryPattern{
+  public static void main(String[] args){
+    Point point1 = Point.Factory.newCartesianPoint(1, 2);
+    Point point2 = Point.Factory.newPolarPoint(10, 3.14);
+    System.out.println(point1);
+    System.out.println(point2);
+  }
+}
+```
+### Final, Finally, Finalize
+final	| finally	| finalize
+--------|---------------|---------
+Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.	| Finally is used to place important code, it will be executed whether exception is handled or not.	| Finalize is used to perform clean up processing just before object is garbage collected.
+Final is a keyword.	| Finally is a block.	| Finalize is a method.
+
+
+[https://www.javatpoint.com/difference-between-final-finally-and-finalize](https://www.javatpoint.com/difference-between-final-finally-and-finalize)  
+
+
 ### restful vs soap 
 [https://github.com/RyanGao67/ComputerScience/blob/master/Microservice_with_spring_boot.md](https://github.com/RyanGao67/ComputerScience/blob/master/Microservice_with_spring_boot.md) 
 ### interface, abstract class polymorphism example
 [https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)   
-### factorial 
-```java
-  int i,fact=1;  
-  int number=5;//It is the number to calculate factorial    
-  for(i=1;i<=number;i++){    
-      fact=fact*i;    
-  }    
-```
+
 ### Name a example of a team experience that did not go well 
 ### Project you are proud of 
-### comparator java maximum of tree instance
-[https://leetcode.com/problems/connecting-cities-with-minimum-cost/](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)     
-[https://leetcode.com/problems/optimize-water-distribution-in-a-village/](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)     
-[https://leetcode.com/problems/minimum-path-sum/](https://leetcode.com/problems/minimum-path-sum/)     
-### Why you want to work in tr
+### Why you want to work in tr  
+
 ### Sorting
 ```java
 public static void mergeSort(int[] array, int left, int right) {
@@ -200,75 +330,9 @@ public static void quickSort(int[] array, int begin, int end) {
 ### How to add dynamic library in java
 [https://cs-fundamentals.com/tech-interview/c/difference-between-static-and-dynamic-linking.php](https://cs-fundamentals.com/tech-interview/c/difference-between-static-and-dynamic-linking.php)   
 [https://www.chilkatsoft.com/java-loadLibrary-Linux.asp](https://www.chilkatsoft.com/java-loadLibrary-Linux.asp)   
-### given a list of integers, count the number of swaps it will take to move the even numbers to left half and odd to right
-```java
-    static void segregateEvenOdd(int arr[]) 
-    { 
-        /* Initialize left and right indexes */
-        int left = 0, right = arr.length - 1; 
-        while (left < right) 
-        { 
-            /* Increment left index while we see 0 at left */
-            while (arr[left]%2 == 0 && left < right) 
-                left++; 
-  
-            /* Decrement right index while we see 1 at right */
-            while (arr[right]%2 == 1 && left < right) 
-                right--; 
-  
-            if (left < right) 
-            { 
-                /* Swap arr[left] and arr[right]*/
-                int temp = arr[left]; 
-                arr[left] = arr[right]; 
-                arr[right] = temp; 
-                left++; 
-                right--; 
-            } 
-        } 
-    } 
-```
-### x=x+y;y=x-y;x=x-y
-### version number x/y/z return more recent
-```java
-package tgao.indocresearch.org;
-import java.util.Arrays;
-import java.util.Comparator;
-public class VersionNumber {
-	static class CustomerSorting implements Comparator<String>{
-		@Override
-		public int compare(String arg0, String arg1) {
-			// TODO Auto-generated method stub
-			String[] args1 = arg0.split("/");
-			String[] args2 = arg1.split("/");
-			int i=0,j=0;
-			while(i<args1.length && j<args2.length) {
-				if(args1[i].compareTo(args2[j])>0)return -1;
-				if(args1[i].compareTo(args2[j])<0)return 1;
-				i++;j++;
-			}
-			if(i<args1.length)return -1;
-			if(j<args2.length)return 1;
-			return 0;
-		}
-	}
-	public static void main(String[] args) {
-		String[] versions = new String[] {"1/2/3", "1/3/4", "2/2/1"};
-		Arrays.sort(versions, new CustomerSorting());
-		for(int i=0;i<versions.length;i++) {
-			System.out.println(versions[i]);
-		}
-	}
-}
-```
+
 ### TCP HTTP
-### implement LRU cache
-[https://leetcode.com/problems/lru-cache/submissions/](https://leetcode.com/problems/lru-cache/submissions/)
-### write arraylist add unittest
-[https://github.com/RyanGao67/JavaArrayList](https://github.com/RyanGao67/JavaArrayList)
-[https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java](https://www.journaldev.com/110/how-to-implement-arraylist-with-array-in-java)    
-### invert a binary tree
-[https://leetcode.com/problems/invert-binary-tree/](https://leetcode.com/problems/invert-binary-tree/)    
+
 ### reverse a string using recursion
 ```python
 class Solution(object):
@@ -315,24 +379,24 @@ public final class FinalClassExample {
 ```
 ### overiding static method,write singleton class
 ### ER diagram https://www.guru99.com/er-diagram-tutorial-dbms.html
-### fizzbuzz  
 ### where js run
 
 * JavaScript is what is called a Client-side Scripting Language. That means that it is a computer programming language that runs inside an Internet browser (a browser is also known as a Web client because it connects to a Web server to download pages).
 
-### how to manipulate java string
 ### linked list vs arraylist
 * ArrayList is implemented as a resizable array. As more elements are added to ArrayList, its size is increased dynamically. It's elements can be accessed directly by using the get and set methods, since ArrayList is essentially an array.   
 * LinkedList is implemented as a double linked list. Its performance on add and remove is better than Arraylist, but worse on get and set methods.   
 * Vector is similar with ArrayList, but it is synchronized. ArrayList is a better choice if your program is thread-safe. Vector and ArrayList require space as more elements are added. Vector each time doubles its array size, while ArrayList grow 50% of its size each time.   
 * LinkedList, however, also implements Queue interface which adds more methods than ArrayList and Vector, such as offer(), peek(), poll(), etc.    Note: The default initial capacity of an ArrayList is pretty small. It is a good habit to construct the ArrayList with a higher initial capacity. This can avoid the resizing cost.    
-### process vs thread
+
 ### SQL haveing vs where
 [https://javarevisited.blogspot.com/2013/08/difference-between-where-vs-having-clause-SQL-databse-group-by-comparision.html](https://javarevisited.blogspot.com/2013/08/difference-between-where-vs-having-clause-SQL-databse-group-by-comparision.html)  
 ### palindrome
 ### treeset
 [https://www.geeksforgeeks.org/treeset-in-java-with-examples/](https://www.geeksforgeeks.org/treeset-in-java-with-examples/)  
 ### deep swallow copy
+[https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy)
+
 ### compiler vs interpreter  
 
 A compiler takes entire program and converts it into object code which is typically stored in a file. The object code is also refereed as binary code and can be directly executed by the machine after linking. Examples of compiled programming languages are C and C++.
@@ -340,7 +404,7 @@ A compiler takes entire program and converts it into object code which is typica
 An Interpreter directly executes instructions written in a programming or scripting language without previously converting them to an object code or machine code. Examples of interpreted languages are Perl, Python and Matlab.
 
 ### whata happends behind the scene when sql join   
-
+[https://www.periscopedata.com/blog/how-joins-work](https://www.periscopedata.com/blog/how-joins-work)
 
 ### 题目：
 Given two unsorted arrays arr1[] and arr2[]. They may contain duplicates. For each element in arr1[] count elements less than or equal to it in array arr2[].
@@ -404,10 +468,13 @@ class GFG
 ```
 
 
-### Design a object storing info about a pet shop animals and employer
-### design database for library
-### Dependency inversion yilaizhuru kongzhifanzhuan foreach(S)
-### How to partition a huge volume of data for distributed processing(S)
+
+### data normalization
+[https://techdifferences.com/difference-between-normalization-and-denormalization.html](https://techdifferences.com/difference-between-normalization-and-denormalization.html)
+
+### sql joins and corelated
+[https://www.geeksforgeeks.org/sql-correlated-subqueries/](https://www.geeksforgeeks.org/sql-correlated-subqueries/)
+
 ### Thread class, Race condition, Callable and Runnable Synchronisation(S)
 ```java
 if (x == 5) // The "Check"
@@ -431,8 +498,9 @@ if (x == 5)
 // release lock for x
 ```
 
-### sql joins and corelated
-[https://www.geeksforgeeks.org/sql-correlated-subqueries/](https://www.geeksforgeeks.org/sql-correlated-subqueries/)
+### Design a object storing info about a pet shop animals and employer
+### design database for library
+### How to partition a huge volume of data for distributed processing(S)
 ### How to change design in a distributed environment
 ### How to handle variable update on GUI thread in a multithread environemnt(s)
 ### how concurrent hashmap works 
@@ -440,8 +508,6 @@ if (x == 5)
 ### why wait and notify should be called from  syncronized block
 ### Hibernate JDBC
 ### plunker CSS
-### data normalization
-### implement singlton pattern
 ### design chessgame   hibernate first level cache second level coppy
 ### what is responsive design
 ### Socket programming java
