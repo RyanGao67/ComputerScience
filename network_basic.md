@@ -31,3 +31,16 @@ The data is then sent through network layer that handles things like mac address
 
 ### Example
 * You have a computer with internet connection. The transport layer creates 2^16(75000) ports on your computer.
+
+### Socket
+* Websocket will allow you to connect to a server's socket via TCP rather than HTTP
+* If the server does not allow websocket, socket io will fall over to Long polling, etc
+* Every process have tube comeing out of them, out of them can come and go data. 
+
+
+### Headers
+App=> Http, ftp, ssh [(header: metadata, for example, Content-type:text/html) + body]   
+Trans => TCP/UDP [(header: source port/Destination port/sequence number/acknowledge number)+http message]
+Network => IP [(header: checksum/source ip/destination ip) + tcp message  ]   
+Link=> (header:...)  
+physical => (header:...)   
