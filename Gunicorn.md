@@ -259,3 +259,56 @@ optional arguments:
                         the ``:``. [False]
                         
                         ```
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+GIT CI FILE
+
+deploy_stage:
+  stage: deploy
+  tags:
+    - deployement
+  script:
+    - export SSHPASS=$PASSA
+    - cd ~/ && rm -rf portal_muhc; rm -rf portal_2
+    - cd ~/ && git clone -b dev https://mamanuddin:$PASSG@git.indocresearch.org/aws_muhc/portal_muhc.git
+    - cd ~/portal_muhc && mv server muhc_backend
+    - sshpass -e scp -o stricthostkeychecking=no -r muhc_backend ubuntu@35.182.112.167:/home/ubuntu/
+    - sshpass -e ssh -o stricthostkeychecking=no ubuntu@35.182.112.167 'cd /home/ubuntu/muhc_backend/ && echo $PASSA | sudo -S service gunicorn restart'
+    
+   
+    - cd ~/ && mv portal_muhc portal_2
+    - sshpass -e scp -o stricthostkeychecking=no -r portal_2 ubuntu@35.183.166.207:/home/ubuntu/
+    - sshpass -e ssh -o stricthostkeychecking=no ubuntu@35.183.166.207 'cd /home/ubuntu/portal_2/ &&  npm install; rm -rf .git; pm2 kill; pm2 start /home/ubuntu/portal_2/node_modules/react-app-rewired/scripts/start.js;'
+    - cd ~/ && rm -rf portal_2
+
+ 
+
+Systemd file for gunicorn
+
+The path the file is /etc/systemd/system/gunicorn.service
+
+ 
+
+[Unit]
+Description=AmaanExample
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/muhc_backend/
+User=ubuntu
+ExecStart= /home/ubuntu/anaconda3/bin/gunicorn  -c gunicorn_config.py wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+ 
+
+After creating the file run sudo systemctl enable gunicorn
