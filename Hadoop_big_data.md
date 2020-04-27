@@ -142,3 +142,8 @@ Removing temp directory /tmp/RatingsBreakdown.maria_dev.20200423.190527.764509..
 ```
 
 ### Install hadoop on ubuntu [https://www.guru99.com/how-to-install-hadoop.html](https://www.guru99.com/how-to-install-hadoop.html)
+
+###  Find port number where HDFS is listening
+Approach 1: check $HADOOP_HOME/etc/hadoop/core-site.xml
+Approach 2: hdfs getconf -confKey fs.defaultFS  # ( new property ) 
+
