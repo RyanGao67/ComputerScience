@@ -141,3 +141,4 @@ Removing temp directory /tmp/RatingsBreakdown.maria_dev.20200423.190527.764509..
 
 ```
 
+### Install hadoop on ubuntu [https://www.guru99.com/how-to-install-hadoop.html](https://www.guru99.com/how-to-install-hadoop.html)
