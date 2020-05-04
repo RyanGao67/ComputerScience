@@ -47,3 +47,8 @@ When you create a thread, it just reuses the original address space and the same
 * copy on write: If a resource is duplicated but not modified, it is not necessary to create a new resource; the resource can be shared between the copy and the original. Modifications must still create a copy, hence the technique: the copy operation is deferred to the first write. 
 
 * Address space:  is the amount of memory allocated for all possible addresses for a computational entity, such as a device, a file, a server, or a networked computer.
+
+19. What is an Unordered_map? What is a pure virtual function? Hackerrank question: Calculate a checksum for a string.  
+20. coding exercise, with a key value map. the maps had limited memory 4096kB and I had to write set and get method for a key value pair.  
+21. Find the Kth largest number in a shuffled array.  
+
