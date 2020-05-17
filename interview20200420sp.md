@@ -14,7 +14,7 @@ list(unique_everseen(items))
 [https://realpython.com/python-gil/#what-problem-did-the-gil-solve-for-python](https://realpython.com/python-gil/#what-problem-did-the-gil-solve-for-python)
 6. In Python, what is the difference between a generator expression and a list comprehension?  
 [https://code-maven.com/list-comprehension-vs-generator-expression](https://code-maven.com/list-comprehension-vs-generator-expression)
-7. Tech questions: What is an Unordered_map? What is a pure virtual function
+7. Tech questions: What is an Unordered_map? What is a pure virtual function   
 [https://www.geeksforgeeks.org/unordered_map-in-cpp-stl/](https://www.geeksforgeeks.org/unordered_map-in-cpp-stl/)  
 [https://en.wikipedia.org/wiki/Virtual_function](https://en.wikipedia.org/wiki/Virtual_function)
 9. coding exercise, with a key value map. the maps had limited memory 4096kB and I had to write set and get method for a key value pair.  
@@ -28,10 +28,6 @@ def merge(a, b):
         if key in a:
             if isinstance(a[key], dict) and isinstance(b[key], dict):
                 merge(a[key], b[key], path + [str(key)])
-            elif a[key] == b[key]:
-                pass # same leaf value
-            else:
-                raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
         else:
             a[key] = b[key]
     return a
