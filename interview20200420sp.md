@@ -7,6 +7,7 @@
 [https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
 4. Using Python, write a one-liner function to return a list containing only the unique elements of the given list. Order doesn't matter. Next, write a function to return an order-preserving list containing only the unique elements of the given list.  
 ```
+from  more_itertools import unique_everseen
 list(unique_everseen(items))
 ```
 5. Explain the Python GIL.  Process & Thread，  
