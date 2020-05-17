@@ -1,18 +1,23 @@
-1. TCP/UDP
-2. Tell me how a syscall works on x86 ?  
-3. Write a function to compute and return the number of ways in which to climb a flight of n steps, taking 1, 2 or 3 steps at a time.  
+
+1. TCP/UDP  
+[https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html](https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html)
+2. Tell me how a syscall works on x86 ?    
+[https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
 4. Using Python, write a one-liner function to return a list containing only the unique elements of the given list. Order doesn't matter. Next, write a function to return an order-preserving list containing only the unique elements of the given list.  
 ```
 list(unique_everseen(items))
 ```
-5. Explain the Python GIL.  
-https://realpython.com/python-gil/#what-problem-did-the-gil-solve-for-python
+5. Explain the Python GIL.  Process & Thread，  
+[https://realpython.com/python-gil/#what-problem-did-the-gil-solve-for-python](https://realpython.com/python-gil/#what-problem-did-the-gil-solve-for-python)
 6. In Python, what is the difference between a generator expression and a list comprehension?  
+[https://code-maven.com/list-comprehension-vs-generator-expression](https://code-maven.com/list-comprehension-vs-generator-expression)
 7. Tech questions: What is an Unordered_map? What is a pure virtual function
-8. Hackerrank question: Calculate a checksum for a string.  
+[https://www.geeksforgeeks.org/unordered_map-in-cpp-stl/](https://www.geeksforgeeks.org/unordered_map-in-cpp-stl/)  
+[https://en.wikipedia.org/wiki/Virtual_function](https://en.wikipedia.org/wiki/Virtual_function)
 9. coding exercise, with a key value map. the maps had limited memory 4096kB and I had to write set and get method for a key value pair.  
+ [https://leetcode.com/problems/lru-cache/](https://leetcode.com/problems/lru-cache/)
 10. Find the Kth largest number in a shuffled array.  
-11. code a fibonacci  
+[https://leetcode.com/problems/kth-largest-element-in-an-array/](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 12. merge two dicts recursively  
 ```
 def merge(a, b):
@@ -28,14 +33,15 @@ def merge(a, b):
             a[key] = b[key]
     return a
 ```
-13. find where two intervals intersect
+13. find where two intervals intersect  
+[https://leetcode.com/problems/interval-list-intersections/](https://leetcode.com/problems/interval-list-intersections/)
 14. shared_ptr vs unique_ptr, 
 * Use unique_ptr when you want a single pointer to an object that will be reclaimed when that single pointer is destroyed.
 * Use shared_ptr when you want multiple pointers to the same resource.
 15. difference between a thread and a process, virtual memory in an OS 
 * The computer's operating system, using a combination of hardware and software, maps memory addresses used by a program, called virtual addresses, into physical addresses in computer memory. Main storage, as seen by a process or task, appears as a contiguous address space or collection of contiguous segments. The operating system manages virtual address spaces and the assignment of real memory to virtual memory. Address translation hardware in the CPU, often referred to as a memory management unit (MMU), automatically translates virtual addresses to physical addresses. Software within the operating system may extend these capabilities to provide a virtual address space that can exceed the capacity of real memory and thus reference more memory than is physically present in the computer.
-16. LRU cache
 17.Write a C++ code that writes all the sequence formed by X 0's and Y 1's.  
+[https://www.geeksforgeeks.org/print-all-combinations-of-given-length/](https://www.geeksforgeeks.org/print-all-combinations-of-given-length/)  
 18. What is the system call to create new processes or threads in Linux.  
 * Processes are usually created with fork, threads are usually created with clone nowadays. Both fork and clone map to the same kernel function do_fork internally. This function can create a lightweight process that shares the address space with the old one, or a separate process (and many other options), depending on what flags you feed to it.
 
@@ -48,7 +54,37 @@ When you create a thread, it just reuses the original address space and the same
 
 * Address space:  is the amount of memory allocated for all possible addresses for a computational entity, such as a device, a file, a server, or a networked computer.
 
-19. What is an Unordered_map? What is a pure virtual function? Hackerrank question: Calculate a checksum for a string.  
-20. coding exercise, with a key value map. the maps had limited memory 4096kB and I had to write set and get method for a key value pair.  
-21. Find the Kth largest number in a shuffled array.  
+22. design a load balanced log in system
+23. Kafka，MongoDB，how is your Linux Skill. Resume
+24. padding, malloc, virtual, function stack,
+[https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/](https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/)  
+[https://www.design-reuse.com/articles/25090/dynamic-memory-allocation-fragmentation-c.html](https://www.design-reuse.com/articles/25090/dynamic-memory-allocation-fragmentation-c.html)  
+25. Explain the Internet to an 8-Year Old in 3 Sentences   
+```
+-              What? Use your first sentence to establish a basic premise: “The Internet is a series of tubes.”
 
+-              How? Your second sentence can describe the first: “The tubes connect information that is stored on computers throughout the world.”
+
+-              Why? Finally, close by summing up the purpose of the Internet: “It helps people to access global information quickly and easily.”
+```
+* What do you know about Squarepoint Capital?  
+•             What are you looking for in your next role? Where you see yourself in 2/3 years time and 10 years   
+•             Why you want to work for them  Why you’re looking to leave your current role  
+•             Have you initiated any projects? If so, what and why?   
+•             Where have you made an impact on the business?   
+•             When you have tackled a key area/issue or solved a particularly tough problem?   
+•             What aspects of software development technology or process are you most interested in and why?   
+•             What specific technology do you dislike the most and why?  
+•             What does good software look like?  
+•             Any technical challenges/complexities that you have faced and how you overcame them?  
+•             Please describe an interesting technical challenge you have faced in your work and how you overcame it.  
+•             How do you get your tech news?  
+•             why should the company employ you  
+•             how would you deal with a tricky/demanding user? What did you do to communicate properly?  
+•             Challenging others  
+•             Dealing with people from other cultures  
+•             How you react under pressure  
+•             Tell me about a time you had to deal with a team member who constantly opposed your ideas  
+•             Tell me about a time when a project’s priorities changed suddenly and you had to adapt  
+•             If our competitor, X, released a new product, Y, how would you advise our team to respond?  
+•             Ask insightful questions - Prepare these questions before the interview  
