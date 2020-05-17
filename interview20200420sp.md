@@ -33,10 +33,11 @@ def merge(a, b):
     return a
 ```
 13. find where two intervals intersect  
-[https://leetcode.com/problems/interval-list-intersections/](https://leetcode.com/problems/interval-list-intersections/)
-14. shared_ptr vs unique_ptr, 
-* Use unique_ptr when you want a single pointer to an object that will be reclaimed when that single pointer is destroyed.
+[https://leetcode.com/problems/interval-list-intersections/](https://leetcode.com/problems/interval-list-intersections/)  
+14. shared_ptr vs unique_ptr,  
+* Use unique_ptr when you want a single pointer to an object that will be reclaimed when that single pointer is destroyed.  
 * Use shared_ptr when you want multiple pointers to the same resource.  
+
 15.virtual memory in an OS   
 * The computer's operating system, using a combination of hardware and software, maps memory addresses used by a program, called virtual addresses, into physical addresses in computer memory. Main storage, as seen by a process or task, appears as a contiguous address space or collection of contiguous segments. The operating system manages virtual address spaces and the assignment of real memory to virtual memory. Address translation hardware in the CPU, often referred to as a memory management unit (MMU), automatically translates virtual addresses to physical addresses. Software within the operating system may extend these capabilities to provide a virtual address space that can exceed the capacity of real memory and thus reference more memory than is physically present in the computer.   
 
