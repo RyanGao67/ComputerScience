@@ -1,4 +1,6 @@
-
+[https://leetcode.com/problems/trapping-rain-water/](https://leetcode.com/problems/trapping-rain-water/)  
+[https://leetcode.com/problems/airplane-seat-assignment-probability/](https://leetcode.com/problems/airplane-seat-assignment-probability/)  
+[https://leetcode.com/problems/interval-list-intersections/](https://leetcode.com/problems/interval-list-intersections/)  
 1. TCP/UDP  
 [https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html](https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html)
 2. Tell me how a syscall works on x86 ?    
