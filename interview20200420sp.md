@@ -70,11 +70,9 @@ When you create a thread, it just reuses the original address space and the same
 
 -              Why? Finally, close by summing up the purpose of the Internet: “It helps people to access global information quickly and easily.”
 ```
-* What do you know about Squarepoint Capital?  
 •             What are you looking for in your next role? Where you see yourself in 2/3 years time and 10 years   
-•             Why you want to work for them  Why you’re looking to leave your current role  
-•             Have you initiated any projects? If so, what and why?   
-•             Where have you made an impact on the business?   
+•             Why you want to work for them  Why you’re looking to leave your current role ?What do you know about Squarepoint Capital?  
+•             Have you initiated any projects? If so, what and why? Where have you made an impact on the business?   
 •             When you have tackled a key area/issue or solved a particularly tough problem?   
 •             What aspects of software development technology or process are you most interested in and why?   
 •             What specific technology do you dislike the most and why?  
