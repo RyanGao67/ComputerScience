@@ -3,6 +3,8 @@
 [https://leetcode.com/problems/interval-list-intersections/](https://leetcode.com/problems/interval-list-intersections/)  
 1. TCP/UDP  
 [https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html](https://www.guru99.com/tcp-vs-udp-understanding-the-difference.html)
+2. What happened when enter a URL in search bar and hit enter?  
+[https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
 2. Tell me how a syscall works on x86 ?    
 [https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux](https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux)
 4. Using Python, write a one-liner function to return a list containing only the unique elements of the given list. Order doesn't matter. Next, write a function to return an order-preserving list containing only the unique elements of the given list.  
