@@ -71,22 +71,22 @@ When you create a thread, it just reuses the original address space and the same
 -              Why? Finally, close by summing up the purpose of the Internet: “It helps people to access global information quickly and easily.”
 ```
 •             What are you looking for in your next role? Where you see yourself in 2/3 years time and 10 years   
-**senior software engineer, decide a direction, lay the foundation, learn how to refactoring the code to make the clean code, archetectureing**
+**senior software engineer, decide a direction, lay the foundation, learn how to refactoring the code to make the clean code, archetectureing**  
 •             Why you want to work for them  Why you’re looking to leave your current role ?What do you know about Squarepoint Capital?  
-**As a technology and data-driven firm, we design and build our own cutting-edge systems, from high performance trading platforms to large scale data analysis and compute farms.**  
+**As a technology and data-driven firm, we design and build our own cutting-edge systems, from high performance trading platforms to large scale data analysis and compute farms.**    
 •             Have you initiated any projects? If so, what and why? Where have you made an impact on the business?   
-**File landing system**
+**File landing system**   
 •             When you have tackled a key area/issue or solved a particularly tough problem?   
-**Debugging the distributed system**
+**Debugging the distributed system**   
 •             What aspects of software development technology or process are you most interested in and why?   
-**Microservices**
+**Microservices**    
 •             What specific technology do you dislike the most and why?  
 •             What does good software look like?  
 **Good software is functional. 
 Good software is measurable. 
 Good software is debuggable. 
 Good software is reusable. Low Coupling, High Cohesion
-Good software is extensible.**
+Good software is extensible.**   
 •             Any technical challenges/complexities that you have faced and how you overcame them?  
 •             How do you get your tech news?  
 •             why should the company employ you  
