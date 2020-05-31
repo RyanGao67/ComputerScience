@@ -110,3 +110,8 @@ public class GreetingController{
 <body><p th:text="'Hello, '+${name} +'!'"/></body>
 </html>
 ```
+
+
+### Topic 2
+Read throught the code.   
+[https://github.com/RyanGao67/SpringBasic20200531/blob/master/src/main/java/com/makemake/springbasic20200524/Springbasic20200524Application.java](https://github.com/RyanGao67/SpringBasic20200531/blob/master/src/main/java/com/makemake/springbasic20200524/Springbasic20200524Application.java)
