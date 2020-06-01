@@ -115,3 +115,7 @@ public class GreetingController{
 ### Topic 2
 Read throught the code.   
 [https://github.com/RyanGao67/SpringBasic20200531/blob/master/src/main/java/com/makemake/springbasic20200524/Springbasic20200524Application.java](https://github.com/RyanGao67/SpringBasic20200531/blob/master/src/main/java/com/makemake/springbasic20200524/Springbasic20200524Application.java)
+
+### Topic 3
+Read through the code.
+[https://github.com/RyanGao67/Sprintboot0601/blob/master/src/main/java/com/makemake/springboot0601/api/PersonController.java](https://github.com/RyanGao67/Sprintboot0601/blob/master/src/main/java/com/makemake/springboot0601/api/PersonController.java)
