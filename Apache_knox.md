@@ -1,3 +1,5 @@
+### Before everything else first implementing this server will be helpful to understand other stuff. 
+[https://github.com/RyanGao67/JWTtest20200603/blob/master/app.js](https://github.com/RyanGao67/JWTtest20200603/blob/master/app.js)
 
 ### How do API Gateways and JWTs fit together? 
 * As a request comes in, one of the first jobs a system will do is decide whether the request should be serviced.   
