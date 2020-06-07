@@ -1,5 +1,8 @@
 ### What is kerberos 
-Kerberos is anauthentication protocol that can be used for single sign on.
+* Kerberos is an authentication protocol that can be used for single sign on.
+* Kerberos is an authentication protocol that for trusted hosts on untrusted networks   
+  * Kerberos does not provide any guarantees if the computers being used oare vulnerable
+
 ![](/img/kerbo.jpg) 
 
 
