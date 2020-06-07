@@ -119,3 +119,7 @@ Read throught the code.
 ### Topic 3
 Read through the code.
 [https://github.com/RyanGao67/Sprintboot0601/blob/master/src/main/java/com/makemake/springboot0601/api/PersonController.java](https://github.com/RyanGao67/Sprintboot0601/blob/master/src/main/java/com/makemake/springboot0601/api/PersonController.java)
+
+### Topic 4  
+Read through the code about spring security
+[https://github.com/RyanGao67/testKerberos/blob/master/testsecurity/src/main/java/com/makemake/testsecurity/SecurityConfiguration.java](https://github.com/RyanGao67/testKerberos/blob/master/testsecurity/src/main/java/com/makemake/testsecurity/SecurityConfiguration.java)
