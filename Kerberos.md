@@ -1,2 +1,3 @@
 ### What is kerberos 
-Kerberos is anauthentication protocol that can be used for single sign on. 
+Kerberos is anauthentication protocol that can be used for single sign on.
+![](/img/kerbo.jpg) 
