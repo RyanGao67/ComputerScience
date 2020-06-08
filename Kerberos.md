@@ -2,7 +2,9 @@
 * Kerberos is an authentication protocol that can be used for single sign on.
 * Kerberos is an authentication protocol that for trusted hosts on untrusted networks   
   * Kerberos does not provide any guarantees if the computers being used oare vulnerable
+  * KDC includes three parts (KDC kerberos distribution center, client, server)
 
+To Demonstrate trust we are going to need to use some secrets. There is only one secret, NTLM Hash. Kerberos uses shared secrets for authentication in a windows domain there is only one, the NTML Hash. The password hash is used to encropt everything in MS Kerberos. 
 ![](/img/kerbo.jpg) 
 
 
