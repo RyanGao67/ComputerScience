@@ -140,3 +140,159 @@ docker run -p 1337:1337 \
 Go to Konga dashboard and set up the admin account and the Kong connection.
 
 
+# Setup Kong api gateway
+some references
+[https://indocconsortium.atlassian.net/browse/IRDP-463](https://indocconsortium.atlassian.net/browse/IRDP-463)
+
+Add a client in Keycloak
+Go to Keycloak Admin UI. Go to Clients → Create to create a new client. Configure the following and save:
+
+Client ID: kong
+
+Client Protocol: openid-connect
+
+Root URL: http://10.3.9.241:8000 (Kong proxy URL)
+
+Accept Type: Confidential
+
+Valid Redirect URIs: /* 
+
+Go to tab Credentials and copy the client secret.
+
+
+This ticket describes the workflow of how to make a request to an backend API protected by Kong API Gateway, which uses Keycloak as the identity provider through an OIDC plugin.
+
+Setup
+
+For details on how to set up the Keycloak client for Kong and configure Kong OIDC plugin, see above. We will use the setup where token introspection and bearer only are enabled so that it accepts jwt tokens and does not redirect to the login page.
+
+In Kong, we have two services and two corresponding routes:
+
+name
+
+Kong proxy path
+
+upstream service path
+
+plugin
+
+vre-portal-login
+
+10.3.9.241:8000/vre/portal/users/auth 
+
+10.3.9.240:5060/users/auth
+
+vre-portal-api
+
+10.3.9.241:8000/vre/portal
+
+10.3.9.240:5060/ 
+
+OIDC
+
+By configuring the above, we do not need an access token to access the login endpoint but we need it for all other API endpoints. This works because Kong will choose the route with the longest path if multiple routes match the incoming request.
+
+In Flask API, since the token validation is already taken care of by Kong OIDC plugin, we do not need to validate it again ourselves.
+
+Workflow
+
+Portal makes a request to the login endpoint exposed by Kong with the username and password provided by the user. Since this endpoint is not OIDC-protected, it does not require an access token. Kong proxies this request to the upstream service API, which exchanges the credentials with Keycloak for an access token. Portal then fetches and stores the access token returned.
+
+For the subsequent API calls, portal sends the access token in the Authorization header along with the request. Since all other API endpoints are protected by the OIDC plugin, they all require an access token. Kong checks for the access token and validates it by talking to the token introspection endpoint of Keycloak. If the token is valid, Kong will proxy the request to the upstream service API and the result will be returned to portal. Otherwise, Kong will reject the request and return a 401 unauthorized error without proxying it to the upstream services.
+
+How to set up new services:
+
+In this example, I will describe how to add an upstream service, for example:
+```
+(base) $ curl http://10.3.9.240:5060/v1/datasets
+{
+    "result": [
+        {
+            "time_created": "2020-06-23T17:33:21",
+            "id": 18,
+            "name": "Carsten Finke Generate",
+            "type": "Usecase",
+            "time_lastmodified": "2020-06-23T17:33:21",
+            "path": "/dataset/Carsten Finke Generate",
+            "labels": [
+                "Dataset"
+            ]
+        },
+```
+This is the API we want to put behind the kong API gateway. 
+
+Step1: add a service called vre_test, the URL is the upstream service, in this case, is http://10.3.9.240:5060/v1/datasets
+
+Step2: add a route, specify the http://10.3.9.241:8000/portal/v1/datasets and specify the method, in this case, is get
+
+That’s all it needs to add a mapping. 
+
+Test:
+
+we can see now, the following does the same thing:
+```
+curl http://10.3.9.241:8000/portal/abc/
+{
+    "result": [
+        {
+            "time_created": "2020-06-23T17:33:21",
+            "id": 18,
+            "name": "Carsten Finke Generate",
+            "type": "Usecase",
+            "time_lastmodified": "2020-06-23T17:33:21",
+            "path": "/dataset/Carsten Finke Generate",
+            "labels": [
+                "Dataset"
+            ]
+        },
+```
+
+add oidc authentication:
+
+client id: kong
+
+introspection endpoint: http://10.3.9.241:8080/auth/realms/testrealms/protocol/openid-connect/token/introspect
+
+bearer only: yes
+
+discovery: http://10.3.9.241:8080/auth/realms/testrealms/.well-known/openid-configuration
+
+client secret: client secret copied from Keycloak
+
+Test:
+```
+$ curl --header "Content-Type: application/json"   \
+--request POST   \
+--data '{"username":"testuser061501","password":"Trillian42!"}'  \
+http://10.3.9.241:8000/portal/users/auth
+{
+    "result": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJrY3VRQjVCcDNTQlhRR0NpOVNCNDVjTGFnWnNRWVhkdi1OY3hQbzNJTU84In0.eyJleHAiOjE1OTMwMzcwNDIsImlhdCI6MTU5MzAzMzQ0MiwianRpIjoiNGE1ZjZjNjMtMzQwNi00MzdjLTgzYzEtY2UwZGE3ZGQ1MmIxIiwiaXNzIjoiaHR0cDovLzEwLjMuOS4yNDE6ODA4MC9hdXRoL3JlYWxtcy90ZXN0cmVhbG1zIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjI4NTI2ODY3LTAyY2MtNDlhZS1iNDA1LTE1NzA3ZmRiOGI0NSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImtvbmciLCJzZXNzaW9uX3N0YXRlIjoiMTM3N2ZjMWQtMGY4Yi00MzhiLWIwN2MtM2FkZTIxOWRhMGEwIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJ0ZXN0dXNlcjA2MTUwMSB0ZXN0dXNlcjA2MTUwMSIsInByZWZlcnJlZF91c2VybmFtZSI6InRlc3R1c2VyMDYxNTAxIiwiZ2l2ZW5fbmFtZSI6InRlc3R1c2VyMDYxNTAxIiwiZmFtaWx5X25hbWUiOiJ0ZXN0dXNlcjA2MTUwMSJ9.hVetrxeLzZGD3hTqGuZgStH6m2WCgTGHG2DI_LQgL2VQnFci22bEyhbI52BxSUKC48uW-zlzmzwmPIX-zTr3UJPYM--j2UpMNHi2PeBUSX73q9RG09BY4eLkzT92JvaJFmiIsfYeX7Uh-pWUJPkFLyw1vSAXYdz-QbceutQKKOsymFNfcugiSYD3yDarD8J0PaygAfXvobDBlk5jF1VcaFIGIK7yvZtqBVFnKbUtR6PHEjgG1GehGNzCdBOZejuxUzomRRcPMekWeSuFeRVD1V6QYIGTvu029k1IhTOLCMVx-u8ucx3JdNTY27kFTQQUf2PtXkfW0kLCH8OWZCaIMQ",
+        "token_type": "bearer",
+        "refresh_expires_in": 1800,
+        "not-before-policy": 0,
+        "session_state": "1377fc1d-0f8b-438b-b07c-3ade219da0a0",
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjNTQ3ZTc1ZC01MWZjLTQwMDMtOGI3Yy1lYmJlMDFkODRmOTAifQ.eyJleHAiOjE1OTMwMzUyNDIsImlhdCI6MTU5MzAzMzQ0MiwianRpIjoiY2Q5ZDFjZmMtZDJmZS00NmNlLThiNzgtOWRhZDhmYjcxY2QzIiwiaXNzIjoiaHR0cDovLzEwLjMuOS4yNDE6ODA4MC9hdXRoL3JlYWxtcy90ZXN0cmVhbG1zIiwiYXVkIjoiaHR0cDovLzEwLjMuOS4yNDE6ODA4MC9hdXRoL3JlYWxtcy90ZXN0cmVhbG1zIiwic3ViIjoiMjg1MjY4NjctMDJjYy00OWFlLWI0MDUtMTU3MDdmZGI4YjQ1IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImtvbmciLCJzZXNzaW9uX3N0YXRlIjoiMTM3N2ZjMWQtMGY4Yi00MzhiLWIwN2MtM2FkZTIxOWRhMGEwIiwic2NvcGUiOiJwcm9maWxlIGVtYWlsIn0.5CLYFijJLirjYJnOPNfJDD_6nMVCJZMc4D5qxn1qIzU",
+        "expires_in": 3600,
+        "scope": "profile email"
+    }
+}
+
+$ curl http://10.3.9.241:8000/portal/abc/
+no Authorization header found
+$ curl --header "Content-Type: application/json" \
+--header "Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJrY3VRQjVCcDNTQlhRR0NpOVNCNDVjTGFnWnNRWVhkdi1OY3hQbzNJTU84In0.eyJleHAiOjE1OTMwMzcwNDIsImlhdCI6MTU5MzAzMzQ0MiwianRpIjoiNGE1ZjZjNjMtMzQwNi00MzdjLTgzYzEtY2UwZGE3ZGQ1MmIxIiwiaXNzIjoiaHR0cDovLzEwLjMuOS4yNDE6ODA4MC9hdXRoL3JlYWxtcy90ZXN0cmVhbG1zIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjI4NTI2ODY3LTAyY2MtNDlhZS1iNDA1LTE1NzA3ZmRiOGI0NSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImtvbmciLCJzZXNzaW9uX3N0YXRlIjoiMTM3N2ZjMWQtMGY4Yi00MzhiLWIwN2MtM2FkZTIxOWRhMGEwIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJ0ZXN0dXNlcjA2MTUwMSB0ZXN0dXNlcjA2MTUwMSIsInByZWZlcnJlZF91c2VybmFtZSI6InRlc3R1c2VyMDYxNTAxIiwiZ2l2ZW5fbmFtZSI6InRlc3R1c2VyMDYxNTAxIiwiZmFtaWx5X25hbWUiOiJ0ZXN0dXNlcjA2MTUwMSJ9.hVetrxeLzZGD3hTqGuZgStH6m2WCgTGHG2DI_LQgL2VQnFci22bEyhbI52BxSUKC48uW-zlzmzwmPIX-zTr3UJPYM--j2UpMNHi2PeBUSX73q9RG09BY4eLkzT92JvaJFmiIsfYeX7Uh-pWUJPkFLyw1vSAXYdz-QbceutQKKOsymFNfcugiSYD3yDarD8J0PaygAfXvobDBlk5jF1VcaFIGIK7yvZtqBVFnKbUtR6PHEjgG1GehGNzCdBOZejuxUzomRRcPMekWeSuFeRVD1V6QYIGTvu029k1IhTOLCMVx-u8ucx3JdNTY27kFTQQUf2PtXkfW0kLCH8OWZCaIMQ" \
+http://10.3.9.241:8000/portal/abc/
+{
+    "result": [
+        {
+            "time_created": "2020-06-23T17:33:21",
+            "id": 18,
+            "name": "Carsten Finke Generate",
+            "type": "Usecase",
+            "time_lastmodified": "2020-06-23T17:33:21",
+            "path": "/dataset/Carsten Finke Generate",
+            "labels": [
+                "Dataset"
+            ]
+```
