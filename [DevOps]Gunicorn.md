@@ -1,25 +1,15 @@
 
-Installation:
-
-The gunicorn version in this ticket will be 20.0.4
+### Installation:
 
 ```
 pip install gunicorn
 ```
-Assumption:
-
-python 3.0+
+Assumption: python 3.0+
 ```
 pip install flask
 
 pip install flask-restful
-```
-Because this ticket is focusing on deployment, so assume that user already have a script for the flask API ready for deploy. Let us assume the python script with flask api is “test.py“
 
-Order steps:
-
-Check gunicorn installed 
-```
 $which gunicorn
 ```
 Deploy the flask API with gunicorn 
