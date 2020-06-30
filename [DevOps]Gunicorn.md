@@ -16,22 +16,22 @@ Deploy the flask API with gunicorn
 ```
 $gunicorn test:app
 ```
-*Important: For flask app with factory pattern, user need to  create a new script(e.g. wsgi.py), then deploy the create_app() method, instead run the created app in the script.
+**Important: For flask app with factory pattern, user need to  create a new script(e.g. wsgi.py), then deploy the create_app() method, instead run the created app in the script.**  
+[https://stackoverflow.com/questions/25319690/how-do-i-run-a-flask-app-in-gunicorn-if-i-used-the-application-factory-pattern/25319752](https://stackoverflow.com/questions/25319690/how-do-i-run-a-flask-app-in-gunicorn-if-i-used-the-application-factory-pattern/25319752)
 
-Create python script to import create method:
+Create python script to import create method:   
+
 ```
-
 from my_project import create_app
-
 app = create_app()
 ```
 
-        Then use gunicorn to deploy the flask app:
+Then use gunicorn to deploy the flask app:
 
 ```
 gunicorn my_project:create_app()
 ```
-Link:  https://stackoverflow.com/questions/25319690/how-do-i-run-a-flask-app-in-gunicorn-if-i-used-the-application-factory-pattern/25319752
+
 
 Result:
 
