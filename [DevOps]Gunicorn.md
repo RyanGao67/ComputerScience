@@ -34,11 +34,7 @@ gunicorn my_project:create_app()
 
 
 Result:
-
-Test script:
-
-In command line 
-
+```
 $gunicorn test:app
 [2020-02-12 14:35:26 -0500] [28288] [INFO] Starting gunicorn 20.0.4
 [2020-02-12 14:35:26 -0500] [28288] [INFO] Listening at: http://127.0.0.1:8000 (28288)
@@ -47,10 +43,11 @@ $gunicorn test:app
 
 
 Open http://127.0.0.1:8000 on web
+```
 
-Config parameters:
+## Config parameters:
 
-Simple set up:
+### Simple set up:
 
 Use command line options: the example set up gunicorn with 4 workers 
 ```
@@ -60,7 +57,8 @@ Set up command arguments: the example set up gunicorn with 3 workers and 127.0.0
 ```
 $ GUNICORN_CMD_ARGS="--bind=127.0.0.1 --workers=3" gunicorn test:app
 ```
-Use config file:
+
+### Use config file:
 The config file must have a python extension
 
 To set a parameter, just assign to it. There’s no special syntax.
