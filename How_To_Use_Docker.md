@@ -133,3 +133,7 @@ CMD ["tini","--","node","./bin/www"]
 ```docker push bretfisher/testing-node:part2 ```
 ```docker image rm bretfisher/testing-node```
 ```docker container run --rm -p 80:3000 bretfisher/testing-node```
+
+
+### Docker CICD
+[https://docker.events.cube365.net/docker/dockercon/content/Videos/NjnEcHsq29HMDbMRn](https://docker.events.cube365.net/docker/dockercon/content/Videos/NjnEcHsq29HMDbMRn)
