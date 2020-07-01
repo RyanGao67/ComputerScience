@@ -1,3 +1,7 @@
+### Update 20200701
+* If keycloak ssl required
+[https://stackoverflow.com/questions/30622599/https-required-while-logging-in-to-keycloak-as-admin](https://stackoverflow.com/questions/30622599/https-required-while-logging-in-to-keycloak-as-admin)
+
 In this blog I will briefly describe   
 * how to setup kong as API getway.   
 * How to setup keycloak as IDP(identity provider).    
