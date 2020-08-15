@@ -7,3 +7,7 @@
 7. switches send messages in local network (LAN)
 8. switches work on layer 2 (TCP/IP, OSI model)
 9. routers allow us to go from our Ethernet LAN, local area network onto the internet(WAN)
+10. Protocals and Layers  
+![](./img/Computer_Network1)
+11. terminology and layers
+![](./img/Computer_Network2)
