@@ -1,6 +1,6 @@
 1. MAC address : First half is the manufacturer's organizationally unique identifier(OUI) . Second half is a unique number
 2. arp is used to discover the mac address of another divice . In ethernet mac address is attached to a devices by vendors, I need to know your mac address to talk to your devices in ethernet
-3. A media access control address(MAC address) is a unique identifier assigned to a NIC (network interface controller) for use as a network address in communications within a network setment
+3. A media access control address(MAC address) is a unique identifier assigned to a NIC (network interface controller) for use as a network address in communications within a network segment
 4. The dynamic host configuration protocal (DHCP) is a network managemnt protocal used on internet protocol networks whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks
 5. Bridge = learns MAC addresses in software
 6. Switch = learns MAC addresses much more quickly by using hardware ASICs(application specific integarted circuits)
