@@ -11,7 +11,7 @@
 ![](./img/Computer_Network1.png)  
 11. terminology and layers  
 ![](./img/Computer_Network2.png)  
-12. IP address is an layer 3 logical address assigned by an administrator(unlike MAC address that is burnt into NIC by manufacturer) 
+12. IP address is an layer 3 logical address assigned by an administrator(unlike MAC address that is burnt into NIC by manufacturer, There is no relationship. A MAC Address is a layer-2 address, and an IP address is a layer-3 address. The network layers are independent of each other. The ARP cache is the the link between them. The Address Resolution Protocol is responsible for converting an IP-address to a MAC-address.) 
 13. An IP address is used to uniquely identify a device on the network and is used by routers to determine where the device is  
 14. The IP address can change within a subnet for example when using DHP or Dynamic Host configuration Protocol   
 15. An IP address is used to uniquely identify a device on the network and is used by routers to determine where that device is. So a router routes traffic to a destination IP address based on a hirarchy of network and host    
