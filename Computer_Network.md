@@ -50,8 +50,8 @@ Examples of Local Broadcast address:
 43. Local Loopback addresss 127.0.0.1 (127.*.*.*).  (Routers have loopback addresses which are not the same as the local loopback address)    
 44. Essentially a lot of the information of network protocols comes from RFC (Request For Comments)    RFC1149 ---> how to send data using pigeons   
 45. RFC1918 describes the use of the private IP addresses internally within organizations and those IP addresses would be NATed or Address Translated when traffic is sent unto the internet  ( in this RDC it states that the internet assigned numbers Authority or IANA, has reserved the following blocks of IP address space for private internets, so we have network 10 which is a class A address, network 172.16 up to 172.31 which are class B networks and 192.168 all the way up to 192.168.255 which are class C networks)   
-46. ![](./etc/Computer_Network15.png)   
-47. ![](./etc/Computer_Network16.png)   
+46. ![](./img/Computer_Network15.png)   
+47. ![](./img/Computer_Network16.png)   
 48. Subnet Mask (Network Address)  
 - used to determine network and host portion
 - is a device remote or local?   
