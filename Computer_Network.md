@@ -40,5 +40,44 @@
 38. ![](./img/Computer_Network11.png)     
 39. ![](./img/Computer_Network12.png)   
 40. ![](./img/Computer_Network13.png)   
+41. ![](./img/Computer_Network14.png)  
+Examples of Local Broadcast address:   
+- Host request an IP address from a DHCP server  
+- Dynamic host configuration protocol   
+- Providing both wireless connectivity and IP address   
+42. By aware that Local Broadcast Address are always dropped by Layer 3 devices such as routers and Layer 3 devices such as routers and Layer 3 switches. You can override that functionality by configuring what is called DHCP forwarding also called DHCP relay on your routers and switches, so as an example if you had a PC or device in VLAN 10 but your DHCP server was on a different VLAN or different network somewhere else in your topology, the DHCP request from the PC or phone would not be received by the DHCP server by default, you would have to configure IP forwarding or IP DHCP relay on the switch or router to forward the DHCP request to the DHCP server    
 
+43. Local Loopback addresss 127.0.0.1 (127.*.*.*).  (Routers have loopback addresses which are not the same as the local loopback address)    
+44. Essentially a lot of the information of network protocols comes from RFC (Request For Comments)    RFC1149 ---> how to send data using pigeons   
+45. RFC1918 describes the use of the private IP addresses internally within organizations and those IP addresses would be NATed or Address Translated when traffic is sent unto the internet  ( in this RDC it states that the internet assigned numbers Authority or IANA, has reserved the following blocks of IP address space for private internets, so we have network 10 which is a class A address, network 172.16 up to 172.31 which are class B networks and 192.168 all the way up to 192.168.255 which are class C networks)   
+46. ![](./etc/Computer_Network15.png)   
+47. ![](./etc/Computer_Network16.png)   
+48. Subnet Mask (Network Address)  
+- used to determine network and host portion
+- is a device remote or local?   
+For example: Address 10.1.1.1 forward message to Address 10.1.2.1 does the computer forward the traffic to the local segment or does it forward it to its default gateway. If they are on different subnets the PCs will forward their traffic to their default gateways which will do the inter-VLAN routing if they are on the local LAN(local are network) or route the traffic if the traffic is forwarded to a traditional router, so a layer 3 switch may do the routing between two VLAN.   
+49. VTY   
+Line vty 0 4 = 5 simultaneous virtual connections   
+Line vty 0 15 = 16 simultaneous virtual connections     
+While going through any Cisco Router or Switch configuration, we may come across the term of “line vty 0 4” or “line vty 0 15“.
+
+Let’s discuss these keywords in more detail and their requirement in the configuration of the Cisco Router or Switches     
+
+
+
+VTY
+The term “vty” stands for Virtual teletype. VTY is a virtual port and used to get Telnet or SSH access to the device.VTY is solely used for inbound connections to the device. These connections are all virtual with no hardware associated with them.
+
+Related Blog – VTY Password
+
+The abstract “0 – 4” means that the device can allow 5 simultaneous virtual connections which may be Telnet or SSH. In a way, we may say that 5 (0 – 4) are connection ports to the Router or Switch. In fact, we may have connection ports up to 16 (0 – 15).
+
+Here is an example where we configure telnet access to a cisco device and password for telnet facility –      
+
+```
+R3(config)#line vty 0 4
+R3(config-line)#password Cisco
+R3(config-line)#login
+R3(config-line)#exit
+```
 
