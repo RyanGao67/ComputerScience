@@ -4,7 +4,7 @@
 4. The dynamic host configuration protocal (DHCP) is a network managemnt protocal used on internet protocol networks whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks
 5. Bridge = learns MAC addresses in software
 6. Switch = learns MAC addresses much more quickly by using hardware ASICs(application specific integarted circuits)
-7. switches send messages in local network (LAN)
+7. switches send messages in local network (LAN)  switches are very similar to bridges(switches use hardware to get the MAC address table thus much quicker)  
 8. switches work on layer 2 (TCP/IP, OSI model)
 9. routers allow us to go from our Ethernet LAN, local area network onto the internet(WAN)
 10. Protocals and Layers  
@@ -79,5 +79,14 @@ R3(config)#line vty 0 4
 R3(config-line)#password Cisco
 R3(config-line)#login
 R3(config-line)#exit
-```
+```    
 
+50. telnet && SSH
+Telnet is a network protocol that allows a user to communicate with a remote device. It is a virtual terminal protocol used mostly by network administrators to remotely access and manage devices. Administrator can access the device by telnetting to the IP address or hostname of a remote device.
+
+To use telnet, you must have a software (Telnet client) installed. On a remote device, a Telnet server must be installed and running. Telnet uses the TCP port 23 by default.
+
+One of the greatest disadvantages of this protocol is that all data, including usernames and passwords, is sent in clear text, which is a potential security risk. This is the main reason why Telnet is rarely used today and is being replaced by a much secure protocol called SSH. Here you can find information about setting up Telnet access on your Cisco device.
+
+
+SSH uses the TCP port 22 by default.
