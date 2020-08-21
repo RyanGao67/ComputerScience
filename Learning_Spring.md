@@ -123,3 +123,7 @@ Read through the code.
 ### Topic 4  
 Read through the code about spring security
 [https://github.com/RyanGao67/testKerberos/blob/master/testsecurity/src/main/java/com/makemake/testsecurity/SecurityConfiguration.java](https://github.com/RyanGao67/testKerberos/blob/master/testsecurity/src/main/java/com/makemake/testsecurity/SecurityConfiguration.java)
+
+
+Example 1:
+[https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus](https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus)
