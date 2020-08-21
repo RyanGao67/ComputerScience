@@ -126,4 +126,7 @@ Read through the code about spring security
 
 
 Example 1:
-[https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus](https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus)
+[https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus](https://github.com/RyanGao67/CoronavirusTracker/tree/master/cronavirus/src/main/java/com/makemake/cronavirus)   
+
+Example 2:
+[https://github.com/RyanGao67/SpringSecurity/tree/master/sprintJWT/src/main/java/com/makemake/sprintJWT](https://github.com/RyanGao67/SpringSecurity/tree/master/sprintJWT/src/main/java/com/makemake/sprintJWT)
