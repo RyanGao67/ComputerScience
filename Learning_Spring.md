@@ -130,3 +130,8 @@ Example 1:
 
 Example 2:
 [https://github.com/RyanGao67/SpringSecurity/tree/master/sprintJWT/src/main/java/com/makemake/sprintJWT](https://github.com/RyanGao67/SpringSecurity/tree/master/sprintJWT/src/main/java/com/makemake/sprintJWT)
+
+
+Example 3:   
+how to upload file to aws with spring
+[https://github.com/RyanGao67/spring-aws-image-upload/tree/master/aws-image-upload/src/main](https://github.com/RyanGao67/spring-aws-image-upload/tree/master/aws-image-upload/src/main)
