@@ -74,5 +74,39 @@ BUILD SUCCESSFUL in 462ms
 ```
 
 
+### How to clean.    (delete the build folder ).      
+```
+./gradlew clean
+```
+
+
+### what is a gradle wrapper?   
+is a thin layer around gradle.     
+check to see that the required version of gradle is installed.     
+passes the command into the real gradle.          
+
+
+### To create the gradle wrapper in case there is none:      
+```
+gradle wrapper --gradle-version 3.5
+```
+
+
+### What are gradle tasks?    
+they are functions performed by gradle
+they are consisted of one or more actions
+
+```
+gradle build 
+```
+this will run tasks
+
+```
+gradle tasks 
+```
+list all the tasks.    
+
+
+
 ### This is an example:   
 [https://github.com/RyanGao67/GradlePractice](https://github.com/RyanGao67/GradlePractice)
