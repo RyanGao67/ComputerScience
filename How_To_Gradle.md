@@ -68,6 +68,11 @@ BUILD SUCCESSFUL in 462ms
 
 ```
 
+### list all projects in a project(including subproject--> module)
+```
+./gradlew projects 
+```
+
 
 ### This is an example:   
 [https://github.com/RyanGao67/GradlePractice](https://github.com/RyanGao67/GradlePractice)
