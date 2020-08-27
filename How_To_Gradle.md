@@ -67,3 +67,7 @@ BUILD SUCCESSFUL in 462ms
 1 actionable task: 1 executed
 
 ```
+
+
+### This is an example:   
+[https://github.com/RyanGao67/GradlePractice](https://github.com/RyanGao67/GradlePractice)
