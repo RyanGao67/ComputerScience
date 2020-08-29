@@ -57,3 +57,6 @@ this means install goal in the install plugin
 
 
 A goal can be a specific task which we can run indepently , or can be part of a bigger build
+
+
+![/img/mvn1.png](/img/mvn1.png)
