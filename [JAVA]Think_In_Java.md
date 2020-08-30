@@ -105,3 +105,27 @@ So, we can say, plugin is a Jar file which executes the task, and dependency is 
 # Shading and shadowing
 
 [https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.](https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.)
+
+
+
+# uber jar(fat jar)
+
+Über is the German word for above or over (it's actually cognate with the English over).
+
+Hence, in this context, an uber-jar is an "over-jar", one level up from a simple JAR (a), defined as one that contains both your package and all its dependencies in one single JAR file. The name can be thought to come from the same stable as ultrageek, superman, hyperspace, and metadata, which all have similar meanings of "beyond the normal".
+
+The advantage is that you can distribute your uber-jar and not care at all whether or not dependencies are installed at the destination, as your uber-jar actually has no dependencies.
+
+All the dependencies of your own stuff within the uber-jar are also within that uber-jar. As are all dependencies of those dependencies. And so on.
+
+(a) I probably shouldn't have to explain what a JAR is to a Java developer but I'll include it for completeness. It's a Java archive, basically a single file that typically contains a number of Java class files along with associated metadata and resources.
+
+
+
+ubar jar is also known as fat jar i.e. jar with dependencies.
+There are three common methods for constructing an uber jar:
+
+Unshaded: Unpack all JAR files, then repack them into a single JAR. Works with Java's default class loader. Tools maven-assembly-plugin
+Shaded: Same as unshaded, but rename (i.e., "shade") all packages of all dependencies. Works with Java's default class loader. Avoids some (not all) dependency version clashes. Tools maven-shade-plugin
+JAR of JARs: The final JAR file contains the other JAR files embedded within. Avoids dependency version clashes. All resource files are preserved. Tools: Eclipse JAR File Exporter
+
