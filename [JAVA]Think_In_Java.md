@@ -61,6 +61,8 @@ A goal can be a specific task which we can run independently , or can be part of
 
 ![/img/mvn1.png](/img/mvn1.png)
 
+* How to set source and target [https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html)
+
 
 ### MVN coordinates
 * When we build our plugins such as jar and war we'll look at the maven coordinates in the pom.xml namely the groupId and artifactID and version and packaging for the information about the project
