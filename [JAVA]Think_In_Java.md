@@ -1,5 +1,5 @@
 
-### How to maven
+# How to maven
 
 ```
 mvn install 
@@ -90,3 +90,18 @@ Same goes with your scenario. You have to use spring-plugin to execute some spri
 
 So, we can say, plugin is a Jar file which executes the task, and dependency is a Jar which provides the class files to execute the task.
 
+
+
+### TO SKip the tests:
+
+```
+-DskipTests
+```
+
+### Which scope can be used to tell maven that we do not need a dependency to be packaged in to a war that will be deployed to a container which will already have that jar/dependecy     -------->  provided
+
+
+
+# Shading and shadowing
+
+[https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.](https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.)
