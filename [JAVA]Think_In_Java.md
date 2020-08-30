@@ -61,7 +61,7 @@ A goal can be a specific task which we can run independently , or can be part of
 
 ![/img/mvn1.png](/img/mvn1.png)
 
-* How to set source and target [Setting the -source and -target of the Java Compiler](Setting the -source and -target of the Java Compiler)
+* How to set source and target [https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html)
 
 
 ### MVN coordinates
