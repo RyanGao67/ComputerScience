@@ -22,3 +22,7 @@ This endpoint would be implemented so that only blue cars would be returned.
 As far as syntax is concerned, your URL names should be all lowercase. If you have an entity name that is generally two words in English, you would use a hyphen to separate the words, not camel case.
 
 Ex. /two-words
+
+
+Dropwizard example:
+[]()
