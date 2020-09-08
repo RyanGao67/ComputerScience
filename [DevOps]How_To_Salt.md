@@ -17,7 +17,7 @@
 
 * it uses zeroMQ connection between all of those systems (use pub/sub and rep/req)
 
-* Message over this zeroMQ cube connection are serialized and compressed using a library called messagepack(like json) 
+* Message over this zeroMQ tube connection are serialized and compressed using a library called messagepack(like json) 
 
 ![](./img/salt1.png)
 
