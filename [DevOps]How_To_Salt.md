@@ -19,7 +19,7 @@
 
 * Message over this zeroMQ cube connection are serialized and compressed using a library called message bag(like json) 
 
-![./img/salt1.png]()
+![](./img/salt1.png)
 
 
 
