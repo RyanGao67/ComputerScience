@@ -126,7 +126,7 @@ mysecretsetting: sdb://lookup/path/here
 
 Salt uses this to create an encrypted pub sub connection 
 
-So when that public goes out to minions, that publish is encrypted using this key
+So when that publish goes out to minions, that publish is encrypted using this key
 
 and in order to deauthenticate a minion if you delete a minion's key then after you delete that key, salt will then rotate that key. So all of the other minions will authenticate and pick up that new key so that they can decrypt those publishes
 
