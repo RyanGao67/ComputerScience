@@ -389,12 +389,12 @@ Total run time:  82.443 ms
 
 * What happened when execute an stage
 
-![](salt3.png)
+![](./img/salt3.png)
 
 (notice finally the execution mode provide the functionality)
 
 * layers of a state run and execution flow of a state run
 
-![](salt4.png)
+![](./img/salt4.png)
 
 
