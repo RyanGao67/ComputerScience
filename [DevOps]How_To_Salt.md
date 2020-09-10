@@ -295,4 +295,106 @@ salt -L stuart,jerry cmd.script salt://myscript.sh  //this command takes a salt 
 ```
 
 
+### Minion vs Master
+
+in master
+```
+sudo salt '*' test.ping
+```
+
+in minion
+```
+salt-call test.ping
+```
+
+in minion
+```
+salt-call cmd.run 'ls /etc/salt'
+salt-call cmd.run 'ls /etc/salt' -l debug
+```
+
+
+in minion
+```
+salt-call network.netstat 
+salt-call network.netstat -l debug
+```
+
+in master
+```
+salt -L jerry,stuart test.arg foo bar=Bar baz='{qux:Qux}' quux=true
+```
+
+### State
+
+* A single state or a full state run can be executed on a system many times in a row and the end-result will be the same
+
+* each sls file is comprised of many state functions
+
+
+* The minions are the ones that actually run the states, the work is distributed across all the minions which means the master is only responsible for sending out that initial commands and then transferring any files that the minions request to those minions and the minion themselves compile the state tree. 
+
+
+//execution module(m in module index) vs state module (s in module index)
+
+
+* State function returns a dictionary
+  * Result
+  * Changes
+  * Comment
+
+For example:
+
+```
+[centos@ip-172-31-15-51 salt]$ sudo salt jerry state.sls apache
+jerry:
+----------
+          ID: install_apache
+    Function: pkg.installed
+        Name: apache2
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 18:33:32.708314
+    Duration: 31.821 ms
+     Changes:   
+----------
+          ID: start_apache
+    Function: service.running
+        Name: apache2
+      Result: True
+     Comment: The service apache2 is already running
+     Started: 18:33:32.741704
+    Duration: 38.484 ms
+     Changes:   
+----------
+          ID: welcome_page
+    Function: file.managed
+        Name: /var/www/html/index.html
+      Result: True
+     Comment: File /var/www/html/index.html is in the correct state
+     Started: 18:33:32.783872
+    Duration: 12.138 ms
+     Changes:   
+
+Summary for jerry
+------------
+Succeeded: 3
+Failed:    0
+------------
+Total states run:     3
+Total run time:  82.443 ms
+
+```
+
+
+* What happened when execute an stage
+
+![](salt3.png)
+
+(notice finally the execution mode provide the functionality)
+
+* layers of a state run and execution flow of a state run
+
+![](salt4.png)
+
 
