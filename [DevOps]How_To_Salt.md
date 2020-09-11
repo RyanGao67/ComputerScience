@@ -391,7 +391,7 @@ Total run time:  82.443 ms
 
 ![](./img/salt3.png)
 
-(notice finally the execution mode provide the functionality)
+(notice finally the execution module provide the functionality)
 
 * layers of a state run and execution flow of a state run
 
