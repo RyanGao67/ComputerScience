@@ -177,7 +177,7 @@ salt -C 'G@os_family:RedHat and stu*' test.ping
 
 * (on minion) python functions ask the local system and return a little dictionary about whatever it is they query and that is combined into a larger dictionary of information about that system
 
-* they are generated when the minion starts and they are kept in memory on the menu. they are also shipped up to the master and the master keeps a cache of them so that master can perform some out-of-band checks
+* they are generated when the minion starts and they are kept in memory on the minion. they are also shipped up to the master and the master keeps a cache of them so that master can perform some out-of-band checks
 
 List:    
 ```
@@ -396,5 +396,79 @@ Total run time:  82.443 ms
 * layers of a state run and execution flow of a state run
 
 ![](./img/salt4.png)
+
+### What happens after 
+
+```
+salt jerry state.sls apache
+```
+
+the minion will search locally first: do I have apache.sls? 
+
+Just like using the following command:
+
+
+```
+salt jerry cp.cache_file salt://apache.sls
+
+```
+
+If it does: /var/cache/salt/minion/files/base/apache.sls,  it will compare the checksum
+
+
+In one way or another the file will be in the minion cache. 
+
+Then the file will go to salts renderer system which produces a data structure(high state data structure)
+
+To show the high state data structure:
+
+```
+salt jerry state.show_sls apache
+```
+
+
+Then the high state data structure is handed to salts state compiler, the salt state compiler will produce a low state data structure. To show low state data structure:
+
+```
+
+salt jerry state.show_low_sls apache
+```
+
+
+the salt state compiler will read the state one by one and puts the results(for each state one by one) into what's called the running dictionary(in memory)
+
+```
+salt jerry state.sls apache // the print is the dictionary
+
+```
+
+
+### Debug
+
+try to add this "-l debug"
+
+
+### YAML, Jinja and Other Renderers
+
+### Put custom logic inside of a custom execution model
+
+```
+mkdir /srv/salt/_modules
+vi /src/salt/_modules/myutil.py
+
+```
+
+```python
+
+def something():
+	return 'something happended'
+        return __salt__['cmd.run']('date')
+
+```
+
+```
+salt '*' saltutil.sysnc_modules
+salt '*' myutil.something
+```
 
 
