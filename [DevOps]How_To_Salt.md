@@ -471,4 +471,139 @@ salt '*' saltutil.sysnc_modules
 salt '*' myutil.something
 ```
 
+### One example
+Using Jinja and yaml
+```
+# Manage Apache.
+{% if salt.grains.get('os_family') == 'Debian' %}
+{% set apache_pkg = 'apache2' %}
+{% elif salt.grains.get('os_family') == 'RedHat' %}
+{% set apache_pkg = 'httpd' %}
+{% endif %}
 
+install_apache:
+  pkg.installed:
+    - name: {{ apache_pkg }}
+
+start_apache:
+  service.running:
+    - name: {{ apache_pkg}}
+    # Explicitly enable to start on boot because we need to manage
+ centos as well
+    - enable: True
+
+welcome_page:
+  file.managed:
+    - name: /var/www/html/index.html
+    - contents: |
+        <!doctype html>
+        <body><h1>helloworld</h1></body>
+
+```
+
+Slightly modify
+
+```
+# Manage Apache.
+{% set lookup = {
+    'Debian': {
+       'pkg': 'apache2',
+       'srv': 'apache2',
+    },
+    'RedHat': {
+       'pkg': 'httpd',
+       'srv': 'httpd'
+    },
+} %}
+
+{% set apache = lookup[salt.grains.get('os_family')] %}
+{% set apache = salt.grains.filter_by(lookup) %}
+
+install_apache:
+  pkg.installed:
+    - name: {{ apache.pkg }}
+
+start_apache:
+  service.running:
+    - name: {{ apache.pkg}}
+    # Explicitly enable to start on boot because we need to manage
+ centos as well
+    - enable: True
+
+welcome_page:
+  file.managed:
+    - name: /var/www/html/index.html
+    - contents: |
+        <!doctype html>
+        <body><h1>helloworld</h1></body>
+
+
+```
+
+
+### Pillar 
+
+Edit the following files:
+```
+[centos@ip-172-31-15-51 salt]$ sudo vi /srv/pillar/name.sls
+[centos@ip-172-31-15-51 salt]$ sudo vi /srv/pillar/top.sls
+```
+
+refresh the pillar
+```
+ salt '*' saltutil.refresh
+```
+
+Pillar never touches disk on the minions(store using memory)
+
+
+To override the information in file:
+```
+salt '*' state.sls apache.welcome pillar='{name: Override}'
+```
+
+
+
+
+### Debug
+
+* This is debug.
+```
+sudo salt-call state.show_sls apache -l debug
+```
+
+* This is context.
+```
+# /srv/salt/show_context.sls
+Context is: {{ show_full_context().keys() }}
+```
+
+```
+sudo salt jerry state.show_sls show_context
+```
+
+* Context variables. 
+```
+output_jinja:
+  file.managed:
+    - name: /tmp/jinja_output
+    - contents: | 
+        My Jinja variable 'foo' is :
+        {{ foo | json() }}
+```
+
+
+
+### Pillar vs Top
+
+All that is avaiable to us from the top file are processed on the minion unlike with pillar where everything is processed on the Masters and just the resulting data structure sent to minions
+
+
+
+### Execution steps 
+
+* salt '*' match.glob '*' 
+* salt '*' cp.cache_file salt://top.sls
+* salt '*' state.show_top
+* salt '*' state.show_highstate
+* salt '*' state.highstate --out=json
