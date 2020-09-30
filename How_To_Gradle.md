@@ -127,3 +127,18 @@ Configuration
 Execution
 
 ![](./img/gradle1.png)
+
+
+To quickly summarize, Gradle goes through three different phases.
+
+For every build you run initialization phases where it will scan through the settings.gradle file.
+
+It will figure out what kind of project our project is, whether it is a single module or, as you will
+
+explore later on, a multi module project.
+
+It will create a project object for each of the projects using the build.gradle contents.
+
+Then it will figure out this acyclic graph that is required and then it will execute all the tasks in
+
+the right order.
