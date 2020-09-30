@@ -110,3 +110,20 @@ list all the tasks.
 
 ### This is an example:   
 [https://github.com/RyanGao67/GradlePractice](https://github.com/RyanGao67/GradlePractice)
+
+
+### Gradle configuration    
+In MVN it is scope and in gradle it is configuration
+
+In maven, the scope is compile, provided, runtime, test    
+In gradle, the configuration is implementation, api(compile), compileonly(like provided), runtimeonly, testimplementation, testcompileonly, testruntimeonly    
+
+Implementation vs api(previous compile). If current project is a dependency in another project, we can not access the api dependency of current project but we can access the Implementation dependency.   
+
+
+### Gradle phases
+Initialization
+Configuration
+Execution
+
+![](./img/gradle1.png)
