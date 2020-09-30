@@ -142,3 +142,57 @@ It will create a project object for each of the projects using the build.gradle 
 Then it will figure out this acyclic graph that is required and then it will execute all the tasks in
 
 the right order.
+
+
+### Gradle daemon
+
+Use the daemon: 
+
+```
+gradle build --daemon
+``` 
+
+// fast because of information is stored in memory
+
+```
+gradle build --no-daemon
+```
+
+### Gradle tasks
+
+Compile -===> build folder
+```
+gradle compileJava
+```
+
+clean build folder
+```
+gradle clean
+```
+
+```
+gradle compileTest
+```
+
+Build and create a jar in lib folder
+```
+gradle jar
+```
+
+This is the plugins: 
+
+java plugins to add support for java
+application plugins to add support for building a CLI application
+```
+plugins {
+  id 'java'
+  id 'application'
+}
+```
+
+```
+application {
+  mainClassName = 'com.bfadfaf.app'
+}
+```
+  `gradle run` will run main class 
