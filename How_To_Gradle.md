@@ -195,4 +195,4 @@ application {
   mainClassName = 'com.bfadfaf.app'
 }
 ```
-  `gradle run` will run main class 
+  `gradle run` will run main class because of application plugin
