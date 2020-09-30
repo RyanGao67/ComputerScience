@@ -196,3 +196,10 @@ application {
 }
 ```
   `gradle run` will run main class because of application plugin
+
+
+
+```
+gradle --rerun-tasks --build
+```
+force run all tasks even no code changed
