@@ -203,3 +203,38 @@ application {
 gradle --rerun-tasks --build
 ```
 force run all tasks even no code changed
+
+
+### Gradle project
+```
+gradle projects
+
+```
+
+
+### Initialization > configuration > Execution  phase   
+Initialization phase map to 1 or more build script eg, settings.gradle
+
+Configuration phase build.gradle (It is the scipt that does the configuration so during the configuration phase the delegate object is the project )   
+
+Execution phase is where the configuration phase get performed by performing a number of tasks
+
+
+* Initialization    
+init.gradle + <xxx>.gradle these scripts run before the actual build (setup enterprise wide settings, to find customized plugins, to setup properties based on the current environment such as a developer's machine vs a continuous integration server, information to authenticate in a db)  the variable here can be accessed afterwords 
+    
+    
+Example: 
+in .gradle/another.gradle (initialization phase)
+```
+gradle.ext.timestamp = {
+ def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+ df.setTimeZone(TimeZone.getTimeZone("UTC"))
+ return df.format(new Date())
+}
+```
+    
+build.gradle. For example, if you have five object instantiated that implement the script interface that is one for each build script. 
+
+
+![](./img/gradle2.png)
