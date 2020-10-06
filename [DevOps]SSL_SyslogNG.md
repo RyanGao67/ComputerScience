@@ -27,3 +27,7 @@ openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 ### Understand SSL 
 
 [https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd)
+
+
+
+[https://www.youtube.com/watch?v=wzbf9ldvBjM](https://www.youtube.com/watch?v=wzbf9ldvBjM)
