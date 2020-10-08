@@ -554,7 +554,24 @@ refresh the pillar
  salt '*' saltutil.refresh
 ```
 
+Each minion will send a request on the private channel to the master saying hey can I have my latest pillar.
+
+The master then compiles pillar for that one requesting minion and it does so with the local cache that lives on the master, the minion's grains as well as the minion's ID and also a copy of the minion's configuration file.
+
+And then it generates pillar And then it returns over that private channel a dictionary of those pillar values of those
+rendered pillar values.
+
+So the minion never gets access to these Salles files it just gets access to the resulting dictionary.
+
+All of those as well as files are merged together into one big dictionary and then anything that comes in from external pillar again merged into that big dictionary not dissimilar from grains.
+
+So the master compiles this once for each minion and then each minion keeps its own copy of pillar in memory.
+
+So pillar is not appropriate for say large binary files because because it's kept in memory 
+
 Pillar never touches disk on the minions(store using memory)
+
+
 
 
 To override the information in file:
@@ -562,8 +579,42 @@ To override the information in file:
 salt '*' state.sls apache.welcome pillar='{name: Override}'
 ```
 
+### fileserver backend
+in /etc/salt/master, edit the fileserver_backend:
+```
+fileserver_backend:
+  - git
+  - roots
+```
+also install gitpython on centos
 
+```
+sudo yum install GitPython
+```
 
+also add this to /etc/salt/master
+
+```
+gitfs_remotes:
+  - https://github.com/saltstack-formulas/memcached-formula.git
+
+```
+
+After this you need to restart salt master
+
+```
+sudo systemctl restart salt-master
+```
+
+To verify: this is asking jerry to ask the master for all the files in its file root
+```
+sudo salt jerry cp.list_master
+```
+
+this shows all the sls file live in the file root
+```
+sudo salt jerry cp.list_states
+```
 
 ### Debug
 
