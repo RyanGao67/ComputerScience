@@ -649,6 +649,20 @@ output_jinja:
 
 All that is avaiable to us from the top file are processed on the minion unlike with pillar where everything is processed on the Masters and just the resulting data structure sent to minions
 
+### top file
+
+This will use the root top.sls file   
+```
+sudo salt '*' state.highstate
+```
+
+This is the top file used by state.highstate
+```
+base:
+  '*':
+    - apache
+    - apache.welcome
+```
 
 
 ### Execution steps 
