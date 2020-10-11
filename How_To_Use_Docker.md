@@ -11,6 +11,11 @@
 * Docker's default image registry is call docker hub
 * ```ps aux``` show me all running process
 
+
+### Docker vs VM
+![](./img/docker1.png)
+![](./img/docker2.png)
+
 ## Run docker container commands basic
 *  ```docker container run``` always starts new container, use ```docker container start``` to start an existing stopped one
 * ```docker container run --publish 80:80 --detach --name webhost nginx```
