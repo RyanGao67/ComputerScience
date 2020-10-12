@@ -44,7 +44,10 @@
 
 Remember each one of those commands has options you can learn with --help.
 
+### Docker volumn
+```sudo docker container run --name website -v $(pwd):/usr/share/nginx/html -d -p 3001:80 nginx ```
 
+```sudo docker container run --name website-copy --volumns-from website -d -p 8081:80 nginx```
 
 ### Assignment:CLI App Testing
 * Use different Linux distro containers to check curl cli tool version
@@ -142,3 +145,16 @@ CMD ["tini","--","node","./bin/www"]
 
 ### Docker CICD
 [https://docker.events.cube365.net/docker/dockercon/content/Videos/NjnEcHsq29HMDbMRn](https://docker.events.cube365.net/docker/dockercon/content/Videos/NjnEcHsq29HMDbMRn)
+
+
+
+### Docker file
+
+```sudo docker build --tag website:latest .``` 
+
+This is the dockerfile   
+```
+FROM nginx:latest                                                         
+Add . /usr/share/nginx/html
+```
+
