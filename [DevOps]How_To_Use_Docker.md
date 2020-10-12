@@ -164,3 +164,7 @@ Add . /usr/share/nginx/html
 ### K8S
 ![](./img/k8s1.png)
 ![](./img/k8s2.png)
+
+
+### K8S components
+volumns pod service ingress configMap secrets deployment statefulset
