@@ -1,3 +1,5 @@
+Example:   
+[https://github.com/RyanGao67/saltpractise/tree/master/salt/apache](https://github.com/RyanGao67/saltpractise/tree/master/salt/apache)   
 ### Why salt?
 * Fast enough that it doesn't require cached data or a database
 
