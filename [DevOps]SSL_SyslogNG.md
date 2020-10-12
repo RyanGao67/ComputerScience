@@ -31,3 +31,10 @@ openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 
 
 [https://www.youtube.com/watch?v=wzbf9ldvBjM](https://www.youtube.com/watch?v=wzbf9ldvBjM)
+
+
+### check if ssl is enabled
+
+```
+openssl s_client -connect 54.161.237.103:6514
+```
