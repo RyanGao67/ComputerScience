@@ -1,3 +1,11 @@
+### Gradle  Interface
+1. script interface(It is added to every gradle script)
+2. project interface(related to build.gradle file)
+3. gradle interface 
+4. Settings interface (multiproject)
+5. Task
+6. Action
+
 ### This is a sample build.gradle
 ```
 plugins {
@@ -223,7 +231,12 @@ Execution phase is where the configuration phase get performed by performing a n
 * Initialization    
 init.gradle + <xxx>.gradle these scripts run before the actual build (setup enterprise wide settings, to find customized plugins, to setup properties based on the current environment such as a developer's machine vs a continuous integration server, information to authenticate in a db)  the variable here can be accessed afterwords 
     
+ 
+* Settings.gradle 
+It is oriented towards multi-project projects
     
+    
+* configuration phase and execution phase both rely on build.gradle file. If you have a multi project build, each project in your build have to have a build.gradle
 Example: 
 in .gradle/another.gradle (initialization phase)
 ```
