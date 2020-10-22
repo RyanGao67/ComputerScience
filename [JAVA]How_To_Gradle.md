@@ -251,3 +251,6 @@ build.gradle. For example, if you have five object instantiated that implement t
 
 
 ![](./img/gradle2.png)
+
+### Example 1
+[https://github.com/RyanGao67/testgradle/blob/master/build.gradle](https://github.com/RyanGao67/testgradle/blob/master/build.gradle)
