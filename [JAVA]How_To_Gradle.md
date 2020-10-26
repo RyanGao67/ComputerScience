@@ -257,3 +257,6 @@ build.gradle. For example, if you have five object instantiated that implement t
 
 ### Example 2
 [https://github.com/RyanGao67/gradletest1/blob/master/build.gradle](https://github.com/RyanGao67/gradletest1/blob/master/build.gradle)
+
+### Example 3
+[https://github.com/RyanGao67/gradletest2/blob/master/build.gradle](https://github.com/RyanGao67/gradletest2/blob/master/build.gradle)
