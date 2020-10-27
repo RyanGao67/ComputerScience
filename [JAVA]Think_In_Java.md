@@ -131,3 +131,7 @@ Unshaded: Unpack all JAR files, then repack them into a single JAR. Works with J
 Shaded: Same as unshaded, but rename (i.e., "shade") all packages of all dependencies. Works with Java's default class loader. Avoids some (not all) dependency version clashes. Tools maven-shade-plugin
 JAR of JARs: The final JAR file contains the other JAR files embedded within. Avoids dependency version clashes. All resource files are preserved. Tools: Eclipse JAR File Exporter
 
+
+### Junit test 4&5
+[https://hackernoon.com/mixing-junit4-and-junit5-2da44956de8c](https://hackernoon.com/mixing-junit4-and-junit5-2da44956de8c)
+
