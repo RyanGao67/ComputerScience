@@ -182,4 +182,9 @@ volumns pod service ingress configMap secrets deployment statefulset
   * API
   * Scheduler
   * controller manager
+  * Core DNS
+  
+* Node
+  * all the nodes they're going to need an agent running that is known as kubelet
+  * you'll need kube-proxy to control the networking
 
