@@ -168,3 +168,18 @@ Add . /usr/share/nginx/html
 
 ### K8S components
 volumns pod service ingress configMap secrets deployment statefulset
+
+* Kubernetes: The whole orchestration system
+* Kuberctl: CTL to configure Kubernetes and manage apps
+* Node: single server in the kubernetes cluster
+* kubelet:kubelet is the container that will run a small little agent on each node to allow that node to talk back to kubernetes master
+* Control Plane: Set of container that manage the cluster
+  * Include API server, scheduler, controller manager, etcd, and more
+  * sometimes called master
+  
+* Inside of each master, we're going to need to run multiple containers to keep control of the system. 
+  * The first of that is etcd. etcd is a distributed storage system for key values. 
+  * API
+  * Scheduler
+  * controller manager
+
