@@ -215,3 +215,7 @@ sudo microk8s.kubectl get all
 When you're using the run as it is right now in Version 1.14, it is technically using a Deployment controlle. That Deployment controller creates a ReplicaSet controller. That ReplicateSet controller then creates the pods. In this case, it's just one replica. So, it's only one pod.
 > kubectl create (create some resources via CTL or YAML)      
 > kubectl apply (create/update anything via YAML)
+
+
+
+![](./img/k8s3.png)
