@@ -188,3 +188,30 @@ volumns pod service ingress configMap secrets deployment statefulset
   * all the nodes they're going to need an agent running that is known as kubelet
   * you'll need kube-proxy to control the networking
 
+
+### Kubernetes Container Abstractions
+* Pod: one or more containers running together on one Node 
+  * Basic unit of deployment. Containers are always in pods
+  
+* Controller: For creating / updating pods and other objects
+  * Many types of controllers Deployment, ReplicaSet, StatefulSet, DaemonSet, Job, CronJob, etc.
+
+* Service: network endpoint to connect to a pod
+* Namespace: Filtered group of objects in cluster 
+* Secrets, configMaps, and more
+
+> kubectl run (changing to be only for pod creation)   
+```
+sudo microk8s.kubectl version
+```  
+
+```
+sudo microk8s.kubectl run my-nginx --image nginx
+```
+
+```
+sudo microk8s.kubectl get all
+```
+When you're using the run as it is right now in Version 1.14, it is technically using a Deployment controlle. That Deployment controller creates a ReplicaSet controller. That ReplicateSet controller then creates the pods. In this case, it's just one replica. So, it's only one pod.
+> kubectl create (create some resources via CTL or YAML)
+> kubectl apply (create/update anything via YAML)
