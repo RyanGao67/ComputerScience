@@ -212,6 +212,10 @@ sudo microk8s.kubectl run my-nginx --image nginx
 ```
 sudo microk8s.kubectl get all
 ```
+
+```
+sudo microk8s delete deployment my-nginx
+```
 When you're using the run as it is right now in Version 1.14, it is technically using a Deployment controlle. That Deployment controller creates a ReplicaSet controller. That ReplicateSet controller then creates the pods. In this case, it's just one replica. So, it's only one pod.
 > kubectl create (create some resources via CTL or YAML)      
 > kubectl apply (create/update anything via YAML)
@@ -219,3 +223,49 @@ When you're using the run as it is right now in Version 1.14, it is technically 
 
 
 ![](./img/k8s3.png)
+
+
+
+Depending on which version of Kubernetes you have installed, you'll need to decide how you'll create objects. Here's a cheat sheet for how old commands should be used with the 1.18 changes.
+
+kubectl run nginx --image nginx created a Deployment named nginx before 1.18 (which creates a ReplicaSet, which creates a Pod)
+
+kubectl run nginx --image nginx creates a Pod named nginx in 1.18+
+
+Creating a Deployment in 1.18: kubectl create deployment nginx --image nginx
+
+
+
+```
+kubectl scale deploy/my-apache --replicas 2
+kubectl scale deployment my-apache --replicas 2
+```
+
+deploy/my-apache: 
+Type of deployment (also called deployment) 
+
+![](./img/k8s4.png)
+
+
+Inspect/ describe
+* The nice thing here is when you use the kubectl run command, it automatically added a label of the name of the Deployment to all these pods. So, we can use that same Deployment name my Apache for selecting all the pods with that label.
+
+```
+kubectl logs -l run=my-apache
+```
+
+Use -l to specify the label that the run command applied which is my-apache
+
+* `kubectl get pods`
+
+* `kubectl logs deployment/my-apache --follow --tail --tail 1`
+
+* `kubectl describe pod/my-apache-xxxx-yyyy`
+
+* `kubectl get pods -w`
+
+* `kubectl delete pod/my-apache-xxxx-yyyy`
+
+
+
+![](./img/k8s5.png)
