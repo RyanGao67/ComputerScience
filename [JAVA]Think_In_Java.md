@@ -135,3 +135,85 @@ JAR of JARs: The final JAR file contains the other JAR files embedded within. Av
 # Junit test 4&5
 [https://hackernoon.com/mixing-junit4-and-junit5-2da44956de8c](https://hackernoon.com/mixing-junit4-and-junit5-2da44956de8c)
 
+
+
+# jar basic 
+Viewing the Contents of a JAR File
+The basic format of the command for viewing the contents of a JAR file is:
+
+```
+jar tf jar-file
+```
+
+Let's look at the options and argument used in this command:
+
+The t option indicates that you want to view the table of contents of the JAR file.
+The f option indicates that the JAR file whose contents are to be viewed is specified on the command line.
+The jar-file argument is the path and name of the JAR file whose contents you want to view.
+The t and f options can appear in either order, but there must not be any space between them.
+
+This command will display the JAR file's table of contents to stdout.
+
+You can optionally add the verbose option, v, to produce additional information about file sizes and last-modified dates in the output.
+
+An Example
+Let's use the Jar tool to list the contents of the TicTacToe.jar file we created in the previous section:
+
+```
+jar tf TicTacToe.jar
+```
+This command displays the contents of the JAR file to stdout:
+```
+META-INF/MANIFEST.MF
+TicTacToe.class
+audio/
+audio/beep.au
+audio/ding.au
+audio/return.au
+audio/yahoo1.au
+audio/yahoo2.au
+images/
+images/cross.gif
+images/not.gif
+```
+The JAR file contains the TicTacToe class file and the audio and images directory, as expected. The output also shows that the JAR file contains a default manifest file, META-INF/MANIFEST.MF, which was automatically placed in the archive by the JAR tool. For more information, see the Understanding the Default Manifest section.
+
+All pathnames are displayed with forward slashes, regardless of the platform or operating system you're using. Paths in JAR files are always relative; you'll never see a path beginning with C:, for example.
+
+The JAR tool will display additional information if you use the v option:
+
+```
+jar tvf TicTacToe.jar
+```
+
+For example, the verbose output for the TicTacToe JAR file would look similar to this:
+```
+    68 Thu Nov 01 20:00:40 PDT 2012 META-INF/MANIFEST.MF
+   553 Mon Sep 24 21:57:48 PDT 2012 TicTacToe.class
+  3708 Mon Sep 24 21:57:48 PDT 2012 TicTacToe.class
+  9584 Mon Sep 24 21:57:48 PDT 2012 TicTacToe.java
+     0 Mon Sep 24 21:57:48 PDT 2012 audio/
+  4032 Mon Sep 24 21:57:48 PDT 2012 audio/beep.au
+  2566 Mon Sep 24 21:57:48 PDT 2012 audio/ding.au
+  6558 Mon Sep 24 21:57:48 PDT 2012 audio/return.au
+  7834 Mon Sep 24 21:57:48 PDT 2012 audio/yahoo1.au
+  7463 Mon Sep 24 21:57:48 PDT 2012 audio/yahoo2.au
+   424 Mon Sep 24 21:57:48 PDT 2012 example1.html
+     0 Mon Sep 24 21:57:48 PDT 2012 images/
+   157 Mon Sep 24 21:57:48 PDT 2012 images/cross.gif
+   158 Mon Sep 24 21:57:48 PDT 2012 images/not.gif
+   ```
+
+* Understanding the Default Manifest
+When you create a JAR file, it automatically receives a default manifest file. There can be only one manifest file in an archive, and it always has the pathname
+
+META-INF/MANIFEST.MF
+When you create a JAR file, the default manifest file simply contains the following:
+
+Manifest-Version: 1.0
+Created-By: 1.7.0_06 (Oracle Corporation)
+These lines show that a manifest's entries take the form of "header: value" pairs. The name of a header is separated from its value by a colon. The default manifest conforms to version 1.0 of the manifest specification and was created by the 1.7.0_06 version of the JDK.
+
+The manifest can also contain information about the other files that are packaged in the archive. Exactly what file information should be recorded in the manifest depends on how you intend to use the JAR file. The default manifest makes no assumptions about what information it should record about other files.
+
+Digest information is not included in the default manifest. To learn more about digests and signing, see the Signing and Verifying JAR Files lesson.
