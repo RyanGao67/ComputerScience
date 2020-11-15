@@ -108,6 +108,9 @@ So, we can say, plugin is a Jar file which executes the task, and dependency is 
 
 [https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.](https://medium.com/@akhaku/java-class-shadowing-and-shading-9439b0eacb13#:~:text=In%20Java%2C%20to%20%E2%80%9Cshade%E2%80%9D,and%20rewriting%20all%20affected%20bytecode.&text=Your%20project's%20code%20then%20uses,dependency%20on%20the%20original%20jar.)
 
+One example:
+[https://github.com/RyanGao67/dropwizardtest/blob/master/pom.xml](https://github.com/RyanGao67/dropwizardtest/blob/master/pom.xml)
+
 
 
 # uber jar(fat jar)
