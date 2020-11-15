@@ -217,3 +217,7 @@ These lines show that a manifest's entries take the form of "header: value" pair
 The manifest can also contain information about the other files that are packaged in the archive. Exactly what file information should be recorded in the manifest depends on how you intend to use the JAR file. The default manifest makes no assumptions about what information it should record about other files.
 
 Digest information is not included in the default manifest. To learn more about digests and signing, see the Signing and Verifying JAR Files lesson.
+
+# Understand the characteristics of a runnable jar
+* A runnable jar must have MANIFEST.MF file under META-IN folder. This folder is recognized by java platform to configure the application, Extensions, Class Loader, and Services
+* MENIFEST.MF file contains the extension and package related data, so we must declare in manifest.mf file which class contains the main method of our application if our code uses some third part libs then we need to declare the paths of those libs here. 
