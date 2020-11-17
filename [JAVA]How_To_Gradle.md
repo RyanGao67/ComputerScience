@@ -263,3 +263,9 @@ build.gradle. For example, if you have five object instantiated that implement t
 
 ### Example 4
 [https://github.com/RyanGao67/gradletest3/blob/master/build.gradle](https://github.com/RyanGao67/gradletest3/blob/master/build.gradle)
+
+
+# Gradle shade
+[https://github.com/RyanGao67/howtogradle/blob/master/build.gradle](https://github.com/RyanGao67/howtogradle/blob/master/build.gradle)   
+Refer to this page for detailed information:   
+[https://github.com/johnrengelman/shadow](https://github.com/johnrengelman/shadow)
