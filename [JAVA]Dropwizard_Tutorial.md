@@ -24,8 +24,12 @@ As far as syntax is concerned, your URL names should be all lowercase. If you ha
 Ex. /two-words
 
 
-Dropwizard example:
+Dropwizard example:     
 [https://github.com/RyanGao67/dropwizardexample/tree/master/src/main/java/com/howtodoinjava/rest](https://github.com/RyanGao67/dropwizardexample/tree/master/src/main/java/com/howtodoinjava/rest)
 
 
 [https://howtodoinjava.com/dropwizard-tutorials/](https://howtodoinjava.com/dropwizard-tutorials/)
+
+
+Dropwizard exmaple2:
+[https://github.com/RyanGao67/dropwizard2/tree/master/src/main/java/com/shallowlightning](https://github.com/RyanGao67/dropwizard2/tree/master/src/main/java/com/shallowlightning)
