@@ -224,3 +224,13 @@ Digest information is not included in the default manifest. To learn more about 
 # Understand the characteristics of a runnable jar
 * A runnable jar must have MANIFEST.MF file under META-IN folder. This folder is recognized by java platform to configure the application, Extensions, Class Loader, and Services
 * MENIFEST.MF file contains the extension and package related data, so we must declare in manifest.mf file which class contains the main method of our application if our code uses some third part libs then we need to declare the paths of those libs here. 
+
+
+# Working with Json
+
+[https://github.com/RyanGao67/JavaJson/tree/master/src/test/java/com/shallowlightning](https://github.com/RyanGao67/JavaJson/tree/master/src/test/java/com/shallowlightning)
+
+
+Useful links:
+
+[https://www.baeldung.com/jackson](https://www.baeldung.com/jackson)
