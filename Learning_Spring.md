@@ -139,3 +139,9 @@ how to upload file to aws with spring
 
 ### Example 4:   
 [https://github.com/RyanGao67/spring-mvc/tree/master/springmvc/src/main/java/com/makemake/springmvc](https://github.com/RyanGao67/spring-mvc/tree/master/springmvc/src/main/java/com/makemake/springmvc)
+
+
+### Spring SSL
+[https://github.com/RyanGao67/SpringSSL/tree/master/src/main/java/com/example/demo](https://github.com/RyanGao67/SpringSSL/tree/master/src/main/java/com/example/demo)
+
+[https://www.thomasvitale.com/https-spring-boot-ssl-certificate/](https://www.thomasvitale.com/https-spring-boot-ssl-certificate/)
