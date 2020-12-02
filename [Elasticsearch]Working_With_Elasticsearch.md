@@ -147,3 +147,13 @@ node.role here is dim, data inject master
 ![](./img/elas6.png)
 
 
+
+# Create index
+```
+curl -XPUT localhost:9200/products -H 'Content-Type: application/json' -d '{"settings":{"number_of_shards":2, "number_of_replicas":2}}' 
+
+
+curl -XDELETE localhost:9200/products
+{"acknowledged":true}
+
+```
