@@ -146,4 +146,51 @@ node.role here is dim, data inject master
 
 ![](./img/elas6.png)
 
+```
+ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST localhost:9200/products/_doc/100 -H 'Content-Type:application/json' -d '{"name":"Toaster", "price":49, "in_stock":true}'
+{"_index":"products","_type":"_doc","_id":"100","_version":1,"result":"created","_shards":{"total":3,"successful":1,"failed":0},"_seq_no":1,"_primary_term":1}
 
+ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST localhost:9200/products/_search
+{"took":184,"timed_out":false,"_shards":{"total":2,"successful":2,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1.0,"hits":[{"_index":"products","_type":"_doc","_id":"T_OHJXYBjcvHWAUM583g","_score":1.0,"_source":{"name": "Coffee Maker"}},{"_index":"products","_type":"_doc","_id":"100","_score":1.0,"_source":{"name":"Toaster", "price":49, "in_stock":true}}]}}
+
+ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST localhost:9200/products/_search?pretty
+{
+  "took" : 6,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 2,
+    "successful" : 2,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 2,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "products",
+        "_type" : "_doc",
+        "_id" : "T_OHJXYBjcvHWAUM583g",
+        "_score" : 1.0,
+        "_source" : {
+          "name" : "Coffee Maker"
+        }
+      },
+      {
+        "_index" : "products",
+        "_type" : "_doc",
+        "_id" : "100",
+        "_score" : 1.0,
+        "_source" : {
+          "name" : "Toaster",
+          "price" : 49,
+          "in_stock" : true
+        }
+      }
+    ]
+  }
+}
+```
