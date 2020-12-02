@@ -101,3 +101,6 @@ However, as a rule of thumb, a decent place to start, would be to choose five sh
 To recap, sharding is a way to sub-divide an index into smaller pieces, each being a shard. This serves two main purposes; enabling the index to grow in size, and to improve the throughput of the index.
 
 By using sharding, you can store an index taking up 700 gigabytes of disk space, even if you have no single node that can store that amount of data. An index defaults to having one shard.
+
+# Replication
+![](./img/elas1.png)
