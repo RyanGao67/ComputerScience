@@ -129,3 +129,21 @@ pages 0     p/r    STARTED  0    230b  127.0.0.1 Bos-MBP-2
 ![](./img/elas3.png)
 
 ![](./img/elas4.png) 
+
+![](./img/elas5.png)
+
+
+```
+// check elasticsearch node, ?v will print the header
+curl -X GET localhost:9200/_cat/nodes?v
+ip         heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
+172.17.0.2           16          90  50    3.15    3.02     2.02 dilm      *      5f3477e4bef8
+
+```
+
+node.role here is dim, data inject master
+
+
+![](./img/elas6.png)
+
+
