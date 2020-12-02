@@ -104,3 +104,26 @@ By using sharding, you can store an index taking up 700 gigabytes of disk space,
 
 # Replication
 ![](./img/elas1.png)
+
+# Increase query throughput with replication
+We don't really need another node, and we also don't want to increase our costs.Instead, we can increase the number of replica shards by one, or however many we need. Since we only have two nodes, we are not really increasing the availability of the index, but we are increasing the throughput of the index.
+
+A replica shard is a fully functional index on its own, just like a shard is. This actually means that both of the replica shards can be queried at the same time. This is possible because of two things; the fact that Elasticsearch automatically coordinates where queries will be executed, and parallelization.Elasticsearch will automatically select the shard that will execute a given query, based on a number of factors
+
+
+```
+// see shards situation
+cat /_cat/shards?v
+
+example return: 
+index shard prirep state    docs store ip        node
+pages 0     p/r    STARTED  0    230b  127.0.0.1 Bos-MBP-2
+```
+
+
+
+# Roles
+
+![](./img/elas2.png)
+
+![](./img/elas3.png) 
