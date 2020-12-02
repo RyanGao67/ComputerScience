@@ -153,6 +153,7 @@ ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST loca
 ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST localhost:9200/products/_search
 {"took":184,"timed_out":false,"_shards":{"total":2,"successful":2,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1.0,"hits":[{"_index":"products","_type":"_doc","_id":"T_OHJXYBjcvHWAUM583g","_score":1.0,"_source":{"name": "Coffee Maker"}},{"_index":"products","_type":"_doc","_id":"100","_score":1.0,"_source":{"name":"Toaster", "price":49, "in_stock":true}}]}}
 
+<<<<<<< HEAD
 ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST localhost:9200/products/_search?pretty
 {
   "took" : 6,
@@ -193,4 +194,15 @@ ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST loca
     ]
   }
 }
+=======
+
+# Create index
+```
+curl -XPUT localhost:9200/products -H 'Content-Type: application/json' -d '{"settings":{"number_of_shards":2, "number_of_replicas":2}}' 
+
+
+curl -XDELETE localhost:9200/products
+{"acknowledged":true}
+
+>>>>>>> 4970de8349f2db37b071ab751ba014899598f6c2
 ```
