@@ -394,3 +394,28 @@ how it works inside
 ![](./img/elas11.png)
 ![](./img/elas12.png)
 ![](./img/elas13.png)
+
+
+# primary_term and seq_no this is to solve the concurrency issue
+```
+
+ryangao67@ryangao67-ThinkPad-T460s:~$ curl -XGET localhost:9200/products/_doc/100?pretty
+{
+  "_index" : "products",
+  "_type" : "_doc",
+  "_id" : "100",
+  "_version" : 6,
+  "_seq_no" : 6,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "name" : "Toaster",
+    "price" : 36,
+    "in_stock" : true,
+    "tags" : [
+      "electronics"
+    ]
+  }
+}
+ryangao67@ryangao67-ThinkPad-T460s:~$ curl -X POST -H "Content-Type:application/json" localhost:9200/products/_update/100?if_primary_term=151186&if_seq_no=6 -d '{"doc":{"in_stock":false}}'
+```
