@@ -351,3 +351,15 @@ Note that you can write a similar script that just inverts the conditional state
 Actually, you can also set the operation to "delete," which will cause the document to be deleted instead. This will set the value of the "result" key to "deleted" within the results. This is rarely useful though, as you can also delete documents that match a given query, as you will see later in this section, so this should only be used for situations where you need to use scripting to determine if a document should be deleted. You can see an example of such a query on your screen. The query decreases the value of the "in_stock" field by one as long as it is less than or equal to one.
 
 ![](./img/elas7.png)
+
+
+
+# Upsert
+```
+curl -XPOST localhost:9200/products/_update/101 -H "Content-Type:application/json" -d '{"script":{"source":"ctx._source.price++"},"upsert":{"name":"Blender", "price":399, "in_stock":true}}'
+{"_index":"products","_type":"_doc","_id":"101","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":5,"_primary_term":1}
+```
+
+If id 101 exists, it will update using the script, otherwise it will update. 
+
+
