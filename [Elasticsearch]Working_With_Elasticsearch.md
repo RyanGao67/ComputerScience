@@ -396,7 +396,8 @@ how it works inside
 ![](./img/elas13.png)
 
 
-# primary_term and seq_no this is to solve the concurrency issue
+# primary_term and seq_no 
+This is to solve the concurrency issue(Optimistic concurrency control)
 ```
 
 ryangao67@ryangao67-ThinkPad-T460s:~$ curl -XGET localhost:9200/products/_doc/100?pretty
@@ -418,4 +419,55 @@ ryangao67@ryangao67-ThinkPad-T460s:~$ curl -XGET localhost:9200/products/_doc/10
   }
 }
 ryangao67@ryangao67-ThinkPad-T460s:~$ curl -X POST -H "Content-Type:application/json" localhost:9200/products/_update/100?if_primary_term=151186&if_seq_no=6 -d '{"doc":{"in_stock":false}}'
+```
+
+If the primary_term and seq_no do not match then there is some thing wrong, eg, another thread makes changes and hasn't been synced. 
+
+# _update_by_query
+
+```
+POST /products/_update_by_query
+{
+	"script":{
+		"source":"ctx._source.in_stock--"
+	},
+ 	"query":{
+		"match_all":{}	
+	}
+}
+```
+
+**behind the scene**
+
+![](./img/elas14.png)
+The first thing that happens when an Update By Query request is processed, is that a snapshot of the index is created. I will get back to why this is the case in a moment. When the snapshot has been taken, a search query is sent to each of the index' shards, in order to find all of the documents that match the supplied query. Whenever a search query matches any documents, a bulk request is sent to update those documents. We haven't covered bulk requests yet, but it's a way to perform document actions on many documents with one request. Specifically, the index, update, and delete actions. Anyway, we'll get to that soon. The "batches" key within the results, specifies how many batches were
+used to retrieve the documents. The query uses something called the Scroll API internally, which is a way to scroll through result sets. The point of this is to be able to handle queries that may match thousands of documents. Each pair of search and bulk requests are sent sequentially, i.e. one at a time. The reason for not doing everything simultaneously, is related to how errors are handled. Should there be an error performing either the search query or the bulk query, Elasticsearch will automatically retry up to ten times. The number of retries is specified within the "retries" key, for both the search and bulk queries. If the affected query is still not successful, the whole query is aborted. The failures will then be specified in the results, within the "failures" key. It is important to note that the query is aborted, and not rolled back. This means that if a number of documents have been updated when an error occurs, those documents will remain updated, even though the request failed. The query is therefore not run within a transaction as you might be familiar with from various databases. That is actually not something unique to this API, but rather a general design pattern.
+
+Typically you will see that if an API can partially succeed or fail, it will return information that you can use to deal with it. The diagram that you see now, shows that the queries were run successfully against Replication Group A, but something went wrong while sending queries to Replication Group B, causing the query to be aborted. Any documents that may match the search query, are therefore not updated within Replication Group C. The documents that were updated within Replication Group A, will remain updated even though the query was aborted. The reason why Elasticsearch takes a snapshot of the index, is to ensure that the updates are performed on the basis of the current state of the index. For an index where documents are indexed, modified, and deleted frequently, it is not unlikely that something has changed from when Elasticsearch received the query, to when it finishes processing it. This is especially true when updating many documents. When Elasticsearch is requested to update a given document, it uses the document's primary term and sequence number from the snapshot to ensure that it has not been changed since creating the snapshot. If the document has been changed, there will be a version conflict, causing the document to not be updated. This will also cause the entire query to be aborted. The number of conflicts is returned under the "version_conflicts" key within the query results. If you don't want the query to be aborted when there is a version conflict, you can specify a "conflicts" key with a value of "proceed" within the request body. Note that you can also add this as a query parameter if you prefer.
+
+```
+POST /products/_update_by_query
+{
+	"conflicts":"proceed",
+        "script":{
+		"source": "ctx._source.in_stock--"	
+ 	},
+	"query":{
+		"match_all":{}
+	}
+}
+```
+
+What this does, is that the version conflicts will just be counted, rather than causing the query to be aborted.
+
+
+# delete_by_query
+
+```
+POST /products/_delete_by_query
+{
+	"query":{
+		"match_all":{}
+	}
+}
 ```
