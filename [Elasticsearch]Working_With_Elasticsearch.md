@@ -340,3 +340,14 @@ curl -X POST -H "Consearch?pretty
   }
 }
 ```
+
+
+Two other possible values for the "result"(see above update command)key that is specified within the query results, apart from "updated." The key may also contain the value "noop." In the previous lecture, I told you that this is the case if we try to update a field value with its existing value. The same is not the case with scripted updates; if we set a field value within a script, the result will always equal "updated," even if no field values actually changed. There are two exceptions to this, both being if we explicitly set the operation within the script.
+
+For example, we can write a script that ignores a given document based on a condition. This is done by setting the "op" property on the "ctx" variable to "noop."
+
+Note that you can write a similar script that just inverts the conditional statement and only reduces the field value if it evaluates to "true." The difference between these two scripts, is that the one to the right always yields a result of "updated," regardless of whether or not the field value was actually changed. This is not the case for the one on the left. So if it's important for you to detect if nothing was changed, then that's the way to go.
+
+Actually, you can also set the operation to "delete," which will cause the document to be deleted instead. This will set the value of the "result" key to "deleted" within the results. This is rarely useful though, as you can also delete documents that match a given query, as you will see later in this section, so this should only be used for situations where you need to use scripting to determine if a document should be deleted. You can see an example of such a query on your screen. The query decreases the value of the "in_stock" field by one as long as it is less than or equal to one.
+
+![](./img/elas7.png)
