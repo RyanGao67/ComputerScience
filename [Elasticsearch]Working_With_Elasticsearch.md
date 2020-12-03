@@ -389,3 +389,8 @@ DELETE /products/_doc/101
 
 # Writing
 ![](./img/elas10.png)
+
+how it works inside
+![](./img/elas11.png)
+![](./img/elas12.png)
+![](./img/elas13.png)
