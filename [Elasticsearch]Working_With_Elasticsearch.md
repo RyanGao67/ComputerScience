@@ -193,6 +193,7 @@ ryangao67@ryangao67-ThinkPad-T460s:~/tgao2020/ComputerScience$ curl -X POST loca
     ]
   }
 }
+```
 
 # Create index
 ```
@@ -201,5 +202,47 @@ curl -XPUT localhost:9200/products -H 'Content-Type: application/json' -d '{"set
 
 curl -XDELETE localhost:9200/products
 {"acknowledged":true}
+
+```
+
+# Update
+```
+curl -X POST localhost:9200/products/_update/100 -H "Content-Type:application/json" -d '{"doc":{"tags":["electronics"]}}'
+{"_index":"products","_type":"_doc","_id":"100","_version":2,"result":"updated","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1,"_primary_term":1}
+
+curl -X POST localhost:9200/products/_update/100 -H "search?pretty
+{
+  "took" : 12,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "products",
+        "_type" : "_doc",
+        "_id" : "100",
+        "_score" : 1.0,
+        "_source" : {
+          "name" : "Toaster",
+          "price" : 49,
+          "in_stock" : true,
+          "tags" : [
+            "electronics"
+          ]
+        }
+      }
+    ]
+  }
+}
 
 ```
