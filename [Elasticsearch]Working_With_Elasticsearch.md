@@ -383,3 +383,9 @@ DELETE /products/_doc/101
 
 # Routing
 ![](./img/elas8.png)
+
+# Reading
+![](./img/elas9.png)
+
+# Writing
+![](./img/elas10.png)
