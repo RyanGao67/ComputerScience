@@ -363,3 +363,23 @@ curl -XPOST localhost:9200/products/_update/101 -H "Content-Type:application/jso
 If id 101 exists, it will update using the script, otherwise it will update. 
 
 
+# Replace
+
+It is the same as index 
+
+```
+PUT /products/_doc/100
+{
+  "name":"Toaster",
+  "price":79,
+  "in_stock":4
+}
+```
+
+# Delete
+```
+DELETE /products/_doc/101
+```
+
+# Routing
+![](./img/elas8.png)
