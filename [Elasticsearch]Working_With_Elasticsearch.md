@@ -203,6 +203,46 @@ curl -XPUT localhost:9200/products -H 'Content-Type: application/json' -d '{"set
 curl -XDELETE localhost:9200/products
 {"acknowledged":true}
 
+
+curl -H 'Content-Type: application/json' -X PUT localhost:9200/risk_scores -d \
+'{ 
+
+"settings": { 
+	"number_of_shards": "2", 
+ 	"number_of_replicas": "1" 
+}, 
+
+"mappings" : { 
+	"properties" : { 
+		"entityName" : { 
+			"type" : "text", 
+			"fields" : {
+				"raw" : {"type" : "keyword"}
+			} 
+		}, 
+		"entityType" : { 
+			"type" : "text", 
+			"fields" : {"raw" : {"type" : "keyword"}} 
+		},
+		"entityHash" : {
+			"type" : "keyword"
+		},
+		"hasAnomalies" : {
+			"type" : "boolean"
+		}, 
+		"id" : {
+			"type" : "keyword"
+		}, 
+		"score" : {
+			"type" : "double"
+		}, 
+		"timestamp" : {
+			"type" : "date"
+		}
+	} 
+}
+
+}'
 ```
 
 # Update
