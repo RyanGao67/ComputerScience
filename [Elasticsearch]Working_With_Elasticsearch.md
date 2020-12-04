@@ -439,7 +439,7 @@ POST /products/_update_by_query
 
 **behind the scene**
 
-![](./img/elas14.png)
+![](./img/elas19.png)
 The first thing that happens when an Update By Query request is processed, is that a snapshot of the index is created. I will get back to why this is the case in a moment. When the snapshot has been taken, a search query is sent to each of the index' shards, in order to find all of the documents that match the supplied query. Whenever a search query matches any documents, a bulk request is sent to update those documents. We haven't covered bulk requests yet, but it's a way to perform document actions on many documents with one request. Specifically, the index, update, and delete actions. Anyway, we'll get to that soon. The "batches" key within the results, specifies how many batches were
 used to retrieve the documents. The query uses something called the Scroll API internally, which is a way to scroll through result sets. The point of this is to be able to handle queries that may match thousands of documents. Each pair of search and bulk requests are sent sequentially, i.e. one at a time. The reason for not doing everything simultaneously, is related to how errors are handled. Should there be an error performing either the search query or the bulk query, Elasticsearch will automatically retry up to ten times. The number of retries is specified within the "retries" key, for both the search and bulk queries. If the affected query is still not successful, the whole query is aborted. The failures will then be specified in the results, within the "failures" key. It is important to note that the query is aborted, and not rolled back. This means that if a number of documents have been updated when an error occurs, those documents will remain updated, even though the request failed. The query is therefore not run within a transaction as you might be familiar with from various databases. That is actually not something unique to this API, but rather a general design pattern.
 
@@ -471,3 +471,10 @@ POST /products/_delete_by_query
 	}
 }
 ```
+
+# Bulk
+![](./img/elas14.png)
+![](./img/elas15.png)
+![](./img/elas16.png)
+![](./img/elas17.png)
+![](./img/elas18.png)
