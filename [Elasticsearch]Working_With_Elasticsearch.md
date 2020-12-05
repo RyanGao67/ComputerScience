@@ -593,4 +593,19 @@ curl localhost:9200/_analyze?pretty -H "Content-Type:application/json" -d '{"tex
   ]
 }
 
+
+# standard analyzer is same as the following
+
+POST /_analyze
+{
+	"text":"2 guys walk into a bar, but the third...DUCKS! :-)",
+	"char_filter":[],
+ 	"tokenizer":"standard",
+	"filter":["lowercase"]
+}
+
 ```
+
+tokens are terms, and terms are put into inverted index which is a data structure
+![](./img/elas20.png)
+![](./img/elas21.png)
