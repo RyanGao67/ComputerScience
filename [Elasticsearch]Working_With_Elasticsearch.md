@@ -609,3 +609,17 @@ POST /_analyze
 tokens are terms, and terms are put into inverted index which is a data structure
 ![](./img/elas20.png)
 ![](./img/elas21.png)
+
+
+# Datatypes
+1. Object
+![](./img/elas22.png)
+![](./img/elas23.png)
+* How array of object is stored, eg:
+![](./img/elas24.png)
+
+# Nested 
+![](./img/elas25.png)
+
+# Keyword
+![](./img/elas26.png)
