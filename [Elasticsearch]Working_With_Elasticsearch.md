@@ -623,3 +623,6 @@ tokens are terms, and terms are put into inverted index which is a data structur
 
 # Keyword
 ![](./img/elas26.png)
+Keyword using noop analyzer, no operation is applied and the string is stored as it is. 
+
+
