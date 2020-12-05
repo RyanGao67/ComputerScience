@@ -625,4 +625,77 @@ tokens are terms, and terms are put into inverted index which is a data structur
 ![](./img/elas26.png)
 Keyword using noop analyzer, no operation is applied and the string is stored as it is. 
 
+# Mapping  
+```
 
+curl -H 'Content-Type: application/json' -X PUT localhost:9200/risk_scores -d \
+'{ 
+"settings": 
+	{ "number_of_shards": "2", "number_of_replicas": "1" }, 
+"mappings" : { 
+	"properties" : { 
+		"entityName" : { 
+			"type" : "text", 
+			"fields" : {"raw" : {"type" : "keyword"}} 
+		}, 
+		"entityType" : { 
+			"type" : "text", 
+			"fields" : {"raw" : {"type" : "keyword"}} 
+		}, 
+		"entityHash" : {
+			"type" : "keyword"
+		},
+		"hasAnomalies" : {
+			"type" : "boolean"
+		}, 
+		"id" : {
+			"type" : "keyword"
+		}, 
+		"score" : {
+			"type" : "double"
+		}, 
+		"timestamp" : {
+			"type" : "date"
+		}
+	} 
+}
+}'
+
+```
+
+
+```
+curl -H 'Content-Type:application/json' -XPUT localhost:9200/reviews -d \
+`
+{
+"mappings":{
+	"properties":{
+		"rating":{"type":"float"},
+		"content":{"type":"text"},
+		"product_id":{"type":"integer"},
+		"author":{
+			"properties":{
+				"first_name":{"type":"text"},
+				"last_name":{"type":"text"},
+				"email":{"type":"keyword"}
+			}
+		}
+	}
+}
+}
+
+`
+
+PUT /reviews/_doc/1
+{
+	"rating":5.0
+	"content":"Outstanding course! Bo really taught me a lot about Elasticsearch!",
+	"product_id":123,
+	"author":{
+		"first_name":"john",
+		"last_name":"Doe",
+		"email":"johndoe123@example.com"
+	}
+}
+
+```
