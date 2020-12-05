@@ -360,7 +360,7 @@ curl -XPOST localhost:9200/products/_update/101 -H "Content-Type:application/jso
 {"_index":"products","_type":"_doc","_id":"101","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":5,"_primary_term":1}
 ```
 
-If id 101 exists, it will update using the script, otherwise it will update. 
+If id 101 exists, it will update using the script, otherwise it will create. 
 
 
 # Replace
@@ -478,3 +478,79 @@ POST /products/_delete_by_query
 ![](./img/elas16.png)
 ![](./img/elas17.png)
 ![](./img/elas18.png)
+
+
+# Analyzer
+
+```
+curl localhost:9200/_analyze?pretty -H "Content-Type:application/json" -d '{"text": "2 guys walk into    a bar, the thrid... DUCKS! :-)", "analyzer": "standard"}'
+
+{
+  "tokens" : [
+    {
+      "token" : "2",
+      "start_offset" : 0,
+      "end_offset" : 1,
+      "type" : "<NUM>",
+      "position" : 0
+    },
+    {
+      "token" : "guys",
+      "start_offset" : 2,
+      "end_offset" : 6,
+      "type" : "<ALPHANUM>",
+      "position" : 1
+    },
+    {
+      "token" : "walk",
+      "start_offset" : 7,
+      "end_offset" : 11,
+      "type" : "<ALPHANUM>",
+      "position" : 2
+    },
+    {
+      "token" : "into",
+      "start_offset" : 12,
+      "end_offset" : 16,
+      "type" : "<ALPHANUM>",
+      "position" : 3
+    },
+    {
+      "token" : "a",
+      "start_offset" : 20,
+      "end_offset" : 21,
+      "type" : "<ALPHANUM>",
+      "position" : 4
+    },
+    {
+      "token" : "bar",
+      "start_offset" : 22,
+      "end_offset" : 25,
+      "type" : "<ALPHANUM>",
+      "position" : 5
+    },
+    {
+      "token" : "the",
+      "start_offset" : 27,
+      "end_offset" : 30,
+      "type" : "<ALPHANUM>",
+      "position" : 6
+    },
+    {
+      "token" : "thrid",
+      "start_offset" : 31,
+      "end_offset" : 36,
+      "type" : "<ALPHANUM>",
+      "position" : 7
+    },
+    {
+      "token" : "ducks",
+      "start_offset" : 40,
+      "end_offset" : 45,
+      "type" : "<ALPHANUM>",
+      "position" : 8
+    }
+  ]
+}
+
+```
