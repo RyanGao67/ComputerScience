@@ -216,7 +216,7 @@ curl -H 'Content-Type: application/json' -X PUT localhost:9200/risk_scores -d \
 	"properties" : { 
 		"entityName" : { 
 			"type" : "text", 
-			"fields" : {
+			"fields" : {                          // the raw here is name specified by us
 				"raw" : {"type" : "keyword"}
 			} 
 		}, 
@@ -894,3 +894,138 @@ PUT /server-metrics
 # Updating field mapping
 
 Mostly you cannot updating existing mapping (eg, changing the data types)
+
+
+# reindexing
+
+```
+POST /_reindex
+{
+	"source":{
+		"index":"reviews"
+	},
+	"dest":{
+		"index":"reviews_new"
+	},
+	"script":{
+		"source":"""
+			if(ctx._source.product_id!=null){
+				ctx._source.product_id = ctx._source.product_id.toString();
+			}
+		"""
+	}
+}
+
+POST /_reindex
+{
+	"source":{
+		"index":"review",
+		"query":{
+			"range":{
+				"rating":{
+					"gte":4.0
+				}
+			}
+		}
+	},
+	"dest":{
+		"index":"reviews_new"
+	}
+}
+
+
+```
+
+# DELETE by query
+```
+POST /reviews_new/_delete_by_query
+{
+	"query":{
+		"match_all":{}
+	}
+}
+```
+
+
+# Multi-field mappings
+Eg, we cannot run aggregations on text fields, (aggregation can be run on dates and numbers)
+
+```
+curl -H 'Content-Type: application/json' -X PUT localhost:9200/risk_scores -d \
+'{
+
+"settings": {
+        "number_of_shards": "2",
+        "number_of_replicas": "1"
+},
+
+"mappings" : {
+        "properties" : {
+                "entityName" : {
+                        "type" : "text",
+                        "fields" : {                          // the raw her
+e is name specified by us
+                                "raw" : {"type" : "keyword"}
+                        }
+                },
+                "entityType" : {
+                        "type" : "text",
+                        "fields" : {"raw" : {"type" : "keyword"}}
+                },
+                "entityHash" : {
+                        "type" : "keyword"
+                },
+                "hasAnomalies" : {
+                        "type" : "boolean"
+                },
+                "id" : {
+                        "type" : "keyword"
+                },
+                "score" : {
+                        "type" : "double"
+                },
+                "timestamp" : {
+                        "type" : "date"
+                }
+        }
+}
+
+}'
+
+
+```
+
+# Index template
+```
+PUT /_template/access-logs
+{
+	"index_patterns":["access-logs-*"],
+	"settings":{"numer_of_shards":2, "index.mapping.coerce":false},
+	"mappings":{
+		"properties":{
+			....
+		}
+	}
+}
+
+```
+
+# Mapping recommendations
+* Set doc_values to false if you don't need soring, aggregations, and scripting
+
+* Set norms to false if you don't need relevence scoring
+
+* Set index to false if you don't need to filter on values
+
+  * You can still do aggregations, eg, for time series data
+
+* Probably only worth the effort when storing lots of documents 
+
+  * otherwise it's probably an over complication
+
+* Worst case scenario, you will need to reindex documents
+
+
+# Analyzer
+
+# Aggregation
