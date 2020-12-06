@@ -698,4 +698,199 @@ PUT /reviews/_doc/1
 	}
 }
 
+# show mapping
+GET /reviews/_mapping
+GET /reviews/_mapping/field/content
+GET /reviews/_mapping/field/author.email
+
 ```
+```
+# modify the mapping
+PUT /reviews/_mapping
+{
+	"properties":{
+		"create_at":{
+			"type":"date"
+		}
+	}
+}
+```
+
+# Date
+![](./img/elas27.png)
+![](./img/elas28.png)
+![](./img/elas29.png)
+
+# Mapping parameters
+1. format
+* Used to customize the format for date fields
+* I recommend using the default format whenever possible
+  * "strick_date_optional_time || epoch_millis "
+* Using Java's DateFormatter syntax
+  * "dd/MM/yyyy" 
+* Using built-in formats
+  * "epoch_second"
+
+```
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"purchased_at":{
+				"type":"date",
+				"format":"dd/MM/yyyy"
+			}
+		}
+	}
+}
+
+
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"purchased_at":{
+				"type":"date",
+				"format":"epoch_second"
+			}
+		}
+	}
+}
+```
+
+2. properties parameter
+```
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"sold_by":{
+				"properties":{
+					"name":{"type":"text"}
+				}
+			}
+		}
+	}
+}
+
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"products":{
+				"type":"nested",
+				"properties":{
+					"name":{"type":"text"}
+				}
+			}
+		}
+	}
+}
+```
+
+3. coerce parameter
+```
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"amount":{
+				"type":"float",
+				"coerce":false
+			}
+		}	
+	}
+}
+
+
+PUT /sales
+{
+	"setting":{"index.mapping.coerce":false},
+	"mappings":{
+		"properties":{
+			"amount":{
+				"type":"float",
+				"coerce":true
+			}
+		}
+	}
+}
+```
+
+4. doc_values
+
+Essentially an uninverted index    
+Used for sorting, aggregations, and scripting    
+An additional data structure, not a replacement   
+Elasticsearch automatically queries the appropriate data structure   
+
+Disabling doc_values
+* Set the doc_values parameter to false to save disk space
+  * Also slightly increases the indexing throughput
+* Only disable doc values if you won't use aggregations, sorting, or scripting  
+* Particularly useful for large indices; typically not worth it for small ones
+* Cannot be changed without reindexing documents into new index
+  * Use with caution, and try to anticipate how fields will be queried
+
+```
+PUT /sales
+{
+	"mappings":{
+		"properties":{
+			"buyer_email":{
+				"type":"keyword",
+				"doc_values":false
+			}
+		}
+	}
+}
+```
+
+5. norms
+
+* Normalization factors used for relevance scoring  
+* Often we don't just want to filter results, but also rank them   
+* Norms can be disabled to save disk space  
+  * Useful for fields that won't be used for relevance scoring
+  * the fields can still be used for filtering and aggregations
+
+```
+PUT /products
+{
+	"mappings":{
+		"properties":{
+			"tags":{
+				"type":"text",
+				"norms":false
+			}
+		}
+	}
+}
+```
+
+6. index
+
+* Disables indexing for a field
+* Values are still stored within _source
+* Useful if you won't use a field for search queries  
+* Saves disk space and slightly improves indexing throughput  
+* often used for time series data
+* Fields with indexing disabled can still be used for aggregations
+
+```
+PUT /server-metrics
+{
+	"mappings":{
+		"properties":{
+			"server_id":{
+				"type":"integer",
+				"index":false
+			}
+		}
+	}
+}
+```
+
+# Updating field mapping
+
+Mostly you cannot updating existing mapping (eg, changing the data types)
