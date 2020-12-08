@@ -1029,3 +1029,5 @@ PUT /_template/access-logs
 # Analyzer
 
 # Aggregation
+
+![](./img/elas30.png)
