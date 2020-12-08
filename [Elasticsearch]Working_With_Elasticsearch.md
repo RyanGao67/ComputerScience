@@ -1031,3 +1031,37 @@ PUT /_template/access-logs
 # Aggregation
 
 ![](./img/elas30.png)
+
+# Example multiple subaggregation with sort
+```
+curl -XPOST localhost:9200/risk_scores/_search\?pretty -H "Content-Type:application/json" -d \
+'{
+    "size":0,
+    "aggs":{
+        "first":{
+            "terms":{
+                "field":"entityHash",
+                "size":5,                        
+                "order": {"second": "desc"}    
+            },                       
+            "aggs":{
+                "second":{                     
+                    "max":{
+                        "field":"score"
+                    }      
+
+                },
+                "third": {
+                    "top_hits": {      
+                        "_source": {
+                            "includes": ["hasAnomalies","timestamp", "score", "entityHash" ]
+                        },                                                   
+                        "size": 5                                                           
+                    }               
+                }                                                                           
+            }                       
+        }                                                                                   
+    }            
+}'                               
+
+```
