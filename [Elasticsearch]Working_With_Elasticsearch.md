@@ -1410,9 +1410,10 @@ GET /product/default/_search
 }
 ```
 
+```
   ? match only 1
   * match anything
-
+```
 avoid wildcard query. it is a for loop search
 
 # regx
