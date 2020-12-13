@@ -1027,7 +1027,146 @@ PUT /_template/access-logs
 
 
 # Analyzer
+1. Standard analyzer:  
+*  Splits text at word boundaries and removes punctuation
+  * Done by the standard tokenizer
+* Lowercases letters with the lowercase token filter
+* Contains the stop token filter (disable by default)
 
+2. simple analyzer
+* Similar to the standard analyzer
+  * Split into tokens when encountering anything else than letters
+* Lowercases letters with the lowercase tokenizer
+  * Unusual and a performance hack
+
+3. whitespace analyzer
+* split text into tokens by whitespace
+* Does not lowercase letters
+
+4. keyword analyzer
+* No-op analyzer that leaves the input text intact
+  * it simply outputs it as a single token
+* Used for keyword fields by default
+  * Used for exact matching
+
+5. pattern analyzer
+* A regular expression is used to match token separators
+  * it should match whatever should split the text into tokens
+* This analyzer is very flexible  
+* The default pattern matches all non-word characters(/W+)
+* Lowercases letters by default
+
+An example analyzer
+
+```
+// example 1: modify existing analyzer
+PUT /products
+{
+	"settings":{
+		"analysis":{
+			"analyzer":{
+				"remove_english_stop_words":{
+					"type": "standard",
+					"stopwords": "_english_"
+				}
+			}
+		}
+	}
+}
+
+// example 3: 
+PUT /analyzer_test
+{
+	"settings":{
+		"analysis":{
+			"analyzer":{
+				"my_custom_analyzer":{
+					"type":"custom",
+					"char_filter":["html_strip"],
+					"tokenizer":"standard",
+					"filter":[
+						"lowercase",
+						"stop",
+						"asciifolding"
+					]
+				}
+			}
+		}
+	}
+}
+
+// to test example 3:
+POST /analyzer_test/_analyze
+{
+	"analyzer":"my_custom_analyzer",
+	"text":"I&apos;m a <em>good</em> mood&nbsp;-&nbsp;and I <strong>love</strong> acai!"
+}
+
+// example 2: create a new analyzer
+PUT /english_example
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "english_stop": {
+          "type":       "stop",
+          "stopwords":  "_english_" 
+        },
+        "english_keywords": {
+          "type":       "keyword_marker",
+          "keywords":   ["example"] 
+        },
+        "english_stemmer": {
+          "type":       "stemmer",
+          "language":   "english"
+        },
+        "english_possessive_stemmer": {
+          "type":       "stemmer",
+          "language":   "possessive_english"
+        }
+      },
+      "char_filter":{},
+      "tokenizer":{},
+      "analyzer": {
+        "rebuilt_english": {
+          "tokenizer":  "standard",
+          "filter": [
+            "english_possessive_stemmer",
+            "lowercase",
+            "english_stop",
+            "english_keywords",
+            "english_stemmer"
+          ]
+        }
+      }
+    }
+  }
+}
+
+// How to use analyzer
+
+PUT /products
+{
+	"mappings":{
+		"properties":{
+			"description":{
+				"type":"text",
+				"analyzer":"english"
+			}
+		}
+	}
+}
+
+POST /products/_doc
+{
+	"description":"Is that Perter's cute-looking dog?"
+}
+
+
+// ==========> ["peter", "cute", "look", "dog"]
+
+
+```
 # Aggregation
 
 ![](./img/elas30.png)
@@ -1064,4 +1203,49 @@ curl -XPOST localhost:9200/risk_scores/_search\?pretty -H "Content-Type:applicat
     }            
 }'                               
 
+```
+
+# Open & closed indices
+
+* An open index is available for indexing and search requests
+
+* A closed index will refuse requests
+  * Read and write requests are blocked
+  * Necessary for performing some operations
+
+# Dynamic and static settings
+
+* Dynamic settings can be changed without closing the index first
+  * Requires no downtime
+* Static settings require the index to be closed first
+  * The index will be briefly unavailable
+* Analysis settings are static settings
+
+```
+//close a index
+PUT /analyzer_test/_close
+
+// adding analyzers to existing indices
+PUT /analyzer_test/_settings
+{
+	"analysis":{
+		"analyzer":{
+			"my_second_analyzer":{
+				"type":"custom",
+				"tokenizer":"standard",
+				"char_filter":["html_strip"],
+				"filter":[
+					"lowercase",
+					"stop",
+					"asciifolding"
+				]
+			}
+		}
+	}
+}
+
+// reopening index
+POST /analyzer_test/_open
+
+GET /analyzer_test/_settings
 ```
