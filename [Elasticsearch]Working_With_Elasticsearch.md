@@ -1530,5 +1530,5 @@ GET /recipe/default/_search
 ```
 
 # internal match query
-![./img/elas31](./img/elas31)
-![](./img/elas32)
+![./img/elas31.png](./img/elas31.png)
+![](./img/elas32.png)
