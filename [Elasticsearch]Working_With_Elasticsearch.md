@@ -1251,3 +1251,227 @@ POST /analyzer_test/_open
 
 GET /analyzer_test/_settings
 ```
+
+
+# How to debug a query
+```
+// this will show why the document match or not match query 
+// GET /<index>/<type>/<id>/_explain
+GET /product/default/1/_explain
+{
+	"query":{
+		"term":{
+			"name":"lobster"
+		}
+	}
+}
+```
+
+
+# query context vs filter context
+
+* query context: 
+
+We're essentially asking how well the documents match this query,  elastic search will still decide whether or not documents match in the first place but a relevant score will also be calculated.
+
+
+* filter context
+
+query is what we have seen so far because we nested a term query Clauss within a query object.
+
+The reason we did that is because there is another place where we can accurately assess within a filter context when adding a query clause within a filter context we ask elasticsearch wheather the documents match the query. 
+
+That part is the same as with the query context.
+
+But the important difference is that with the filter context no relevent score is calculated.
+
+
+# term query and terms query
+
+```
+ curl -XPOST -H 'Content-Type:application/json' localhost:9200/risk_scores/_search\?pretty -d \
+'{"query":
+	{"term":
+		{"entityHash":{"value":
+				"8093bc0a5fa1d022bc8cd3765ae253f5"
+			}
+		}
+	}
+}'
+``` 
+
+
+```
+GET /product/default/_search
+{
+	"query":{
+		"terms":{
+			"tags.keyword":[
+				"Soap",
+				"Cake"
+			]
+		}
+	}
+}
+```
+[https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)
+
+
+# id query
+```
+GET /product/default/_search{
+	"query":{
+		"ids":{
+			"values":[1,2,3]
+		}
+	}
+}
+```
+
+
+# Range query
+
+```
+GET /product/default/_search
+{
+	"query":{
+		"range":{
+			"created":{
+				"gte":"01-01-2010",
+				"lte":"31-12-2010",
+				"format":"dd-MM-yyyy"
+			}
+		}
+	}
+}
+```
+
+# date math
+```
+GET /product/default/_search
+{
+	"query":{
+		"range":{
+			"created":{
+				"gte":"2010/01/01||-1y/M"
+			}
+		}
+	}
+}
+```
+
+-1y means minus 1 year
+/M means round to month
+
+# not null
+```
+GET /product/default/_search
+{
+	"query":{
+		"exists":{
+			"field":"tags"
+		}
+	}
+}
+```
+
+# prefix
+```
+GET /product/default/_search
+{
+	"query":{
+		"prefix":{
+			"tags.keyword":"Vege"
+		}
+	}
+}
+```
+
+# Wildcard
+```
+GET /product/default/_search
+{
+	"query":{
+		"wildcard":{
+			"tags.keyword":"Veg*ble"
+		}
+	}
+}
+```
+
+```
+GET /product/default/_search
+{
+	"query":{
+		"wildcard":{
+			"tags.keyword":"Veg?ble"
+		}
+	}
+}
+```
+
+? match only 1
+* match anything
+
+avoid wildcard query. it is a for loop search
+
+# regx
+
+```
+GET /product/default/_search
+{
+	"query":{
+		"regexp":{
+			"tags.keyword":"Veget[a-zA-Z]+ble"
+		}
+	}
+}
+```
+
+# match query
+```
+GET /recipe/default/_search
+{
+	"query":{
+		"match":{
+			"title":"Recipes with pasta or spaghetti"
+		}
+	}
+}
+```
+
+Example
+
+```
+Please write a query searching for the sentence "pasta with parmesan and spinach" within the "title" field, simulating that this sentence was entered by a user within a search field.
+
+GET /recipe/_doc/_search
+{
+  "query": {
+    "match": {
+      "title": "Pasta with parmesan and spinach"
+    }
+  }
+}
+Please write a query searching for phrase "pasta carbonara" within the "title" field.
+
+GET /recipe/_doc/_search
+{
+  "query": {
+    "match_phrase": {
+      "title": "pasta carbonara"
+    }
+  }
+}
+Please write a query searching for the terms "pasta" or "pesto" within the "title" and "description" fields.
+
+GET /recipe/_doc/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "pasta pesto",
+      "fields": [ "title", "description" ]
+    }
+  }
+}
+```
