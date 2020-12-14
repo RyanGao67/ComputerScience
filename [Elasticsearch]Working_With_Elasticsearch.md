@@ -1532,3 +1532,97 @@ GET /recipe/default/_search
 # internal match query
 ![./img/elas31.png](./img/elas31.png)
 ![](./img/elas32.png)
+
+# join
+```
+PUT /department
+{
+	"mappings":{
+		"_doc":{
+			"properties":{
+				"name":{
+					"type":"text"
+				},
+				"employees":{
+					"type":"nested"
+				}
+			}
+		}
+	}
+}
+
+POST /department/_doc/1
+{
+	"name":"Development",
+	"employees":[
+		{
+			"name":"Eric Green",
+			"age":39,
+			"gender":"M",
+			"position":"Big Data Specialist"
+		},
+		{
+			"name":"James Taylor",
+			"age":27,
+			"gender":"M",
+			"position":"Software Developer"
+		}
+	]
+}
+
+// this will not work because nested query cannot be queried like this
+GET /department/_search
+{
+	"query":{
+		"bool":{
+			"must":[
+				{
+					"match":{
+						"employees.position":"intern"
+					}
+				},
+				{
+					"term":{
+						"employees.gender.keyword":{
+							"value":"F"
+						}
+					}
+				}
+			]
+		}
+	}
+}
+
+// the right way
+GET /department/_search
+{
+	"query":{
+		"nested":{
+			"path":"employees",
+			"query":{
+				"bool":{
+					"must":[
+			                           {
+		                                        "match":{
+                		                                "employees.position":"intern"
+                                		        }
+                                		},
+                                {
+                                        "term":{
+                                                "employees.gender.keyword":{
+                                                        "value":"F"
+                                                }
+                                        }
+                                }
+
+					]
+				}
+			}
+		}
+	}
+}
+```
+
+# inner hits
+what caused the document to match the query
+![](./img/elas34.png)
