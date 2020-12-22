@@ -237,3 +237,81 @@ Useful links:
 
 # Java Functional programming
 [https://github.com/RyanGao67/Java_Functional_Programming/blob/master/src/main/java/testFunctinalProgramming.java](https://github.com/RyanGao67/Java_Functional_Programming/blob/master/src/main/java/testFunctinalProgramming.java)
+
+# Java Reflection 
+
+### Reflection Entry Point -Class<?>
+* Class<?> is an entry point for us to reflect on our application's code   
+* An object of Class<?> contains all the information on 
+  * A given object's runtime type
+  * A class in our application
+* That information includes 
+  * What methods and fields it contains 
+  * What classes it extends
+  * What interfaces it implements  
+  * .... and much much more
+
+### How to get the Class<?> object
+(1) Object.getClass():
+
+String stringObject = "some-string";
+
+Car car  = new Car();
+
+Map<String, Integer> map = new HashMap<>();
+
+Class<String> stringClass = stringObject.getClass();
+
+Class<Car> carClass = car.getClass();
+
+Class<?> mapClass = map.getClass();
+
+boolean condition = true;
+
+Class booleanClass = condition.getClass(); //compilation error
+
+(2) class
+
+Class<String> stringClass = String.class;
+
+Class<Car> carClass = Car.class;
+
+Class<?> mapClass = HashMap.class;
+
+Class booleanType = boolean.class;
+
+Class intType = int.class;
+
+Class doubleType = double.class;
+
+(3)Class.forName(...)
+
+Class<?> stringType = Class.forName("java.lang.String");
+
+Class<?> carType = Class.forName("vehicles.Car");
+
+Class<?> engineType = Class.forName("vehicles.Car$Engine");
+
+```
+package vehicles;   
+class Car{   
+...   
+static class Engine{}   
+}  
+```
+
+boolean condition = true;
+Class booleanClass = Class.forName("boolean"); // Runtime Error 
+
+**Some notes on Class.forName()**
+* Much more likely to mistype the class name and get the ClassNotFoundException
+* The class we pass into the Class.forName(...) may not exist  
+* Class.forName(..) is the least safest way to get a Class<?> object  
+* There are use cases where Class.forName(...) is our only option
+  * one such use case is when the type we want to inspect or create an instance of at runtime is passed to us from a user-defined configuration file.  using this approach users can change the application's behavior just by modifying an external text file with no need to change or recompile the source code. Using the static forName() method we can read the fully qualified class name from the config file and get the class object of that type at runtime 
+
+  * the second use case is when the class we want to reflect on is not even part of our project and does not exist when we compile the code however that class is added to the application's class path at runtime this is very useful if we're building a library separately from the applications that will import and use it 
+
+
+![](./img/java1.png)
+![](./img/java2.png)
