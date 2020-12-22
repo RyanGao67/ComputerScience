@@ -315,3 +315,5 @@ Class booleanClass = Class.forName("boolean"); // Runtime Error
 
 ![](./img/java1.png)
 ![](./img/java2.png)
+
+Exercise: [](./https://github.com/RyanGao67/Java_Reflection/blob/master/src/main/java/Main.java)
