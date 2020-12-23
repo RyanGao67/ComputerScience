@@ -318,3 +318,75 @@ Class booleanClass = Class.forName("boolean"); // Runtime Error
 
 Exercise:  
 [https://github.com/RyanGao67/Java_Reflection/blob/master/src/main/java/Main.java](https://github.com/RyanGao67/Java_Reflection/blob/master/src/main/java/Main.java)
+
+
+### java.lang.reflect.Constructor<?> 
+* A constructor of a Java class is represented by an instance of Constructor<?> class
+
+* The Constructor object contains all the information about the class's constructor including: 
+  * Number of parameters
+  * Types of the parameters
+
+* A class may have multiple constructors
+
+### Method to get Constructor<?> objects
+
+* Class.getDeclaredConstructors()
+  * Returns all declared constructors within the class
+  * includes all the public and non-public constructors
+
+* Class.getConstructors()
+  * Returns only public constructors
+
+* If you know the particular constructor parameter types we call: 
+  * Class.getConstructor(Class<?> ... parameterTypes) or Class.getDeclaredConstructor(Class<?> ... parameterTypes) 
+    * Returns a particular constructor based on the parameter types
+    * Throws NoSuchMethodException if no matching constructor is found
+
+
+### Objective and motivation - object creator
+* Implement a single "factory" method that can create an object of any class
+* Depending on the arguments passed to out method, it will find the right constructor
+* Create the given class object by calling the right constructor
+* Without Reflection it is impossible 
+**Refer to the example for code example**
+
+### Private Constructors with Reflection
+* Using reflection we have full access to all 
+  * public 
+  * protected
+  * package-private
+  * and private
+constructors
+
+* Using Constructor.newInstance() we can create objects of a class using the restricted constructors
+
+* Exception: A class belonging to a Java module that does not allow access to a given class
+
+### PUblic classes vs Package-Private classes
+```
+Package some.package;
+public class InternalClass{}
+```
+
+When the public is missing, the class cannot be accessed from outside of the package
+
+```
+class InternalClass{
+	public InternalClass(){}
+}
+```
+
+Package-Private classes External Access
+
+* there are cases where we need to allow access to package-private classes from outside the package for:
+  * Reading
+  * Initializing
+
+* Typically when we want to use an external library to help us initialize those classes
+
+* The code in the external libraries is outside of our package
+
+Example: 
+
+[https://github.com/RyanGao67/Java_Reflaction_tictactoe/tree/master/src](https://github.com/RyanGao67/Java_Reflaction_tictactoe/tree/master/src)
