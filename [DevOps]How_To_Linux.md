@@ -97,4 +97,8 @@ eg, man uptime
 # Shell Script
 [https://github.com/RyanGao67/Shell_Script](https://github.com/RyanGao67/Shell_Script)
 
+# awk    
+[https://www.geeksforgeeks.org/awk-command-unixlinux-examples/](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)  
 
+# uniq
+[https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/](https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/)
