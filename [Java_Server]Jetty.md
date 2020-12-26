@@ -49,3 +49,24 @@ The logs is a directory for logs.
 The start.ini file contains arguments that are added during command line execution. 
 
 Finally, the webapps directory contains web applications that run under the default configuration of Jetty. It is where we deploy our web archives.
+
+# Start demo
+
+cd demo-base
+
+java -jar ../start.jar
+
+
+# Shutting down Jetty
+The Jetty server can be stopped by pressing Ctrl+C at the shell prompt or by killing its process.
+
+It is possible to stop Jetty with the start.jar. Stopping this way must be enabled first.
+
+$ java -jar start.jar STOP.PORT=8090 STOP.KEY=mypasswd 
+
+When we start Jetty, we provide a password and a port number on which Jetty listens to stop command.
+
+$ java -jar start.jar STOP.PORT=8090 STOP.KEY=mypasswd --stop
+
+ 
+We append the --stop option to shut down the Jetty server.
