@@ -102,3 +102,6 @@ eg, man uptime
 
 # uniq
 [https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/](https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/)
+
+# array
+[https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
