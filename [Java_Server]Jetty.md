@@ -155,3 +155,10 @@ $ java -jar $JETTY_HOME/start.jar
 
 # Create webapp
 [https://github.com/RyanGao67/Learn_Jetty_20201226/tree/master/src/main/java/com/journaldev](https://github.com/RyanGao67/Learn_Jetty_20201226/tree/master/src/main/java/com/journaldev)
+
+# Reference
+Jetty:   
+[http://zetcode.com/java/jetty/introduction/](http://zetcode.com/java/jetty/introduction/)
+
+Jersey: 
+[https://www.journaldev.com/498/jersey-java-tutorial#creating-jersey-eclipse-maven-project](https://www.journaldev.com/498/jersey-java-tutorial#creating-jersey-eclipse-maven-project)
