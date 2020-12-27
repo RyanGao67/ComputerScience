@@ -160,5 +160,8 @@ $ java -jar $JETTY_HOME/start.jar
 Jetty:   
 [http://zetcode.com/java/jetty/introduction/](http://zetcode.com/java/jetty/introduction/)
 
-Jersey: 
+Jersey:    
 [https://www.journaldev.com/498/jersey-java-tutorial#creating-jersey-eclipse-maven-project](https://www.journaldev.com/498/jersey-java-tutorial#creating-jersey-eclipse-maven-project)
+
+
+[https://www.vogella.com/tutorials/REST/article.html](https://www.vogella.com/tutorials/REST/article.html)
