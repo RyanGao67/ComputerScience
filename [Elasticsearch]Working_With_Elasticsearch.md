@@ -1,9 +1,9 @@
 # Examples
 
-* elasticsearch java
+* DropWizard elasticsearch app: 
 [https://github.com/RyanGao67/ElasticSearch_Java](https://github.com/RyanGao67/ElasticSearch_Java)
 
-* elasticsearch java
+* Elasticsearch highlevel client: 
 [https://github.com/RyanGao67/elasticsearch_java_1/blob/master/src/main/java/com/example.java](https://github.com/RyanGao67/elasticsearch_java_1/blob/master/src/main/java/com/example.java)
 
 * [https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java)
@@ -1626,3 +1626,9 @@ GET /department/_search
 # inner hits
 what caused the document to match the query
 ![](./img/elas34.png)
+
+
+# Elasticsearch debug gems
+
+* How to resolve unassigned shards in Elasticsearch   
+[https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster](https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster)
