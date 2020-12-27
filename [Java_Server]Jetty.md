@@ -70,3 +70,88 @@ $ java -jar start.jar STOP.PORT=8090 STOP.KEY=mypasswd --stop
 
  
 We append the --stop option to shut down the Jetty server.
+
+
+# Jetty home & base
+
+Starting with Jetty 9.1, it is possible to maintain a seperation between the binary installation of the standalone Jetty called Jetty home, and the customizations for a specific environment called Jetty base. 
+
+
+* Jetty home is the location for the Jetty distribution binaries, default XML configurations, and default module definitions. 
+
+* Jetty base is the location for configurations and customizations to the Jetty distribution.
+
+```
+$ mkdir my-base
+$ cd my-base/
+```
+
+We create a my-base directory which will be our Jetty base. 
+
+```
+$ export JETTY_BASE=/home/...../my_base
+
+```
+
+A JETTY_BASE environment variable is created. Jetty determins the Jetty home and Jetty base locations either from environment variables or from properties
+
+Three important items of a Jetty base are the start.d configuration directory, the start.ini configuration file and the webapps directory. 
+
+We use the start.jar to enable necessary modules of Jetty. 
+
+The --add-to-start option enables a module by appending lines to the ${jetty.base}/start.ini file. 
+
+The --add-to-startd enables a module via creation of a module-specific INI file in the ${jetty.base}/start.d/ directory. 
+
+So, 
+```
+java -jar $JETTY_HOME/start.jar --add-to-start=deploy
+```
+
+This will create start.ini file and add deploy module to it. Also the webapps directory is created. 
+
+
+```
+$ java -jar $JETTY_HOME/start.jar --add-to-startd=http
+
+```
+
+The http module configuration named http.ini is created in the start.d directory.
+
+```
+$ tree
+.
+├── start.d
+│   └── http.ini
+├── start.ini
+└── webapps
+```
+2 directories, 2 files
+At this moment we have this content in our Jetty base directory. Actually, we have enabled more than two modules—modules may have dependent modules and these were enabled as well. For instance, by enabling the http module we have activated the server module as well.
+```
+$ java -jar $JETTY_HOME/start.jar --list-modules
+...
+Jetty Active Module Tree:
+-------------------------
+ + Module: server [enabled]
+   + Module: http [enabled]
+   + Module: security [enabled]
+   + Module: servlet [enabled]
+     + Module: webapp [enabled]
+       + Module: deploy [enabled]
+```
+
+To change the port
+```
+$ cat start.d/http.ini 
+```
+
+# To Start the app 
+```
+$ pwd
+/home/janbodnar/prog/jetty/my-base
+$ java -jar $JETTY_HOME/start.jar
+```
+
+# Create webapp
+[https://github.com/RyanGao67/Learn_Jetty_20201226/tree/master/src/main/java/com/journaldev](https://github.com/RyanGao67/Learn_Jetty_20201226/tree/master/src/main/java/com/journaldev)
