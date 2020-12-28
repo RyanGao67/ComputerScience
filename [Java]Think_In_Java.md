@@ -390,3 +390,13 @@ Package-Private classes External Access
 Example: 
 
 [https://github.com/RyanGao67/Java_Reflaction_tictactoe/tree/master/src](https://github.com/RyanGao67/Java_Reflaction_tictactoe/tree/master/src)
+
+
+### Annotation 
+
+[https://github.com/RyanGao67/Java_Annotation/blob/master/src/test/java/JsonSerializerUnitTest.java](https://github.com/RyanGao67/Java_Annotation/blob/master/src/test/java/JsonSerializerUnitTest.java)
+
+Reference:    
+[https://www.baeldung.com/java-custom-annotation](https://www.baeldung.com/java-custom-annotation)
+
+[https://www.baeldung.com/java-default-annotations](https://www.baeldung.com/java-default-annotations)
