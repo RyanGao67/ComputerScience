@@ -269,3 +269,57 @@ build.gradle. For example, if you have five object instantiated that implement t
 [https://github.com/RyanGao67/howtogradle/blob/master/build.gradle](https://github.com/RyanGao67/howtogradle/blob/master/build.gradle)   
 Refer to this page for detailed information:   
 [https://github.com/johnrengelman/shadow](https://github.com/johnrengelman/shadow)
+
+
+# Advanced Gradle     
+**SourceSet**:
+
+[https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceSet.html](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceSet.html)
+
+A SourceSet represents a logical group of Java source and resource files. 
+
+The following example shows how you can configure the 'main' source set, which in this case involves excluding classes whose package begins 'some.unwanted.package' from compilation of the source files in the 'java' SourceDirectorySet:
+
+```
+plugins {
+    id 'java'
+}
+
+sourceSets {
+  main {
+    java {
+      exclude 'some/unwanted/package/**'
+    }
+  }
+}
+```
+
+**SourceDirectorySet**:
+
+[https://docs.gradle.org/current/dsl/org.gradle.api.file.SourceDirectorySet.html](https://docs.gradle.org/current/dsl/org.gradle.api.file.SourceDirectorySet.html)    
+A SourceDirectorySet represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.
+
+SourceDirectorySet extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.
+
+You can create an instance of SourceDirectorySet using the ObjectFactory.sourceDirectorySet(java.lang.String, java.lang.String) method.
+
+
+
+**When Should use 'java' plugin and when 'java-library' plugin?**: 
+
+Basically, if you build a library (aka, a component meant to be consumed by other components), you should use the java-library plugin instead of the java plugin. That is to say change from apply plugin: 'java' to apply plugin: 'java-library'.
+
+
+**Application Plugin**:
+
+[https://docs.gradle.org/current/userguide/application_plugin.html](https://docs.gradle.org/current/userguide/application_plugin.html)
+
+The Application plugin facilitates creating an executable JVM application. It makes it easy to start the application locally during development, and to package the application as a TAR and/or ZIP including operating system specific start scripts.
+
+Applying the Application plugin also implicitly applies the Java plugin. The main source set is effectively the “application”.
+
+
+
+
+
+
