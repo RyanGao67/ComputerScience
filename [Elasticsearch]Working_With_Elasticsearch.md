@@ -1633,6 +1633,5 @@ what caused the document to match the query
 * How to resolve unassigned shards in Elasticsearch   
 [https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster](https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster)
 
-* POST /_cluster/reroute API
-
+* POST /_cluster/reroute API  
 [https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html)
