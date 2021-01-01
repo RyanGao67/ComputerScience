@@ -11,6 +11,9 @@
 * How to run multinode elasticsearch  
  [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 
+
+*  [https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java)
+
 # Elasticsearch CMD
 
 ```
@@ -1635,3 +1638,6 @@ what caused the document to match the query
 
 * How to resolve unassigned shards in Elasticsearch   
 [https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster](https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/#reason-4-shard-data-no-longer-exists-in-the-cluster)
+
+* POST /_cluster/reroute API  
+[https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html)
