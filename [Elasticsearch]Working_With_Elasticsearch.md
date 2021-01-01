@@ -8,6 +8,9 @@
 
 * [https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java)
 
+* How to run multinode elasticsearch  
+ [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
+
 # Elasticsearch CMD
 
 ```
