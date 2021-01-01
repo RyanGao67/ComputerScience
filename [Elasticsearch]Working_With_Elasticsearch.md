@@ -8,6 +8,8 @@
 
 * [https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch_java_2/blob/master/src/main/java/com/shallowlightning/App.java)
 
+*  [https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java)
+
 # Elasticsearch CMD
 
 ```
