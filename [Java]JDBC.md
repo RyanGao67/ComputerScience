@@ -18,3 +18,7 @@ Installing:
 
 Connecting to DB:
 [https://www.a2hosting.ca/kb/developer-corner/mysql/connect-to-mysql-from-the-command-line](https://www.a2hosting.ca/kb/developer-corner/mysql/connect-to-mysql-from-the-command-line)
+
+# Example
+
+[https://github.com/RyanGao67/JDBC/tree/master/src/main/java/com/shallowlightning](https://github.com/RyanGao67/JDBC/tree/master/src/main/java/com/shallowlightning)
