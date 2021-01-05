@@ -269,3 +269,38 @@ Use -l to specify the label that the run command applied which is my-apache
 
 
 ![](./img/k8s5.png)
+
+Let's start with Nodes and Node is a machine, physical or virtual one which Kubernetes is installed 
+
+Node is a worker machine and that is where containers will be launched by Kubernetes, It was also known as minion's in the past. So you might hear these terms used interchangeably. 
+
+But what if the node on which your application is running fails? Well obviously our application goes down. So you need to have more than one Node. A Cluster is a set of nodes grouped together, this way even if one node fails you have your application still accessible from the other Nodes. Moreover having multiple nodes helps in sharing load as well.
+
+Now we have a cluster. But who is responsible for managing the cluster? Where is the information about members of the cluster stored.
+
+How were the Nodes monitored? When a node fails how do you move the workload of the failed node to another worker node? That's where the Master comes in.
+
+The Master is another node with Kubernetes installed in it and is configured as a Master. The Master watches over the Nodes in the cluster and is responsible for the actual orchestration of containers on the worker Nodes. When you install Kubernetes on a system you're actually installing the following components - An API server. An ETCD service. A kubelet service. A Container Runtime, Controllers and Schedulers.
+
+* The API server acts as the front end for Kubernetes, the users, management devices, command line interfaces all talk to the API server to interact with Kubernetes cluster.
+
+* Next is the ETCD key store. ETCD is a distributed reliable key-value store used by Kubernetes to store all data used to manage the cluster. Think of it this way. When you have multiple Nodes and multiple Masters in your cluster, ETCD stores all that information of all the nodes in the cluster in a distributed manner.
+ETCD is responsible for implementing locks within the cluster to ensure that there are no conflicts between
+the Masters. 
+
+* The scheduler is responsible for distributing work or containers across multiple nodes it looks for newly created containers and assigns them to nodes.
+
+* The controllers are the brain behind orchestration. They are responsible for noticing and responding when nodes, containers or end points goes down. The controllers make decisions to bring up new containers in such cases.
+
+* The container runtime is the underlying software that is used to run containers. In our case it happens to be Docker, but there are other options as well.
+
+* And finally Kubelet is the agent that runs on each node in the cluster. The agent is responsible for making sure that the containers are running on the nodes as expected.
+
+So far we saw two types of servers. Master and Worker and a set of components that make up Kubernetes. But how are these companies distributed across different types of servers. In other words how does one server become a master and the other the slave. The worker node or minion as it is also known is where the containers are hosted.To run Docker containers on a system we need container runtime installed. And that's where the container runtime falls. In this case it happens to be Docker. 
+
+The master server has the Kube API server and that is what makes it a master. Similarly the worker nodes have to Kubelet agent that is responsible for interacting with a master to provide health information of the worker node and carry out actions requested by the Master on the worker nodes.
+
+All the information gathered are stored in a key value store on the master. The key value store is based on the popular ETCD framework as we just discussed. The master also has the control manager and the scheduler.
+There are other components as well but we will stop there for now.
+
+kube control tool is used to deploy and manage applications on a Kubernetes cluster to get cluster information to get the status of other Nodes in the cluster and to manage many other things. the kubectl run command is used to deploy an application on the cluster. The kubectl cluster info command is used to view information about the cluster and the kubectl get nodes command is used to list all the nodes part of the cluster.
