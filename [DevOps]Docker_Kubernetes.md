@@ -304,3 +304,5 @@ All the information gathered are stored in a key value store on the master. The 
 There are other components as well but we will stop there for now.
 
 kube control tool is used to deploy and manage applications on a Kubernetes cluster to get cluster information to get the status of other Nodes in the cluster and to manage many other things. the kubectl run command is used to deploy an application on the cluster. The kubectl cluster info command is used to view information about the cluster and the kubectl get nodes command is used to list all the nodes part of the cluster.
+
+![](./img/k8s6.png)
