@@ -329,3 +329,36 @@ spec:
 |Service|v1|
 |ReplicaSet|apps/v1|
 |Deployment|apps/v1|
+
+```
+kubectl get pods    // get all the pods
+kubectl describe pod myapp-pod  // get detailed information
+kubectl delete deployment nginx // delete pods
+kubectl delete pod webapp // delete pods
+kubectl create -f pod-definition.yml // create pod
+kubectl get pods -o wide // get more detailed information
+
+```
+
+Example:
+```
+controlplane $ kubectl get pod webapp
+NAME     READY   STATUS             RESTARTS   AGE
+webapp   1/2     ImagePullBackOff   0          76s
+```
+
+We can see here there are two container in this pod webapp. 
+
+# Create a pod yml from command line
+```
+kubectl run redis --image=redis123 --dry-run=client -o yaml > pod.yaml
+```
+
+# Update the pod 
+```
+kubectl edit pod redis 
+```
+
+# Replication controller (one of the controller)
+Replication controller is replaced by replica set 
+![](./img/k8s7.png)
