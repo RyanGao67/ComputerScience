@@ -362,3 +362,64 @@ kubectl edit pod redis
 # Replication controller (one of the controller)
 Replication controller is replaced by replica set 
 ![](./img/k8s7.png)
+
+# How to scale replica 
+1. Change the replica yaml, eg, replicas:6 . And then run `kubectl replace -f replicaset-definition.yml`
+
+2. `kubectl scale --replicas=6 -f replicaset-definition.yml`  ----> this will not update the file
+
+3. `kubectl scale --replicas=6 replicaset myapp-replicaset`  ----> the last two parameters are TYPE and NAME
+
+4. this is for editing. `kubectl edit replicaset new-replica-set`  ----> the last parameter is the replicaset name
+
+# Replicasets
+
+```
+// get replicasets
+kubectl get replicasets
+
+// eg
+
+controlplane $ kubectl get replicasets
+NAME            DESIRED   CURRENT   READY   AGE
+new-replica-set 4         4         0       12s
+
+// describe replicaset
+kubectl describe replicaset new-replica-set
+```
+
+# Deployment
+![](./img/k8s8.png)
+
+```
+kubectl get all 
+```
+
+This will return the replica, pods, deployment
+
+Example:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: busybox-pod
+  template:
+    metadata:
+      labels:
+        name: busybox-pod
+    spec:
+      containers:
+        - name: busybox-container
+          image: busybox888
+          command: 
+            - sh
+            - "-c"
+            - echo Hello Kubernetes! && sleep 3600
+```
+
