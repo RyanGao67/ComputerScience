@@ -528,4 +528,53 @@ Both the above commands have their own challenges. While one of it cannot accept
 
 
 
+# Get pod yml 
 
+```
+kubectl get pod webapp-color -o yaml > pod.yaml
+```
+
+```
+kubectl delete pod webapp-color
+```
+
+# Config map
+
+```
+kubectl create configmap webapp-color
+```
+
+```
+kubectl create cm webapp-config-map --from-literal=APP_COLOR=darkblue
+```
+
+* how to specify the envFrom, configMapRef
+
+```
+spec:
+  containers:
+  - envFrom:
+    - configMapRef:
+        name: webapp-config-map
+
+    image: kodecloud/webapp-color
+.....
+```
+
+# Secret
+
+```
+kubectl create secret generic\
+  app-secret --from-literal=DB_HOST=mysql\
+             --from-literal=DB_USER=root\
+             --from-literal=DB_Password=password
+kubectl create secret generic
+  app-secret --from-file=app_secret.properties
+
+```
+
+![](./img/k8s9.png)
+![](./img/k8s10.png)
+![](./img/k8s11.png)
+![](./img/k8s12.png)
+![](./img/k8s12.png)
