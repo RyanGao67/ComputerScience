@@ -3,11 +3,37 @@ https://spoore.wordpress.com/2017/02/21/keycloak-and-freeipa-intro/
 
 Here is one example for using keycloak with Spring boot: 
 [https://github.com/RyanGao67/Spring_Keycloak/tree/master/demo/src/main/java/com/example/demo](https://github.com/RyanGao67/Spring_Keycloak/tree/master/demo/src/main/java/com/example/demo)
+![./img/keycloak1.png](./img/keycloak1.png)
+
+Authorization code grant:
+
+ you have experienced this type of authorization flow when granting a mobile application or a Web page to access your Facebook or Google account. And this is a redirection based flow.  To use this flow, it must be capable of handling your redirects from the authorization server. And additionally, to be able to handle your redirects, the client application must be able to securely store the client secret that it will be using when exchanging the authorization code for an access token.
+
+And if the client application cannot guarantee this, Instead, it should consider using PKCE in the hands authorization code.
+
+* How the workflow works:
+[https://docs.google.com/presentation/d/1CiAiuay5rd1KDDnYwOyu6ud9xk5ZetSQDOMp9DYUKjs/edit#slide=id.g8bb7b0e120_0_0](https://docs.google.com/presentation/d/1CiAiuay5rd1KDDnYwOyu6ud9xk5ZetSQDOMp9DYUKjs/edit#slide=id.g8bb7b0e120_0_0)
+
+
+PKCE-enhanced Authorization Code:
+
+[https://docs.google.com/presentation/d/1yJeYPMoPY2050cZkkBcBu1SL5Z88StV7O7fH5f_6X3A/edit#slide=id.g8b2fa1d558_0_2](https://docs.google.com/presentation/d/1yJeYPMoPY2050cZkkBcBu1SL5Z88StV7O7fH5f_6X3A/edit#slide=id.g8b2fa1d558_0_2)
+
+
+Client Credentials: 
+[https://docs.google.com/presentation/d/1KEA3i0F0bhB4me1uHfXkbmuaaFeRyxo7rG0ih-MlP68/edit#slide=id.g8bcad8744b_0_1](https://docs.google.com/presentation/d/1KEA3i0F0bhB4me1uHfXkbmuaaFeRyxo7rG0ih-MlP68/edit#slide=id.g8bcad8744b_0_1)
+
+
+
+Refresh AccessToken:
+[https://docs.google.com/presentation/d/1e0bWzKk5JxxGXlAvAyeWe1q8iYgY804Y6vZ-zCpRAKU/edit#slide=id.p](https://docs.google.com/presentation/d/1e0bWzKk5JxxGXlAvAyeWe1q8iYgY804Y6vZ-zCpRAKU/edit#slide=id.p)
 
 
 ### Update 20200701
 * If keycloak ssl required
 [https://stackoverflow.com/questions/30622599/https-required-while-logging-in-to-keycloak-as-admin](https://stackoverflow.com/questions/30622599/https-required-while-logging-in-to-keycloak-as-admin)
+
+
 
 In this blog I will briefly describe   
 * how to setup kong as API getway.   
