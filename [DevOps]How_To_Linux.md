@@ -105,3 +105,9 @@ eg, man uptime
 
 # array
 [https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
+
+# RPM 
+[https://rpm-packaging-guide.github.io/](https://rpm-packaging-guide.github.io/)
+
+# Service
+[https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples)
