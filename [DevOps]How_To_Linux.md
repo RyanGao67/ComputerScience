@@ -111,3 +111,5 @@ eg, man uptime
 
 # Service
 [https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples](https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples)
+
+[https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux](https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux)
