@@ -14,6 +14,8 @@
 
 *  [https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java](https://github.com/RyanGao67/elasticsearch3/blob/master/src/main/java/com/shallowlightning/App.java)
 
+* Multi-subproject [https://github.com/RyanGao67/SearchManagerES](https://github.com/RyanGao67/SearchManagerES)
+
 # Elasticsearch CMD
 
 ```
