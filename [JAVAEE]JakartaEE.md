@@ -4,3 +4,6 @@ An exploded archive is a tree of folder and files that respects a given structur
 A packaged archive is a zip file containing the above mentioned structure. The extension of a packaged archive can vary (war, jar, car, ear) but they are all zip files that contains a given structure.
 
 They call unzipping an archive or a zip file or a WAR file into a tree of files and folders as Exploding
+
+### Web container
+https://en.wikipedia.org/wiki/Web_container
