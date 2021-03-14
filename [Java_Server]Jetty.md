@@ -165,3 +165,23 @@ Jersey:
 
 
 [https://www.vogella.com/tutorials/REST/article.html](https://www.vogella.com/tutorials/REST/article.html)
+
+
+### 3. Jetty Struction
+**Context path**  Refers to the location which is relative to the server’s address and represents the name of the web application.
+
+For example, if our web application is put under the $JETTY_HOME\webapps\myapp directory, it will be accessed by the URL http://localhost/myapp, and its context path will be /myapp.
+
+**WAR.** Is the extension of a file that packages a web application directory hierarchy in ZIP format and is short for Web Archive. Java web applications are usually packaged as WAR files for deployment. WAR files can be created on the command line or with an IDE like Eclipse.
+
+### 4. Deploying by Copying WAR
+The easiest way to deploy a web application to Jetty server is probably by copying the WAR file into the $JETTY_HOME/webapps directory.
+
+After copying, we can start the server by navigating to $JETTY_HOME and running the command:
+
+java -jar start.jar   
+Jetty will scan its $JETTY_HOME/webapps directory at startup for web applications to deploy.
+
+[https://www.baeldung.com/deploy-to-jetty](https://www.baeldung.com/deploy-to-jetty)
+
+
