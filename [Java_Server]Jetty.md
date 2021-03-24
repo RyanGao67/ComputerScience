@@ -166,6 +166,8 @@ Jersey:
 
 [https://www.vogella.com/tutorials/REST/article.html](https://www.vogella.com/tutorials/REST/article.html)
 
+[https://www.baeldung.com/deploy-to-jetty](https://www.baeldung.com/deploy-to-jetty)
+
 
 ### 3. Jetty Struction
 **Context path**  Refers to the location which is relative to the server’s address and represents the name of the web application.
