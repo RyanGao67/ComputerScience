@@ -17,6 +17,7 @@
 ![](./img/docker2.png)
 
 ## Run docker container commands basic
+* ```docker run busy-box echo Helloworld``` allow change default starting command
 *  ```docker container run``` always starts new container, use ```docker container start``` to start an existing stopped one
 * ```docker container run --publish 80:80 --detach --name webhost nginx```
 * ```docker container run -d -p 3386:3386 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql``` => use ```--env``` to pass in ```MYSQL_RANDOM_ROOT_PASSWORD=yes``` and then use ```docker container logs db``` to find password 
