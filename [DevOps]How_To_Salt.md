@@ -502,6 +502,12 @@ Total run time:  82.443 ms
 
 ```
 
+* dry run mode 
+
+```
+sudo salt jerry state.sls apache --test=true
+```
+
 
 * What happened when execute an stage
 
