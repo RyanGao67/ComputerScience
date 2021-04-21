@@ -170,8 +170,59 @@ salt -G os_family:RedHat test.ping
 
 ```
 salt -C 'G@os_family:RedHat and stu*' test.ping
+
 ```
 
+### Common useful execution module
+```
+sudo salt * sys.doc test.ping
+sudo salt * sys.list_modules                       -----> list all the execution module on minions 
+sudo salt * sys.list_functions                     -----> list all the functions in each execution modules on minions
+sudo salt * sys.doc pkg.list_pgks
+
+// pkg module 
+sudo salt * pkg.list_pkgs 
+sudo salt -L jerry,stuart pkg.list_pkgs --out=txt | grep wget | cut -c -20 -----> out txt output to a text line, cut -c to cut first 20 chars
+sudo salt stuart pkg.install wget 
+
+// user module
+sudo salt * sys.doc user
+sudo salt stuart user.getent root
+
+// service module
+sudo salt * sys.doc service
+sudo salt * service.get_running
+
+// service module
+sudo salt * status.uptime
+sudo salt * sys.doc status
+
+// test 
+sudo salt * test.versions_report
+sudo salt * test.ping
+
+// cmd
+sudo salt * cmd.run 'ls /etc/salt'
+sudo salt * cmd.run 'whoami'
+sudo salt * cmd.run 'date'
+sudo salt * cmd.run 'cat /etc/salt/grains'
+sudo salt * cmd.run_all 'cat /etc/salt/grains' ----> shows stdout, stderr, pid, retcode
+sudo salt * cmd.script salt://myscript.sh
+
+//grains module
+sudo salt * grains.get os_family
+
+// cp module
+sudo salt * cp.list_master   -----> list files usable on master
+sudo salt -L stuart,jerry match.list 'stuart,jerry' 
+```
+
+### Run from minion
+```
+salt-call test.ping
+salt-call cmd.run 'ls /etc/salt' -l debug
+salt-call network.netstat -l debug
+```
 
 ### Grains
 
