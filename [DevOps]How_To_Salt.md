@@ -215,6 +215,69 @@ sudo salt * grains.get os_family
 // cp module
 sudo salt * cp.list_master   -----> list files usable on master
 sudo salt -L stuart,jerry match.list 'stuart,jerry' 
+
+[centos@ip-172-31-24-125 ~]$ sudo salt -L jerry,stuart test.arg foo bar=Bar baz='{qux:Qux}'
+jerry:
+    ----------
+    args:
+        - foo
+    kwargs:
+        ----------
+        __pub_arg:
+            - foo
+            |_
+              ----------
+              bar:
+                  Bar
+              baz:
+                  {qux:Qux}
+        __pub_fun:
+            test.arg
+        __pub_jid:
+            20210421011306504050
+        __pub_ret:
+        __pub_tgt:
+            - jerry
+            - stuart
+        __pub_tgt_type:
+            list
+        __pub_user:
+            sudo_centos
+        bar:
+            Bar
+        baz:
+            {qux:Qux}
+stuart:
+    ----------
+    args:
+        - foo
+    kwargs:
+        ----------
+        __pub_arg:
+            - foo
+            |_
+              ----------
+              bar:
+                  Bar
+              baz:
+                  {qux:Qux}
+        __pub_fun:
+            test.arg
+        __pub_jid:
+            20210421011306504050
+        __pub_ret:
+        __pub_tgt:
+            - jerry
+            - stuart
+        __pub_tgt_type:
+            list
+        __pub_user:
+            sudo_centos
+        bar:
+            Bar
+        baz:
+            {qux:Qux}
+
 ```
 
 ### Run from minion
