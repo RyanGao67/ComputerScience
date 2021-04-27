@@ -586,3 +586,8 @@ kubectl create secret generic
 ![](./img/k8s11.png)
 ![](./img/k8s12.png)
 ![](./img/k8s12.png)
+
+
+
+### EKS
+[https://github.com/RyanGao67/EKS_2021_04_27](https://github.com/RyanGao67/EKS_2021_04_27)
