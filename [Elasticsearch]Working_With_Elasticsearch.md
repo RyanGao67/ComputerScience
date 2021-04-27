@@ -16,6 +16,9 @@
 
 * Multi-subproject [https://github.com/RyanGao67/SearchManagerES](https://github.com/RyanGao67/SearchManagerES)
 
+* Cheatsheet: [https://www.bmc.com/blogs/elasticsearch-commands/](https://www.bmc.com/blogs/elasticsearch-commands/)
+
+
 # Elasticsearch CMD
 
 ```
@@ -1643,3 +1646,60 @@ what caused the document to match the query
 
 * POST /_cluster/reroute API  
 [https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-reroute.html)
+
+
+# LOG stash
+```
+input 
+{
+	file {
+		path => "/home/ryangao67/tgao2021/elk/logs"
+		type => "logs"
+		start_position => "beginning"
+	}
+	
+}
+
+filter
+{
+	grok{
+		match => {
+			"message" => "%{COMBINEDAPACHELOG}"
+		}
+	}
+	mutate{
+		convert => { "bytes" => "integer" }
+	}
+	date {
+		match => [ "timestamp", "dd/MMM/YYYY:HH:mm:ss Z" ]
+		locale => en
+		remove_field => "timestamp"
+	}
+	geoip {
+		source => "clientip"
+	}
+	useragent {
+		source => "agent"
+		target => "useragent"
+	}
+}
+
+
+output
+{
+	stdout {
+		codec => dots
+	}
+
+ 	elasticsearch {
+
+  	}
+
+}
+
+```
+
+[https://www.udemy.com/course/complete-elasticsearch-masterclass-with-kibana-and-logstash/learn/lecture/11528556#overview](https://www.udemy.com/course/complete-elasticsearch-masterclass-with-kibana-and-logstash/learn/lecture/11528556#overview)   
+[https://www.elastic.co/guide/en/logstash/7.12/index.html](https://www.elastic.co/guide/en/logstash/7.12/index.html)     
+[https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html)
+
