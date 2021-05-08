@@ -1,3 +1,7 @@
+### Example   
+[https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/code](https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/code)   
+[https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/kafka-beginners-course-master](https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/kafka-beginners-course-master)
+
 
 ### Download and Setup Java 8 JDK:
 
