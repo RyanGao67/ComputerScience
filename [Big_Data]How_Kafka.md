@@ -136,6 +136,15 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --group my-first-applica
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
 ```
 
+### Kafka describe 
+```
+$ kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --describe
+Topic: first_topic	TopicId: R-MQI2BIRS6_ON_4ynI-sw	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: first_topic	Partition: 0	Leader: 0	Replicas: 0	Isr: 0    ===> Leader: 0 Replicas: 0 Isr: 0 "0" is broker id
+	Topic: first_topic	Partition: 1	Leader: 0	Replicas: 0	Isr: 0
+	Topic: first_topic	Partition: 2	Leader: 0	Replicas: 0	Isr: 0
+```
+
 ### Producers Acks Deep Dive 
 acks = 0 (no acks)
 * No response is requested
