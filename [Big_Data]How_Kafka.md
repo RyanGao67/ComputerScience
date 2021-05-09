@@ -1,7 +1,66 @@
+
+
 ### Example   
 [https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/code](https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/code)   
 [https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/kafka-beginners-course-master](https://github.com/RyanGao67/Kafka_Learn_20210507/tree/master/kafka-beginners-course-master)
 
+### Topics  
+- Topic is a particular stream of data. (Similar to a table in database). You can have as many topics as you want.   
+- A topic is identified by its name  
+- Topics are split in partitions  
+- Each partition is ordered  
+- Each message within a partition gets an incremental id, called offset  
+- When create a topic you have to specify how many partitions you have. 
+
+### Brokers
+- A Kafka cluster is composed of multiple brokers (servers)
+- Each broker is identified with its ID (integer)
+- Each broker contains certain topic partitions
+- After connecting to any broker (called a bootstap broker), you will be connected to the entire cluster
+
+### Topic replication factor  
+- Topics should have a replication factor > 1 (usually 2 or 3, 3 is standard)
+
+### Concept of Leader for a partition
+- At anytime only one broker can be a leader for a given partition
+- Only that leader can receive and serve data for a partition
+- The other brokers will synchronize the data
+- Therefore each partition has one leader and multiple ISR (in-sync replica)
+
+### Producers
+- Producers write data to topics (which is made of partitions)
+- Producers automatically know to which broker and partition to write to (If you send without a key, producer will send the messages round-robin to partition 0, partition 1, partition 2)
+- In case of Broker failures, Producers will automatically recover
+* Producers can choose acks:
+  * acks=0: Producer won't wait for acknowledgement (possible data loss)
+  * acks=1: Producer will wait for leader acknowledgement (limited data loss)
+  * acks=all: Leader + replicas acknowledgement (no data loss)
+* Producers: Message keys
+  * Producers can choose to send a key with the message (string, number, etc..)
+  * If key=null, data is sent round robin (broker 101 then 102 then 103...)
+  * If a key is sent, then all messages for that key will always go to the same partition
+  * A key is sent if you need message ordering for a specific field 
+
+### Consumers
+* Consumers read data from a topic (identified by name)
+* Consumers know which broker to read from
+* In case of broker failures, consumers know how to recover
+* Data is read in order within each partitions
+* Consumer groups
+  * Consumers read data in consumer groups
+  * Each consumer within a group reads from exclusive partitions
+  * If you have more consumers than partitions, some consumers will be inactive
+* Kafka stores the offsets at which a consumer group has been reading
+* The offsets committed live in a kafka topic named __consumer_offsets
+* When a consumer in a group has processed data received from kafka, it should be committing the offsets
+* If a consumer dies, it will be able to read back from where it left off thanks to the committed consumer offsets
+* Delivery semantics for consumers
+  * At most once: offsets are committed as soon as the message is received. If the processing goes wrong, the message will be lost (it won't be read again)
+  * At least once: offsets are committed after the message is processed. If the processing goes wrong the message will be read again. this can result in duplicate processing of messages. Make sure your processing is idempotent. 
+  * Exact once: Can only be achieved for Kafa to Kafka workflow using kafka streams API. For Kafka to external system workflows, use an idempotent consumer
+
+
+  
 
 ### Download and Setup Java 8 JDK:
 
