@@ -59,7 +59,7 @@
   * At least once: offsets are committed after the message is processed. If the processing goes wrong the message will be read again. this can result in duplicate processing of messages. Make sure your processing is idempotent. 
   * Exact once: Can only be achieved for Kafa to Kafka workflow using kafka streams API. For Kafka to external system workflows, use an idempotent consumer
 
-
+![](./img/kafka1.png)
   
 
 ### Download and Setup Java 8 JDK:
