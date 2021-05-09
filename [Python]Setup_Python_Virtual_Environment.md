@@ -17,3 +17,14 @@
 ```cd environments```  
 ```python3 -m venv project_env``` This will create a project_env folder in environment : ./environment/project_env  
 ```source project_env/bin/activate```  
+
+
+### Conda
+```
+conda create --name myenv django
+conda create --name myDjangoEnv python=3.5
+source activate MyDjangoEnv
+deactivate
+conda info --envs
+conda install django
+```
