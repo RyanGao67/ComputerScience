@@ -60,6 +60,10 @@
   * Exact once: Can only be achieved for Kafa to Kafka workflow using kafka streams API. For Kafka to external system workflows, use an idempotent consumer
 
 ![](./img/kafka1.png)
+
+As long as the number of partitions remains constant for a topic (no new partitions), the same key will always go to the same partition
+
+![](./img/kafka2.png)
   
 
 ### Download and Setup Java 8 JDK:
