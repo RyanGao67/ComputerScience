@@ -8,5 +8,8 @@ They call unzipping an archive or a zip file or a WAR file into a tree of files 
 ### Web container
 https://en.wikipedia.org/wiki/Web_container
 
-## JakartaEE Example   
+### JakartaEE Example   
 [https://github.com/RyanGao67/JavaEE_20210516](https://github.com/RyanGao67/JavaEE_20210516)
+
+### CDI
+[https://github.com/RyanGao67/JavaEE_20210517](https://github.com/RyanGao67/JavaEE_20210517)
