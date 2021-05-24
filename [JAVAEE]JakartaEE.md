@@ -13,3 +13,12 @@ https://en.wikipedia.org/wiki/Web_container
 
 ### CDI
 [https://github.com/RyanGao67/JavaEE_20210517](https://github.com/RyanGao67/JavaEE_20210517)
+
+### How to JSP
+
+* Install eclipse enterprise version
+* Install tomcat 9
+* link tomcat 9 to eclipse
+* create a dynamic java project
+* create a jsp in webapp folder(right click jsp run on tomcat 9)
+* Details in this course [Udemy: JSP: Covers JSP 2.3 and Servlets 3.1 - Most Popular JSP/Servlet course]
