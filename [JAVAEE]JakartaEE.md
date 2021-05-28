@@ -42,3 +42,6 @@ JEE:
 Start with Payara: 
 
 [https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX](https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX)
+
+How to war file:  
+[https://maven.apache.org/plugins/maven-war-plugin/index.html](https://maven.apache.org/plugins/maven-war-plugin/index.html)
