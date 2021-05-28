@@ -24,3 +24,14 @@ https://en.wikipedia.org/wiki/Web_container
 * Details in this course [Udemy: JSP: Covers JSP 2.3 and Servlets 3.1 - Most Popular JSP/Servlet course]
 
 [https://github.com/RyanGao67/JavaEE_20210525.git](https://github.com/RyanGao67/JavaEE_20210525.git)
+
+
+### How to Payara  
+[https://github.com/RyanGao67/JavaEE_0528](https://github.com/RyanGao67/JavaEE_0528)
+
+[https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s](https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s)
+
+
+[https://www.youtube.com/watch?v=PAvn_jBNVNE&list=PLFMhxiCgmMR9Pu0v-VjNdEaRLcoUqHLFT](https://www.youtube.com/watch?v=PAvn_jBNVNE&list=PLFMhxiCgmMR9Pu0v-VjNdEaRLcoUqHLFT)
+
+[https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX](https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX)
