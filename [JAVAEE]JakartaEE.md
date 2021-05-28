@@ -31,6 +31,8 @@ https://en.wikipedia.org/wiki/Web_container
 
 JPA: 
 
+[https://thorben-janssen.com/jpa-persistence-xml/](https://thorben-janssen.com/jpa-persistence-xml/)
+
 [https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s](https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s)
 
 
