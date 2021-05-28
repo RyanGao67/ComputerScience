@@ -29,9 +29,14 @@ https://en.wikipedia.org/wiki/Web_container
 ### How to Payara  
 [https://github.com/RyanGao67/JavaEE_0528](https://github.com/RyanGao67/JavaEE_0528)
 
+JPA: 
+
 [https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s](https://www.youtube.com/watch?v=dl30p1j-Wbw&list=PLFMhxiCgmMR9Yo4p20k4lAJniEYqPsjNA&index=1&t=5s)
 
 
+JEE:  
 [https://www.youtube.com/watch?v=PAvn_jBNVNE&list=PLFMhxiCgmMR9Pu0v-VjNdEaRLcoUqHLFT](https://www.youtube.com/watch?v=PAvn_jBNVNE&list=PLFMhxiCgmMR9Pu0v-VjNdEaRLcoUqHLFT)
+
+Start with Payara: 
 
 [https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX](https://www.youtube.com/playlist?list=PLFMhxiCgmMR-wxd1BAFiSGdDGROxRgDDX)
