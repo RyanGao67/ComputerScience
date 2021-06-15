@@ -69,3 +69,26 @@ Program on socket where sender will send packets in zigzag manner and receiver n
 
 What is REST and SOAP and explain the difference
 Describe one thing that demonstrated you are a determined person
+
+
+# A design solution to their current trucking’ problem.
+
+* given an array filter out duplicates in javascript
+
+* More of system design discussion
+
+* Verbally say code for traversal of BST.
+
+*  lru caching 
+
+*  sorted lists
+
+* Generate all the possible IP addresses from a given string.
+
+
+* Goat Latin
+
+* what are closures in Javascript
+
+* What is best to do to avoid being the single point of failure?
+
