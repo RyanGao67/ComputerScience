@@ -92,3 +92,35 @@ Describe one thing that demonstrated you are a determined person
 
 * What is best to do to avoid being the single point of failure?
 
+1. coding: given a list of digits, construct all the possible valid IP addresses by adding dots to different positions. 用backtracking做的，不难。
+2. Design: Desgin an uber, 侧重data model的design，如何partition data, 如何balance load，各个backend components 如何交互。
+
+午饭， 瞎聊一会儿。
+
+3. Design: design a data pipline that collect and store different data coming from different sensors on trucks, 本质就是要求设计一个能够存储大量streaming data的系统，我和面试官讨论都是high level的components，比如用Kafka来queue不同的data log，如何利用spark做aggragation什么的。
+4. Coding: given a list of sorted interger lists, find the smallest integer appearing in all lists.  
+5. Hiring Manager: 一些behavior, 还有一些brainstorm，比如怎么从卡车dashcam的900帧图片里跳出最有价值的100帧图片，就是想一些heuristic来给图片计算出一个rank，其实这轮主要是在瞎扯。
+
+每轮面试官都很友好，没有刻意刁难。
+
+
+罗马数字转换成阿拉伯数字
+
+
+如何判断一个罗马数字是合法的
+
+[https://leetcode.com/problems/basic-calculator/](https://leetcode.com/problems/basic-calculator/)
+
+
+
+- 设计一个 job scheduler API
+- 给一个数据集，用 pandas 做 dataframe manipulation
+- 计算器 leetcode hard
+- system design for an ML classification model
+-  尔尔斯/尔尔其的综合
+-  2. Samansa (电话面): 货车装货，卸货，拿当前货重
+3. Roku(电话面): 给一个String，容许最多一个char修改（包括删除，替换），判断是否是valid palindrome
+4. cruise(电话面): 利口 酒吧摇 least recently used cache
+3 sum，和leetcode不同在于，要求三个数互不相同
+先是问是否存在3个数，和为target；
+followup，找出所有这样的组合。
