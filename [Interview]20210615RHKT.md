@@ -202,29 +202,41 @@ Tell me about a time you failed/ The biggest mistake you made
 → 对应的是 earn trust, customer obsession
 错误不能是致命伤,突出的是为了customer坚持了什么，没有customer的换成老师同学小组都可以。
 
+The first thing jumps into my mind when thinking about this question, is a school project when I was in UBC. It was a course about using R programming language to analyze data. The final project for that course is to build an app for a liquor store, so that the customer can go through the website and visualize the data, for example the sales for each wine, the changes of sales in different quorter. At that time I was too ambicious. If I have a chance to do it again. 
+
 Take a risk, or do not have much time, to make a decision/ Tell me about a time when you had to work on a project with unclear responsibilities.
 → 对应的是 Bias for action, Ownership.
 是行动优先，而且是要突出当仁不让，有责任自己能顶上的意识。比如customer找不到人刚好你在，你能主动做些事。
+
+It was when I first join microfoucs, and I'm still onboarding. But unfortunaltely at that time a senior engineer just left, and the team lead is on vacation, some other team member is in another time zone, so there were only me and another intern. And that is a morning after a major release, and the customer find that the data is not injested into our elasticsearch cluster. it was because there is not enough elasticsearch heap size. 
 
 Challenging client-facing situation/ Disagree with teammate or manager/ Tell me a time when you did something without asking approval from you manager
 → 对应的是earn trust
 这个很多人没对准，记住不是强行说服或者没什么理由的顺应别人, 为了customer或者最重要目的所以不同意别人。都是好说辞，和事佬的说法是偏题。
 介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
+The core function of my team is to provide searching service. But over the time more and more functionality is added to the service. the user management, the elasticsearch index management. and tuning apis. And a month ago, we find the elasticsearch license is not friendly any more. So we have to change the search engine. I thought it is a great chance for us to modernize our code. Seperate the monolith service to microservices, provide additional abstract layer above search engine so that we don't need to change much when we need to change search engine again, etc. But another engineer believe we do not have enough time to 
+do all the refactoring because we need to deliver the product in 2 month. 
 
 Most challenging/proudest project/Tell me a time you solved a complex problem
 → 对应的是highest standards, think big
 要讲自己怎么走出comfort zone, 当然舒适区本身也是一道题。
 扣题，怎么复杂，是deadline 紧，还是技术复杂，你怎么做的，学习了新技术，use my priavte time to work on it 等等 最后说结果或者说通过这个process 你学到了什么
 
+Couple of weeks ago, we decide to focus more on our Saas offering. So we want to move containerized on premise infrastructure to AWS. Since I have knowledge on searching service, I take the responsibility of moving our service to AWS EKS, also known as AWS fargate. This is something new and the learning curve is a bit steep. We use salt stack, terreform, kubenetes, helm to build our cloud infrastructure. So I pushed myself to quickly learn some devops skills and ask some of our cloud engineer to familiar with the cloud infrastructure. After work I learning the new technology, and during work I applied the knowledge to practice. 
+
+
 Miss deadline  对应的是customer obsession, Deliver Results.
 要突出怎么让影响最小, 让customer不受影响。讲你自己的影响就偏题了。
 解释为何会miss 你是怎么把损失降到最低的，最后结果是好的，影响不是很大
+I don't remember that I missed the deadline. But I did remember we push off the deadline in sprint planning or around the beginning of a sprint. I remember that last springt we want to replace elasitcsearch. And at first we want to change elasticsearch to opensearch, and add a abstract layer on top of searchengine. But we quickly realize that it is not doable with the time frame. So we redo the plan, and push off the refactoring to the next springt. and focus on replace elasticsearch. 
 
 Tell me a time when you received negative feedback
 先介绍背景,别人对你哪里不满意了, 简单说以下就行, 不要说很多别人如何对你不满, 也不要sugar coat 说自己其实没错。重点放在自己怎么解决这个问题，以及学到了什么。结果一定是好结果
+I don't remember that I received negative feedback. But if I received negative feedback, I will first try to understand why my coworker is not happy with my work. After all it is a great chance to impreve our produce and improve myself. We can schedule a meeting to see what is a better solution. 
 
 Tell me about a time when you gave a simple solution to a complex problem/ Find a new way to do something
 这个问题一定要让面试官信服你说的例子。先说一般的方法很耗时，自己找到一个方法很快就完成并且Deliver 了，而且很稳定，没出过问题，结果要是好的。
+our team is mainly providing searching service. but sometimes we need to manage the search engine. previously we manually manage the search engine. For example, when upgrade elasticsearch we need to manually reindex the data. When update the template of a index, we need to first delete the old index and create a new one. And I think it is better to provide a easy way to do the management. So I communicated with my team lead and manager about my thoughts, and provided somedesign and they all supoorted the approach. And as a result the management of search engine is simplified and less error prone. 
 
 亚麻军规14条(LP 14):
 顾客至上：永远站在顾客的视角上看待问题
@@ -241,3 +253,30 @@ Tell me about a time when you gave a simple solution to a complex problem/ Find 
 注重细节：细节决定效率和成败
 保持不同观点：希望听见不同的声音和可取的建议，一旦下了决定就会绝不言弃
 结果导向：为最终的目标而努力
+
+
+1 introduce yourself
+   这个问题是容易被忽视的，但是我认为是最重要的，而且是会被99.99%被问到，这个问题是展现自己的机会，一定要抓住。
+    I’ve been working on software design and development related work for over 4 years. My experience includes refining and documenting UI requirements, implementing high-level requirements and producing       robust solutions within predefined timelines and scope limitations. I'm so passionate about creating great services for customers and I have been enjoying working with customers. I am always happy to learn new  technologies and incorporate them with what I’ve been doing. Keeping learning and being curious always refreshes my mind with better designs and solutions. Once I commit a task, I will work relentlessly to achieve my goals and will alway try to finish it earlier than what I have promised.
+上面这个提到了 Customer Obsession, Learn and Be Curious, Deliver Results. 恰好这些能帮助他们记录要点
+
+2. Tell me a time when you disagree with your manager/teammate  
+Let me share with you a quick story. ..........介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
+
+3. Tell me a time when you received a negative feedback.
+先介绍背景,别人对你哪里不满意了，简单说以下就行，不要说很多别人如何对你不满，也不要sug·ar·coat 说自己其实没错。重点放在自己怎么解决这个问题，以及学到了什么。结果一定是好结果
+
+4. Tell me a time when you came up with a simple solution to solve a problem
+这个问题一定要让面试官信服你说的例子。先说一般的方法很耗时，自己找到一个方法很快就完成并且Deliver 了，而且很稳定，没出过问题，结果要是好的。
+
+5. Tell me your most challenging project/ a time you solved a complex problem
+扣题，怎么复杂，是deadline 紧，还是技术复杂，你怎么做的，学习了新技术，use my priavte time to work on it 等等 最后说结果或者说通过这个process 你学到了什么
+
+6. Tell me a time when you missed deadline
+先介绍背景 解释为何会miss 你是怎么把损失降到最低的，最后结果是好的，影响不是很大
+
+7. Biggest mistake or failure
+8. Tell me a time when you took on something significant outside your area of responsibility
+9. Tell me a time when you take caculated rist
+10 Tell me a time when you did something without asking approval from you manager
+11 Tell me a time when you dive deep
