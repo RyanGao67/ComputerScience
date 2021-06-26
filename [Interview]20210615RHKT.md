@@ -123,6 +123,7 @@ Describe one thing that demonstrated you are a determined person
 
 
 - 设计一个 job scheduler API
+[https://leetcode.com/discuss/interview-question/system-design/344524/Amazon-or-Design-a-JobTask-Scheduler](https://leetcode.com/discuss/interview-question/system-design/344524/Amazon-or-Design-a-JobTask-Scheduler)
 
 
 3. Roku(电话面): 给一个String，容许最多一个char修改（包括删除，替换），判断是否是valid palindrome
@@ -133,3 +134,110 @@ Describe one thing that demonstrated you are a determined person
 3 sum，和leetcode不同在于，要求三个数互不相同
 先是问是否存在3个数，和为target；
 followup，找出所有这样的组合。
+
+
+
+### Behavior question
+
+7 [https://www.1point3acres.com/bbs/interview/amazon-software-engineer-679738.html](https://www.1point3acres.com/bbs/interview/amazon-software-engineer-679738.html)
+
+[https://www.1point3acres.com/bbs/thread-532862-1-1.html](https://www.1point3acres.com/bbs/thread-532862-1-1.html)
+
+introduction: 
+
+conflict: 
+
+
+* Start: 
+I'm actually really excited about the interviews, this is the only chance to talk to someone outside of my team and family. 
+
+* Self introduction: 
+
+
+* Question to ask: 
+What is your favorite part working here?   
+What is your favorite Amazon leadership principle and why?    
+What is the team culture like?    
+What do you think are the most important qualities for someone to be really successful in this position?   
+What are the common career paths in this department?   
+What are the biggest challenges the company is facing right now?   
+What is the typical day at Amazon?   
+
+
+Tell me about a time when you had to
+work with incomplete data or information.
+My team had a big outage a few months back and we knew that there had been an issue
+because I received an alarm, I was on call. So I responded to the alarm, started looking at some
+of our dashboards and saw that there was a big drop in our order count. That usually signifies
+that something is gone pretty South for the customers. But the problem is I didn’t have enough
+time to figure out what had gone wrong at a root cause level.
+I knew I couldn’t solve this just by myself because our system is quite large. And so I set up a
+conference call with several of the other engineers in the team and started a divide and conquer
+process and nominated a bunch of folks to start looking into different aspects of the system and
+start triaging.
+Once we hit about hour four, even though we didn’t know the exact impact on the customer, I
+knew that it was too risky to continue leaving this feature live in production. And so I made the
+call to do a rollback.
+(你怎么知道这时候需要rollback而不是继续whatever it was before?
+注意了！customer obsession 正确解题姿势：
+There is a point of diminishing returns with an investigation like this and given the fact that this is
+a feature that any customer on Amazon can use, you’d never want to have sustained customer
+impact like this and we’d already gotten a couple of customer service calls. And so once you
+have a couple of confirmed customer service cases, it’s kind of a good best practice to do a
+rollback and then allow for time to go and do the root cause analysis.)
+It was a couple of days of detailed investigation, not only what the actual customer impact was
+finding out, you know, the number of customers impacted by the dollars that came out of that.
+But also trying to root cause and what subsystem we had a break such that we couldn’t ship the
+orders that we needed to ship and once we determined what that was, we came up with an
+action plan to mitigate it. I was responsible for getting all the partner teams that were involved
+on board and making sure that they made space to go and deploy a hotfix and then getting that
+deployed and tested out in production and then finally doing deployment again.
+Because we were able to root cause that we haven’t had any issues since then. It also allowed
+us to expand our regression test suite. We prevented additional issues from happening in the
+future.
+We also took steps to start monitoring additional services that will help us know there’s
+something going wrong in that subsystem in the future.
+
+Tell me about a time you failed/ The biggest mistake you made
+→ 对应的是 earn trust, customer obsession
+错误不能是致命伤,突出的是为了customer坚持了什么，没有customer的换成老师同学小组都可以。
+
+Take a risk, or do not have much time, to make a decision/ Tell me about a time when you had to work on a project with unclear responsibilities.
+→ 对应的是 Bias for action, Ownership.
+是行动优先，而且是要突出当仁不让，有责任自己能顶上的意识。比如customer找不到人刚好你在，你能主动做些事。
+
+Challenging client-facing situation/ Disagree with teammate or manager/ Tell me a time when you did something without asking approval from you manager
+→ 对应的是earn trust
+这个很多人没对准，记住不是强行说服或者没什么理由的顺应别人, 为了customer或者最重要目的所以不同意别人。都是好说辞，和事佬的说法是偏题。
+介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
+
+Most challenging/proudest project/Tell me a time you solved a complex problem
+→ 对应的是highest standards, think big
+要讲自己怎么走出comfort zone, 当然舒适区本身也是一道题。
+扣题，怎么复杂，是deadline 紧，还是技术复杂，你怎么做的，学习了新技术，use my priavte time to work on it 等等 最后说结果或者说通过这个process 你学到了什么
+
+Miss deadline  对应的是customer obsession, Deliver Results.
+要突出怎么让影响最小, 让customer不受影响。讲你自己的影响就偏题了。
+解释为何会miss 你是怎么把损失降到最低的，最后结果是好的，影响不是很大
+
+Tell me a time when you received negative feedback
+先介绍背景,别人对你哪里不满意了, 简单说以下就行, 不要说很多别人如何对你不满, 也不要sugar coat 说自己其实没错。重点放在自己怎么解决这个问题，以及学到了什么。结果一定是好结果
+
+Tell me about a time when you gave a simple solution to a complex problem/ Find a new way to do something
+这个问题一定要让面试官信服你说的例子。先说一般的方法很耗时，自己找到一个方法很快就完成并且Deliver 了，而且很稳定，没出过问题，结果要是好的。
+
+亚麻军规14条(LP 14):
+顾客至上：永远站在顾客的视角上看待问题
+领导视角：目光长远, 相对于完成短期工作任务，更关注对于公司的长期收益
+创造优化：不断创新，并且精简工作中不必要的流程
+洞察预判, 挑战自己：用直觉为公司做判断
+不断学习：做一台没有感情的学习机器
+选择最优：总裁养成计划：会用人也会培养人
+坚持最高标准：完美主义+强迫症: 对自己对团队最高要求， 从长计议，长期收益永远高于短期收益
+大智慧全局观:想的多、想的远、想的“骚”(揽客思路要骚)
+行动是第一生产力: 敢冒险勇担责
+勤俭持家从我做起：doing more with less
+获取信任：与用户、同事、上司建立信任关系
+注重细节：细节决定效率和成败
+保持不同观点：希望听见不同的声音和可取的建议，一旦下了决定就会绝不言弃
+结果导向：为最终的目标而努力
