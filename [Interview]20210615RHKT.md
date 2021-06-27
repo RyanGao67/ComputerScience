@@ -252,8 +252,7 @@ our team is mainly providing searching service. but sometimes we need to manage 
 
 1 introduce yourself
    这个问题是容易被忽视的，但是我认为是最重要的，而且是会被99.99%被问到，这个问题是展现自己的机会，一定要抓住。
-    I’ve been working on software design and development related work for over 4 years. My experience includes refining and documenting UI requirements, implementing high-level requirements and producing       robust solutions within predefined timelines and scope limitations. I'm so passionate about creating great services for customers and I have been enjoying working with customers. I am always happy to learn new  technologies and incorporate them with what I’ve been doing. Keeping learning and being curious always refreshes my mind with better designs and solutions. Once I commit a task, I will work relentlessly to achieve my goals and will alway try to finish it earlier than what I have promised.
-上面这个提到了 Customer Obsession, Learn and Be Curious, Deliver Results. 恰好这些能帮助他们记录要点
+I'm so passionate about creating great services for customers. I am always happy to learn new  technologies and incorporate them with what I’ve been doing. Keeping learning and being curious always refreshes my mind with better designs and solutions.
 
 2. Tell me a time when you disagree with your manager/teammate  
 Let me share with you a quick story. ..........介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
