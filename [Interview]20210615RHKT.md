@@ -110,6 +110,8 @@ Describe one thing that demonstrated you are a determined person
 
 [https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/](https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/)
 
+[https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/submissions/](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/submissions/)
+
 6. Hiring Manager: 一些behavior, 还有一些brainstorm，比如怎么从卡车dashcam的900帧图片里跳出最有价值的100帧图片，就是想一些heuristic来给图片计算出一个rank，其实这轮主要是在瞎扯。
 
 罗马数字转换成阿拉伯数字
