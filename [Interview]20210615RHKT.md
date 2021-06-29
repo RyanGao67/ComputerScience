@@ -138,6 +138,18 @@ Describe one thing that demonstrated you are a determined person
 followup，找出所有这样的组合。
 
 
+https://www.upsolver.com/blog/streaming-data-architecture-key-components
+
+https://levelup.gitconnected.com/system-design-idea-robust-streaming-data-processing-2e9224c33d3f
+
+https://searchdatamanagement.techtarget.com/feature/How-to-build-an-effective-streaming-data-architecture
+
+https://medium.com/@ODSC/designing-a-streaming-architecture-for-high-frequency-sensor-data-84ca16fa38a4
+
+https://www.snowflake.com/blog/designing-modern-big-data-streaming-architectures-at-scale-part-one/
+
+https://www.youtube.com/watch?v=dZ3swmtR1As
+
 
 ### Behavior question
 
