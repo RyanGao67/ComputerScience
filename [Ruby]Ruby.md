@@ -96,3 +96,28 @@ With attr_reader you can only read the value, but not change it. With attr_write
 attr_reader :name, :value, :ready?
 ```
 Multiple instance variables
+
+```ruby
+Those methods let you set instance vars in a more indirect way: imagine you have a class Person
+
+class Person < ActiveRecord::Base
+  attr_accessible :first_name, :last_name
+
+  def full_name
+    [@first_name, @last_name].join
+  end
+
+  def full_name=(name)
+    @first_name, @last_name = name.split(" ")
+  end
+end
+Then you can do something like this:
+
+p = Person.new
+p.full_name = "John Doe"
+p.first_name # => "John"
+p.last_name # => "Doe"
+p.full_name # => "John Doe"
+```
+
+If you are wandering why full_name= method is like this, it is just a syntactic sugar. 
