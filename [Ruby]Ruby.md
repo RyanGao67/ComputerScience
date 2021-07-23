@@ -92,4 +92,7 @@ In other words:
 
 With attr_reader you can only read the value, but not change it. With attr_writer you can only change a value but not read it.
 
-
+```ruby
+attr_reader :name, :value, :ready?
+```
+Multiple instance variables
