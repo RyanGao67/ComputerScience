@@ -121,3 +121,14 @@ p.full_name # => "John Doe"
 ```
 
 If you are wandering why full_name= method is like this, it is just a syntactic sugar. 
+
+
+# When not use parenthesis in ruby function calling
+
+Ruby allows you to leave out parenthesis, in general, resist this temptation.    
+Parenthesis make the code easier to follow. General Ruby style is to use them, except in the following cases:
+
+* Always leave out empty parentheses
+* The parentheses can be left out of a single command that is surrounded by ERb delimiters -- the ERb markers make sure the code is still readable
+* A line that is a single command and a single simple argument can be written without the parenthesis. Personally, I find that I do this less and less, but it's still perfectly readable. I tend not to like single lines in regular ruby code that have multiple arguments and no parentheses.
+* A lot of Ruby-based Domain Specific Languages (such as Rake) don't use parenthesis to preserve a more natural language feel to their statements.
