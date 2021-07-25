@@ -8,7 +8,14 @@ Unlike other languages, the nil is not used to express emptiness, false or zero.
 
 As everything in Ruby is object, the nil value refers to the non-instantiable NilClass class. 
 
-
+```ruby
+irb> "I'm an object".nil?
+ => false
+irb> a = nil
+ => nil
+irb> a.nil?
+ => true
+```
 # OOP
 Ruby is an object-oriented programming language(OOP) that uses classes as blueprints for objects. Everything is Ruby is object, and object has two main properties: states and behaviors. 
 
