@@ -1,3 +1,29 @@
+# Install Ruby
+```
+sudo apt update    
+sudo apt install git curl autoconf bison build-essential \
+    libssl-dev libyaml-dev libreadline6-dev zlib1g-dev \
+    libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+    
+    
+sudo apt install rbenv
+
+rbenv init # follow the instruction you see after hit enter
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile   
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+Then, rather than running $ ~/.rbenv/bin/rbenv init, I ran $ source ~/.bash_profile. I was then able to install ruby-build:
+
+$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+After installing Ruby ($ rbenv install 2.7.0), remember to set it as the default version ($ rbenv global 2.7.0 in my case).
+
+NOTE: replace .bash_profile with .bashrc if using Ubuntu.
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+
+```
 # The nil value
 
 The nil value is used to express the notion of a "lack of an object". 
