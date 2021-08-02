@@ -24,6 +24,34 @@ NOTE: replace .bash_profile with .bashrc if using Ubuntu.
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 
 ```
+
+On Mac if `rbenv global *.*.*` does not change the version: 
+
+Check that PATH contains `$HOME/.rbenv/shims` and `$HOME/.rbenv/bin`
+
+`$ env | grep PATH`      
+Also check that you have the following in your ~/.bash_profile if using bash or ~/.zshenv if using zsh
+
+```
+export PATH="$HOME/.rbenv/bin:$PATH"       
+eval "$(rbenv init -)"        
+```
+NOTE: Make sure it's the last setting in your ~/.bash_profile . I ran into an issue where I installed a program that updated my .bash_profile and reset PATH.
+
+Finally, make sure your $HOME folder doesn't have a .ruby-version file that you may have created by accident if you were to have done $ rbenv local <ruby-version> in your $HOME folder. Doing $ rbenv global <ruby-version> modifies the $HOME/.rbenv/version file, and the existence of a .ruby-version file in the $HOME folder would override the version set by $HOME/.rbenv/version.
+
+From the docs:
+
+Choosing the Ruby Version When you execute a shim, rbenv determines which Ruby version to use by reading it from the following sources, in this order:
+
+The RBENV_VERSION environment variable, if specified. You can use the rbenv shell command to set this environment variable in your current shell session.
+
+The first .ruby-version file found by searching the directory of the script you are executing and each of its parent directories until reaching the root of your filesystem.
+
+The first .ruby-version file found by searching the current working directory and each of its parent directories until reaching the root of your filesystem. You can modify the .ruby-version file in the current working directory with the rbenv local command.
+
+The global ~/.rbenv/version file. You can modify this file using the rbenv global command. If the global version file is not present, rbenv assumes you want to use the "system" Ruby—i.e. whatever version would be run if rbenv weren't in your path.
+
 # The nil value
 
 The nil value is used to express the notion of a "lack of an object". 
