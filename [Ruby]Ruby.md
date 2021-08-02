@@ -1,4 +1,8 @@
 # Install Ruby
+
+**ebenv cheat sheet**
+[https://devhints.io/rbenv](https://devhints.io/rbenv)
+
 ```
 sudo apt update    
 sudo apt install git curl autoconf bison build-essential \
