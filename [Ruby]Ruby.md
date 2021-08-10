@@ -1,3 +1,6 @@
+# Rails 
+[https://github.com/RyanGao67/First_Rails_20210809](https://github.com/RyanGao67/First_Rails_20210809)
+
 # Install Ruby
 
 **ebenv cheat sheet**
