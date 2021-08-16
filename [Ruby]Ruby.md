@@ -5,6 +5,18 @@
 
 [https://github.com/RyanGao67/Grape2_Rails_20210810](https://github.com/RyanGao67/Grape2_Rails_20210810)
 
+Rack, Rails model scope:   
+[https://github.com/RyanGao67/Rack_20210816](https://github.com/RyanGao67/Rack_20210816)
+
+Rails Oauth2:
+[https://github.com/RyanGao67/Devise_Rails_20210816](https://github.com/RyanGao67/Devise_Rails_20210816)
+
+
+# DB migrate
+[https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
+
+[https://stackoverflow.com/questions/4116067/purge-or-recreate-a-ruby-on-rails-database](https://stackoverflow.com/questions/4116067/purge-or-recreate-a-ruby-on-rails-database)
+
 # Install Ruby
 
 **ebenv cheat sheet**
