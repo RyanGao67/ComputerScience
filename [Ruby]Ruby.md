@@ -21,6 +21,9 @@ MiniTest:
 FactorBot:      
 [https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md)
 
+Rails-stock-app:     
+[https://github.com/RyanGao67/Rails_20210831](https://github.com/RyanGao67/Rails_20210831)
+
 
 # DB migrate
 [https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
