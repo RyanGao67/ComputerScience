@@ -24,6 +24,13 @@ FactorBot:
 Rails-stock-app:     
 [https://github.com/RyanGao67/Rails_20210831](https://github.com/RyanGao67/Rails_20210831)
 
+Rails_auth   
+Backend: 
+[https://github.com/RyanGao67/Rails_API_20210902](https://github.com/RyanGao67/Rails_API_20210902)
+Frontend:    
+
+
+
 
 # DB migrate
 [https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
