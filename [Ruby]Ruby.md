@@ -24,11 +24,11 @@ FactorBot:
 Rails-stock-app:     
 [https://github.com/RyanGao67/Rails_20210831](https://github.com/RyanGao67/Rails_20210831)
 
-Rails_auth   
-Backend: 
+Rails_auth      
+Backend:       
 [https://github.com/RyanGao67/Rails_API_20210902](https://github.com/RyanGao67/Rails_API_20210902)      
-Frontend:    
-[https://github.com/RyanGao67/Rails_React_20210902](https://github.com/RyanGao67/Rails_React_20210902)
+Frontend:       
+[https://github.com/RyanGao67/Rails_React_20210902](https://github.com/RyanGao67/Rails_React_20210902)   
 
 
 
