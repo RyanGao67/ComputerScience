@@ -94,7 +94,7 @@ nix-build /nix/store/fdsfasfd-demo.drv
 /nix/store/jfldsafjalskdjflasjfdlsa-demo
 
 
-
+![](img/nix1.png)
 
 
 
