@@ -97,4 +97,84 @@ nix-build /nix/store/fdsfasfd-demo.drv
 ![](img/nix1.png)
 
 
+```
+cat /nix/store/fjdslafjsaldfjaldsfjlsa-demo
 
+hello world
+```
+
+# Sandbox
+
+* outputs
+* inputDrvs
+* inputSrcs
+* platform
+* builder
+* args
+* env
+
+Only things mentioned in the derivation are available when building a derivation. Nix normally builds with a sandbox that actually prevents access to anything not declared, or outside of the Nix Store. 
+
+A path's hash is derived from its derivation's hash, which is derived from all of this(outputs, inputDrvs, inputSrcs, platform, builder, args, env) 
+
+
+Dependencies mush be made explicit, this makes them part of the output hash of the software being built. 
+
+
+=====> So you can literally copy a Nix store closure from one machine to another and it runs the same. 
+
+# Nix lang
+
+Free of side effects
+* no networking
+* no user input
+* no file writing
+* no output(except some tracing)
+* doesn't actually do anything
+
+except when calling derivation function
+
+```
+derivation {
+	name="demo";
+        builder = "${bash}/bin/bash";
+	args=["-c" "echo neat > $out"];
+	system = "x86_64-darwin";
+}
+
+derivation {
+        name="demo";
+        builder = "${bash}/bin/bash";
+        args=["-c" "echo neat > $out"];
+        system = "x86_64-darwin";
+	drvPath = "/nix/store/fjdslakfjlksajf-demo.drv";    ----> this is side effect a new file 
+	outPath = "/nix/store/fjsalkfjsldfj-demo";
+}
+```
+
+derivation 
+ 
+a function all in nixlang which generates a /nix/store/... drv file. 
+
+That file can be built with (e.g. nix-build). 
+
+NixLang doesn't actually build - or do - anything at all other than create .drvs
+
+# Garbage collection
+
+![](img/nix2.png)
+
+```
+nix-collect-garbage
+```
+
+nix-env -iA nixpkgs.tree    -----> because it creates a entry in nix root, it will no longer be garbage collect
+
+# installation
+
+https://nixos.org/guides/install-nix.html
+
+```
+source /etc/profile.d/nix.sh 
+
+```
