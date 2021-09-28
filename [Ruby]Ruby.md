@@ -584,3 +584,6 @@ http://lizabinante.com/blog/modules-and-self-in-ruby/
 # class << self
 https://stackoverflow.com/questions/15773552/ruby-class-instance-variable-vs-class-variable
 https://stackoverflow.com/questions/31444209/class-variable-using-attr-accessor-inside-class-self
+    
+# Constant in ruby
+[https://www.tutorialspoint.com/ruby/ruby_variables.htm](https://www.tutorialspoint.com/ruby/ruby_variables.htm)
