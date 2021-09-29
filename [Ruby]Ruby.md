@@ -587,3 +587,6 @@ https://stackoverflow.com/questions/31444209/class-variable-using-attr-accessor-
     
 # Constant in ruby
 [https://www.tutorialspoint.com/ruby/ruby_variables.htm](https://www.tutorialspoint.com/ruby/ruby_variables.htm)
+    
+# << self
+[https://stackoverflow.com/questions/2505067/class-self-idiom-in-ruby](https://stackoverflow.com/questions/2505067/class-self-idiom-in-ruby)
