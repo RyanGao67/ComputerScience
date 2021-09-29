@@ -80,9 +80,12 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | 
 
 ```
 
+
 On Mac if `rbenv global *.*.*` does not change the version: 
 
+
 Check that PATH contains `$HOME/.rbenv/shims` and `$HOME/.rbenv/bin`
+
 
 `$ env | grep PATH`      
 Also check that you have the following in your ~/.bash_profile if using bash or ~/.zshenv if using zsh
@@ -91,23 +94,35 @@ Also check that you have the following in your ~/.bash_profile if using bash or 
 export PATH="$HOME/.rbenv/bin:$PATH"       
 eval "$(rbenv init -)"        
 ```
+
+
 NOTE: Make sure it's the last setting in your ~/.bash_profile . I ran into an issue where I installed a program that updated my .bash_profile and reset PATH.
 
+```
 Finally, make sure your $HOME folder doesn't have a .ruby-version file that you may have created by accident if you were to have done $ rbenv local <ruby-version> in your $HOME folder. Doing $ rbenv global <ruby-version> modifies the $HOME/.rbenv/version file, and the existence of a .ruby-version file in the $HOME folder would override the version set by $HOME/.rbenv/version.
+```
+    
 
 From the docs:
 
+    
+
 Choosing the Ruby Version When you execute a shim, rbenv determines which Ruby version to use by reading it from the following sources, in this order:
+    
 
 The RBENV_VERSION environment variable, if specified. You can use the rbenv shell command to set this environment variable in your current shell session.
+    
 
 The first .ruby-version file found by searching the directory of the script you are executing and each of its parent directories until reaching the root of your filesystem.
-
+    
 The first .ruby-version file found by searching the current working directory and each of its parent directories until reaching the root of your filesystem. You can modify the .ruby-version file in the current working directory with the rbenv local command.
+    
 
 The global ~/.rbenv/version file. You can modify this file using the rbenv global command. If the global version file is not present, rbenv assumes you want to use the "system" Ruby—i.e. whatever version would be run if rbenv weren't in your path.
+    
 
 # The nil value
+    
 
 The nil value is used to express the notion of a "lack of an object". 
 
@@ -125,6 +140,7 @@ irb> a = nil
 irb> a.nil?
  => true
 ```
+    
 # OOP
 Ruby is an object-oriented programming language(OOP) that uses classes as blueprints for objects. Everything is Ruby is object, and object has two main properties: states and behaviors. 
 
@@ -185,6 +201,7 @@ end
 ```
 
 For this example, it creates:
+    
 
 protein     
 protein=     
@@ -253,6 +270,7 @@ $variableName #global scope
 def self.getClassVar
     @@classVariable
 end
+    
 
 #Ruby has shortcuts for instance variable getters and setters
 
@@ -295,6 +313,7 @@ civic = Car.new("Honda")
 >>Car.wheels
 =>4
 ```
+    
 
 
 
@@ -397,6 +416,7 @@ class A
   end
 end
 ```
+    
 Let's simplify this a bit, since A.config is clearly just an attribute_reader:
 
 ```ruby
@@ -509,6 +529,7 @@ module Mummy
   self == Mummy # => true
 end 
 ```
+    
 
 
 Instance methods
@@ -528,9 +549,11 @@ end
 g = Ghost.new
 g.reflect == g # => true
 ```
+    
 
 Class methods
 When we extend a class to mix in class methods, self behaves exactly like it does in normal class methods.
+    
 
 ```ruby
 module Reflection
@@ -545,9 +568,11 @@ end
 
 Ghost.reflect == Ghost # => true
 ```
+    
 
 Inside the metaclass
 Chances are you've seen this popular shortcut for defining lots of class methods at once.
+    
 
 ```ruby
 class Ghost
@@ -560,6 +585,7 @@ class Ghost
   end
 end
 ```
+    
 The class << foo syntax is actually pretty interesting. It lets you access an object's metaclass - which is also called the "singleton class" or "eigenclass." I plan on covering metaclasses more deeply in a future post. But for now, you just need to know that the metaclass is where Ruby stores methods that are unique to a specific object.
 
 If you access self from inside the class << foo block, you get the metaclass.
@@ -572,6 +598,8 @@ end
 
 # => #<Class:#<String:0x007f8de283bd88>
 ```
+    
+    
 Outside of any class
 If you're running code outside of any class, Ruby still provides self. It points to "main", which is an instance of Object:
 
@@ -590,3 +618,9 @@ https://stackoverflow.com/questions/31444209/class-variable-using-attr-accessor-
     
 # << self
 [https://stackoverflow.com/questions/2505067/class-self-idiom-in-ruby](https://stackoverflow.com/questions/2505067/class-self-idiom-in-ruby)
+    
+    
+# define_method and defind_singleton_method
+[https://apidock.com/ruby/v2_5_5/Object/define_singleton_method](https://apidock.com/ruby/v2_5_5/Object/define_singleton_method)
+
+[https://apidock.com/ruby/Module/define_method](https://apidock.com/ruby/Module/define_method)
