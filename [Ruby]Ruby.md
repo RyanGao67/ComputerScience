@@ -42,6 +42,11 @@ https://www.youtube.com/watch?v=0zZsjykBIMU
 https://github.com/RyanGao67/Rails_React_JWT_20210905    
 https://github.com/RyanGao67/Rails_JWT_20210905/blob/master/README.md
 
+Rails backburner active admin    
+https://github.com/RyanGao67/Ruby_Backburner_ActiveAdmin_ETC
+
+Rails devise    
+https://github.com/RyanGao67/Rails_Devise_Bootstrap
 
 
 # DB migrate
