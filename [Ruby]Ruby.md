@@ -48,6 +48,9 @@ https://github.com/RyanGao67/Ruby_Backburner_ActiveAdmin_ETC
 Rails devise    
 https://github.com/RyanGao67/Rails_Devise_Bootstrap
 
+Rails 
+https://github.com/RyanGao67/Rails_Blog_20211127
+
 
 # DB migrate
 [https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload](https://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload)
