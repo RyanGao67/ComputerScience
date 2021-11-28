@@ -48,7 +48,7 @@ https://github.com/RyanGao67/Ruby_Backburner_ActiveAdmin_ETC
 Rails devise    
 https://github.com/RyanGao67/Rails_Devise_Bootstrap
 
-Rails 
+Rails blog 
 https://github.com/RyanGao67/Rails_Blog_20211127
 
 
