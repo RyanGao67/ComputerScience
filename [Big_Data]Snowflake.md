@@ -1,3 +1,6 @@
+# Snowflake resource
+https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#data-platform-as-a-cloud-service
+
 ### create dataware houses
 ```
 USE ROLE SYSADMIN;
@@ -600,3 +603,110 @@ COPY INTO EXERCISE_DB.PUBLIC.CUSTOMERS
     FROM @aws_stage
       file_format= EXERCISE_DB.public.aws_fileformat
 ```
+### clusters
+
+snowflake is creating cluster keys on certain columns to create subset of rows to locate them  in micro-partions
+
+* snowflake automatically maintains these cluster keys
+* in general snowflake produces well-clustered tables
+* cluster keys are not always ideal and can change over time
+* manually customize these cluster keys
+
+will benifit multiple terabyte data tables
+
+* how to cluster?    
+columns that are used frequently in where clauses (often date columns for event tables)
+
+if you typically filters on two columns then the table can also benefit from two cluster keys
+
+column that is frequently used in joins
+
+Large enough number of distinct values to enable effective grouping(too large not a good cluster key)
+
+Small enough number of distinct values to allow effective grouping(too small not a good cluster key)
+
+
+
+### Best practice
+* Enable auto-suspend
+* Enable auto-resume
+* Set appropriate timeouts
+  * ETL/Data loading => timeout immidiately
+  * BI/SELECT queries => timeout 10 min
+  * Devops/Data science => timeout 5 min
+
+
+* If we have very complex queries that take a lot of time, it is no problem at all to set a larger virtual warehouse size. And then we can also later on, if we see this enough, we can also decrease the size of the virtual warehouse.
+
+So we should not focus too much on using a small virtual warehouse because we always can use: enable auto suspend.
+
+And usually, if we use a virtual warehouse that is large for a very complex query, then this is not a lot more in terms of cost because it can also process these queries a lot faster.
+
+So these were the best practices regarding the virtual warehouse.
+
+* Appropriate table type
+  * staging tables - Transient
+  * Production tables - Permanent
+  * Development tables - transient
+
+
+* Appropriate table type  
+* set cluster keys only if necessary
+  * Large table
+  * Most query time for table scan
+  * dimentions
+
+### monitoring
+
+```
+
+-- Table Storage
+
+SELECT * FROM "SNOWFLAKE"."ACCOUNT_USAGE"."TABLE_STORAGE_METRICS";
+
+-- How much is queried in databases
+SELECT * FROM "SNOWFLAKE"."ACCOUNT_USAGE"."QUERY_HISTORY";
+
+SELECT 
+DATABASE_NAME,
+COUNT(*) AS NUMBER_OF_QUERIES,
+SUM(CREDITS_USED_CLOUD_SERVICES)
+FROM "SNOWFLAKE"."ACCOUNT_USAGE"."QUERY_HISTORY"
+GROUP BY DATABASE_NAME;
+
+
+-- Usage of credits by warehouses
+SELECT * FROM "SNOWFLAKE"."ACCOUNT_USAGE"."WAREHOUSE_METERING_HISTORY";
+
+-- Usage of credits by warehouses // Grouped by day
+SELECT 
+DATE(START_TIME),
+SUM(CREDITS_USED)
+FROM "SNOWFLAKE"."ACCOUNT_USAGE"."WAREHOUSE_METERING_HISTORY"
+GROUP BY DATE(START_TIME);
+
+-- Usage of credits by warehouses // Grouped by warehouse
+SELECT
+WAREHOUSE_NAME,
+SUM(CREDITS_USED)
+FROM "SNOWFLAKE"."ACCOUNT_USAGE"."WAREHOUSE_METERING_HISTORY"
+GROUP BY WAREHOUSE_NAME;
+
+-- Usage of credits by warehouses // Grouped by warehouse & day
+SELECT
+DATE(START_TIME),
+WAREHOUSE_NAME,
+SUM(CREDITS_USED)
+FROM "SNOWFLAKE"."ACCOUNT_USAGE"."WAREHOUSE_METERING_HISTORY"
+GROUP BY WAREHOUSE_NAME,DATE(START_TIME);
+
+```
+
+### Retention period
+Best practice: 
+
+Staging database - 0 days (transient)
+
+Production - 4-7 days (1 day min)
+
+Best practice #3 - Large high-churn tables - 0 days (transient)
