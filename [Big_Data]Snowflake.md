@@ -710,3 +710,231 @@ Staging database - 0 days (transient)
 Production - 4-7 days (1 day min)
 
 Best practice #3 - Large high-churn tables - 0 days (transient)
+
+
+### Access Control
+Discretionary access control (DAC): Each object has an owner who can grant access to that object
+
+Role-based access control (RBAC): Access priviledges are assigned to roles, which are in turn assigned to users
+
+Example: 
+
+Role 1 creates a table. This means Role 1 owns this table. 
+
+Role 1 can grant the privileges to role 2 and role 3. 
+
+Role 2 Role 3 etc can we assigned to different users. 
+
+```
+GERANT <privilege> on <object> TO <role>
+
+GRANT <role> to <user>
+```
+
+### Access Control
+Account object has: 
+
+User, Role, Database, Warehouse, Other Account objects
+
+Database object has: 
+
+schema
+
+Schema object has: 
+
+Table, View, Stage, Integration, other schema objects
+
+Every object owned by a single role, the role can be assigned to multiple users
+Owner(role) has all privileges per default)
+
+
+### Hirarchy of roles
+
+So if the role **public** has a user with the role public has created a table, then these privileges will be also inherited to the other roles according to this hierarchy.
+
+### Role concepts
+
+1. User: People or systems
+2. Role: Entity to with priviledges are granted
+3. Privilege: Level of access to an object(select, drop, create, etc.)
+4. Securable object: objects to which privileges can be granted on (Database, Table, Warehouse etc.)
+
+
+### AccountAdmin
+* inherite both sysadmin and securityadmin
+* top-level role in the system
+* should be grated only to a limited number of users
+
+### securityadmin
+* useradmin role is granted(inherited by) to securityadmin
+* can manage users and roles
+* can manage any object grant globally
+
+### Systemadmin
+* create warehouses and databases(more objects)
+* recommended that all custome roles are assigned
+
+### Useradmin
+* dedicated to user and role management only
+* can create users and roles
+
+### public
+* automatically granted to every user
+* can create own objects like every other role(the object is available to every other user/role)
+
+### accountadmin
+* top-level-role
+* manage & view all objects
+* all configurations on account level
+
+**Usage**:
+First user will have this role assigned
+
+initial setup & managing account level objects
+
+
+**Best practises**
+* Very controlled(careful) assignment strongly recommented
+* Multi-factor authentification
+* at least two users should be assigned that role
+* avoid creating objects with that role unless you have to 
+
+
+```
+
+--- User 1 ---
+CREATE USER maria PASSWORD = '123' 
+DEFAULT_ROLE = ACCOUNTADMIN 
+MUST_CHANGE_PASSWORD = TRUE;
+
+GRANT ROLE ACCOUNTADMIN TO USER maria;
+
+
+--- User 2 ---
+CREATE USER frank PASSWORD = '123' 
+DEFAULT_ROLE = SECURITYADMIN 
+MUST_CHANGE_PASSWORD = TRUE;
+
+GRANT ROLE SECURITYADMIN TO USER frank;
+
+
+--- User 3 ---
+CREATE USER adam PASSWORD = '123' 
+DEFAULT_ROLE = SYSADMIN 
+MUST_CHANGE_PASSWORD = TRUE;
+GRANT ROLE SYSADMIN TO USER adam;
+```
+
+### security admin
+```
+-- SECURITYADMIN role --
+--  Create and Manage Roles & Users --
+
+
+-- Create Sales Roles & Users for SALES--
+
+create role sales_admin;
+create role sales_users;
+
+-- Create hierarchy
+grant role sales_users to role sales_admin;
+
+-- As per best practice assign roles to SYSADMIN
+grant role sales_admin to role SYSADMIN;
+
+
+-- create sales user
+CREATE USER simon_sales PASSWORD = '123' DEFAULT_ROLE =  sales_users 
+MUST_CHANGE_PASSWORD = TRUE;
+GRANT ROLE sales_users TO USER simon_sales;
+
+-- create user for sales administration
+CREATE USER olivia_sales_admin PASSWORD = '123' DEFAULT_ROLE =  sales_admin
+MUST_CHANGE_PASSWORD = TRUE;
+GRANT ROLE sales_admin TO USER  olivia_sales_admin;
+
+-----------------------------------
+
+-- Create Sales Roles & Users for HR--
+
+create role hr_admin;
+create role hr_users;
+
+-- Create hierarchy
+grant role hr_users to role hr_admin;
+
+-- This time we will not assign roles to SYSADMIN (against best practice)
+-- grant role hr_admin to role SYSADMIN;
+
+
+-- create hr user
+CREATE USER oliver_hr PASSWORD = '123' DEFAULT_ROLE =  hr_users 
+MUST_CHANGE_PASSWORD = TRUE;
+GRANT ROLE hr_users TO USER oliver_hr;
+
+-- create user for sales administration
+CREATE USER mike_hr_admin PASSWORD = '123' DEFAULT_ROLE =  hr_admin
+MUST_CHANGE_PASSWORD = TRUE;
+GRANT ROLE hr_admin TO USER mike_hr_admin;
+
+```
+
+### sysadmin
+
+```
+-- SYSADMIN --
+
+-- Create a warehouse of size X-SMALL
+create warehouse public_wh with
+warehouse_size='X-SMALL'
+auto_suspend=300 
+auto_resume= true
+
+-- grant usage to role public
+grant usage on warehouse public_wh 
+to role public
+
+-- create a database accessible to everyone
+create database common_db;
+grant usage on database common_db to role public
+
+-- create sales database for sales
+create database sales_database;
+grant ownership on database sales_database to role sales_admin;
+grant ownership on schema sales_database.public to role sales_admin
+
+SHOW DATABASES;
+
+
+-- create database for hr
+drop database hr_db;
+grant ownership on database hr_db to role hr_admin;
+grant ownership on schema hr_db.public to role hr_admin
+
+```
+
+### When to use materialized view
+a good use case: takes a long time to query; is updated rarely, is queried often
+
+
+* don't use materialized view if data changes are very frequent   
+* keep maintenance cost in mind   
+* consider leveraging tasks & streams instead   
+
+only available in enterprice version
+
+joins (including self-joins ) are not supported
+
+limited amount of aggregation functions
+
+no user defined functions
+no having clauses
+no order by clause
+no limit clause
+
+
+### Data sharing
+* Usually this can be a rather complicated process
+* data sharing without actual copy of that data & up to date
+* shared data can be consumed by the own compute resources
+* non-snoflake-users can also access through a reader account
