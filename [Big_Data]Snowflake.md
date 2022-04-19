@@ -54,8 +54,12 @@ If the query is more and more complex, we need bigger warehouse, like M or L or 
 
 Scaling policy: 
 
-Standard: minimizes queuing by favoring starting additional clusters over conserving credits     
-Economy: conserves credits by favoring keeping running clusters fully-loaded rather than starting additional clusters
+Standard: minimizes queuing by favoring starting additional clusters over conserving credits. Cluster starts immediately when either a query is queued or the system detects that there are more queries than can be executed by the currently available clusters. Cluster shuts down after 2-3 consecutive successful checks(performs every 1 minute). checks determine whether the load on the least-loaded cluster could be redistributed to other clusters. 
+
+
+Economy: conserves credits by favoring keeping running clusters fully-loaded rather than starting additional clusters. Clusters starts only if the system estimates there's enough query load to keep the cluster busy at least 6 minutes. Cluster shut down after 5-6 consecutive successful checks. 
+
+
 
 ### create database and tables
 ```
