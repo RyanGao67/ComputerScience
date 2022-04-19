@@ -1,7 +1,31 @@
 # Snowflake resource
 https://docs.snowflake.com/en/user-guide/intro-key-concepts.html#data-platform-as-a-cloud-service
 
-### create dataware houses
+### Architecture
+
+So here we see these three layers that snowflake basically consists of. **So the first layer is the storage.** So this is where our data is stored.
+
+Of course, we know that the data is not stored in Snowflake itself, but for example, in our case, this is stored in Amazon AWS S3 buckets.
+
+And this is also now not that important technically, but in this case, this data is stored in hybrid Columbanus storage.
+
+So in contrast to the traditional form of storing data, we store the data instead of saving it in rows, we store them and compress them into blobs.
+
+And then when we query the data, we also don't fetch these rows, but we fetch these blobs.
+
+And this hybrid column, not storage, is used in a lot of big data contexts. And so it is also in here. And this makes it more efficient in storing the data and also faster even in querying this data.
+
+**The second layer is virtual warehouse**. This is different from data warehouse. Muscle of the system performs MMP
+
+**Brain of the system** is cloud services. Managing infrastructure, access control. 
+
+XS virtual wareshouse -> 1 servers
+S virtual warehourse -> 2 servers
+M virtual warehouse -> 4 servers
+
+multiclustering -> for example multiple S virtual warehouses  when necessary
+
+### create data warehouses
 ```
 USE ROLE SYSADMIN;
 
