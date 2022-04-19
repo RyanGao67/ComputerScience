@@ -451,6 +451,10 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX
 SELECT COUNT(*) FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX
 
+//TRUNCATE TABLE
+//Removes all rows from a table but leaves the table intact (including all privileges and //constraints on the table). Also deletes the load metadata for the table, which allows the same //files to be loaded into the table again after the command completes.
+
+//Note that this is different from DROP TABLE, which removes the table from the system but //retains a version of the table (along with its load history) so that they can be recovered.
 TRUNCATE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 
 // Error handling using the ON_ERROR option = ABORT_STATEMENT (default)
