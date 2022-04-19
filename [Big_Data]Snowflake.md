@@ -347,6 +347,10 @@ SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX
 
 
 ### more transformation
+
+https://docs.snowflake.com/en/user-guide/data-load-transform.html#:~:text=Snowflake%20supports%20transforming%20data%20while,columns%20during%20a%20data%20load.
+
+
 ```
 //Example 3 - Table
 
