@@ -71,6 +71,15 @@ CREATE TABLE "OUR_FIRST_DB"."PUBLIC"."SECOND_TABLE" (
 )
 ```
 
+### list schema and table
+
+```
+show schemas in database our_first_db;
+show tables in database our_first_db;
+show tables in schema our_first_db.INFORMATION_SCHEMA;
+
+```
+
 ### Load data
 
 ```
