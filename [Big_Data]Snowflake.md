@@ -80,6 +80,12 @@ show tables in schema our_first_db.INFORMATION_SCHEMA;
 
 ```
 
+### snowflake pricing
+standard $2/credit
+enterprise $3/credit
+business critical $4/credit
+virtual private contact snowflake
+
 ### Load data
 
 ```
