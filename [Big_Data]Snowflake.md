@@ -1764,6 +1764,13 @@ SHOW GRANTS TO SHARE ORDERS_SHARE;
 ALTER SHARE ORDERS_SHARE ADD ACCOUNT=<consumer-account-id>;
 
 ```
+ on the other account we receive the share. consume by consumer
+```
+SHOW SHARES; // need account admin
+DESC SHARE QNAdfasf***.ORDERS_SHARE;
+CREATE DATABASE DATA_S FROM SHARE QMA***.ORDERS_SHARE;
+SELECT * FROM DATA_S.PUBLIC.ORDERS;
+```
 
 
 ```
