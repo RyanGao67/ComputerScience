@@ -135,6 +135,18 @@ with DAG(
 ```
 
 ### config
+
+
+config the db: postgres (with the big config file)
+check db connections
+```
+airflow db check
+```     
+check connections     
+``` 
+airflow config get-value core sql_alchemy_conn
+```
+
 ```
 [core]
 # The folder where your airflow pipelines live, most likely a
