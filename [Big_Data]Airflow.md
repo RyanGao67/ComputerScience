@@ -2333,3 +2333,11 @@ with DAG(
     task_1 >>[task_2, task_3] >> task_4
 ```
 
+### parallelism
+```
+The first one is parallelism. parallelism allows you to define the maximum number of tasks that you can execute in parallel for your entire airflow instance.
+
+Then we have discovered DAG concurrency, allowing you to define the maximum number of tasks that you can execute in parallel for a given DAG across all of its diagrams.
+
+And last but not least, we have seen Max active run per DAG  allowing you to define the maximum number of DAG runs that can be executed in parallel for a given time.
+```
