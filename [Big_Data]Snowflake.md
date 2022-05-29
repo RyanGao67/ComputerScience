@@ -2177,18 +2177,21 @@ ALTER SHARE VIEW_SHARE
 ADD ACCOUNT=KAA74702
 
 
-
-
-
-
-
-
 ```
 ### Streams are objects (DML) changes made to a table
 
 The process of capturing the changes is called change data capture
 
 stream object is created on top of table, captuing update delete insert in a table
+
+
+changed include delete insert update
+
+all colunms in the table is in stream object. and stream object has 3 additional columns:
+
+METADATA$ACTION
+METADATA$UPDATE
+METADATA$ROW_ID
 
 ```
 
