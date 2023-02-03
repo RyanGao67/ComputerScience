@@ -637,3 +637,7 @@ https://stackoverflow.com/questions/31444209/class-variable-using-attr-accessor-
 [https://apidock.com/ruby/v2_5_5/Object/define_singleton_method](https://apidock.com/ruby/v2_5_5/Object/define_singleton_method)
 
 [https://apidock.com/ruby/Module/define_method](https://apidock.com/ruby/Module/define_method)
+
+
+
+# rails 5 way [https://github.com/RyanGao67/Rails-way-5](https://github.com/RyanGao67/Rails-way-5)
