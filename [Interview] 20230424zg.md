@@ -1,36 +1,78 @@
-11. why you leave your current company? why zynga?
-12. Give one challenging project story.
-13. Write a method that receives queen positions on a chess board and returns true if the queens are attacking one another and false otherwise.
-14. how to determine if two binary trees are similar?
-15. Reverse a linked list
-16. detect the cycle in the linked list 
-17. find starting point in cycle linked list and remove
-18. onvert string to int. Follow UP 是covert hex-decimal to decimal。
-19. remove duplicate elements in linkedlist
-20.print valid parenthese
-21. 详细问简历，问oop基础（hash table, 多态，继承等）
-22. leetcode儿爸。我用kmp做的
-23. LRU 缓存 (lc 一四六)。
-24. dynamically allocating buffer via Heap sort, string based question
-25. design rate limiter with high level design and discussed few core components
-26. desing Minesweeper with low level design
-27. given a node in BST along with it's parent node, find its previous and next node using inorder traversal.
-28. Design and code minesweeper game.
-29. Given an array of unique positive integers return k maximum integers.
-30. Given an array of strings, group anagrams together.
-31. Given root node, print the zig zag order traversal of the binary tree.
-23sort 
-24 Do you know hash, how it works? 
-26. palindrome, and reverse, and find the longest
-28.The question was on a 2-D matrix, getting the minimum cost or distance to start from the left-bottom corner to the right-upper corner. 
-29.Given an array of integer numbers and a value K, get the count of all the combinations of the sum of any 3 numbers whichgreater than or equal to the K
-31. It was a construction of clusters. And then finding the possible number of pairs of nodes, not belonging to the same cluster.
-31. Traversals in a binary tree and cloning a binary tree.
-32. 24 Write a class that does search and delete on a BST
-33. write a function that takes an int n and prints a pyramid of stars where lowest level has n stars.
-35. Given an array find all the subsets in the array which sums up to the target value. You can pick any value from the array? What would be the time complexity?
-36. Given an array find the number of ways a particular element in an array can make jump upto n-1th element in the array? max jump would be the given value in an array. For ex [3, 2, 1, 0] Ans would be [6, 3, 1, 0]
-37. Design a tic-tac-toe game with coming up the best possible move a computer can make.
+1. N-Queens: https://leetcode.com/problems/n-queens/
+2. N-Queens II: https://leetcode.com/problems/n-queens-ii/
+3. Valid Sudoku: https://leetcode.com/problems/valid-sudoku/
+4. Minimum Knight Moves: https://leetcode.com/problems/minimum-knight-moves/
+5. Word Search: https://leetcode.com/problems/word-search/
+6. Same Tree: https://leetcode.com/problems/same-tree/
+7. Symmetric Tree: https://leetcode.com/problems/symmetric-tree/
+8. Subtree of Another Tree: https://leetcode.com/problems/subtree-of-another-tree/
+9. Diameter of Binary Tree: https://leetcode.com/problems/diameter-of-binary-tree/
+10. Binary Tree Maximum Path Sum: https://leetcode.com/problems/binary-tree-maximum-path-sum/
+11. Reverse Linked List: https://leetcode.com/problems/reverse-linked-list/
+12. Remove Nth Node From End of List: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+13. Merge Two Sorted Lists: https://leetcode.com/problems/merge-two-sorted-lists/
+14. Palindrome Linked List: https://leetcode.com/problems/palindrome-linked-list/
+15. Linked List Cycle: https://leetcode.com/problems/linked-list-cycle/16. detect the cycle in the linked list 
+17. Linked List Cycle II: https://leetcode.com/problems/linked-list-cycle-ii/
+18. Remove Linked List Cycle: https://leetcode.com/problems/remove-linked-list-cycle/
+18. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+19. Remove Duplicates from Sorted List: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+20. Remove Duplicates from Sorted List II: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+21. Remove Duplicates from Unsorted List: https://leetcode.com/problems/remove-duplicates-from-unsorted-list/
+22. Generate Parentheses: https://leetcode.com/problems/generate-parentheses/
+23. Valid Parentheses: https://leetcode.com/problems/valid-parentheses/
+24. Different Ways to Add Parentheses: https://leetcode.com/problems/different-ways-to-add-parentheses/
+27. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/?orderBy=most_votes
+28. https://leetcode.com/problems/lru-cache/
+29. https://leetcode.com/problems/sort-an-array/
+30. https://leetcode.com/problems/kth-largest-element-in-an-array/
+31. https://leetcode.com/problems/top-k-frequent-elements/
+34. https://leetcode.com/problems/inorder-successor-in-bst/
+35. https://leetcode.com/problems/inorder-successor-in-bst-ii/
+36. https://leetcode.com/problems/binary-search-tree-iterator/
+37. https://www.lintcode.com/problem/915/
+39. https://leetcode.com/problems/kth-largest-element-in-an-array/
+40. https://leetcode.com/problems/top-k-frequent-elements/
+41. https://leetcode.com/problems/find-k-closest-elements/
+42. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+43. https://leetcode.com/problems/k-closest-points-to-origin/
+44. https://leetcode.com/problems/group-anagrams/
+45. https://leetcode.com/problems/find-all-anagrams-in-a-string/
+46. https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/.
+47. https://leetcode.com/problems/sort-list/
+48. https://leetcode.com/problems/sort-an-array/ 
+26. https://leetcode.com/problems/longest-palindromic-substring/
+27. https://leetcode.com/problems/longest-palindromic-subsequence/
+28. https://leetcode.com/problems/palindromic-substrings/
+29. https://leetcode.com/problems/minimum-path-sum/
+30. https://leetcode.com/problems/unique-paths/
+31. https://leetcode.com/problems/unique-paths-ii/
+32.Given an array of integer numbers and a value K, get the count of all the combinations of the sum of any 3 numbers whichgreater than or equal to the K
+def count_combinations(arr, K):
+    arr.sort()
+    count = 0
+    for i in range(len(arr)):
+        j, k = i+1, len(arr)-1
+        while j < k:
+            if arr[i] + arr[j] + arr[k] >= K:
+                count += k-j
+                k -= 1
+            else:
+                j += 1
+    return count
+33. https://leetcode.com/problems/combination-sum-ii/
+34. https://leetcode.com/problems/combination-sum/
+35. https://leetcode.com/problems/4sum/
+36. https://leetcode.com/problems/3sum/
+37. https://leetcode.com/problems/evaluate-division/
+38. https://leetcode.com/problems/accounts-merge/
+39. https://leetcode.com/problems/longest-consecutive-sequence/
+40. https://leetcode.com/problems/number-of-provinces/.
+41. 24 Write a class that does search and delete on a BST
+42. write a function that takes an int n and prints a pyramid of stars where lowest level has n stars.
+43. Given an array find all the subsets in the array which sums up to the target value. You can pick any value from the array? What would be the time complexity?
+44. Given an array find the number of ways a particular element in an array can make jump upto n-1th element in the array? max jump would be the given value in an array. For ex [3, 2, 1, 0] Ans would be [6, 3, 1, 0]
+45. Design a tic-tac-toe game with coming up the best possible move a computer can make.
 38 Design a stack in which these following operations take O(1) time:pop/push/push middle/pop middle
 39. Given a connected path which can have many subpaths get the path which is nth distance from the source ?
 40. Calculate the angle between a minute and hour hands in a clock.
@@ -53,12 +95,9 @@
 3.  finding set of permutations etc
 4. Find kth max in an array
 5. Check for prime
-1. Find if a linked list contains a cycle.
-2. Convert a string to an integer.
 3. Given a family tree, find the average age of a given generation.
 4. Add 1 to a number represented as a linked list.
 5. Implement a linked list class and several traversal and search methods.
-7. Given a string containing brackets, eg, "(( hi ) )", check if it's closed or not. What if we took into account any pair of opening/closing char
 3. Given 2 int arrays (unsorted, duplicates can exist), create a function that returns the unique (no overlap) ints from both arrays.
 4. Find out if two given strings are anagrams of each other or not?
 5. Insert a number in a sorted linkedlist.
@@ -204,54 +243,60 @@ return s;
 8. Pseudo Number Generator for a card game
 17. Implement the search for the closest common ancestor of two tree nodes
 18. How do you find the max depth of a binary tree?
-19. Design an algorithm to recommend friends to people on facebook.
-20. 32. Design MVC for a leaderboard design leaderboard
-21. 6. design a scrabble game
-7. 30. Amazon Recommendation System related design
-8. 10. thread1 {for (int i = 0; i<100; i++) {a++;}} thread2{for (int i = 0; i<100; i++) {a++;}} suppose a is initialized to 0, what's the final value of a
-11.What is the memory necessary for this iterative block of code?
-12. implement atoi
-13. Design a class to handle hashing.
-14. design the news feed of facebook
-15. design a job machine class which can have various kinds of jobs executed.
-16. 5 Pirate & 100 gold...need to be divided perfectly.exact problem details & answer : http://en.wikipedia.org/wiki/Pirate_game
-17. Design a card game, what data structure to use to minimize pattern searching operation in Poker.
-9. 43. If an iphone app crashes often how will you debug
-10. - Design a real time MMO game. Resource sharing and locking
-11. How would you find 10 suitably matched opponents in Mafia Wars without taking a DB hit.
-6. How do you deal with a big network of servers... how would you plan your upgrades, etc.
-4. if you have a big text file on unix, how would you parse it if it has a predefined table format... how would you get data from a particular column?
-2.How would you design a Leadership board for a game so that it shows stats for the user at the game level, and also position in his/her social circle.
-3. Implement char* itoa
+19. 24 Do you know hash, how it works? 
+20. Design an algorithm to recommend friends to people on facebook.
+21. 32. Design MVC for a leaderboard design leaderboard
+22. 6. design a scrabble game
+23. 30. Amazon Recommendation System related design
+24. 10. thread1 {for (int i = 0; i<100; i++) {a++;}} thread2{for (int i = 0; i<100; i++) {a++;}} suppose a is initialized to 0, what's the final value of a
+25.What is the memory necessary for this iterative block of code?
+26. implement atoi
+27. Design a class to handle hashing.
+28. design the news feed of facebook
+29.  Design and code minesweeper game.
+30. design a job machine class which can have various kinds of jobs executed.
+31. 5 Pirate & 100 gold...need to be divided perfectly.exact problem details & answer : http://en.wikipedia.org/wiki/Pirate_game
+32. Design a card game, what data structure to use to minimize pattern searching operation in Poker.
+33. 43. If an iphone app crashes often how will you debug
+34. - Design a real time MMO game. Resource sharing and locking
+35. How would you find 10 suitably matched opponents in Mafia Wars without taking a DB hit.
+36. How do you deal with a big network of servers... how would you plan your upgrades, etc.
+37. if you have a big text file on unix, how would you parse it if it has a predefined table format... how would you get data from a particular column?
+38.How would you design a Leadership board for a game so that it shows stats for the user at the game level, and also position in his/her social circle.
+39. Implement char* itoa
 44. Design chess game and scale it
-22. 16 Sync a huge file between nodes 
-23.atomicity 
-24. deadlocks
-25. 1.How would you proactively provision hardware for a large LAMP application? Discuss monitoring, cost planning, and how you'd estimate the marginal value.
-26. Suppose you need a chat system with 10M concurrent users, with a dense adjacency matrix. How would you implement a presence and chat system that scales to that kind of user base? Discuss tradeoffs among reliability, complexity, latency, and cost.
-27. Implement a distributed hash table. Discuss how it will scale horizontally, how it might implement redundancy, and what kind of reliability guarantees it can make.
-28.bank of webservers
-29. tiers of caching
-30. Many Server architecture comparisons.
-31. dealing with connection fan-in, etc (do you understand systems and networks, not just FOR loops).
-32. Huge bank of servers is pounding data layer with connections. What do we do?
+41. 16 Sync a huge file between nodes 
+42.atomicity 
+43. deadlocks
+44. 1.How would you proactively provision hardware for a large LAMP application? Discuss monitoring, cost planning, and how you'd estimate the marginal value.
+45. Suppose you need a chat system with 10M concurrent users, with a dense adjacency matrix. How would you implement a presence and chat system that scales to that kind of user base? Discuss tradeoffs among reliability, complexity, latency, and cost.
+46. Implement a distributed hash table. Discuss how it will scale horizontally, how it might implement redundancy, and what kind of reliability guarantees it can make.
+47.bank of webservers
+48. tiers of caching
+49. Many Server architecture comparisons.
+50. dealing with connection fan-in, etc (do you understand systems and networks, not just FOR loops).
+51. Huge bank of servers is pounding data layer with connections. What do we do?
 Chaining / Linear-probing
 Blocking queue implementation. 
 Design an OO model for the elevator.
 linked list questions(find the mid point)
 2. Implement the btree algorithm.
-3. 17. You have two variable lengths of rope with different widths at different sections of the rope and both of them burn at different rates and speeds, they only thing you know about them is that they both burn in exactly 30 minutes. You also have two matches. Just using these two things, how would you measure 45 minutes of time? (Also, you have no way to measure time, i.e. - no wrist watch, etc.)
+3. 32. design rate limiter with high level design and discussed few core components
+33. desing Minesweeper with low level design
+4. 17. You have two variable lengths of rope with different widths at different sections of the rope and both of them burn at different rates and speeds, they only thing you know about them is that they both burn in exactly 30 minutes. You also have two matches. Just using these two things, how would you measure 45 minutes of time? (Also, you have no way to measure time, i.e. - no wrist watch, etc.)
 18. What's the difference between polling and interrupts
-4.如何处理100万个用户访问？如何query server端？
+6.如何处理100万个用户访问？如何query server端？
 29. Talk about what happens when a browser makes a request, 
-25. Implement tinyurl
-26. How do you open a website without a browser?
-27. If there was a feature you only wanted to show to 10% of the users, how would you do so?
-28. binary search.
-29. Thread? Deadlock?
-30. what is the difference between an object and an interface
-31. what is the difference between overriding and overloading a method.
-32. Define a queen movement in chess using pseudo code?
-33. trie
-34. 6. Find the minimum number of races required to find out the winner between 25 horses, in one race you can race 5 horses.
-35. 32. Stack grows up or down?stack vs heap
+30. 12. Give one challenging project story.
+31. Implement tinyurl
+32. 26. 详细问简历，问oop基础（hash table, 多态，继承等）
+33. How do you open a website without a browser?
+34. If there was a feature you only wanted to show to 10% of the users, how would you do so?
+35. binary search.
+36. Thread? Deadlock?
+37. what is the difference between an object and an interface
+38. what is the difference between overriding and overloading a method.
+39. Define a queen movement in chess using pseudo code?
+40. trie
+41. 6. Find the minimum number of races required to find out the winner between 25 horses, in one race you can race 5 horses.
+42. 32. Stack grows up or down?stack vs heap
