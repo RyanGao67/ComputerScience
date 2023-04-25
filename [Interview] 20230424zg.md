@@ -1,3 +1,7 @@
+first linkedlist/deduplicate array/braket
+
+fibonaci/binary tree
+
 1. N-Queens: https://leetcode.com/problems/n-queens/
 2. N-Queens II: https://leetcode.com/problems/n-queens-ii/
 3. Valid Sudoku: https://leetcode.com/problems/valid-sudoku/
