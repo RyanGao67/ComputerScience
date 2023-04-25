@@ -176,69 +176,71 @@ root.left.right.right = Node(8)
 path = find_mirror_image_path(root, 5)
 print([node.val if node is not None else None for node in path]) # [5, 3, None]
 This code finds the node with value 5 in the tree and returns its mirror image path, which is [5, 3, None] in this case. This indicates that the mirror image of the node with value 5 is at the same depth as the original node, and has no children.
-98.Invert Binary Tree (https://leetcode.com/problems/invert-binary-tree/)
-99. Symmetric Tree (https://leetcode.com/problems/symmetric-tree/)
-100. Binary Tree Level Order Traversal (https://leetcode.com/problems/binary-tree-level-order-traversal/)
-101. Path Sum (https://leetcode.com/problems/path-sum/)
-102. Lowest Common Ancestor of a Binary Tree (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-103. Word search in matrix. https://leetcode.com/problems/word-search/
-104. https://leetcode.com/problems/insert-into-a-binary-search-tree/
-105. https://leetcode.com/problems/complete-binary-tree-inserter/
-106. https://leetcode.com/problems/course-schedule-ii/
-107. https://leetcode.com/problems/path-with-maximum-gold/
-108. https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
-109. https://leetcode.com/problems/walls-and-gates/
-110.https://leetcode.com/problems/binary-tree-postorder-traversal/
-111. https://leetcode.com/problems/binary-tree-inorder-traversal/
-112. https://leetcode.com/problems/binary-tree-postorder-traversal/
-113. https://leetcode.com/problems/binary-tree-preorder-traversal/
-114. https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
-115. https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-116. https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
-117.https://leetcode.com/problems/maximum-subarray/
-118.https://leetcode.com/problems/letter-combinations-of-a-phone-number
-119. https://leetcode.com/problems/permutations/
-120. https://leetcode.com/problems/palindrome-permutation-ii/
-121. https://leetcode.com/problems/maximum-subarray/
-122. Print Words Vertically (https://leetcode.com/problems/print-words-vertically/)
-123.  Immutable Linked List in Reverse (https://leetcode.com/problems/print-immutable-linked-list-in-reverse/)
-124.  Output Contest Matches (https://leetcode.com/problems/output-contest-matches/)
-125.  Print Zero Even Odd (https://leetcode.com/problems/print-zero-even-odd/)
-126.  Beautiful Arrangement II (https://leetcode.com/problems/beautiful-arrangement-ii/)
-127. The Dining Philosophers problem (https://leetcode.com/problems/the-dining-philosophers/)
-128. Dining Philosophers II (https://leetcode.com/problems/dining-philosophers/)
-129. Building H2O (https://leetcode.com/problems/building-h2o/)
-130. Print in Order (https://leetcode.com/problems/print-in-order/)
-131. Print FooBar Alternately (https://leetcode.com/problems/print-foobar-alternately/)
-132. https://leetcode.com/problems/divide-two-integers/
-133. 26. https://leetcode.com/problems/string-to-integer-atoi/
-134. https://leetcode.com/problems/random-pick-with-weight/
-135. https://leetcode.com/problems/shuffle-an-array/
-136. https://leetcode.com/problems/reverse-words-in-a-string/
-137. https://leetcode.com/problems/middle-of-the-linked-list/
-138. 45. binary search.
-139. 50. trie
-140. the complexity of this algorithm
-public String getString()
-String s= "";
-for(int i =0 ; i < LARGE_NUMBER ; i++) {s += "a";}
-return s;
-}
-4. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
-5. https://leetcode.com/problems/first-unique-number/
-6. https://leetcode.com/problems/reverse-linked-list-ii/
-7. https://leetcode.com/problems/reverse-nodes-in-k-group/
-8. https://leetcode.com/problems/nim-game/
-9. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-17.https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
-18. https://leetcode.com/problems/maximum-depth-of-binary-tree/
-19. https://leetcode.com/problems/minimum-depth-of-binary-tree/
-20. https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/
+98.Invert Binary Tree (https://leetcode.com/problems/invert-binary-tree/)     
+99. Symmetric Tree (https://leetcode.com/problems/symmetric-tree/)   
+100. Binary Tree Level Order Traversal (https://leetcode.com/problems/binary-tree-level-order-traversal/)   
+101. Path Sum (https://leetcode.com/problems/path-sum/)   
+102. Lowest Common Ancestor of a Binary Tree (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)   
+103. Word search in matrix. https://leetcode.com/problems/word-search/  
+104. https://leetcode.com/problems/insert-into-a-binary-search-tree/  
+105. https://leetcode.com/problems/complete-binary-tree-inserter/  
+106. https://leetcode.com/problems/course-schedule-ii/  
+107. https://leetcode.com/problems/path-with-maximum-gold/  
+108. https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/  
+109. https://leetcode.com/problems/walls-and-gates/   
+110.https://leetcode.com/problems/binary-tree-postorder-traversal/  
+111. https://leetcode.com/problems/binary-tree-inorder-traversal/  
+112. https://leetcode.com/problems/binary-tree-postorder-traversal/  
+113. https://leetcode.com/problems/binary-tree-preorder-traversal/  
+114. https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/  
+115. https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/  
+116. https://leetcode.com/problems/flatten-binary-tree-to-linked-list/  
+117.https://leetcode.com/problems/maximum-subarray/  
+118.https://leetcode.com/problems/letter-combinations-of-a-phone-number  
+119. https://leetcode.com/problems/permutations/  
+120. https://leetcode.com/problems/palindrome-permutation-ii/  
+121. https://leetcode.com/problems/maximum-subarray/  
+122. Print Words Vertically (https://leetcode.com/problems/print-words-vertically/)   
+123.  Immutable Linked List in Reverse (https://leetcode.com/problems/print-immutable-linked-list-in-reverse/)   
+124.  Output Contest Matches (https://leetcode.com/problems/output-contest-matches/)  
+125.  Print Zero Even Odd (https://leetcode.com/problems/print-zero-even-odd/)   
+126.  Beautiful Arrangement II (https://leetcode.com/problems/beautiful-arrangement-ii/)  
+127. The Dining Philosophers problem (https://leetcode.com/problems/the-dining-philosophers/)  
+128. Dining Philosophers II (https://leetcode.com/problems/dining-philosophers/)  
+129. Building H2O (https://leetcode.com/problems/building-h2o/)  
+130. Print in Order (https://leetcode.com/problems/print-in-order/)  
+131. Print FooBar Alternately (https://leetcode.com/problems/print-foobar-alternately/)  
+132. https://leetcode.com/problems/divide-two-integers/  
+133. 26. https://leetcode.com/problems/string-to-integer-atoi/  
+134. https://leetcode.com/problems/random-pick-with-weight/  
+135. https://leetcode.com/problems/shuffle-an-array/  
+136. https://leetcode.com/problems/reverse-words-in-a-string/  
+137. https://leetcode.com/problems/middle-of-the-linked-list/  
 
 
-21. Design MVC for a leaderboard design leaderboard
-22. design a scrabble game
-23. Amazon Recommendation System related design
+138. binary search.  
+139. trie  
+140. the complexity of this algorithm  
+public String getString()  
+String s= "";  
+for(int i =0 ; i < LARGE_NUMBER ; i++) {s += "a";}  
+return s;  
+}  
+4. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/  
+5. https://leetcode.com/problems/first-unique-number/  
+6. https://leetcode.com/problems/reverse-linked-list-ii/  
+7. https://leetcode.com/problems/reverse-nodes-in-k-group/  
+8. https://leetcode.com/problems/nim-game/  
+9. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/  
+17.https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/  
+18. https://leetcode.com/problems/maximum-depth-of-binary-tree/  
+19. https://leetcode.com/problems/minimum-depth-of-binary-tree/  
+20. https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/  
+  
+
+21. Design MVC for a leaderboard design leaderboard  
+22. design a scrabble game  
+23. Amazon Recommendation System related design  
 24. thread1 {for (int i = 0; i<100; i++) {a++;}} thread2{for (int i = 0; i<100; i++) {a++;}} suppose a is initialized to 0, what's the final value of a
 25.What is the memory necessary for this iterative block of code?
 61. w.r.t. memory, explain why arrays are preferred over Linked lists (other than the get() method)
