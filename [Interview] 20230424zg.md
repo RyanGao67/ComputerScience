@@ -12,30 +12,30 @@ fibonaci/binary tree
 8. Subtree of Another Tree: https://leetcode.com/problems/subtree-of-another-tree/
 9. Diameter of Binary Tree: https://leetcode.com/problems/diameter-of-binary-tree/
 10. Binary Tree Maximum Path Sum: https://leetcode.com/problems/binary-tree-maximum-path-sum/
-11. Reverse Linked List: https://leetcode.com/problems/reverse-linked-list/
-12. Remove Nth Node From End of List: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-13. Merge Two Sorted Lists: https://leetcode.com/problems/merge-two-sorted-lists/
-14. Palindrome Linked List: https://leetcode.com/problems/palindrome-linked-list/
-15. Linked List Cycle: https://leetcode.com/problems/linked-list-cycle/16. detect the cycle in the linked list 
-16. Linked List Cycle II: https://leetcode.com/problems/linked-list-cycle-ii/
-17. Remove Linked List Cycle: https://leetcode.com/problems/remove-linked-list-cycle/
+11. +Reverse Linked List: https://leetcode.com/problems/reverse-linked-list/
+12. +Remove Nth Node From End of List: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+13. +Merge Two Sorted Lists: https://leetcode.com/problems/merge-two-sorted-lists/
+14. +Palindrome Linked List: https://leetcode.com/problems/palindrome-linked-list/
+15. +Linked List Cycle: https://leetcode.com/problems/linked-list-cycle/16. detect the cycle in the linked list 
+16. +Linked List Cycle II: https://leetcode.com/problems/linked-list-cycle-ii/
+17. +Remove Linked List Cycle: https://leetcode.com/problems/remove-linked-list-cycle/
 18. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
-19. Remove Duplicates from Sorted List: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
-20. Remove Duplicates from Sorted List II: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
-21. Remove Duplicates from Unsorted List: https://leetcode.com/problems/remove-duplicates-from-unsorted-list/
-22. Generate Parentheses: https://leetcode.com/problems/generate-parentheses/
-23. Valid Parentheses: https://leetcode.com/problems/valid-parentheses/
-24. Different Ways to Add Parentheses: https://leetcode.com/problems/different-ways-to-add-parentheses/
+19. +Remove Duplicates from Sorted List: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+20. +Remove Duplicates from Sorted List II: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+21. +Remove Duplicates from Unsorted List: https://leetcode.com/problems/remove-duplicates-from-unsorted-list/
+22. +Generate Parentheses: https://leetcode.com/problems/generate-parentheses/
+23. +Valid Parentheses: https://leetcode.com/problems/valid-parentheses/
+24. +Different Ways to Add Parentheses: https://leetcode.com/problems/different-ways-to-add-parentheses/
 25. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/?orderBy=most_votes
-26. https://leetcode.com/problems/lru-cache/
-27. https://leetcode.com/problems/sort-an-array/
-28. https://leetcode.com/problems/kth-largest-element-in-an-array/
+26. +https://leetcode.com/problems/lru-cache/
+27. +https://leetcode.com/problems/sort-an-array/
+28. +https://leetcode.com/problems/kth-largest-element-in-an-array/
 29. https://leetcode.com/problems/top-k-frequent-elements/
 30. https://leetcode.com/problems/inorder-successor-in-bst/
 31. https://leetcode.com/problems/inorder-successor-in-bst-ii/
 32. https://leetcode.com/problems/binary-search-tree-iterator/
 33. https://www.lintcode.com/problem/915/
-34. https://leetcode.com/problems/kth-largest-element-in-an-array/
+34. +https://leetcode.com/problems/kth-largest-element-in-an-array/
 35. https://leetcode.com/problems/top-k-frequent-elements/
 36. https://leetcode.com/problems/find-k-closest-elements/
 37. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
@@ -43,15 +43,16 @@ fibonaci/binary tree
 39. https://leetcode.com/problems/group-anagrams/
 40. https://leetcode.com/problems/find-all-anagrams-in-a-string/
 41. https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/.
-42. https://leetcode.com/problems/sort-list/
-43. https://leetcode.com/problems/sort-an-array/ 
-44. https://leetcode.com/problems/longest-palindromic-substring/
-45. https://leetcode.com/problems/longest-palindromic-subsequence/
-46. https://leetcode.com/problems/palindromic-substrings/
+42. +https://leetcode.com/problems/sort-list/
+43. +https://leetcode.com/problems/sort-an-array/ 
+44. +https://leetcode.com/problems/longest-palindromic-substring/
+45. +https://leetcode.com/problems/longest-palindromic-subsequence/
+46. +https://leetcode.com/problems/palindromic-substrings/
 47. https://leetcode.com/problems/minimum-path-sum/
 48. https://leetcode.com/problems/unique-paths/
 49. https://leetcode.com/problems/unique-paths-ii/
-50.Given an array of integer numbers and a value K, get the count of all the combinations of the sum of any 3 numbers whichgreater than or equal to the K
+50. +Given an array of integer numbers and a value K, get the count of all the combinations of the sum of any 3 numbers whichgreater than or equal to the K
+```
 def count_combinations(arr, K):
     arr.sort()
     count = 0
@@ -64,6 +65,7 @@ def count_combinations(arr, K):
             else:
                 j += 1
     return count
+```
 51. https://leetcode.com/problems/combination-sum-ii/
 52. https://leetcode.com/problems/combination-sum/
 53. https://leetcode.com/problems/4sum/
@@ -95,21 +97,21 @@ def count_combinations(arr, K):
 79. https://leetcode.com/problems/design-circular-queue/
 80. https://leetcode.com/problems/design-hashmap/
 81. https://leetcode.com/problems/course-schedule-ii/
-82. Generate Parentheses (https://leetcode.com/problems/generate-parentheses/)
+82. +Generate Parentheses (https://leetcode.com/problems/generate-parentheses/)
 83. Letter Combinations of a Phone Number (https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 84. Permutations (https://leetcode.com/problems/permutations/)
 85. Word Search (https://leetcode.com/problems/word-search/)
 86. https://leetcode.com/problems/average-of-levels-in-binary-tree/
 87. https://leetcode.com/problems/cousins-in-binary-tree/
 88. https://leetcode.com/problems/binary-tree-right-side-view/
-89. https://leetcode.com/problems/plus-one-linked-list/
-90. https://leetcode.com/problems/design-linked-list/
-91. https://leetcode.com/problems/intersection-of-two-arrays/
-92.https://leetcode.com/problems/insertion-sort-list/
+89. +https://leetcode.com/problems/plus-one-linked-list/
+90. +https://leetcode.com/problems/design-linked-list/
+91. +https://leetcode.com/problems/intersection-of-two-arrays/
+92. +https://leetcode.com/problems/insertion-sort-list/
 93. https://leetcode.com/problems/top-k-frequent-elements/
 94. https://leetcode.com/problems/top-k-frequent-words/
-95. https://leetcode.com/problems/find-median-from-data-stream/
-96.https://leetcode.com/problems/roman-to-integer/
+95. +https://leetcode.com/problems/find-median-from-data-stream/
+96. +https://leetcode.com/problems/roman-to-integer/
 97.To find the mirror image path of a given node in a binary tree, we need to traverse the tree to find the given node, and then traverse the mirror image of the tree to find the mirror image of the node. Here's one way to implement this algorithm in Python:
 class Node:
     def __init__(self, val):
@@ -194,17 +196,17 @@ This code finds the node with value 5 in the tree and returns its mirror image p
 113. https://leetcode.com/problems/binary-tree-preorder-traversal/  
 114. https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/  
 115. https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/  
-116. https://leetcode.com/problems/flatten-binary-tree-to-linked-list/  
-117.https://leetcode.com/problems/maximum-subarray/  
-118.https://leetcode.com/problems/letter-combinations-of-a-phone-number  
+116. +https://leetcode.com/problems/flatten-binary-tree-to-linked-list/  
+117. +https://leetcode.com/problems/maximum-subarray/  
+118. https://leetcode.com/problems/letter-combinations-of-a-phone-number  
 119. https://leetcode.com/problems/permutations/  
 120. https://leetcode.com/problems/palindrome-permutation-ii/  
-121. https://leetcode.com/problems/maximum-subarray/  
+121. +https://leetcode.com/problems/maximum-subarray/  
 122. Print Words Vertically (https://leetcode.com/problems/print-words-vertically/)   
-123.  Immutable Linked List in Reverse (https://leetcode.com/problems/print-immutable-linked-list-in-reverse/)   
+123.  +Immutable Linked List in Reverse (https://leetcode.com/problems/print-immutable-linked-list-in-reverse/)   
 124.  Output Contest Matches (https://leetcode.com/problems/output-contest-matches/)  
 125.  Print Zero Even Odd (https://leetcode.com/problems/print-zero-even-odd/)   
-126.  Beautiful Arrangement II (https://leetcode.com/problems/beautiful-arrangement-ii/)  
+126.  +Beautiful Arrangement II (https://leetcode.com/problems/beautiful-arrangement-ii/)  
 127. The Dining Philosophers problem (https://leetcode.com/problems/the-dining-philosophers/)  
 128. Dining Philosophers II (https://leetcode.com/problems/dining-philosophers/)  
 129. Building H2O (https://leetcode.com/problems/building-h2o/)  
@@ -213,9 +215,9 @@ This code finds the node with value 5 in the tree and returns its mirror image p
 132. https://leetcode.com/problems/divide-two-integers/  
 133. 26. https://leetcode.com/problems/string-to-integer-atoi/  
 134. https://leetcode.com/problems/random-pick-with-weight/  
-135. https://leetcode.com/problems/shuffle-an-array/  
+135. +https://leetcode.com/problems/shuffle-an-array/  
 136. https://leetcode.com/problems/reverse-words-in-a-string/  
-137. https://leetcode.com/problems/middle-of-the-linked-list/  
+137. +https://leetcode.com/problems/middle-of-the-linked-list/  
 
 
 138. binary search.  
@@ -228,14 +230,14 @@ return s;
 }  
 4. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/  
 5. https://leetcode.com/problems/first-unique-number/  
-6. https://leetcode.com/problems/reverse-linked-list-ii/  
-7. https://leetcode.com/problems/reverse-nodes-in-k-group/  
+6. +https://leetcode.com/problems/reverse-linked-list-ii/  
+7. +https://leetcode.com/problems/reverse-nodes-in-k-group/  
 8. https://leetcode.com/problems/nim-game/  
 9. https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/  
 17.https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/  
 18. https://leetcode.com/problems/maximum-depth-of-binary-tree/  
 19. https://leetcode.com/problems/minimum-depth-of-binary-tree/  
-20. https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/  
+20. +https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/  
   
 
 21. Design MVC for a leaderboard design leaderboard  
