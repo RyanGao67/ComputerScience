@@ -26,7 +26,7 @@ fibonaci/binary tree
 22. +Generate Parentheses: https://leetcode.com/problems/generate-parentheses/
 23. +Valid Parentheses: https://leetcode.com/problems/valid-parentheses/
 24. +Different Ways to Add Parentheses: https://leetcode.com/problems/different-ways-to-add-parentheses/
-25. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/?orderBy=most_votes
+25. +https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/?orderBy=most_votes
 26. +https://leetcode.com/problems/lru-cache/
 27. +https://leetcode.com/problems/sort-an-array/
 28. +https://leetcode.com/problems/kth-largest-element-in-an-array/
@@ -41,7 +41,7 @@ fibonaci/binary tree
 37. https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 38. https://leetcode.com/problems/k-closest-points-to-origin/
 39. https://leetcode.com/problems/group-anagrams/
-40. https://leetcode.com/problems/find-all-anagrams-in-a-string/
+40. +https://leetcode.com/problems/find-all-anagrams-in-a-string/
 41. https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/.
 42. +https://leetcode.com/problems/sort-list/
 43. +https://leetcode.com/problems/sort-an-array/ 
@@ -93,7 +93,7 @@ def count_combinations(arr, K):
 75. https://leetcode.com/problems/the-maze-ii/
 76. https://leetcode.com/problems/the-maze-iii/
 77. https://leetcode.com/problems/gas-station/
-78. https://leetcode.com/problems/first-unique-character-in-a-string/
+78. +https://leetcode.com/problems/first-unique-character-in-a-string/
 79. https://leetcode.com/problems/design-circular-queue/
 80. https://leetcode.com/problems/design-hashmap/
 81. https://leetcode.com/problems/course-schedule-ii/
@@ -213,10 +213,10 @@ This code finds the node with value 5 in the tree and returns its mirror image p
 130. Print in Order (https://leetcode.com/problems/print-in-order/)  
 131. Print FooBar Alternately (https://leetcode.com/problems/print-foobar-alternately/)  
 132. https://leetcode.com/problems/divide-two-integers/  
-133. 26. https://leetcode.com/problems/string-to-integer-atoi/  
+133. + https://leetcode.com/problems/string-to-integer-atoi/  
 134. https://leetcode.com/problems/random-pick-with-weight/  
 135. +https://leetcode.com/problems/shuffle-an-array/  
-136. https://leetcode.com/problems/reverse-words-in-a-string/  
+136. +https://leetcode.com/problems/reverse-words-in-a-string/  
 137. +https://leetcode.com/problems/middle-of-the-linked-list/  
 
 
