@@ -2,16 +2,16 @@ first linkedlist/deduplicate array/braket
 
 fibonaci/binary tree
 
-1. N-Queens: https://leetcode.com/problems/n-queens/
-2. N-Queens II: https://leetcode.com/problems/n-queens-ii/
-3. Valid Sudoku: https://leetcode.com/problems/valid-sudoku/
-4. Minimum Knight Moves: https://leetcode.com/problems/minimum-knight-moves/
-5. Word Search: https://leetcode.com/problems/word-search/
-6. Same Tree: https://leetcode.com/problems/same-tree/
-7. Symmetric Tree: https://leetcode.com/problems/symmetric-tree/
-8. Subtree of Another Tree: https://leetcode.com/problems/subtree-of-another-tree/
-9. Diameter of Binary Tree: https://leetcode.com/problems/diameter-of-binary-tree/
-10. Binary Tree Maximum Path Sum: https://leetcode.com/problems/binary-tree-maximum-path-sum/
+1. +N-Queens: https://leetcode.com/problems/n-queens/
+2. +N-Queens II: https://leetcode.com/problems/n-queens-ii/
+3. +Valid Sudoku: https://leetcode.com/problems/valid-sudoku/
+4. +Minimum Knight Moves: https://leetcode.com/problems/minimum-knight-moves/
+5. +Word Search: https://leetcode.com/problems/word-search/
+6. +Same Tree: https://leetcode.com/problems/same-tree/
+7. +Symmetric Tree: https://leetcode.com/problems/symmetric-tree/
+8. +Subtree of Another Tree: https://leetcode.com/problems/subtree-of-another-tree/
+9. +Diameter of Binary Tree: https://leetcode.com/problems/diameter-of-binary-tree/
+10. +Binary Tree Maximum Path Sum: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 11. +Reverse Linked List: https://leetcode.com/problems/reverse-linked-list/
 12. +Remove Nth Node From End of List: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 13. +Merge Two Sorted Lists: https://leetcode.com/problems/merge-two-sorted-lists/
@@ -19,7 +19,7 @@ fibonaci/binary tree
 15. +Linked List Cycle: https://leetcode.com/problems/linked-list-cycle/16. detect the cycle in the linked list 
 16. +Linked List Cycle II: https://leetcode.com/problems/linked-list-cycle-ii/
 17. +Remove Linked List Cycle: https://leetcode.com/problems/remove-linked-list-cycle/
-18. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+18. +https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 19. +Remove Duplicates from Sorted List: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 20. +Remove Duplicates from Sorted List II: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 21. +Remove Duplicates from Unsorted List: https://leetcode.com/problems/remove-duplicates-from-unsorted-list/
@@ -30,8 +30,8 @@ fibonaci/binary tree
 26. +https://leetcode.com/problems/lru-cache/
 27. +https://leetcode.com/problems/sort-an-array/
 28. +https://leetcode.com/problems/kth-largest-element-in-an-array/
-29. https://leetcode.com/problems/top-k-frequent-elements/
-30. https://leetcode.com/problems/inorder-successor-in-bst/
+29. +https://leetcode.com/problems/top-k-frequent-elements/
+30. +https://leetcode.com/problems/inorder-successor-in-bst/
 31. https://leetcode.com/problems/inorder-successor-in-bst-ii/
 32. https://leetcode.com/problems/binary-search-tree-iterator/
 33. https://www.lintcode.com/problem/915/
